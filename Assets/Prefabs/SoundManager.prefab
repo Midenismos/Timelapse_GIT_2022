@@ -1,0 +1,333 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4799102588018462843
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6535125495232900922}
+  - component: {fileID: 7337030862046094907}
+  - component: {fileID: 6874931238844734316}
+  m_Layer: 11
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6535125495232900922
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4799102588018462843}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7337030862046094907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4799102588018462843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fa5b2e1bfef06e4db7948eac8a16bec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Button
+    clip: {fileID: 8300000, guid: 8db2c9aad8c149c4c9ed8deccfaaaddf, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    newPitch: 0
+    TimeManipulable: 1
+  - name: Fail
+    clip: {fileID: 8300000, guid: 249b6775f8212ed4c937c009bc606f89, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    newPitch: 0
+    TimeManipulable: 1
+  - name: AccessGranted
+    clip: {fileID: 8300000, guid: 1bb011e4216834a46ac122813df87532, type: 3}
+    volume: 1
+    pitch: 1.5
+    loop: 0
+    source: {fileID: 0}
+    newPitch: 0
+    TimeManipulable: 1
+  - name: Walk
+    clip: {fileID: 8300000, guid: b4fead8eef0ad5145ba75debd5b11f04, type: 3}
+    volume: 0.261
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+    newPitch: 0
+    TimeManipulable: 0
+  - name: BreakingCard
+    clip: {fileID: 8300000, guid: 83502472387c5514d958995a000a2c7e, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    newPitch: 0
+    TimeManipulable: 1
+  - name: Jump
+    clip: {fileID: 8300000, guid: a89b0497777ba05478a56dfd78121aba, type: 3}
+    volume: 0.243
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    newPitch: 0
+    TimeManipulable: 1
+  - name: Drink
+    clip: {fileID: 8300000, guid: 2b4b97af57b716e4eb58821f733e34f5, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    newPitch: 0
+    TimeManipulable: 1
+  - name: Eat
+    clip: {fileID: 8300000, guid: 4afb03c765518c344b37cad3419616d5, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    newPitch: 0
+    TimeManipulable: 1
+  - name: Death
+    clip: {fileID: 8300000, guid: 6c8df0132146ca5488bcddf0db38cda3, type: 3}
+    volume: 0.704
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    newPitch: 0
+    TimeManipulable: 1
+  - name: AmbiancePostFusible
+    clip: {fileID: 8300000, guid: 33122ad4230d6c640a9161e7eac19970, type: 3}
+    volume: 0.149
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+    newPitch: 0
+    TimeManipulable: 1
+  - name: Alerte
+    clip: {fileID: 8300000, guid: 90702f9e714c70843812bd9c286f5a49, type: 3}
+    volume: 0.149
+    pitch: 0.8
+    loop: 0
+    source: {fileID: 0}
+    newPitch: 0
+    TimeManipulable: 1
+  - name: EndAlerte
+    clip: {fileID: 8300000, guid: 7ad37e9b0c608ef498a636e7ab5d64d6, type: 3}
+    volume: 0.149
+    pitch: 0.8
+    loop: 0
+    source: {fileID: 0}
+    newPitch: 0
+    TimeManipulable: 1
+  - name: Fracas
+    clip: {fileID: 8300000, guid: 744ab228e34329943b26a6b5c59d02de, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    newPitch: 0
+    TimeManipulable: 1
+  - name: InvestigationClick
+    clip: {fileID: 8300000, guid: 6a1d14b332090e34090bf8aa6136243c, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    newPitch: 0
+    TimeManipulable: 0
+  - name: InvestigationOpen
+    clip: {fileID: 8300000, guid: 28d01286da8efeb4dbe0f18700068e52, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    newPitch: 0
+    TimeManipulable: 0
+  - name: InvestigationClose
+    clip: {fileID: 8300000, guid: 7b3bac0f8d6058141ae571b4acb642c5, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    newPitch: 0
+    TimeManipulable: 0
+  - name: InvestigationLink
+    clip: {fileID: 8300000, guid: 64c7f2f21e8603747831d121ccb9c8dc, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    newPitch: 0
+    TimeManipulable: 0
+  SpookyRandomSounds:
+  - name: 1
+    clip: {fileID: 8300000, guid: d9a30b406f426bd4190cb4aa4f4e8271, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    newPitch: 0
+    TimeManipulable: 0
+  - name: 2
+    clip: {fileID: 8300000, guid: 137128924b66a7b4aa2bba5fb6830d67, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    newPitch: 0
+    TimeManipulable: 0
+  - name: 3
+    clip: {fileID: 8300000, guid: 210736a1996c3974f82e32252a43ce23, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    newPitch: 0
+    TimeManipulable: 0
+  - name: 4
+    clip: {fileID: 8300000, guid: ab63657a5b578824c88bb4ff4cca6294, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    newPitch: 0
+    TimeManipulable: 0
+  - name: 5
+    clip: {fileID: 8300000, guid: 0a711c688960821468ba8b4f994965ba, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    newPitch: 0
+    TimeManipulable: 0
+  - name: 6
+    clip: {fileID: 8300000, guid: 3399567a281f55544ae4e09208cb392b, type: 3}
+    volume: 0.3
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+    newPitch: 0
+    TimeManipulable: 0
+  - name: 7
+    clip: {fileID: 8300000, guid: 12f8964d2e9561b419492fd3b3f12945, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    newPitch: 0
+    TimeManipulable: 0
+  - name: 8
+    clip: {fileID: 8300000, guid: e5c269f0d851a714cab8a5ee2246c01e, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    newPitch: 0
+    TimeManipulable: 0
+  - name: 9
+    clip: {fileID: 8300000, guid: ca0e5e48ee079ff49b6f58f185f65e42, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    newPitch: 0
+    TimeManipulable: 0
+  - name: 10
+    clip: {fileID: 8300000, guid: 9e65a41640562f843bba15c94cee9de2, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    newPitch: 0
+    TimeManipulable: 0
+  - name: 11
+    clip: {fileID: 8300000, guid: 9e8a214414a32e949b329291b1807765, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    newPitch: 0
+    TimeManipulable: 0
+  - name: 12
+    clip: {fileID: 8300000, guid: 9721bca257a4e344fb8f100b8b450ffa, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    newPitch: 0
+    TimeManipulable: 0
+  - name: 13
+    clip: {fileID: 8300000, guid: fef1f8df0912fa34096c2953996838e2, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    newPitch: 0
+    TimeManipulable: 0
+  - name: 14
+    clip: {fileID: 8300000, guid: 8d2afcefcd45ac14bae6261a1c33c017, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    newPitch: 0
+    TimeManipulable: 0
+  - name: 15
+    clip: {fileID: 8300000, guid: ad95d634b671eec49b1e4d9fd9a49c14, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    newPitch: 0
+    TimeManipulable: 0
+  - name: 16
+    clip: {fileID: 8300000, guid: 3aa4be1975e0e104cbc5dad259fc3a06, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    newPitch: 0
+    TimeManipulable: 0
+  _loreWithAudios: []
+  _fadeCountdown: 1
+  _fadeSpeed: 1
+  _fadeLerp: 0
+  _lerping: 0
+  _diegeticSounds: []
+  _constantPitchChange: 0.4
+--- !u!114 &6874931238844734316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4799102588018462843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0990850b72ab194796bee22a8f10766, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  historyNonDiegetic: []
+  historyDiegetic: []

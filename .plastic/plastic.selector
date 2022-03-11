@@ -1,0 +1,3 @@
+rep "Timelapse@KhronoTeam@cloud"
+  path "/"
+    smartbranch "/main"
