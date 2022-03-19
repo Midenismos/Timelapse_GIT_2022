@@ -6,7 +6,7 @@ public class PlayerAxisScript : MonoBehaviour
 {
     [SerializeField] private int[] _axis;
     [SerializeField] private int _currentAxis = 0;
-    [SerializeField] private int _iCurrentAxis = 0;
+     public int IDCurrentAxis = 0;
     [SerializeField] private float _rotationLerp = 0;
     [SerializeField] private float _rotationCountdown = 1;
     [SerializeField] private float _rotationSpeed = 0.2f;
@@ -15,8 +15,8 @@ public class PlayerAxisScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _iCurrentAxis = 0;
-        _currentAxis = _axis[_iCurrentAxis];
+        IDCurrentAxis = 0;
+        _currentAxis = _axis[IDCurrentAxis];
     }
 
     // Update is called once per frame
@@ -26,11 +26,11 @@ public class PlayerAxisScript : MonoBehaviour
         {
             if (!_isLerping)
             {
-                _iCurrentAxis += 1;
-                if (_iCurrentAxis < 0)
-                    _iCurrentAxis = _axis.Length-1;
-                else if (_iCurrentAxis > _axis.Length-1)
-                    _iCurrentAxis = 0;
+                IDCurrentAxis += 1;
+                if (IDCurrentAxis < 0)
+                    IDCurrentAxis = _axis.Length-1;
+                else if (IDCurrentAxis > _axis.Length-1)
+                    IDCurrentAxis = 0;
                 _rotationCountdown = 1;
                 _rotationLerp = 0;
                 _isLerping = true;
@@ -40,11 +40,11 @@ public class PlayerAxisScript : MonoBehaviour
         {
             if(!_isLerping)
             {
-                _iCurrentAxis -= 1;
-                if (_iCurrentAxis < 0)
-                    _iCurrentAxis = _axis.Length - 1;
-                else if (_iCurrentAxis > _axis.Length - 1)
-                    _iCurrentAxis = 0;
+                IDCurrentAxis -= 1;
+                if (IDCurrentAxis < 0)
+                    IDCurrentAxis = _axis.Length - 1;
+                else if (IDCurrentAxis > _axis.Length - 1)
+                    IDCurrentAxis = 0;
                 _rotationCountdown = 1;
                 _rotationLerp = 0;
                 _isLerping = true;
@@ -59,11 +59,11 @@ public class PlayerAxisScript : MonoBehaviour
 
             if (_rotationCountdown == 0)
             {
-                _currentAxis = _axis[_iCurrentAxis];
+                _currentAxis = _axis[IDCurrentAxis];
                 _isLerping = false;
             }
 
-            transform.rotation = Quaternion.Slerp(Quaternion.Euler(0, _currentAxis, 0), Quaternion.Euler(0, _axis[_iCurrentAxis], 0), _rotationLerp);
+            transform.rotation = Quaternion.Slerp(Quaternion.Euler(0, _currentAxis, 0), Quaternion.Euler(0, _axis[IDCurrentAxis], 0), _rotationLerp);
 
             _rotationLerp = 1f - _rotationCountdown;
         }

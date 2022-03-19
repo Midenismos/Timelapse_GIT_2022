@@ -21,11 +21,11 @@ public class USBObjectReceiver : ObjectReceiver
         if (held)
         {
             USB usb = held.GetComponent<USB>();
-            _camscreen.Movie.clip = usb.Video;
+            //_camscreen.Movie.clip = usb.Video;
         }
         else
         {
-            _camscreen.Movie.clip = null;
+            //_camscreen.Movie.clip = null;
         }
     }
     public override void Interact(GameObject pickup, PlayerController player)
@@ -50,7 +50,7 @@ public class USBObjectReceiver : ObjectReceiver
         else if (held)
         {
             held = null;
-            _camscreen.Movie.Stop();
+            //_camscreen.Movie.Stop();
         }
     }
 }
