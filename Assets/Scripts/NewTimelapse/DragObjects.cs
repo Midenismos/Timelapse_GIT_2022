@@ -8,11 +8,17 @@ public class DragObjects : MonoBehaviour
     private Vector3 mOffset;
 
     private float mZCoord;
+
+    public bool IsDragable = true;
     private void OnMouseDown()
     {
-        GetComponent<Rigidbody>().isKinematic = true;
-        mZCoord = GameObject.Find("Camera").GetComponent<Camera>().WorldToScreenPoint(gameObject.transform.position).z;
-        mOffset = gameObject.transform.position - GetMouseWorldPos();
+        if(IsDragable)
+        {
+            GetComponent<Rigidbody>().isKinematic = true;
+            mZCoord = GameObject.Find("Camera").GetComponent<Camera>().WorldToScreenPoint(gameObject.transform.position).z;
+            mOffset = gameObject.transform.position - GetMouseWorldPos();
+        }
+
     }
 
     private Vector3 GetMouseWorldPos()
@@ -25,11 +31,17 @@ public class DragObjects : MonoBehaviour
     }
     private void OnMouseDrag()
     {
-        transform.position = GetMouseWorldPos() + mOffset;
+        if (IsDragable)
+        {
+            transform.position = GetMouseWorldPos() + mOffset;
+        }
     }
 
-    private void OnMouseUp()
+    public void OnMouseUp()
     {
-        GetComponent<Rigidbody>().isKinematic = false;
+        if (IsDragable)
+        {
+            GetComponent<Rigidbody>().isKinematic = false;
+        }
     }
 }

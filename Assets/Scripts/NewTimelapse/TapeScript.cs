@@ -12,6 +12,7 @@ public class TapeScript : MonoBehaviour
     [SerializeField] private float _zoomSpeed = 0.2f;
     [SerializeField] private bool _isLerping = false;
     [SerializeField] private bool _hasZoomed = false;
+    public AudioClip sound = null;
 
     private Vector3 posA, posB;
 
@@ -20,11 +21,13 @@ public class TapeScript : MonoBehaviour
     float doubleClickStart = 0;
     //Pour faire le double clic
     void OnMouseUp() 
-    { 
+    {
+
         if ((Time.time - doubleClickStart) < 0.3f) 
         { 
             this.OnDoubleClick(); 
             doubleClickStart = -1; 
+
         } 
         else 
         { 
@@ -51,6 +54,7 @@ public class TapeScript : MonoBehaviour
                         _zoomLerp = 0;
                         GameObject.Find("TapePosition").GetComponent<ZoomPoint>().IsEmpty = false;
                         _isLerping = true;
+                        GameObject.Find("Player").GetComponent<PlayerAxisScript>().HasTape = true;
                     }
 
                 }
@@ -66,6 +70,7 @@ public class TapeScript : MonoBehaviour
                         _zoomLerp = 0;
                         GameObject.Find("TapePosition").GetComponent<ZoomPoint>().IsEmpty = true;
                         _isLerping = true;
+                        GameObject.Find("Player").GetComponent<PlayerAxisScript>().HasTape = false;
                     }
                 }
             }
@@ -73,7 +78,23 @@ public class TapeScript : MonoBehaviour
         }
     }
 
+    private void OnMouseDown()
+    {
+        AudioSource Radio = GameObject.Find("Radio").GetComponent<AudioSource>();
+        if (!_hasZoomed)
+        {
+            if (GetComponent<DragObjects>())
+            {
+                GetComponent<DragObjects>().IsDragable = true;
+            }
+        }
+        if(Radio.clip == sound)
+        {
+            Radio.Stop();
+            Radio.clip = null;
+        }
 
+    }
     // Update is called once per frame
     void Update()
     {
@@ -81,11 +102,13 @@ public class TapeScript : MonoBehaviour
         {
             _originalPosition = transform.position;
             _originalRotation = transform.rotation;
-            GetComponent<Rigidbody>().isKinematic = false;
+
         }
         else
         {
             GetComponent<Rigidbody>().isKinematic = true;
+            if (GetComponent<DragObjects>())
+                GetComponent<DragObjects>().IsDragable = false;
         }
         //Lerp de la casette
         if (_isLerping)
@@ -102,6 +125,25 @@ public class TapeScript : MonoBehaviour
             transform.rotation = Quaternion.Slerp(rotA, rotB, _zoomLerp);
 
             _zoomLerp = 1f - _zoomCountdown;
+        }
+        //Remet la casette à sa place si le joueur change d'axe
+        if (GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis != 5)
+        {
+            if (_hasZoomed)
+            {
+                if (GameObject.Find("TapePosition").GetComponent<ZoomPoint>().IsEmpty == false)
+                { 
+                    posB = _originalPosition;
+                    posA = GameObject.Find("TapePosition").transform.position;
+                    rotB = _originalRotation;
+                    rotA = GameObject.Find("TapePosition").transform.rotation;
+                    _zoomCountdown = 1;
+                    _zoomLerp = 0;
+                    GameObject.Find("TapePosition").GetComponent<ZoomPoint>().IsEmpty = true;
+                    _isLerping = true;
+                }
+            }
+
         }
     }
 }

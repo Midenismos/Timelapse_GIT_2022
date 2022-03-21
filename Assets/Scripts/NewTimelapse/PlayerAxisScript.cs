@@ -11,6 +11,7 @@ public class PlayerAxisScript : MonoBehaviour
     [SerializeField] private float _rotationCountdown = 1;
     [SerializeField] private float _rotationSpeed = 0.2f;
     private bool _isLerping = false;
+    public bool HasTape = false;
 
     // Start is called before the first frame update
     void Start()
@@ -23,34 +24,38 @@ public class PlayerAxisScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("d"))
+        if(!HasTape)
         {
-            if (!_isLerping)
+            if (Input.GetKeyDown("d"))
             {
-                IDCurrentAxis += 1;
-                if (IDCurrentAxis < 0)
-                    IDCurrentAxis = _axis.Length-1;
-                else if (IDCurrentAxis > _axis.Length-1)
-                    IDCurrentAxis = 0;
-                _rotationCountdown = 1;
-                _rotationLerp = 0;
-                _isLerping = true;
+                if (!_isLerping)
+                {
+                    IDCurrentAxis += 1;
+                    if (IDCurrentAxis < 0)
+                        IDCurrentAxis = _axis.Length - 1;
+                    else if (IDCurrentAxis > _axis.Length - 1)
+                        IDCurrentAxis = 0;
+                    _rotationCountdown = 1;
+                    _rotationLerp = 0;
+                    _isLerping = true;
+                }
+            }
+            if (Input.GetKeyDown("q"))
+            {
+                if (!_isLerping)
+                {
+                    IDCurrentAxis -= 1;
+                    if (IDCurrentAxis < 0)
+                        IDCurrentAxis = _axis.Length - 1;
+                    else if (IDCurrentAxis > _axis.Length - 1)
+                        IDCurrentAxis = 0;
+                    _rotationCountdown = 1;
+                    _rotationLerp = 0;
+                    _isLerping = true;
+                }
             }
         }
-        if (Input.GetKeyDown("q"))
-        {
-            if(!_isLerping)
-            {
-                IDCurrentAxis -= 1;
-                if (IDCurrentAxis < 0)
-                    IDCurrentAxis = _axis.Length - 1;
-                else if (IDCurrentAxis > _axis.Length - 1)
-                    IDCurrentAxis = 0;
-                _rotationCountdown = 1;
-                _rotationLerp = 0;
-                _isLerping = true;
-            }
-        }
+
 
         //Gère le lerp des sons lors d'un changement temporel
 
