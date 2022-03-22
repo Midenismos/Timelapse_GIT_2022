@@ -54,7 +54,5 @@ public class CircleSlider : MonoBehaviour
     {
         PressPoint = Input.mousePosition;
         StartRotation = transform.rotation;
-
-
     }
 }

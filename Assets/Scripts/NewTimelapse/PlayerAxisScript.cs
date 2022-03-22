@@ -11,7 +11,7 @@ public class PlayerAxisScript : MonoBehaviour
     [SerializeField] private float _rotationCountdown = 1;
     [SerializeField] private float _rotationSpeed = 0.2f;
     private bool _isLerping = false;
-    public bool HasTape = false;
+    public bool HasItem = false;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +24,7 @@ public class PlayerAxisScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!HasTape)
+        if(!HasItem)
         {
             if (Input.GetKeyDown("d"))
             {

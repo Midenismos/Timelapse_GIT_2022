@@ -10,6 +10,12 @@ public class DragObjects : MonoBehaviour
     private float mZCoord;
 
     public bool IsDragable = true;
+    [SerializeField] private MeshRenderer _interactFeedBack;
+
+    private void Awake()
+    {
+        _interactFeedBack = transform.GetChild(0).gameObject.GetComponent<MeshRenderer>();
+    }
     private void OnMouseDown()
     {
         if(IsDragable)
@@ -43,5 +49,14 @@ public class DragObjects : MonoBehaviour
         {
             GetComponent<Rigidbody>().isKinematic = false;
         }
+    }
+
+    private void OnMouseExit()
+    {
+        _interactFeedBack.enabled = false;
+    }
+    private void OnMouseEnter()
+    {
+        _interactFeedBack.enabled = true;
     }
 }
