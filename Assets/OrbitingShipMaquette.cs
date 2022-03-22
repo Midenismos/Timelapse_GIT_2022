@@ -19,14 +19,14 @@ public class OrbitingShipMaquette : MonoBehaviour
     [SerializeField] private EllipseRenderer ellipse = null;
     [SerializeField] private Transform ship = null;
 
-    private TimeManager timeManager = null;
+    private NewLoopManager timeManager = null;
 
     // Start is called before the first frame update
     void Start()
     {
         if (standartMode)
         {
-            timeManager = FindObjectOfType<TimeManager>();
+            timeManager = FindObjectOfType<NewLoopManager>();
             if (!timeManager) Debug.LogError("OrbitingShipMaquette needs a timeManager to function");
         }
     }

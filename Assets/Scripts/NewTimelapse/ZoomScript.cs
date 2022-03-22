@@ -38,18 +38,14 @@ public class ZoomScript : MonoBehaviour
         {
             if ((Time.time - doubleClickStart) < 0.3f)
             {
-                this.OnDoubleClick();
+                this.OnSimpleClick();
                 doubleClickStart = -1;
-            }
-            else
-            {
-                doubleClickStart = Time.time;
             }
         }
 
     }
 
-    void OnDoubleClick()
+    void OnSimpleClick()
     {
         //Rapproche le doc du joueur ou le remet à sa place en cliquant dessus
         if (AxisScript.IDCurrentAxis == itemAxis)
@@ -61,7 +57,7 @@ public class ZoomScript : MonoBehaviour
                     if (ZoomPos.GetComponent<ZoomPoint>().IsEmpty == true)
                     {
                         posA = _originalPosition;
-                        posB = ZoomPos.transform.position;
+                        posB =  ZoomPos.transform.position;
                         rotA = _originalRotation;
                         rotB = ZoomPos.transform.rotation;
                         _zoomCountdown = 1;
@@ -72,7 +68,7 @@ public class ZoomScript : MonoBehaviour
                     }
 
                 }
-                else
+                /*else
                 {
                     if (ZoomPos.GetComponent<ZoomPoint>().IsEmpty == false)
                     {
@@ -86,7 +82,7 @@ public class ZoomScript : MonoBehaviour
                         _isLerping = true;
                         AxisScript.HasItem = false;
                     }
-                }
+                }*/
             }
 
         }
@@ -103,14 +99,15 @@ public class ZoomScript : MonoBehaviour
         }
         if(isCamera)
         {
-            this.OnDoubleClick();
+            this.OnSimpleClick();
         }
+        doubleClickStart = Time.time;
     }
     private void Update()
     {
         if (!HasZoomed && !_isLerping)
         {
-            _originalPosition = transform.position;
+            _originalPosition = isCamera ? transform.parent.transform.position : transform.position;
             _originalRotation = transform.rotation;
 
         }
@@ -161,6 +158,25 @@ public class ZoomScript : MonoBehaviour
                     _zoomLerp = 0;
                     ZoomPos.GetComponent<ZoomPoint>().IsEmpty = true;
                     _isLerping = true;
+                }
+            }
+        }
+
+        if (Input.GetKeyDown("s"))
+        {
+            if (HasZoomed)
+            {
+                if (ZoomPos.GetComponent<ZoomPoint>().IsEmpty == false)
+                {
+                    posB = _originalPosition;
+                    posA = ZoomPos.transform.position;
+                    rotB = _originalRotation;
+                    rotA = ZoomPos.transform.rotation;
+                    _zoomCountdown = 1;
+                    _zoomLerp = 0;
+                    ZoomPos.GetComponent<ZoomPoint>().IsEmpty = true;
+                    _isLerping = true;
+                    AxisScript.HasItem = false;
                 }
             }
         }
