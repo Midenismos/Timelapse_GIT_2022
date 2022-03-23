@@ -2,11 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum SpeedType
+{
+    SLOW,
+    NORMAL,
+    FAST
+}
 public class NewLoopManager : MonoBehaviour
 {
-    public float currentLoopTime = 0;
+    public float CurrentLoopTime = 0;
     [Header("Loop Settings")]
     public float LoopDuration = 15;
+
+    public float Multiplier = 1;
+
+    public SpeedType Speed;
 
     //TODO : REMETTRE LE SYSTEME DE NEBULEUSE ICI
 
@@ -16,11 +26,24 @@ public class NewLoopManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        currentLoopTime += Time.deltaTime;
+        CurrentLoopTime += Time.deltaTime * Multiplier;
 
-        if (currentLoopTime >= LoopDuration)
+        if (CurrentLoopTime >= LoopDuration)
         {
-            currentLoopTime = 0;
+            CurrentLoopTime = 0;
+        }
+
+        switch(Speed)
+        {
+            case (SpeedType.SLOW):
+                Multiplier = 0.5f;
+                break;
+            case (SpeedType.NORMAL):
+                Multiplier = 1f;
+                break;
+            case (SpeedType.FAST):
+                Multiplier = 2f;
+                break;
         }
     }
 }

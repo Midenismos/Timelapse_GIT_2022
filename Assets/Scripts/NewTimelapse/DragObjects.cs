@@ -32,6 +32,7 @@ public class DragObjects : MonoBehaviour
         Vector3 mousePoint = Input.mousePosition;
 
         mousePoint.z = mZCoord;
+        mousePoint.y = Mathf.Clamp(mousePoint.y, 150, 5000);
 
         return GameObject.Find("Camera").GetComponent<Camera>().ScreenToWorldPoint(mousePoint);
     }

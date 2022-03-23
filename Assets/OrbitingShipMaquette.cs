@@ -36,7 +36,7 @@ public class OrbitingShipMaquette : MonoBehaviour
     {
         if(timeManager && standartMode)
         {
-            ChangeShipPosition(timeManager.currentLoopTime, timeManager.LoopDuration);
+            ChangeShipPosition(timeManager.CurrentLoopTime, timeManager.LoopDuration);
         }
     }
 

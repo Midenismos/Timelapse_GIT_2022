@@ -4,21 +4,29 @@ using UnityEngine;
 
 public class PlayerAxisScript : MonoBehaviour
 {
-    [SerializeField] private int[] _axis;
-    [SerializeField] private int _currentAxis = 0;
-     public int IDCurrentAxis = 0;
-    [SerializeField] private float _rotationLerp = 0;
+    [SerializeField] private Vector3[] _axisRotation;
+    [SerializeField] private Vector3[] _camRotation;
+    [SerializeField] private Vector3[] _camPosition;
+    private Vector3 _currentAxisRotation;
+    private Vector3 _currentCamRotation;
+    private Vector3 _currentCamPosition;
+    public int IDCurrentAxis = 0;
+    [SerializeField] private float _moveLerp = 0;
     [SerializeField] private float _rotationCountdown = 1;
     [SerializeField] private float _rotationSpeed = 0.2f;
     private bool _isLerping = false;
     public bool HasItem = false;
+    private GameObject cam;
 
     // Start is called before the first frame update
     void Start()
     {
+        cam = GameObject.Find("Camera");
         Cursor.lockState = CursorLockMode.Confined;
         IDCurrentAxis = 0;
-        _currentAxis = _axis[IDCurrentAxis];
+        _currentAxisRotation = _axisRotation[IDCurrentAxis];
+        _currentCamRotation = _camRotation[IDCurrentAxis];
+        _currentCamPosition = _camPosition[IDCurrentAxis];
     }
 
     // Update is called once per frame
@@ -32,11 +40,11 @@ public class PlayerAxisScript : MonoBehaviour
                 {
                     IDCurrentAxis += 1;
                     if (IDCurrentAxis < 0)
-                        IDCurrentAxis = _axis.Length - 1;
-                    else if (IDCurrentAxis > _axis.Length - 1)
+                        IDCurrentAxis = _axisRotation.Length - 1;
+                    else if (IDCurrentAxis > _axisRotation.Length - 1)
                         IDCurrentAxis = 0;
                     _rotationCountdown = 1;
-                    _rotationLerp = 0;
+                    _moveLerp = 0;
                     _isLerping = true;
                 }
             }
@@ -46,11 +54,11 @@ public class PlayerAxisScript : MonoBehaviour
                 {
                     IDCurrentAxis -= 1;
                     if (IDCurrentAxis < 0)
-                        IDCurrentAxis = _axis.Length - 1;
-                    else if (IDCurrentAxis > _axis.Length - 1)
+                        IDCurrentAxis = _axisRotation.Length - 1;
+                    else if (IDCurrentAxis > _axisRotation.Length - 1)
                         IDCurrentAxis = 0;
                     _rotationCountdown = 1;
-                    _rotationLerp = 0;
+                    _moveLerp = 0;
                     _isLerping = true;
                 }
             }
@@ -65,13 +73,17 @@ public class PlayerAxisScript : MonoBehaviour
 
             if (_rotationCountdown == 0)
             {
-                _currentAxis = _axis[IDCurrentAxis];
+                _currentAxisRotation = _axisRotation[IDCurrentAxis];
+                _currentCamRotation = _camRotation[IDCurrentAxis];
+                _currentCamPosition = _camPosition[IDCurrentAxis];
                 _isLerping = false;
             }
 
-            transform.rotation = Quaternion.Slerp(Quaternion.Euler(0, _currentAxis, 0), Quaternion.Euler(0, _axis[IDCurrentAxis], 0), _rotationLerp);
+            transform.rotation = Quaternion.Slerp( Quaternion.Euler(_currentAxisRotation), Quaternion.Euler(_axisRotation[IDCurrentAxis]), _moveLerp);
+            cam.transform.localPosition = Vector3.Lerp(_currentCamPosition, _camPosition[IDCurrentAxis], _moveLerp);
+            cam.transform.rotation = Quaternion.Slerp(Quaternion.Euler(_currentCamRotation), Quaternion.Euler(_camRotation[IDCurrentAxis]), _moveLerp);
 
-            _rotationLerp = 1f - _rotationCountdown;
+            _moveLerp = 1f - _rotationCountdown;
         }
     }
 }
