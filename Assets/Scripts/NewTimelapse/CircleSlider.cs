@@ -7,6 +7,7 @@ public class CircleSlider : MonoBehaviour
     private float SceneWidth;
     private Vector3 PressPoint;
     private Quaternion StartRotation;
+    private Quaternion Rotation;
     public float value = 1;
 
     private void Start()
@@ -14,45 +15,34 @@ public class CircleSlider : MonoBehaviour
         SceneWidth = Screen.width;
     }
 
-    private void Update()
+    private void OnMouseDown()
     {
-        /*if(Input.GetMouseButtonDown(0))
+        if (GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == 5)
         {
             PressPoint = Input.mousePosition;
             StartRotation = transform.rotation;
         }
-        else if(Input.GetMouseButton(0))
-        {
-            float CurrentDistanceBetweenMousePositions = (Input.mousePosition - PressPoint).x;
-            transform.rotation = StartRotation * Quaternion.Euler(Vector3.up * (CurrentDistanceBetweenMousePositions / SceneWidth) * 360);
-            value = transform.rotation.eulerAngles.x;
-        }*/
-        value = transform.localRotation.x;
 
     }
 
     private void OnMouseDrag()
     {
-        /*float CurrentDistanceBetweenMousePositions = (Input.mousePosition - PressPoint).x;
-        transform.rotation = 
-            
-            StartRotation * Quaternion.Euler(Vector3.up * Mathf.Clamp(((CurrentDistanceBetweenMousePositions / SceneWidth) * 360), 60, 180));*/
-        Vector3 mouseScreenPosition = GameObject.Find("Camera").GetComponent<Camera>().WorldToScreenPoint(Input.mousePosition);
-
-        Vector3 lookAt = mouseScreenPosition;
-            print(mouseScreenPosition);
-
-        float AngleRad = Mathf.Atan2(lookAt.y - this.transform.position.y, lookAt.x - this.transform.position.x);
-
-        float AngleDeg = (180 / Mathf.PI) * AngleRad;
-
-        this.transform.rotation = Quaternion.Euler(AngleDeg, 180, 90);
-
+        if (GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == 5)
+        {
+            float CurrentDistanceBetweenMousePositions = (Input.mousePosition - PressPoint).x;
+            Rotation = StartRotation * Quaternion.Euler(Vector3.up * (CurrentDistanceBetweenMousePositions / SceneWidth) * 360);
+            Rotation.x = ClampAngle(Rotation.x *100, -120, 120);
+            transform.localRotation = Quaternion.Euler(Rotation.x, 90,90);
+        }
     }
 
-    private void OnMouseDown()
+    public static float ClampAngle(float angle, float min, float max)
     {
-        PressPoint = Input.mousePosition;
-        StartRotation = transform.rotation;
+        if (angle < -360F)
+            angle += 360F;
+        if (angle > 360F)
+            angle -= 360F;
+        return Mathf.Clamp(angle, min, max);
     }
 }
+//9
