@@ -1295,24 +1295,24 @@ MonoBehaviour:
   Speed: 0
   Nebuleuses:
   - type: 0
-    start: 100
-    end: 150
+    start: 0
+    end: 180
     isActive: 0
   - type: 1
-    start: 200
-    end: 250
+    start: 180
+    end: 360
     isActive: 0
   - type: 2
-    start: 450
-    end: 500
+    start: 360
+    end: 540
     isActive: 0
   - type: 3
-    start: 550
-    end: 600
+    start: 540
+    end: 720
     isActive: 0
   - type: 4
-    start: 800
-    end: 850
+    start: 720
+    end: 900
     isActive: 0
 --- !u!4 &114191461
 Transform:
@@ -2524,11 +2524,46 @@ PrefabInstance:
       propertyPath: _interactFeedBack
       value: 
       objectReference: {fileID: 410431085}
+    - target: {fileID: 6209920559368707063, guid: 38468b3b60159cc4094da98261ebf36f,
+        type: 3}
+      propertyPath: _videos.Array.data[0]
+      value: 
+      objectReference: {fileID: 32900000, guid: 6c9d62c4b0f3ae246a0198a8f87625eb,
+        type: 3}
+    - target: {fileID: 6209920559368707063, guid: 38468b3b60159cc4094da98261ebf36f,
+        type: 3}
+      propertyPath: _videos.Array.data[1]
+      value: 
+      objectReference: {fileID: 32900000, guid: bde57dedada3df846a9b1d13d3beac11,
+        type: 3}
+    - target: {fileID: 6209920559368707063, guid: 38468b3b60159cc4094da98261ebf36f,
+        type: 3}
+      propertyPath: _videos.Array.data[2]
+      value: 
+      objectReference: {fileID: 32900000, guid: 755a5552ab337b043a26a294e315360e,
+        type: 3}
+    - target: {fileID: 6209920559368707063, guid: 38468b3b60159cc4094da98261ebf36f,
+        type: 3}
+      propertyPath: _videos.Array.data[3]
+      value: 
+      objectReference: {fileID: 32900000, guid: b3851995a9b2ae04087548cae800d0d5,
+        type: 3}
+    - target: {fileID: 6209920559368707063, guid: 38468b3b60159cc4094da98261ebf36f,
+        type: 3}
+      propertyPath: _videos.Array.data[4]
+      value: 
+      objectReference: {fileID: 32900000, guid: a2f81784f55750847ba33b40efd9f309,
+        type: 3}
+    - target: {fileID: 6209920559368707063, guid: 38468b3b60159cc4094da98261ebf36f,
+        type: 3}
+      propertyPath: isAffectedByNebuleuse
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6209920559368707064, guid: 38468b3b60159cc4094da98261ebf36f,
         type: 3}
       propertyPath: m_VideoClip
       value: 
-      objectReference: {fileID: 32900000, guid: 755a5552ab337b043a26a294e315360e,
+      objectReference: {fileID: 32900000, guid: 6c9d62c4b0f3ae246a0198a8f87625eb,
         type: 3}
     - target: {fileID: 6209920559368707064, guid: 38468b3b60159cc4094da98261ebf36f,
         type: 3}
@@ -12535,22 +12570,22 @@ PrefabInstance:
     - target: {fileID: 414180648462360667, guid: eca3f644f178cc843bac498575a16b56,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.7526134
+      value: 1.3690941
       objectReference: {fileID: 0}
     - target: {fileID: 414180648462360667, guid: eca3f644f178cc843bac498575a16b56,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.3007348
+      value: -1.9682153
       objectReference: {fileID: 0}
     - target: {fileID: 1918802882620358992, guid: eca3f644f178cc843bac498575a16b56,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.9619104
+      value: 1.8096541
       objectReference: {fileID: 0}
     - target: {fileID: 1918802882620358992, guid: eca3f644f178cc843bac498575a16b56,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.5244327
+      value: 1.1496042
       objectReference: {fileID: 0}
     - target: {fileID: 2117829770945948417, guid: eca3f644f178cc843bac498575a16b56,
         type: 3}
@@ -12565,12 +12600,12 @@ PrefabInstance:
     - target: {fileID: 4961185257989166328, guid: eca3f644f178cc843bac498575a16b56,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.9619102
+      value: -1.9645745
       objectReference: {fileID: 0}
     - target: {fileID: 4961185257989166328, guid: eca3f644f178cc843bac498575a16b56,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.5244331
+      value: 0.50592977
       objectReference: {fileID: 0}
     - target: {fileID: 5190613672073332710, guid: eca3f644f178cc843bac498575a16b56,
         type: 3}
@@ -12630,22 +12665,22 @@ PrefabInstance:
     - target: {fileID: 5261589506203369537, guid: eca3f644f178cc843bac498575a16b56,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.2532077
+      value: -0.9635074
       objectReference: {fileID: 0}
     - target: {fileID: 5261589506203369537, guid: eca3f644f178cc843bac498575a16b56,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.1042125
+      value: -2.366028
       objectReference: {fileID: 0}
     - target: {fileID: 8120467423523073957, guid: eca3f644f178cc843bac498575a16b56,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.041884825
+      value: -0.25066715
       objectReference: {fileID: 0}
     - target: {fileID: 8120467423523073957, guid: eca3f644f178cc843bac498575a16b56,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.6994078
+      value: 2.6787097
       objectReference: {fileID: 0}
     - target: {fileID: 8738582621286197039, guid: eca3f644f178cc843bac498575a16b56,
         type: 3}
@@ -12660,27 +12695,27 @@ PrefabInstance:
     - target: {fileID: 8738582621286197039, guid: eca3f644f178cc843bac498575a16b56,
         type: 3}
       propertyPath: MiddleValue.Array.data[0]
-      value: 0.1388889
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 8738582621286197039, guid: eca3f644f178cc843bac498575a16b56,
         type: 3}
       propertyPath: MiddleValue.Array.data[1]
-      value: 0.25
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 8738582621286197039, guid: eca3f644f178cc843bac498575a16b56,
         type: 3}
       propertyPath: MiddleValue.Array.data[2]
-      value: 0.5277778
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8738582621286197039, guid: eca3f644f178cc843bac498575a16b56,
         type: 3}
       propertyPath: MiddleValue.Array.data[3]
-      value: 0.6388889
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 8738582621286197039, guid: eca3f644f178cc843bac498575a16b56,
         type: 3}
       propertyPath: MiddleValue.Array.data[4]
-      value: 0.9166667
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 9048214256856913926, guid: eca3f644f178cc843bac498575a16b56,
         type: 3}

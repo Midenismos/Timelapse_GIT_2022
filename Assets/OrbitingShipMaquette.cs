@@ -55,7 +55,6 @@ public class OrbitingShipMaquette : MonoBehaviour
         PositionShip(shipProgress);
         UpdateEllipse();
 
-
         for (int i = 0; i <= 4; i++)
         { 
             MiddleValue[i] = (timeManager.Nebuleuses[i].end - (timeManager.Nebuleuses[i].end - timeManager.Nebuleuses[i].start) / 2) / timeManager.LoopDuration;

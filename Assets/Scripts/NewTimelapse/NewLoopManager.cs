@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-using System.Linq;
 
 
 public enum SpeedType
@@ -13,12 +12,11 @@ public enum SpeedType
 }
 public enum NebuleuseType
 {
-    PURPLE1,
-    PURPLE2,
-    YELLOW,
-    GREEN,
-    BLUE,
-    NONE,
+    PURPLE1 = 0,
+    PURPLE2 = 1,
+    YELLOW = 2,
+    GREEN = 3,
+    BLUE = 4,
 }
 
 [Serializable]
@@ -103,8 +101,6 @@ public class NewLoopManager : MonoBehaviour
             }
         }
 
-        if(Nebuleuses.All (Nebuleuse => Nebuleuse.isActive = false))
-            CurrentNebuleusePhase = NebuleuseType.NONE;
 
     }
 }

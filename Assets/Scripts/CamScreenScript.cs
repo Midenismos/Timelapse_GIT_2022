@@ -1,11 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Video;
 
 public class CamScreenScript : MonoBehaviour
 {
     [SerializeField] private MeshRenderer _interactFeedBack;
 
+    [SerializeField] private bool isAffectedByNebuleuse;
+
+    [SerializeField] private VideoClip[] _videos = new VideoClip[5];
     private void OnMouseOver()
     {
         _interactFeedBack.enabled = true;
@@ -16,6 +20,18 @@ public class CamScreenScript : MonoBehaviour
     private void OnMouseExit()
     {
         _interactFeedBack.enabled = false;
+    }
+
+    private void Awake()
+    {
+        if(isAffectedByNebuleuse)
+        {
+            GameObject.Find("LoopManager").GetComponent<NewLoopManager>().ReactedToNebuleuse += delegate (NebuleuseType NebuleuseType)
+            {
+                GetComponent<VideoPlayer>().clip = _videos[(int)NebuleuseType];
+            };
+        }
+        
     }
 
 
