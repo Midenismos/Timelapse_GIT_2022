@@ -1,6 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+using System.Linq;
+
 
 public enum SpeedType
 {
@@ -17,6 +20,15 @@ public enum NebuleuseType
     BLUE,
     NONE,
 }
+
+[Serializable]
+public struct Nebuleuse
+{
+    public NebuleuseType type;
+    public float start;
+    public float end;
+    public bool isActive;
+}
 public class NewLoopManager : MonoBehaviour
 {
     public float CurrentLoopTime = 0;
@@ -31,11 +43,11 @@ public class NewLoopManager : MonoBehaviour
 
     public delegate void ReactToNebuleuse(NebuleuseType NebuleuseType);
     public event ReactToNebuleuse ReactedToNebuleuse;
-    //Changer si besoin pour déterminer la période de changement de Phase Audio
-    [SerializeField] public int PurpleNebuleuse1Start, PurpleNebuleuse1End, PurpleNebuleuse2Start, PurpleNebuleuse2End, YellowNebuleuseStart, YellowNebuleuseEnd, GreenNebuleuseStart, GreenNebuleuseEnd, BlueNebuleuseStart, BlueNebuleuseEnd;
+    //Changer si besoin pour déterminer la période de changement de Nebuleuse
+    public Nebuleuse[] Nebuleuses = new Nebuleuse[5];
+    
 
-
-    public NebuleuseType _currentNebuleusePhase;
+    private NebuleuseType _currentNebuleusePhase;
     public NebuleuseType CurrentNebuleusePhase
     {
         get
@@ -76,17 +88,22 @@ public class NewLoopManager : MonoBehaviour
 
 
         //Quand est-ce que les Nébuleuses ont lieu
-        if (CurrentLoopTime > PurpleNebuleuse1Start && CurrentLoopTime <= PurpleNebuleuse1End)
-            CurrentNebuleusePhase = NebuleuseType.PURPLE1;
-        else if (CurrentLoopTime > PurpleNebuleuse2Start && CurrentLoopTime <= PurpleNebuleuse2End)
-            CurrentNebuleusePhase = NebuleuseType.PURPLE2;
-        else if (CurrentLoopTime > YellowNebuleuseStart && CurrentLoopTime <= YellowNebuleuseEnd)
-            CurrentNebuleusePhase = NebuleuseType.YELLOW;
-        else if (CurrentLoopTime > GreenNebuleuseStart && CurrentLoopTime <= GreenNebuleuseEnd)
-            CurrentNebuleusePhase = NebuleuseType.GREEN;
-        else if (CurrentLoopTime > BlueNebuleuseStart && CurrentLoopTime <= BlueNebuleuseStart)
-            CurrentNebuleusePhase = NebuleuseType.BLUE;
-        else
+
+        for(int i = 0; i<= Nebuleuses.Length-1; i++) 
+        {
+            if (CurrentLoopTime > Nebuleuses[i].start && CurrentLoopTime <= Nebuleuses[i].end)
+            {
+                CurrentNebuleusePhase = Nebuleuses[i].type;
+                Nebuleuses[i].isActive = true;
+                break;
+            }
+            else
+            {
+                Nebuleuses[i].isActive = false;
+            }
+        }
+
+        if(Nebuleuses.All (Nebuleuse => Nebuleuse.isActive = false))
             CurrentNebuleusePhase = NebuleuseType.NONE;
 
     }

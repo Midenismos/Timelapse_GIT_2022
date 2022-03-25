@@ -7,19 +7,24 @@ public class TapeListener : MonoBehaviour
 {
     [SerializeField]private GameObject tapeReceiver = null;
     [SerializeField]private Slider _slider = null;
+    private bool isActivated = true;
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Tape")
         {
             if(GetComponent<AudioSource>().clip == null)
             {
-                other.GetComponent<DragObjects>().IsDragable = false;
-                other.GetComponent<Rigidbody>().isKinematic = true;
-                other.transform.position = tapeReceiver.transform.position;
-                other.transform.rotation = tapeReceiver.transform.rotation;
-                GetComponent<AudioSource>().clip = other.GetComponent<TapeScript>().sound;
-                _slider.value = 1;
-                GetComponent<AudioSource>().Play();
+
+                    other.GetComponent<DragObjects>().IsDragable = false;
+                    other.GetComponent<Rigidbody>().isKinematic = true;
+                    other.transform.position = tapeReceiver.transform.position;
+                    other.transform.rotation = tapeReceiver.transform.rotation;
+                if (isActivated)
+                {
+                    GetComponent<AudioSource>().clip = other.GetComponent<TapeScript>().sound;
+                    _slider.value = 1;
+                    GetComponent<AudioSource>().Play();
+                }
             }
         }
     }
@@ -28,7 +33,12 @@ public class TapeListener : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().ReactedToEnergy += delegate ()
+        {
+            GetComponent<AudioSource>().clip = null;
+            GetComponent<AudioSource>().Stop();
+            isActivated = false;
+        };
     }
 
     // Update is called once per frame

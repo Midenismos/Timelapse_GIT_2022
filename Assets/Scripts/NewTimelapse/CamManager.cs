@@ -15,6 +15,14 @@ public class CamManager : MonoBehaviour
     private void Awake()
     {
         _slider.maxValue = (float)_cams[0].clip.length;
+
+        GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().ReactedToEnergy += delegate ()
+        {
+            foreach (VideoPlayer cam in _cams)
+            {
+                cam.clip = null;
+            }
+        };
     }
     private void Update()
     {
@@ -32,6 +40,7 @@ public class CamManager : MonoBehaviour
 
         if ((float)_cams[0].time <= _slider.value+0.1f && (float)_cams[0].time >= _slider.value - 0.1f)
             IsSliderClicked = false;
+
     }
     public void Rewind()
     {

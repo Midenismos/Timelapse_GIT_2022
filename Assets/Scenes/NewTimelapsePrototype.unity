@@ -1293,17 +1293,27 @@ MonoBehaviour:
   LoopDuration: 900
   Multiplier: 1
   Speed: 0
-  PurpleNebuleuse1Start: 50
-  PurpleNebuleuse1End: 100
-  PurpleNebuleuse2Start: 150
-  PurpleNebuleuse2End: 200
-  YellowNebuleuseStart: 250
-  YellowNebuleuseEnd: 300
-  GreenNebuleuseStart: 550
-  GreenNebuleuseEnd: 600
-  BlueNebuleuseStart: 850
-  BlueNebuleuseEnd: 900
-  _currentNebuleusePhase: 0
+  Nebuleuses:
+  - type: 0
+    start: 100
+    end: 150
+    isActive: 0
+  - type: 1
+    start: 200
+    end: 250
+    isActive: 0
+  - type: 2
+    start: 450
+    end: 500
+    isActive: 0
+  - type: 3
+    start: 550
+    end: 600
+    isActive: 0
+  - type: 4
+    start: 800
+    end: 850
+    isActive: 0
 --- !u!4 &114191461
 Transform:
   m_ObjectHideFlags: 0
@@ -5177,7 +5187,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh15652
+  m_Name: pb_Mesh15684
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5767,7 +5777,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 271071727}
   m_FillRect: {fileID: 0}
   m_HandleRect: {fileID: 271071726}
@@ -12525,22 +12535,22 @@ PrefabInstance:
     - target: {fileID: 414180648462360667, guid: eca3f644f178cc843bac498575a16b56,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.9764568
+      value: 1.7526134
       objectReference: {fileID: 0}
     - target: {fileID: 414180648462360667, guid: eca3f644f178cc843bac498575a16b56,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.41306165
+      value: -1.3007348
       objectReference: {fileID: 0}
     - target: {fileID: 1918802882620358992, guid: eca3f644f178cc843bac498575a16b56,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.7107285
+      value: 1.9619104
       objectReference: {fileID: 0}
     - target: {fileID: 1918802882620358992, guid: eca3f644f178cc843bac498575a16b56,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.3986729
+      value: 0.5244327
       objectReference: {fileID: 0}
     - target: {fileID: 2117829770945948417, guid: eca3f644f178cc843bac498575a16b56,
         type: 3}
@@ -12620,22 +12630,22 @@ PrefabInstance:
     - target: {fileID: 5261589506203369537, guid: eca3f644f178cc843bac498575a16b56,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.3173789
+      value: -1.2532077
       objectReference: {fileID: 0}
     - target: {fileID: 5261589506203369537, guid: eca3f644f178cc843bac498575a16b56,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.0315204
+      value: -2.1042125
       objectReference: {fileID: 0}
     - target: {fileID: 8120467423523073957, guid: eca3f644f178cc843bac498575a16b56,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.64453125
+      value: -0.041884825
       objectReference: {fileID: 0}
     - target: {fileID: 8120467423523073957, guid: eca3f644f178cc843bac498575a16b56,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.555953
+      value: 2.6994078
       objectReference: {fileID: 0}
     - target: {fileID: 8738582621286197039, guid: eca3f644f178cc843bac498575a16b56,
         type: 3}
@@ -12650,17 +12660,17 @@ PrefabInstance:
     - target: {fileID: 8738582621286197039, guid: eca3f644f178cc843bac498575a16b56,
         type: 3}
       propertyPath: MiddleValue.Array.data[0]
-      value: 0.083333336
+      value: 0.1388889
       objectReference: {fileID: 0}
     - target: {fileID: 8738582621286197039, guid: eca3f644f178cc843bac498575a16b56,
         type: 3}
       propertyPath: MiddleValue.Array.data[1]
-      value: 0.19444445
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 8738582621286197039, guid: eca3f644f178cc843bac498575a16b56,
         type: 3}
       propertyPath: MiddleValue.Array.data[2]
-      value: 0.30555555
+      value: 0.5277778
       objectReference: {fileID: 0}
     - target: {fileID: 8738582621286197039, guid: eca3f644f178cc843bac498575a16b56,
         type: 3}
@@ -12670,7 +12680,7 @@ PrefabInstance:
     - target: {fileID: 8738582621286197039, guid: eca3f644f178cc843bac498575a16b56,
         type: 3}
       propertyPath: MiddleValue.Array.data[4]
-      value: 0.9722222
+      value: 0.9166667
       objectReference: {fileID: 0}
     - target: {fileID: 9048214256856913926, guid: eca3f644f178cc843bac498575a16b56,
         type: 3}

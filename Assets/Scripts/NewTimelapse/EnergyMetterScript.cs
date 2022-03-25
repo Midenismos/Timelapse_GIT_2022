@@ -20,6 +20,29 @@ public class EnergyMetterScript : MonoBehaviour
 
     private NewLoopManager loopManager = null;
 
+    private float _energy;
+    public float Energy
+    {
+        get
+        { return _energy; }
+        set
+        {
+            if (value != _energy)
+            {
+                _energy = value;
+                if(_energy >= loopManager.LoopDuration-1)
+                {
+                    if (ReactedToEnergy != null)
+                        ReactedToEnergy();
+                }
+
+            }
+        }
+    }
+
+    public delegate void ReactToEnergy();
+    public event ReactToEnergy ReactedToEnergy;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,7 +58,9 @@ public class EnergyMetterScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _slider.value = loopManager.CurrentLoopTime;
+        Energy = loopManager.CurrentLoopTime;
+
+        _slider.value = Energy;
 
         if (Input.GetKeyDown("d") || Input.GetKeyDown("q"))
         {
