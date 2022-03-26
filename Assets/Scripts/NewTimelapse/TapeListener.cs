@@ -8,6 +8,7 @@ public class TapeListener : MonoBehaviour
     [SerializeField]private GameObject tapeReceiver = null;
     [SerializeField]private Slider _slider = null;
     private bool isActivated = true;
+    public TapeScript CurrentTape = null;
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Tape")
@@ -21,9 +22,12 @@ public class TapeListener : MonoBehaviour
                     other.transform.rotation = tapeReceiver.transform.rotation;
                 if (isActivated)
                 {
-                    GetComponent<AudioSource>().clip = other.GetComponent<TapeScript>().sound;
+                    CurrentTape = other.GetComponent<TapeScript>();
+                    GetComponent<AudioSource>().clip = CurrentTape.CurrentSound;
                     _slider.value = 1;
+                    GetComponent<AudioSource>().time = 0;
                     GetComponent<AudioSource>().Play();
+                    other.GetComponent<ZoomScript>().enabled = false;
                 }
             }
         }
@@ -45,5 +49,17 @@ public class TapeListener : MonoBehaviour
     void Update()
     {
         GetComponent<AudioSource>().pitch = _slider.value;
+    }
+
+    public void ChangeSound()
+    {
+        //Change l'audio en fonction des nébuleuse
+        float time = GetComponent<AudioSource>().time;
+        GetComponent<AudioSource>().Stop();
+        GetComponent<AudioSource>().clip = CurrentTape.CurrentSound;
+        GetComponent<AudioSource>().Play();
+        GetComponent<AudioSource>().time = time;
+
+
     }
 }

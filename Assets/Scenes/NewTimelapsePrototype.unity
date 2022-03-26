@@ -5028,6 +5028,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tapeReceiver: {fileID: 682363481}
   _slider: {fileID: 940538323}
+  CurrentTape: {fileID: 0}
 --- !u!65 &765974901
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7105,6 +7106,16 @@ PrefabInstance:
       propertyPath: sound
       value: 
       objectReference: {fileID: 8300000, guid: a9476702a41589642ad03fa9a945440b, type: 3}
+    - target: {fileID: 493304549035087952, guid: 14e571308375e3a47a5b63802991bacd,
+        type: 3}
+      propertyPath: sounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 5a8bd25b9cea4cb44a617313886313bb, type: 3}
+    - target: {fileID: 493304549035087952, guid: 14e571308375e3a47a5b63802991bacd,
+        type: 3}
+      propertyPath: sounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 8eb842cb7300f2a46b77af9fe725beec, type: 3}
     - target: {fileID: 493304549332103427, guid: 14e571308375e3a47a5b63802991bacd,
         type: 3}
       propertyPath: m_LineType
@@ -8685,6 +8696,16 @@ PrefabInstance:
       propertyPath: sound
       value: 
       objectReference: {fileID: 8300000, guid: 5a8bd25b9cea4cb44a617313886313bb, type: 3}
+    - target: {fileID: 493304549035087952, guid: 14e571308375e3a47a5b63802991bacd,
+        type: 3}
+      propertyPath: sounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 802f0ec8b4f4ea845bbcb97896acb083, type: 3}
+    - target: {fileID: 493304549035087952, guid: 14e571308375e3a47a5b63802991bacd,
+        type: 3}
+      propertyPath: sounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: e1c4a35cda1467e4badece392dbf2b29, type: 3}
     - target: {fileID: 493304549332103427, guid: 14e571308375e3a47a5b63802991bacd,
         type: 3}
       propertyPath: m_LineType
@@ -12989,6 +13010,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 493304549035087952, guid: 14e571308375e3a47a5b63802991bacd,
+        type: 3}
+      propertyPath: sounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: bad42db5f22149746866c21c63a9f64a, type: 3}
+    - target: {fileID: 493304549035087952, guid: 14e571308375e3a47a5b63802991bacd,
+        type: 3}
+      propertyPath: sounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 9c9dd87432bbd89419cd5958773ede77, type: 3}
+    - target: {fileID: 493304549035087952, guid: 14e571308375e3a47a5b63802991bacd,
+        type: 3}
+      propertyPath: sounds.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: cc028a7d27f20e74bab4331e99d9f305, type: 3}
+    - target: {fileID: 493304549035087952, guid: 14e571308375e3a47a5b63802991bacd,
+        type: 3}
+      propertyPath: sounds.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: a9476702a41589642ad03fa9a945440b, type: 3}
+    - target: {fileID: 493304549035087952, guid: 14e571308375e3a47a5b63802991bacd,
+        type: 3}
+      propertyPath: isAffectedByBlueGreen
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 493304549035087952, guid: 14e571308375e3a47a5b63802991bacd,
+        type: 3}
+      propertyPath: isAffectedByNebuleuse
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 493304549332103427, guid: 14e571308375e3a47a5b63802991bacd,
         type: 3}
