@@ -11,16 +11,18 @@ public class CamManager : MonoBehaviour
     [SerializeField] private bool _isRewinding = false;
     [SerializeField] private Slider _slider;
     public bool IsSliderClicked = false;
+    [SerializeField] private OnOffButton _button = null;
 
     private void Awake()
     {
+        OnOff();
         _slider.maxValue = (float)_cams[0].clip.length;
 
         GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().ReactedToEnergy += delegate ()
         {
             foreach (VideoPlayer cam in _cams)
             {
-                cam.clip = null;
+                cam.Stop();
             }
         };
     }
@@ -97,6 +99,28 @@ public class CamManager : MonoBehaviour
     public void ReactivateSlider()
     {
         ChangeTime();
+    }
+
+    public void OnOff()
+    {
+        if(_button.IsActivated == false)
+        {
+            foreach (VideoPlayer cam in _cams)
+            {
+                cam.Stop();
+            }
+            GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().HowManyMachineActivated -= 1;
+        }
+        else
+        {
+            foreach (VideoPlayer cam in _cams)
+            {
+                cam.Play();
+            }
+            GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().HowManyMachineActivated += 1;
+        }
+            
+
     }
 }
 

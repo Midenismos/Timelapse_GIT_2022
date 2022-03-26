@@ -17,8 +17,12 @@ public class EnergyMetterScript : MonoBehaviour
     [SerializeField] private float smooth;
 
     [SerializeField] private Slider _slider;
-
-    private NewLoopManager loopManager = null;
+    [SerializeField] private float _maxEnergy;
+    [SerializeField] private float _baseDecreaseValue;
+    private float _yellowNebuleuseMultiplier = 1;
+    [SerializeField] private float _decreaseValuePerMachine = 0.5f;
+    public int HowManyMachineActivated = 0;
+    private float _decreaseValueWithSpeed = 0.2f;
 
     private float _energy;
     public float Energy
@@ -30,7 +34,7 @@ public class EnergyMetterScript : MonoBehaviour
             if (value != _energy)
             {
                 _energy = value;
-                if(_energy >= loopManager.LoopDuration-1)
+                if(_energy >= _maxEnergy)
                 {
                     if (ReactedToEnergy != null)
                         ReactedToEnergy();
@@ -43,13 +47,24 @@ public class EnergyMetterScript : MonoBehaviour
     public delegate void ReactToEnergy();
     public event ReactToEnergy ReactedToEnergy;
 
+    private void Awake()
+    {
+        //Accélére la perte d'énergie en cas de Nebuleuse Jaune.
+        GameObject.Find("LoopManager").GetComponent<NewLoopManager>().ReactedToNebuleuse += delegate (NebuleuseType NebuleuseType)
+        {
+            if (NebuleuseType == NebuleuseType.YELLOW)
+                _yellowNebuleuseMultiplier = 5;
+            else
+                _yellowNebuleuseMultiplier = 1;
+        };
+        StartCoroutine(DecreaseEnergy());
+
+
+    }
     // Start is called before the first frame update
     void Start()
     {
-        loopManager = FindObjectOfType<NewLoopManager>();
-        if (!loopManager) Debug.LogError("EnergyMetter needs a loopManager to function");
-
-        _slider.maxValue = loopManager.LoopDuration;
+        _slider.maxValue = _maxEnergy;
         player = GameObject.Find("Player").GetComponent<PlayerAxisScript>();
         _currentRotation = _Rotations[player.IDCurrentAxis];
         _currentPosition = _Positions[player.IDCurrentAxis];
@@ -58,8 +73,6 @@ public class EnergyMetterScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Energy = loopManager.CurrentLoopTime;
-
         _slider.value = Energy;
 
         if (Input.GetKeyDown("d") || Input.GetKeyDown("q"))
@@ -72,6 +85,11 @@ public class EnergyMetterScript : MonoBehaviour
             smooth = 1;
         }
 
+        //Change la quantité d'énergie consommée en fonctionne de la vitesse.
+        if (GameObject.Find("LoopManager").GetComponent<NewLoopManager>().Speed == SpeedType.FAST)
+            _decreaseValueWithSpeed = 0.5f;
+        else
+            _decreaseValueWithSpeed = 0.2f;
 
 
         //Gère le lerp des sons lors d'un changement temporel
@@ -89,6 +107,17 @@ public class EnergyMetterScript : MonoBehaviour
             smooth = Mathf.Clamp(_rotationCountdown+0.25f, 0.25f, 1f);
             _moveLerp = (1f - _rotationCountdown);
             
+        }
+    }
+
+    //Baisse la quantité d'energie en fonction de la présence de la Nébuleuse Jaunne, des machines et de la vitesse du vaisseau
+    private IEnumerator DecreaseEnergy()
+    {
+        while (Energy < _maxEnergy)
+        {
+            Energy += _baseDecreaseValue * _yellowNebuleuseMultiplier + (_decreaseValuePerMachine * HowManyMachineActivated) +_decreaseValueWithSpeed;
+            print(_baseDecreaseValue * _yellowNebuleuseMultiplier + (_decreaseValuePerMachine * HowManyMachineActivated) + _decreaseValueWithSpeed);
+            yield return new WaitForSeconds(1f);
         }
     }
 }

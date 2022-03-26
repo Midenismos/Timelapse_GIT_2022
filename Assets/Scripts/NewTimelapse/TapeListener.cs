@@ -28,6 +28,7 @@ public class TapeListener : MonoBehaviour
                     GetComponent<AudioSource>().time = 0;
                     GetComponent<AudioSource>().Play();
                     other.GetComponent<ZoomScript>().enabled = false;
+                    GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().HowManyMachineActivated += 1;
                 }
             }
         }
@@ -59,7 +60,5 @@ public class TapeListener : MonoBehaviour
         GetComponent<AudioSource>().clip = CurrentTape.CurrentSound;
         GetComponent<AudioSource>().Play();
         GetComponent<AudioSource>().time = time;
-
-
     }
 }

@@ -53,6 +53,7 @@ public class TapeScript : MonoBehaviour
             Radio.GetComponent<TapeListener>().CurrentTape = null;
             Radio.clip = null;
             GetComponent<ZoomScript>().enabled = true;
+            GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().HowManyMachineActivated -= 1;
         }
     }
 
