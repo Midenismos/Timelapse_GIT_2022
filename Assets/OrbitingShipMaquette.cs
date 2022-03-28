@@ -91,7 +91,7 @@ public class OrbitingShipMaquette : MonoBehaviour
     // Gère la rotation de la planète
     private void OnMouseDown()
     {
-        if (GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == 2)
+        if (GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == 3)
         {
             PressPoint = Input.mousePosition;
             StartRotation = transform.rotation;
@@ -101,7 +101,7 @@ public class OrbitingShipMaquette : MonoBehaviour
 
     private void OnMouseDrag()
     {
-        if (GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == 2)
+        if (GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == 3)
         {
             float CurrentDistanceBetweenMousePositions = (Input.mousePosition - PressPoint).x;
             transform.rotation = StartRotation * Quaternion.Euler(Vector3.up * (CurrentDistanceBetweenMousePositions / SceneWidth) * 360);

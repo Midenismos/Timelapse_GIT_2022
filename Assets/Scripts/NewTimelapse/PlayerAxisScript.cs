@@ -46,6 +46,8 @@ public class PlayerAxisScript : MonoBehaviour
                     _rotationCountdown = 1;
                     _moveLerp = 0;
                     _isLerping = true;
+                    if (IDCurrentAxis == 1 || IDCurrentAxis == 2)
+                        GameObject.Find("ButtonsPanel").GetComponent<CamManager>().StartSliderLerp();
                 }
             }
             if (Input.GetKeyDown("q"))
@@ -60,6 +62,8 @@ public class PlayerAxisScript : MonoBehaviour
                     _rotationCountdown = 1;
                     _moveLerp = 0;
                     _isLerping = true;
+                    if (IDCurrentAxis == 1 || IDCurrentAxis == 2)
+                        GameObject.Find("ButtonsPanel").GetComponent<CamManager>().StartSliderLerp();
                 }
             }
         }

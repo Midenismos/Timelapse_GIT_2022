@@ -18,7 +18,7 @@ public class LeverScript : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == 2)
+        if (GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == 3)
         {
             PressPoint = Input.mousePosition;
             StartRotation = transform.rotation;
@@ -28,11 +28,11 @@ public class LeverScript : MonoBehaviour
 
     private void OnMouseDrag()
     {
-        if (GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == 2)
+        if (GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == 3)
         {
             float CurrentDistanceBetweenMousePositions = -(Input.mousePosition - PressPoint).y;
             Rotation = StartRotation * Quaternion.Euler(Vector3.forward * (CurrentDistanceBetweenMousePositions / SceneHeight) * 360);
-            Rotation.z = ClampAngle(Rotation.z * 60, -30, 30);
+            Rotation.z = ClampAngle(Rotation.z * 60, -20, 20);
             transform.parent.transform.localRotation = Quaternion.Euler(0f, 0f, Rotation.z);
         }
     }
@@ -51,9 +51,9 @@ public class LeverScript : MonoBehaviour
     private void Update()
     {
         //Change la vitesse du vaisseau en fonction de l'angle du levier.
-        if (transform.parent.transform.localRotation.eulerAngles.z > 20 && transform.parent.transform.localRotation.eulerAngles.z < 30.1)
+        if (transform.parent.transform.localRotation.eulerAngles.z > 15 && transform.parent.transform.localRotation.eulerAngles.z < 20.1)
             GameObject.Find("LoopManager").GetComponent<NewLoopManager>().Speed = SpeedType.SLOW;
-        else if (transform.parent.transform.localRotation.eulerAngles.z > 329 && transform.parent.transform.localRotation.eulerAngles.z < 340)
+        else if (transform.parent.transform.localRotation.eulerAngles.z > 339.1 && transform.parent.transform.localRotation.eulerAngles.z < 345)
             GameObject.Find("LoopManager").GetComponent<NewLoopManager>().Speed = SpeedType.FAST;
         else
             GameObject.Find("LoopManager").GetComponent<NewLoopManager>().Speed = SpeedType.NORMAL;

@@ -116,7 +116,6 @@ public class EnergyMetterScript : MonoBehaviour
         while (Energy < _maxEnergy)
         {
             Energy += _baseDecreaseValue * _yellowNebuleuseMultiplier + (_decreaseValuePerMachine * HowManyMachineActivated) +_decreaseValueWithSpeed;
-            print(_baseDecreaseValue * _yellowNebuleuseMultiplier + (_decreaseValuePerMachine * HowManyMachineActivated) + _decreaseValueWithSpeed);
             yield return new WaitForSeconds(1f);
         }
     }
