@@ -141,7 +141,7 @@ public class CamManager : MonoBehaviour
 
     public void StopSlider()
     {
-        if (player.IDCurrentAxis == 1 || player.IDCurrentAxis == 2)
+        if (player.IDCurrentAxis == 5 || player.IDCurrentAxis == 4)
         {
             foreach (VideoPlayer cam in _cams)
                 cam.Pause();
@@ -194,12 +194,12 @@ public class CamManager : MonoBehaviour
     //Déplacer le slider en fonction de si le joueur est face au cam ou la minimap
     public void StartSliderLerp()
     {
-        if(player.IDCurrentAxis == 1)
+        if(player.IDCurrentAxis == 5)
         {
             _targetRotation = _Rotations[0];
             _targetPosition = _Positions[0];
         }
-        else if (player.IDCurrentAxis == 2)
+        else if (player.IDCurrentAxis == 4)
         {
             _targetRotation = _Rotations[1];
             _targetPosition = _Positions[1];

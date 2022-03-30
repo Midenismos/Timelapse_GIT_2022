@@ -18,7 +18,7 @@ public class LeverScript : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == 3)
+        if (GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == 2)
         {
             PressPoint = Input.mousePosition;
             StartRotation = transform.rotation;
@@ -28,7 +28,7 @@ public class LeverScript : MonoBehaviour
 
     private void OnMouseDrag()
     {
-        if (GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == 3)
+        if (GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == 2)
         {
             float CurrentDistanceBetweenMousePositions = -(Input.mousePosition - PressPoint).y;
             Rotation = StartRotation * Quaternion.Euler(Vector3.forward * (CurrentDistanceBetweenMousePositions / SceneHeight) * 360);

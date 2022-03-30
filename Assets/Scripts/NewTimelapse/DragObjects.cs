@@ -10,19 +10,44 @@ public class DragObjects : MonoBehaviour
     private float mZCoord;
 
     public bool IsDragable = true;
+    public bool Is3D = true;
+    public bool IsEntry = false;
     [SerializeField] private MeshRenderer _interactFeedBack;
 
     private void Awake()
     {
-        _interactFeedBack = transform.GetChild(0).gameObject.GetComponent<MeshRenderer>();
-    }
-    private void OnMouseDown()
-    {
-        if(IsDragable)
+        try
         {
-            GetComponent<Rigidbody>().isKinematic = true;
+            _interactFeedBack = transform.GetChild(0).gameObject.GetComponent<MeshRenderer>();
+        }
+        catch
+        {
+            _interactFeedBack = null;
+        }
+    }
+    public void OnMouseDown()
+    {
+        if(GetComponent<ZoomScript>())
+        {
+            if (!GetComponent<ZoomScript>().HasZoomed)
+            {
+                GetComponent<DragObjects>().IsDragable = true;
+            }
+        }
+        else
+        {
+            GetComponent<DragObjects>().IsDragable = true;
+            if (tag == "PanelImage")
+                transform.parent = GameObject.Find("TI").transform;
+        }
+
+        if (IsDragable)
+        {
+            if(GetComponent<Rigidbody>())
+                GetComponent<Rigidbody>().isKinematic = true;
             mZCoord = GameObject.Find("Camera").GetComponent<Camera>().WorldToScreenPoint(gameObject.transform.position).z;
             mOffset = gameObject.transform.position - GetMouseWorldPos();
+            print("hey");
         }
 
     }
@@ -32,15 +57,20 @@ public class DragObjects : MonoBehaviour
         Vector3 mousePoint = Input.mousePosition;
 
         mousePoint.z = mZCoord;
-        mousePoint.y = Mathf.Clamp(mousePoint.y, 150, 5000);
+        if (Is3D)
+            mousePoint.y = Mathf.Clamp(mousePoint.y, 150, 5000);
+        else if (IsEntry)
+            mousePoint.y = transform.position.y;
+
 
         return GameObject.Find("Camera").GetComponent<Camera>().ScreenToWorldPoint(mousePoint);
     }
-    private void OnMouseDrag()
+    public void OnMouseDrag()
     {
         if (IsDragable)
         {
             transform.position = GetMouseWorldPos() + mOffset;
+            print(GetMouseWorldPos() + mOffset);
         }
     }
 
@@ -48,16 +78,19 @@ public class DragObjects : MonoBehaviour
     {
         if (IsDragable)
         {
-            GetComponent<Rigidbody>().isKinematic = false;
+            if (GetComponent<Rigidbody>())
+                GetComponent<Rigidbody>().isKinematic = false;
         }
     }
 
     private void OnMouseExit()
     {
-        _interactFeedBack.enabled = false;
+        if (_interactFeedBack)
+            _interactFeedBack.enabled = false;
     }
     private void OnMouseEnter()
     {
-        _interactFeedBack.enabled = true;
+        if(_interactFeedBack)
+            _interactFeedBack.enabled = true;
     }
 }

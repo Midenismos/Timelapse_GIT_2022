@@ -15,7 +15,7 @@ public class CamButton : MonoBehaviour
     }
     private void OnMouseOver()
     {
-        if (GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == 1)
+        if (GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == 5)
         {
             _interactFeedBack.enabled = true;
             if (Input.GetMouseButtonDown(0))
