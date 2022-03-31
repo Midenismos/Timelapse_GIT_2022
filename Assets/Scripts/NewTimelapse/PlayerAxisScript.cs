@@ -10,6 +10,11 @@ public class PlayerAxisScript : MonoBehaviour
     private Vector3 _currentAxisRotation;
     private Vector3 _currentCamRotation;
     private Vector3 _currentCamPosition;
+
+    private Vector3 _targetRotation;
+    private Vector3 _targetPosition;
+    private Vector3 _targetCamRotation;
+
     public int IDCurrentAxis = 0;
     [SerializeField] private float _moveLerp = 0;
     [SerializeField] private float _rotationCountdown = 1;
@@ -17,6 +22,7 @@ public class PlayerAxisScript : MonoBehaviour
     private bool _isLerping = false;
     public bool HasItem = false;
     private GameObject cam;
+    public bool IsInTI = false;
 
     // Start is called before the first frame update
     void Start()
@@ -36,7 +42,7 @@ public class PlayerAxisScript : MonoBehaviour
         {
             if (Input.GetKeyDown("d"))
             {
-                if (!_isLerping)
+                if (!_isLerping && !IsInTI)
                 {
                     IDCurrentAxis += 1;
                     if (IDCurrentAxis < 0)
@@ -45,12 +51,17 @@ public class PlayerAxisScript : MonoBehaviour
                         IDCurrentAxis = 0;
                     _rotationCountdown = 1;
                     _moveLerp = 0;
+                    _targetRotation = _axisRotation[IDCurrentAxis];
+                    _targetPosition = _camPosition[IDCurrentAxis];
+                    _targetCamRotation = _camRotation[IDCurrentAxis];
                     _isLerping = true;
+                    if (IDCurrentAxis == 5 || IDCurrentAxis == 4)
+                        GameObject.Find("ButtonsPanel").GetComponent<CamManager>().StartSliderLerp();
                 }
             }
             if (Input.GetKeyDown("q"))
             {
-                if (!_isLerping)
+                if (!_isLerping && !IsInTI)
                 {
                     IDCurrentAxis -= 1;
                     if (IDCurrentAxis < 0)
@@ -59,7 +70,36 @@ public class PlayerAxisScript : MonoBehaviour
                         IDCurrentAxis = 0;
                     _rotationCountdown = 1;
                     _moveLerp = 0;
+                    _targetRotation = _axisRotation[IDCurrentAxis];
+                    _targetPosition = _camPosition[IDCurrentAxis];
+                    _targetCamRotation = _camRotation[IDCurrentAxis];
                     _isLerping = true;
+                    if (IDCurrentAxis == 5 || IDCurrentAxis == 4)
+                        GameObject.Find("ButtonsPanel").GetComponent<CamManager>().StartSliderLerp();
+                }
+            }
+            if (Input.GetKeyDown("s"))
+            {
+                if (!_isLerping && !IsInTI && !HasItem)
+                {
+                    _rotationCountdown = 1;
+                    _moveLerp = 0;
+                    _targetPosition = new Vector3(cam.transform.localPosition.x, 1, 4.5f);
+                    _targetCamRotation = new Vector3(90, cam.transform.rotation.eulerAngles.y, cam.transform.rotation.eulerAngles.z);
+                    _isLerping = true;
+                    IsInTI = true;
+                }
+            }
+            if (Input.GetKeyDown("z"))
+            {
+                if (!_isLerping && IsInTI)
+                {
+                    _rotationCountdown = 1;
+                    _moveLerp = 0;
+                    _targetPosition = _camPosition[IDCurrentAxis];
+                    _targetCamRotation = _camRotation[IDCurrentAxis];
+                    _isLerping = true;
+                    IsInTI = false;
                 }
             }
         }
@@ -73,15 +113,15 @@ public class PlayerAxisScript : MonoBehaviour
 
             if (_rotationCountdown == 0)
             {
-                _currentAxisRotation = _axisRotation[IDCurrentAxis];
-                _currentCamRotation = _camRotation[IDCurrentAxis];
-                _currentCamPosition = _camPosition[IDCurrentAxis];
+                _currentAxisRotation = transform.rotation.eulerAngles;
+                _currentCamRotation = cam.transform.rotation.eulerAngles;
+                _currentCamPosition = cam.transform.localPosition;
                 _isLerping = false;
             }
 
-            transform.rotation = Quaternion.Slerp( Quaternion.Euler(_currentAxisRotation), Quaternion.Euler(_axisRotation[IDCurrentAxis]), _moveLerp);
-            cam.transform.localPosition = Vector3.Lerp(_currentCamPosition, _camPosition[IDCurrentAxis], _moveLerp);
-            cam.transform.rotation = Quaternion.Slerp(Quaternion.Euler(_currentCamRotation), Quaternion.Euler(_camRotation[IDCurrentAxis]), _moveLerp);
+            transform.rotation = Quaternion.Slerp( Quaternion.Euler(_currentAxisRotation), Quaternion.Euler(_targetRotation), _moveLerp);
+            cam.transform.localPosition = Vector3.Lerp(_currentCamPosition, _targetPosition, _moveLerp);
+            cam.transform.rotation = Quaternion.Slerp(Quaternion.Euler(_currentCamRotation), Quaternion.Euler(_targetCamRotation), _moveLerp);
 
             _moveLerp = 1f - _rotationCountdown;
         }

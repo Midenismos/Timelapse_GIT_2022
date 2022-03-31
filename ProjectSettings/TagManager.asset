@@ -11,6 +11,9 @@ TagManager:
   - LoreAudio
   - USB
   - Tape
+  - PanelImage
+  - Entry
+  - ItemForPanel
   layers:
   - Default
   - TransparentFX
@@ -27,7 +30,7 @@ TagManager:
   - Interactable
   - Reactors
   - ReactorsBlocker
-  - 
+  - GrabbableCam
   - Tape
   - 
   - 

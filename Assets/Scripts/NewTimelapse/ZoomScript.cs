@@ -34,14 +34,13 @@ public class ZoomScript : MonoBehaviour
     //Pour faire le double clic
     void OnMouseUp()
     {
-        if(!isCamera)
+
+        if ((Time.time - doubleClickStart) < 0.3f)
         {
-            if ((Time.time - doubleClickStart) < 0.3f)
-            {
-                this.OnSimpleClick();
-                doubleClickStart = -1;
-            }
+            this.OnSimpleClick();
+            doubleClickStart = -1;
         }
+
 
     }
 
@@ -90,24 +89,13 @@ public class ZoomScript : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (!HasZoomed)
-        {
-            if (GetComponent<DragObjects>())
-            {
-                GetComponent<DragObjects>().IsDragable = true;
-            }
-        }
-        if(isCamera)
-        {
-            this.OnSimpleClick();
-        }
         doubleClickStart = Time.time;
     }
     private void Update()
     {
         if (!HasZoomed && !_isLerping)
         {
-            _originalPosition = isCamera ? transform.parent.transform.position : transform.position;
+            _originalPosition = transform.position;
             _originalRotation = transform.rotation;
 
         }
@@ -126,6 +114,8 @@ public class ZoomScript : MonoBehaviour
             if (_zoomCountdown == 0)
             {
                 HasZoomed = !HasZoomed;
+                if(!HasZoomed)
+                    AxisScript.HasItem = false;
                 _isLerping = false;
             }
 
@@ -136,7 +126,7 @@ public class ZoomScript : MonoBehaviour
             }
             else
             {
-                transform.parent.position = Vector3.Lerp(posA, posB, _zoomLerp);
+                transform.position = Vector3.Lerp(posA, posB, _zoomLerp);
             }
 
 
@@ -176,7 +166,6 @@ public class ZoomScript : MonoBehaviour
                     _zoomLerp = 0;
                     ZoomPos.GetComponent<ZoomPoint>().IsEmpty = true;
                     _isLerping = true;
-                    AxisScript.HasItem = false;
                 }
             }
         }
