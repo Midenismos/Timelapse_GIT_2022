@@ -13,7 +13,8 @@ TagManager:
   - Tape
   - PanelImage
   - Entry
-  - ItemForPanel
+  - Cam
+  - Written
   layers:
   - Default
   - TransparentFX

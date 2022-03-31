@@ -468,6 +468,7 @@ GameObject:
   - component: {fileID: 481476437774013261}
   - component: {fileID: 471784111047935953}
   - component: {fileID: 493304549035087955}
+  - component: {fileID: 2254755241805504833}
   - component: {fileID: 493304549035088044}
   - component: {fileID: 493304549035088045}
   - component: {fileID: 493304549035087952}
@@ -558,6 +559,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2254755241805504833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 495107012411010359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6ceb86934969ca4bafafef81d22ee0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!65 &493304549035088044
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -584,6 +597,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsDragable: 1
+  Is3D: 1
+  IsEntry: 0
   _interactFeedBack: {fileID: 0}
 --- !u!114 &493304549035087952
 MonoBehaviour:
@@ -597,7 +612,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea39353677fbf7149b00103b07719be9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sound: {fileID: 8300000, guid: 802f0ec8b4f4ea845bbcb97896acb083, type: 3}
+  sounds:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  CurrentSound: {fileID: 0}
+  isAffectedByBlueGreen: 0
 --- !u!114 &1334901688100244429
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -615,6 +636,7 @@ MonoBehaviour:
   HasZoomed: 0
   itemAxis: 5
   ZoomPos: {fileID: 0}
+  isCamera: 0
 --- !u!1 &1244899333809918170
 GameObject:
   m_ObjectHideFlags: 0

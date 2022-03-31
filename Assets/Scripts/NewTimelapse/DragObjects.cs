@@ -38,7 +38,7 @@ public class DragObjects : MonoBehaviour
         {
             GetComponent<DragObjects>().IsDragable = true;
             if (tag == "PanelImage")
-                transform.parent = GameObject.Find("TI").transform;
+                transform.SetParent(GameObject.Find("TI").transform, true);
         }
 
         if (IsDragable)
@@ -47,7 +47,6 @@ public class DragObjects : MonoBehaviour
                 GetComponent<Rigidbody>().isKinematic = true;
             mZCoord = GameObject.Find("Camera").GetComponent<Camera>().WorldToScreenPoint(gameObject.transform.position).z;
             mOffset = gameObject.transform.position - GetMouseWorldPos();
-            print("hey");
         }
 
     }
@@ -70,7 +69,6 @@ public class DragObjects : MonoBehaviour
         if (IsDragable)
         {
             transform.position = GetMouseWorldPos() + mOffset;
-            print(GetMouseWorldPos() + mOffset);
         }
     }
 
