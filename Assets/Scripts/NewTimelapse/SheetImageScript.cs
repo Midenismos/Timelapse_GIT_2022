@@ -10,9 +10,12 @@ public class SheetImageScript : MonoBehaviour
     {
         if (other.tag == "PanelImage")
         {
-            other.transform.SetParent(this.transform, false);
-            other.transform.position = this.transform.position;
-            other.GetComponent<DragObjects>().IsDragable = false;
+            if (transform.childCount == 0)
+            {
+                other.transform.SetParent(this.transform, false);
+                other.transform.position = this.transform.position;
+                other.GetComponent<DragObjects>().IsDragable = false;
+            }
         }
     }
 }

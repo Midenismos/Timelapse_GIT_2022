@@ -18,7 +18,8 @@ public class NewTIScript : MonoBehaviour
     }
     public void CreateEntryUp()
     {
-
+        GameObject entryUp = Instantiate(_entryUpPrefab, this.transform);
+        entryUp.transform.position = _handle.transform.position;
     }
 
 }

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7195362276060668950}
   - component: {fileID: 7195362276060668951}
   - component: {fileID: 7195362276060668944}
-  m_Layer: 5
+  m_Layer: 18
   m_Name: TapePanelImage
   m_TagString: PanelImage
   m_Icon: {fileID: 0}
@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 7461617600621275300}
   - component: {fileID: 4155997911457283110}
   - component: {fileID: 4561257889134610663}
-  m_Layer: 5
+  m_Layer: 18
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -158,7 +158,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0.068, y: -0.419}
-  m_SizeDelta: {x: 4.3860474, y: 2.1685038}
+  m_SizeDelta: {x: 9.393985, y: 2.1685038}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4155997911457283110
 CanvasRenderer:

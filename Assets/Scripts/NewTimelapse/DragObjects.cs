@@ -10,6 +10,7 @@ public class DragObjects : MonoBehaviour
     private float mZCoord;
 
     public bool IsDragable = true;
+    public bool IsDragged = false;
     public bool Is3D = true;
     public bool IsEntry = false;
     [SerializeField] private MeshRenderer _interactFeedBack;
@@ -69,6 +70,7 @@ public class DragObjects : MonoBehaviour
         if (IsDragable)
         {
             transform.position = GetMouseWorldPos() + mOffset;
+            IsDragged = true;
         }
     }
 
@@ -78,6 +80,7 @@ public class DragObjects : MonoBehaviour
         {
             if (GetComponent<Rigidbody>())
                 GetComponent<Rigidbody>().isKinematic = false;
+            IsDragged = false;
         }
     }
 

@@ -13,8 +13,6 @@ public class CamScreenScript : MonoBehaviour
     private void OnMouseOver()
     {
         _interactFeedBack.enabled = true;
-
-
     }
 
     private void OnMouseExit()
@@ -28,9 +26,13 @@ public class CamScreenScript : MonoBehaviour
         {
             GameObject.Find("LoopManager").GetComponent<NewLoopManager>().ReactedToNebuleuse += delegate (NebuleuseType NebuleuseType)
             {
-                float time = (float)GetComponent<VideoPlayer>().time;
-                GetComponent<VideoPlayer>().clip = _videos[(int)NebuleuseType];
-                GetComponent<VideoPlayer>().time = time;
+                if(GameObject.Find("ButtonsPanel").GetComponent<CamManager>().isActivated)
+                {
+                    float time = (float)GetComponent<VideoPlayer>().time;
+                    GetComponent<VideoPlayer>().clip = _videos[(int)NebuleuseType];
+                    GetComponent<VideoPlayer>().time = time;
+                }
+
             };
         }
         

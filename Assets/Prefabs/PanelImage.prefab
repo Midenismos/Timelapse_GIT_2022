@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7195362276060668950}
   - component: {fileID: 7195362276060668951}
   - component: {fileID: 7195362276060668944}
-  m_Layer: 5
+  m_Layer: 18
   m_Name: PanelImage
   m_TagString: PanelImage
   m_Icon: {fileID: 0}

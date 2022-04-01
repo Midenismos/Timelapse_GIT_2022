@@ -31,6 +31,7 @@ public class CamManager : MonoBehaviour
     private bool _isLerping = false;
     private PlayerAxisScript player;
     [SerializeField] private float smooth;
+    public bool isActivated = true;
 
 
     private void Awake()
@@ -47,6 +48,7 @@ public class CamManager : MonoBehaviour
                 cam.Stop();
                 _minimap.Stop();
             }
+            isActivated = false;
         };
     }
     private void Update()

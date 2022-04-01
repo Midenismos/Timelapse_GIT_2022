@@ -12,28 +12,33 @@ public class PanelBasketScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.GetComponent<PanelImageData>())
+        if (other.GetComponent<DragObjects>().IsDragged)
         {
-            GameObject image;
-            if (other.tag == "Cam")
+            if (other.GetComponent<PanelImageData>())
             {
-                image = Instantiate(_panelImage, this.transform);
-                image.GetComponent<Image>().sprite = other.GetComponent<PanelImageData>().Image;
-                image.transform.SetParent(_panels[2].transform, false);
-            }
-            if (other.tag == "Written")
-            {
-                image = Instantiate(_panelImage, this.transform);
-                image.GetComponent<Image>().sprite = other.GetComponent<PanelImageData>().Image;
-                image.transform.SetParent(_panels[1].transform, false);
-            }
-            else if (other.tag == "Tape")
-            {
-                image = Instantiate(_panelImageTape, this.transform);
-                image.transform.GetChild(0).GetComponent<TMP_Text>().text = other.GetComponent<PanelImageData>().TMText.text;
-                image.transform.SetParent(_panels[0].transform, false);
+                GameObject image;
+                if (other.tag == "Cam")
+                {
+                    image = Instantiate(_panelImage, this.transform);
+                    image.GetComponent<Image>().sprite = other.GetComponent<PanelImageData>().Image;
+                    image.transform.SetParent(_panels[2].transform, false);
+                }
+                if (other.tag == "Written")
+                {
+                    image = Instantiate(_panelImage, this.transform);
+                    image.GetComponent<Image>().sprite = other.GetComponent<PanelImageData>().Image;
+                    image.transform.SetParent(_panels[1].transform, false);
+                }
+                else if (other.tag == "Tape")
+                {
+                    image = Instantiate(_panelImageTape, this.transform);
+                    image.transform.GetChild(0).GetComponent<TMP_Text>().text = other.GetComponent<PanelImageData>().TMText.text;
+                    image.transform.SetParent(_panels[0].transform, false);
 
+                }
+                GetComponent<AudioSource>().Play();
             }
         }
+       
     }
 }
