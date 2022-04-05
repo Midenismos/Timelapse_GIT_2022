@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
+using UnityEngine.UI;
 
 public class CamScreenScript : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class CamScreenScript : MonoBehaviour
     [SerializeField] private bool isAffectedByNebuleuse;
 
     [SerializeField] private VideoClip[] _videos = new VideoClip[5];
+
+    public OnOffButton _onOffButton = null;
     private void OnMouseOver()
     {
         _interactFeedBack.enabled = true;
@@ -35,15 +38,31 @@ public class CamScreenScript : MonoBehaviour
 
             };
         }
-        
+        OnOff();
+
+
     }
 
 
-
-
-    /*private void Update()
+    public void OnOff()
     {
-        if(Movie.clip != null)
+        if (_onOffButton.IsActivated == false)
+        {
+            GetComponent<VideoPlayer>().Stop();
+            GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().HowManyMachineActivated -= 1;
+        }
+        else
+        {
+            GetComponent<VideoPlayer>().time = GameObject.Find("SliderVideo").GetComponent<Slider>().value;
+            GetComponent<VideoPlayer>().Play();
+            GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().HowManyMachineActivated += 1;
+        }
+    }
+
+    private void Update()
+    {
+
+        /*if(Movie.clip != null)
         {
             //Change la vitesse du film en fonction du TimeManager
             if (!_timeManager.rewindManager.isRewinding)
@@ -74,5 +93,5 @@ public class CamScreenScript : MonoBehaviour
 
 
     }*/
-
+    }
 }

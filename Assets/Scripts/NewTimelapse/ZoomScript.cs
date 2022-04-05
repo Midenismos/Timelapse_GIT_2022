@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class ZoomScript : MonoBehaviour
 {
-    private Vector3 _originalPosition;
-    private Quaternion _originalRotation;
+    public Vector3 _originalPosition;
+    public Quaternion _originalRotation;
 
-    private float _zoomLerp = 0;
-    private float _zoomCountdown = 1;
+    public float _zoomLerp = 0;
+    public float _zoomCountdown = 1;
     public float _zoomSpeed = 0.2f;
     public bool _isLerping = false;
     public bool HasZoomed = false;
 
-    private Vector3 posA, posB;
+    public Vector3 posA, posB;
 
-    private Quaternion rotA, rotB;
+    public Quaternion rotA, rotB;
 
     float doubleClickStart = 0;
 
@@ -26,6 +26,8 @@ public class ZoomScript : MonoBehaviour
     private PlayerAxisScript AxisScript = null;
 
     public bool isCamera = false;
+
+    private bool clicked = false;
     private void Awake()
     {
         AxisScript = GameObject.Find("Player").GetComponent<PlayerAxisScript>();
@@ -34,7 +36,7 @@ public class ZoomScript : MonoBehaviour
     //Pour faire le double clic
     void OnMouseUp()
     {
-
+        clicked = false;
         if ((Time.time - doubleClickStart) < 0.3f)
         {
             this.OnSimpleClick();
@@ -47,24 +49,27 @@ public class ZoomScript : MonoBehaviour
     void OnSimpleClick()
     {
         //Rapproche le doc du joueur ou le remet à sa place en cliquant dessus
-        if (AxisScript.IDCurrentAxis == itemAxis)
+        if (AxisScript.IDCurrentAxis == itemAxis && !AxisScript.IsInTI)
         {
             if (!_isLerping)
             {
-                if (!HasZoomed)
+                if (AxisScript.HasItem && AxisScript.CurrentHoldItem.GetComponent<ZoomScript>() != this)
                 {
-                    if (ZoomPos.GetComponent<ZoomPoint>().IsEmpty == true)
-                    {
-                        posA = _originalPosition;
-                        posB =  ZoomPos.transform.position;
-                        rotA = _originalRotation;
-                        rotB = ZoomPos.transform.rotation;
-                        _zoomCountdown = 1;
-                        _zoomLerp = 0;
-                        ZoomPos.GetComponent<ZoomPoint>().IsEmpty = false;
-                        _isLerping = true;
-                        AxisScript.HasItem = true;
-                    }
+                    DezoomCurrentItem();
+
+                }
+                if (ZoomPos.GetComponent<ZoomPoint>().IsEmpty == true)
+                {
+                    posA = _originalPosition;
+                    posB = ZoomPos.transform.position;
+                    rotA = _originalRotation;
+                    rotB = ZoomPos.transform.rotation;
+                    _zoomCountdown = 1;
+                    _zoomLerp = 0;
+                    ZoomPos.GetComponent<ZoomPoint>().IsEmpty = false;
+                    _isLerping = true;
+                    AxisScript.HasItem = true;
+                    AxisScript.CurrentHoldItem = this.gameObject;
 
                 }
                 /*else
@@ -89,10 +94,18 @@ public class ZoomScript : MonoBehaviour
 
     private void OnMouseDown()
     {
+        clicked = true;
         doubleClickStart = Time.time;
     }
     private void Update()
     {
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (AxisScript.CurrentHoldItem != null && AxisScript.CurrentHoldItem.GetComponent<ZoomScript>().clicked != true)
+            {
+                DezoomCurrentItem();
+            }
+        }
         if (!HasZoomed && !_isLerping)
         {
             _originalPosition = transform.position;
@@ -101,8 +114,8 @@ public class ZoomScript : MonoBehaviour
         }
         else
         {
-            if(GetComponent<Rigidbody>())
-            GetComponent<Rigidbody>().isKinematic = true;
+            if (GetComponent<Rigidbody>())
+                GetComponent<Rigidbody>().isKinematic = true;
             if (GetComponent<DragObjects>())
                 GetComponent<DragObjects>().IsDragable = false;
         }
@@ -113,20 +126,19 @@ public class ZoomScript : MonoBehaviour
 
             if (_zoomCountdown == 0)
             {
-                HasZoomed = !HasZoomed;
-                if(!HasZoomed)
-                    AxisScript.HasItem = false;
                 _isLerping = false;
+                HasZoomed = !HasZoomed;
+
             }
 
-            if(!isCamera)
+            if (!isCamera)
             {
                 transform.position = Vector3.Lerp(posA, posB, _zoomLerp);
                 transform.rotation = Quaternion.Slerp(rotA, rotB, _zoomLerp);
             }
             else
             {
-                transform.position = Vector3.Lerp(posA, posB, _zoomLerp);
+                transform.parent.position = Vector3.Lerp(posA, posB, _zoomLerp);
             }
 
 
@@ -134,40 +146,41 @@ public class ZoomScript : MonoBehaviour
         }
 
         //Remet l'objet à sa place si le joueur change d'axe
-        if (AxisScript.IDCurrentAxis != itemAxis)
-        {
-            if (HasZoomed)
+        if (AxisScript.CurrentHoldItem)
+        { 
+            if (AxisScript.IDCurrentAxis != AxisScript.CurrentHoldItem.GetComponent<ZoomScript>().itemAxis)
             {
                 if (ZoomPos.GetComponent<ZoomPoint>().IsEmpty == false)
                 {
-                    posB = _originalPosition;
-                    posA = ZoomPos.transform.position;
-                    rotB = _originalRotation;
-                    rotA = ZoomPos.transform.rotation;
-                    _zoomCountdown = 1;
-                    _zoomLerp = 0;
-                    ZoomPos.GetComponent<ZoomPoint>().IsEmpty = true;
-                    _isLerping = true;
+                    DezoomCurrentItem();
                 }
             }
         }
 
         if (Input.GetKeyDown("s"))
         {
-            if (HasZoomed)
+            if (AxisScript.CurrentHoldItem != null)
             {
                 if (ZoomPos.GetComponent<ZoomPoint>().IsEmpty == false)
                 {
-                    posB = _originalPosition;
-                    posA = ZoomPos.transform.position;
-                    rotB = _originalRotation;
-                    rotA = ZoomPos.transform.rotation;
-                    _zoomCountdown = 1;
-                    _zoomLerp = 0;
-                    ZoomPos.GetComponent<ZoomPoint>().IsEmpty = true;
-                    _isLerping = true;
+                    DezoomCurrentItem();
                 }
             }
         }
+    }
+
+    public void DezoomCurrentItem()
+    {
+        ZoomScript currentItem = AxisScript.CurrentHoldItem.GetComponent<ZoomScript>();
+        currentItem.posB = currentItem._originalPosition;
+        currentItem.posA = currentItem.ZoomPos.transform.position;
+        currentItem.rotB = currentItem._originalRotation;
+        currentItem.rotA = currentItem.ZoomPos.transform.rotation;
+        currentItem._zoomCountdown = 1;
+        currentItem._zoomLerp = 0;
+        currentItem.ZoomPos.GetComponent<ZoomPoint>().IsEmpty = true;
+        currentItem._isLerping = true;
+        AxisScript.HasItem = false;
+        AxisScript.CurrentHoldItem = null;
     }
 }

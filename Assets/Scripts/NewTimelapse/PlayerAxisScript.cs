@@ -7,16 +7,16 @@ public class PlayerAxisScript : MonoBehaviour
     [SerializeField] private Vector3[] _axisRotation;
     [SerializeField] private Vector3[] _camRotation;
     [SerializeField] private Vector3[] _camPosition;
-    [SerializeField] private Vector3[] _basketPosition;
+    [SerializeField] private Vector3[] _consolePosition;
     private Vector3 _currentAxisRotation;
     private Vector3 _currentCamRotation;
     private Vector3 _currentCamPosition;
-    private Vector3 _currentBasketPosition;
+    private Vector3 _currentConsolePosition;
 
     private Vector3 _targetRotation;
     private Vector3 _targetPosition;
     private Vector3 _targetCamRotation;
-    private Vector3 _targetBasketPosition;
+    private Vector3 _targetConsolePosition;
 
 
     public int IDCurrentAxis = 0;
@@ -25,21 +25,22 @@ public class PlayerAxisScript : MonoBehaviour
     [SerializeField] private float _rotationSpeed = 0.2f;
     private bool _isLerping = false;
     public bool HasItem = false;
+    public GameObject CurrentHoldItem = null;
     private GameObject cam;
-    private GameObject basket;
+    private GameObject console;
     public bool IsInTI = false;
 
     // Start is called before the first frame update
     void Start()
     {
         cam = GameObject.Find("Camera");
-        basket = GameObject.Find("PanelBasket");
+        console = GameObject.Find("Console");
         Cursor.lockState = CursorLockMode.Confined;
         IDCurrentAxis = 0;
         _currentAxisRotation = _axisRotation[IDCurrentAxis];
         _currentCamRotation = _camRotation[IDCurrentAxis];
         _currentCamPosition = _camPosition[IDCurrentAxis];
-        _currentBasketPosition = _basketPosition[IDCurrentAxis];
+        _currentConsolePosition = _consolePosition[IDCurrentAxis];
     }
 
     // Update is called once per frame
@@ -60,11 +61,9 @@ public class PlayerAxisScript : MonoBehaviour
                     _moveLerp = 0;
                     _targetRotation = _axisRotation[IDCurrentAxis];
                     _targetPosition = _camPosition[IDCurrentAxis];
-                    _targetBasketPosition = _basketPosition[IDCurrentAxis];
+                    _targetConsolePosition = _consolePosition[IDCurrentAxis];
                     _targetCamRotation = _camRotation[IDCurrentAxis];
                     _isLerping = true;
-                    if (IDCurrentAxis == 5 || IDCurrentAxis == 4)
-                        GameObject.Find("ButtonsPanel").GetComponent<CamManager>().StartSliderLerp();
                 }
             }
             if (Input.GetKeyDown("q"))
@@ -80,16 +79,14 @@ public class PlayerAxisScript : MonoBehaviour
                     _moveLerp = 0;
                     _targetRotation = _axisRotation[IDCurrentAxis];
                     _targetPosition = _camPosition[IDCurrentAxis];
-                    _targetBasketPosition = _basketPosition[IDCurrentAxis];
+                    _targetConsolePosition = _consolePosition[IDCurrentAxis];
                     _targetCamRotation = _camRotation[IDCurrentAxis];
                     _isLerping = true;
-                    if (IDCurrentAxis == 5 || IDCurrentAxis == 4)
-                        GameObject.Find("ButtonsPanel").GetComponent<CamManager>().StartSliderLerp();
                 }
             }
             if (Input.GetKeyDown("s"))
             {
-                if (!_isLerping && !IsInTI && !HasItem)
+                if (!_isLerping && !IsInTI && CurrentHoldItem == null)
                 {
                     _rotationCountdown = 1;
                     _moveLerp = 0;
@@ -113,10 +110,6 @@ public class PlayerAxisScript : MonoBehaviour
             }
         }
 
-        if (IDCurrentAxis == 2)
-            GameObject.Find("PanelBasket").GetComponent<BoxCollider>().enabled = false;
-        else
-            GameObject.Find("PanelBasket").GetComponent<BoxCollider>().enabled = true;
 
         //Gère le lerp des sons lors d'un changement temporel
 
@@ -129,13 +122,13 @@ public class PlayerAxisScript : MonoBehaviour
                 _currentAxisRotation = transform.rotation.eulerAngles;
                 _currentCamRotation = cam.transform.rotation.eulerAngles;
                 _currentCamPosition = cam.transform.localPosition;
-                _currentBasketPosition = basket.transform.localPosition;
+                _currentConsolePosition = console.transform.localPosition;
                 _isLerping = false;
             }
             transform.rotation = Quaternion.Slerp( Quaternion.Euler(_currentAxisRotation), Quaternion.Euler(_targetRotation), _moveLerp);
             cam.transform.localPosition = Vector3.Lerp(_currentCamPosition, _targetPosition, _moveLerp);
             cam.transform.rotation = Quaternion.Slerp(Quaternion.Euler(_currentCamRotation), Quaternion.Euler(_targetCamRotation), _moveLerp);
-            basket.transform.localPosition = Vector3.Lerp(_currentBasketPosition, _targetBasketPosition, _moveLerp);
+            console.transform.localPosition = Vector3.Lerp(_currentConsolePosition, _targetConsolePosition, _moveLerp);
             _moveLerp = 1f - _rotationCountdown;
         }
     }

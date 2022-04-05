@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class TapeListener : MonoBehaviour
 {
     [SerializeField]private GameObject tapeReceiver = null;
-    [SerializeField]private Slider _slider = null;
+    //[SerializeField]private Slider _slider = null;
     private bool isActivated = true;
     public TapeScript CurrentTape = null;
     private void OnTriggerEnter(Collider other)
@@ -24,7 +24,7 @@ public class TapeListener : MonoBehaviour
                 {
                     CurrentTape = other.GetComponent<TapeScript>();
                     GetComponent<AudioSource>().clip = CurrentTape.CurrentSound;
-                    _slider.value = 1;
+                    //_slider.value = 1;
                     GetComponent<AudioSource>().time = 0;
                     GetComponent<AudioSource>().Play();
                     other.GetComponent<ZoomScript>().enabled = false;
@@ -49,7 +49,7 @@ public class TapeListener : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GetComponent<AudioSource>().pitch = _slider.value;
+        //GetComponent<AudioSource>().pitch = _slider.value;
     }
 
     public void ChangeSound()
