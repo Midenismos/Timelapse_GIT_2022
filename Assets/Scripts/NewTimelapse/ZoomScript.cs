@@ -17,7 +17,7 @@ public class ZoomScript : MonoBehaviour
 
     public Quaternion rotA, rotB;
 
-    float doubleClickStart = 0;
+    float clickStart = 0;
 
     public int itemAxis = 0;
 
@@ -28,6 +28,7 @@ public class ZoomScript : MonoBehaviour
     public bool isCamera = false;
 
     private bool clicked = false;
+    public bool IsZoomable = true;
     private void Awake()
     {
         AxisScript = GameObject.Find("Player").GetComponent<PlayerAxisScript>();
@@ -37,10 +38,10 @@ public class ZoomScript : MonoBehaviour
     void OnMouseUp()
     {
         clicked = false;
-        if ((Time.time - doubleClickStart) < 0.3f)
+        if ((Time.time - clickStart) < 0.3f)
         {
             this.OnSimpleClick();
-            doubleClickStart = -1;
+            clickStart = -1;
         }
 
 
@@ -94,8 +95,12 @@ public class ZoomScript : MonoBehaviour
 
     private void OnMouseDown()
     {
-        clicked = true;
-        doubleClickStart = Time.time;
+        if (IsZoomable)
+        {
+            clicked = true;
+            clickStart = Time.time;
+        }
+
     }
     private void Update()
     {
@@ -103,7 +108,14 @@ public class ZoomScript : MonoBehaviour
         {
             if (AxisScript.CurrentHoldItem != null && AxisScript.CurrentHoldItem.GetComponent<ZoomScript>().clicked != true)
             {
-                DezoomCurrentItem();
+                RaycastHit hit;
+                Ray ray = GameObject.Find("Camera").GetComponent<Camera>().ScreenPointToRay(Input.mousePosition);
+
+                if (Physics.Raycast(ray, out hit))
+                {
+                    if (hit.transform.gameObject.tag != "Button")
+                        DezoomCurrentItem();
+                }
             }
         }
         if (!HasZoomed && !_isLerping)
@@ -128,7 +140,11 @@ public class ZoomScript : MonoBehaviour
             {
                 _isLerping = false;
                 HasZoomed = !HasZoomed;
-
+                if (tag == "Tape")
+                {
+                    GetComponent<Rigidbody>().isKinematic = false;
+                    GetComponent<DragObjects>().IsDragable = true;
+                }
             }
 
             if (!isCamera)
@@ -159,7 +175,7 @@ public class ZoomScript : MonoBehaviour
 
         if (Input.GetKeyDown("s"))
         {
-            if (AxisScript.CurrentHoldItem != null)
+            if (AxisScript.CurrentHoldItem != null && AxisScript.CurrentHoldItem.gameObject.tag != "Tape")
             {
                 if (ZoomPos.GetComponent<ZoomPoint>().IsEmpty == false)
                 {
@@ -182,5 +198,6 @@ public class ZoomScript : MonoBehaviour
         currentItem._isLerping = true;
         AxisScript.HasItem = false;
         AxisScript.CurrentHoldItem = null;
+
     }
 }

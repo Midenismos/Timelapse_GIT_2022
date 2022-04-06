@@ -29,6 +29,7 @@ public class PlayerAxisScript : MonoBehaviour
     private GameObject cam;
     private GameObject console;
     public bool IsInTI = false;
+    public bool IsDraging = false;
 
     // Start is called before the first frame update
     void Start()
@@ -46,7 +47,7 @@ public class PlayerAxisScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!HasItem)
+        if(!HasItem && !IsDraging)
         {
             if (Input.GetKeyDown("d"))
             {
@@ -90,6 +91,7 @@ public class PlayerAxisScript : MonoBehaviour
                 {
                     _rotationCountdown = 1;
                     _moveLerp = 0;
+                    _targetConsolePosition = new Vector3(console.transform.localPosition.x-3f, console.transform.localPosition.y, console.transform.localPosition.z);
                     _targetPosition = new Vector3(cam.transform.localPosition.x, 1, 4.5f);
                     _targetCamRotation = new Vector3(90, cam.transform.rotation.eulerAngles.y, cam.transform.rotation.eulerAngles.z);
                     _isLerping = true;
@@ -102,6 +104,7 @@ public class PlayerAxisScript : MonoBehaviour
                 {
                     _rotationCountdown = 1;
                     _moveLerp = 0;
+                    _targetConsolePosition = _consolePosition[IDCurrentAxis];
                     _targetPosition = _camPosition[IDCurrentAxis];
                     _targetCamRotation = _camRotation[IDCurrentAxis];
                     _isLerping = true;
@@ -109,7 +112,6 @@ public class PlayerAxisScript : MonoBehaviour
                 }
             }
         }
-
 
         //Gère le lerp des sons lors d'un changement temporel
 

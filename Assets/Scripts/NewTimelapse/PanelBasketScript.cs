@@ -6,7 +6,7 @@ using TMPro;
 
 public class PanelBasketScript : MonoBehaviour
 {
-    [SerializeField] private GameObject[] _panels = new GameObject[3];
+    [SerializeField] private GameObject[] _panels = new GameObject[4];
     [SerializeField] private GameObject _panelImage = null;
     [SerializeField] private GameObject _panelImageTape = null;
 
@@ -34,6 +34,13 @@ public class PanelBasketScript : MonoBehaviour
                     image = Instantiate(_panelImageTape, this.transform);
                     image.transform.GetChild(0).GetComponent<TMP_Text>().text = other.GetComponent<PanelImageData>().TMText.text;
                     image.transform.SetParent(_panels[0].transform, false);
+
+                }
+                else if (other.tag == "Minimap")
+                {
+                    image = Instantiate(_panelImageTape, this.transform);
+                    image.GetComponent<Image>().sprite = other.GetComponent<PanelImageData>().Image;
+                    image.transform.SetParent(_panels[3].transform, false);
 
                 }
                 GetComponent<AudioSource>().Play();

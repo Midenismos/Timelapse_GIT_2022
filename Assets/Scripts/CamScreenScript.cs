@@ -10,6 +10,10 @@ public class CamScreenScript : MonoBehaviour
 
     [SerializeField] private bool isAffectedByNebuleuse;
 
+    [Header("Sinon mettre la vidéo dans le VideoPlayer")]
+    [Header("0: Violet 1, 1: Violet 2, 2: Sans influence, 3: Vert, 4: Bleu")]
+    [Header("Si cette cam réagit aux nébuleuses, mettre les vidéo dans l'ordre")]
+
     [SerializeField] private VideoClip[] _videos = new VideoClip[5];
 
     public OnOffButton _onOffButton = null;
@@ -29,13 +33,11 @@ public class CamScreenScript : MonoBehaviour
         {
             GameObject.Find("LoopManager").GetComponent<NewLoopManager>().ReactedToNebuleuse += delegate (NebuleuseType NebuleuseType)
             {
-                if(GameObject.Find("ButtonsPanel").GetComponent<CamManager>().isActivated)
-                {
-                    float time = (float)GetComponent<VideoPlayer>().time;
-                    GetComponent<VideoPlayer>().clip = _videos[(int)NebuleuseType];
-                    GetComponent<VideoPlayer>().time = time;
-                }
-
+                float time = (float)GetComponent<VideoPlayer>().time;
+                GetComponent<VideoPlayer>().clip = _videos[(int)NebuleuseType];
+                GetComponent<VideoPlayer>().time = time;
+                if (!_onOffButton.IsActivated)
+                    GetComponent<VideoPlayer>().Stop();
             };
         }
         OnOff();

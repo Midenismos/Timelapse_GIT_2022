@@ -15,6 +15,7 @@ TagManager:
   - Entry
   - Cam
   - Written
+  - Minimap
   layers:
   - Default
   - TransparentFX

@@ -14,6 +14,7 @@ public class DragObjects : MonoBehaviour
     public bool Is3D = true;
     public bool IsEntry = false;
     [SerializeField] private MeshRenderer _interactFeedBack;
+    [SerializeField] private int _axisID = 0;
 
     private void Awake()
     {
@@ -28,27 +29,32 @@ public class DragObjects : MonoBehaviour
     }
     public void OnMouseDown()
     {
-        if(GetComponent<ZoomScript>())
+        if (tag == "PanelImage" ||GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == _axisID)
         {
-            if (!GetComponent<ZoomScript>().HasZoomed)
+            if (GetComponent<ZoomScript>())
+            {
+                if (!GetComponent<ZoomScript>().HasZoomed)
+                {
+                    GetComponent<DragObjects>().IsDragable = true;
+                }
+            }
+            else
             {
                 GetComponent<DragObjects>().IsDragable = true;
+                if (tag == "PanelImage")
+                    transform.SetParent(GameObject.Find("TI").transform, true);
+
+            }
+
+            if (IsDragable)
+            {
+                if (GetComponent<Rigidbody>())
+                    GetComponent<Rigidbody>().isKinematic = true;
+                mZCoord = GameObject.Find("Camera").GetComponent<Camera>().WorldToScreenPoint(gameObject.transform.position).z;
+                mOffset = gameObject.transform.position - GetMouseWorldPos();
             }
         }
-        else
-        {
-            GetComponent<DragObjects>().IsDragable = true;
-            if (tag == "PanelImage")
-                transform.SetParent(GameObject.Find("TI").transform, true);
-        }
 
-        if (IsDragable)
-        {
-            if(GetComponent<Rigidbody>())
-                GetComponent<Rigidbody>().isKinematic = true;
-            mZCoord = GameObject.Find("Camera").GetComponent<Camera>().WorldToScreenPoint(gameObject.transform.position).z;
-            mOffset = gameObject.transform.position - GetMouseWorldPos();
-        }
 
     }
 
@@ -67,10 +73,20 @@ public class DragObjects : MonoBehaviour
     }
     public void OnMouseDrag()
     {
-        if (IsDragable)
+        if (GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == _axisID)
         {
-            transform.position = GetMouseWorldPos() + mOffset;
-            IsDragged = true;
+            if (IsDragable)
+            {
+                if (tag == "Minimap" || tag == "Cam")
+                    transform.parent.transform.position = GetMouseWorldPos() + mOffset;
+                else
+                    transform.position = GetMouseWorldPos() + mOffset;
+
+                IsDragged = true;
+                GameObject.Find("Player").GetComponent<PlayerAxisScript>().IsDraging = true;
+                if (GetComponent<ZoomScript>())
+                    GetComponent<ZoomScript>().enabled = true;
+            }
         }
     }
 
@@ -80,8 +96,10 @@ public class DragObjects : MonoBehaviour
         {
             if (GetComponent<Rigidbody>())
                 GetComponent<Rigidbody>().isKinematic = false;
-            IsDragged = false;
         }
+        IsDragged = false;
+        GameObject.Find("Player").GetComponent<PlayerAxisScript>().IsDraging = false;
+
     }
 
     private void OnMouseExit()

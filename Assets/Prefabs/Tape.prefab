@@ -178,7 +178,7 @@ MonoBehaviour:
   m_InputType: 0
   m_AsteriskChar: 42
   m_KeyboardType: 0
-  m_LineType: 0
+  m_LineType: 2
   m_HideMobileInput: 0
   m_HideSoftKeyboard: 0
   m_CharacterValidation: 0
@@ -222,7 +222,7 @@ MonoBehaviour:
   m_ResetOnDeActivation: 1
   m_RestoreOriginalTextOnEscape: 1
   m_isRichTextEditingAllowed: 0
-  m_LineLimit: 0
+  m_LineLimit: 2
   m_InputValidator: {fileID: 0}
 --- !u!1 &493304549477230006
 GameObject:
@@ -331,7 +331,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 0
+  m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
@@ -487,7 +487,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 495107012411010359}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -32.53122, y: -30.31262, z: -60.90145}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
@@ -571,6 +571,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6ceb86934969ca4bafafef81d22ee0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Image: {fileID: 0}
+  TMText: {fileID: 493304549477230004}
 --- !u!65 &493304549035088044
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -597,9 +599,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsDragable: 1
+  IsDragged: 0
   Is3D: 1
   IsEntry: 0
   _interactFeedBack: {fileID: 0}
+  _axisID: 1
 --- !u!114 &493304549035087952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -613,8 +617,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 802f0ec8b4f4ea845bbcb97896acb083, type: 3}
+  - {fileID: 8300000, guid: e1c4a35cda1467e4badece392dbf2b29, type: 3}
   - {fileID: 0}
   - {fileID: 0}
   CurrentSound: {fileID: 0}
@@ -631,12 +635,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b832074cd533532448906c1710269c22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _originalPosition: {x: 0, y: 0, z: 0}
+  _originalRotation: {x: 0, y: 0, z: 0, w: 0}
+  _zoomLerp: 0
+  _zoomCountdown: 1
   _zoomSpeed: 2
   _isLerping: 0
   HasZoomed: 0
-  itemAxis: 5
+  posA: {x: 0, y: 0, z: 0}
+  posB: {x: 0, y: 0, z: 0}
+  rotA: {x: 0, y: 0, z: 0, w: 0}
+  rotB: {x: 0, y: 0, z: 0, w: 0}
+  itemAxis: 1
   ZoomPos: {fileID: 0}
   isCamera: 0
+  IsZoomable: 1
 --- !u!1 &1244899333809918170
 GameObject:
   m_ObjectHideFlags: 0
