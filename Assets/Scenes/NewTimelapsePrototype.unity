@@ -867,7 +867,7 @@ MonoBehaviour:
   Is3D: 1
   IsEntry: 0
   _interactFeedBack: {fileID: 0}
-  _axisID: 4
+  _axisID: 5
 --- !u!54 &55101520
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6682,7 +6682,7 @@ MonoBehaviour:
   Is3D: 1
   IsEntry: 0
   _interactFeedBack: {fileID: 0}
-  _axisID: 4
+  _axisID: 5
 --- !u!54 &599487247
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -16975,7 +16975,7 @@ MonoBehaviour:
   Is3D: 1
   IsEntry: 0
   _interactFeedBack: {fileID: 0}
-  _axisID: 4
+  _axisID: 5
 --- !u!54 &1544598760
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -25419,6 +25419,11 @@ PrefabInstance:
       propertyPath: ZoomPos
       value: 
       objectReference: {fileID: 1720930046}
+    - target: {fileID: 4100787236950156427, guid: 5593ad09390d10841b53181c2692d8dd,
+        type: 3}
+      propertyPath: _axisID
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4100787236950156431, guid: 5593ad09390d10841b53181c2692d8dd,
         type: 3}
       propertyPath: m_RootOrder

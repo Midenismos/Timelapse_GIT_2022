@@ -29,7 +29,7 @@ public class DragObjects : MonoBehaviour
     }
     public void OnMouseDown()
     {
-        if (tag == "PanelImage" ||GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == _axisID)
+        if (tag == "PanelImage" || tag == "Entry" || GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == _axisID)
         {
             if (GetComponent<ZoomScript>())
             {
@@ -73,7 +73,7 @@ public class DragObjects : MonoBehaviour
     }
     public void OnMouseDrag()
     {
-        if (GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == _axisID)
+        if (tag == "PanelImage" || tag == "Entry" || GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == _axisID)
         {
             if (IsDragable)
             {
