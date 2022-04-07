@@ -10,7 +10,7 @@ public class OnOffButton : MonoBehaviour
 
     [SerializeField] private Material[] _mats = new Material[2];
     private MeshRenderer _plane = null;
-    private bool _isActivated = false;
+    [SerializeField] private bool _isActivated = false;
     public bool IsActivated
     {
         get
@@ -33,17 +33,18 @@ public class OnOffButton : MonoBehaviour
         _interactFeedBack = transform.GetChild(1).gameObject.GetComponent<MeshRenderer>();
         GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().ReactedToEnergy += delegate ()
         {
-            IsActivated = false;
+            if(tag != "ResetEnergy")
+                IsActivated = false;
         };
     }
     private void OnMouseOver()
     {
-        if (GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == 5 || GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == 4)
+        if (GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == 5 || GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == 4 || tag == "ResetEnergy")
         {
             _interactFeedBack.enabled = true;
             if (Input.GetMouseButtonDown(0))
             {
-                if (GameObject.Find("Console").GetComponent<ConsoleManager>().isActivated)
+                if (GameObject.Find("Console").GetComponent<ConsoleManager>().isActivated || tag == "ResetEnergy")
                 {
                     IsActivated = !IsActivated;
                     onClicked?.Invoke();

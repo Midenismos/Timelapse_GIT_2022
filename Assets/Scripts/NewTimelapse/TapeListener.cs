@@ -43,6 +43,10 @@ public class TapeListener : MonoBehaviour
             GetComponent<AudioSource>().Stop();
             isActivated = false;
         };
+        GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().ReactedToEnergyReset += delegate ()
+        {
+            isActivated = true;
+        };
     }
 
 

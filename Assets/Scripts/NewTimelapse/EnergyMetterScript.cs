@@ -24,6 +24,8 @@ public class EnergyMetterScript : MonoBehaviour
     public int HowManyMachineActivated = 0;
     private float _decreaseValueWithSpeed = 0.2f;
 
+    [SerializeField] private GameObject ResetButton = null;
+
     private float _energy;
     public float Energy
     {
@@ -38,6 +40,7 @@ public class EnergyMetterScript : MonoBehaviour
                 {
                     if (ReactedToEnergy != null)
                         ReactedToEnergy();
+                    ResetButton.SetActive(true);
                 }
 
             }
@@ -46,6 +49,8 @@ public class EnergyMetterScript : MonoBehaviour
 
     public delegate void ReactToEnergy();
     public event ReactToEnergy ReactedToEnergy;
+    public delegate void ReactToEnergyReset();
+    public event ReactToEnergyReset ReactedToEnergyReset;
 
     private void Awake()
     {
@@ -118,5 +123,18 @@ public class EnergyMetterScript : MonoBehaviour
             Energy += _baseDecreaseValue * _yellowNebuleuseMultiplier + (_decreaseValuePerMachine * HowManyMachineActivated) +_decreaseValueWithSpeed;
             yield return new WaitForSeconds(1f);
         }
+    }
+
+    public void ResetEnergy()
+    {
+        if(Energy >= _maxEnergy)
+        {
+            Energy = 0;
+            ReactedToEnergyReset();
+            StartCoroutine(DecreaseEnergy());
+            ResetButton.SetActive(false);
+        }
+
+
     }
 }

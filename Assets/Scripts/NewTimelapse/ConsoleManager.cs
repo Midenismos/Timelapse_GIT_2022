@@ -42,6 +42,10 @@ public class ConsoleManager : MonoBehaviour
             }
             isActivated = false;
         };
+        GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().ReactedToEnergyReset += delegate ()
+        {
+            isActivated = true;
+        };
     }
     private void Update()
     {
