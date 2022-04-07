@@ -7,7 +7,7 @@ public class TapeListener : MonoBehaviour
 {
     [SerializeField]private GameObject tapeReceiver = null;
     //[SerializeField]private Slider _slider = null;
-    private bool isActivated = true;
+    [SerializeField] private bool isActivated = true;
     public TapeScript CurrentTape = null;
     private void OnTriggerEnter(Collider other)
     {

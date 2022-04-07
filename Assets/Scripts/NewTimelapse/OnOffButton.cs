@@ -31,6 +31,10 @@ public class OnOffButton : MonoBehaviour
     {
         _plane = transform.GetChild(0).gameObject.GetComponent<MeshRenderer>();
         _interactFeedBack = transform.GetChild(1).gameObject.GetComponent<MeshRenderer>();
+        GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().ReactedToEnergy += delegate ()
+        {
+            IsActivated = false;
+        };
     }
     private void OnMouseOver()
     {
@@ -39,8 +43,12 @@ public class OnOffButton : MonoBehaviour
             _interactFeedBack.enabled = true;
             if (Input.GetMouseButtonDown(0))
             {
-                IsActivated = !IsActivated;
-                onClicked?.Invoke();
+                if (GameObject.Find("Console").GetComponent<ConsoleManager>().isActivated)
+                {
+                    IsActivated = !IsActivated;
+                    onClicked?.Invoke();
+                }
+
             }
         }
 
