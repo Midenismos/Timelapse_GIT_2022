@@ -13,7 +13,9 @@ TagManager:
   - Tape
   - PanelImage
   - Entry
-  - ItemForPanel
+  - Cam
+  - Written
+  - Minimap
   layers:
   - Default
   - TransparentFX
@@ -32,10 +34,10 @@ TagManager:
   - ReactorsBlocker
   - GrabbableCam
   - Tape
-  - 
-  - 
-  - 
-  - 
+  - Entry
+  - PanelImage
+  - Basket
+  - Written
   - 
   - 
   - 

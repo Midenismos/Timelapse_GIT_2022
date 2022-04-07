@@ -6,7 +6,8 @@ using UnityEngine.Events;
 
 public class CamButton : MonoBehaviour
 {
-    public UnityEvent onClicked;
+    public UnityEvent onClickedCam;
+    public UnityEvent onClickedAudio;
     [SerializeField] private MeshRenderer _interactFeedBack;
 
     private void Awake()
@@ -15,11 +16,20 @@ public class CamButton : MonoBehaviour
     }
     private void OnMouseOver()
     {
-        if (GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == 5)
+        if (GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == 5 ||GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == 4)
         {
             _interactFeedBack.enabled = true;
             if (Input.GetMouseButtonDown(0))
-                onClicked?.Invoke(); 
+                onClickedCam?.Invoke(); 
+        }
+
+        if (GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == 1)
+        {
+            _interactFeedBack.enabled = true;
+            if (Input.GetMouseButtonDown(0))
+            {
+                onClickedAudio?.Invoke();
+            }
         }
 
 

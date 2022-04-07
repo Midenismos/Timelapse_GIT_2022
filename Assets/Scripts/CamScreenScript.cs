@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
+using UnityEngine.UI;
 
 public class CamScreenScript : MonoBehaviour
 {
@@ -9,12 +10,16 @@ public class CamScreenScript : MonoBehaviour
 
     [SerializeField] private bool isAffectedByNebuleuse;
 
+    [Header("Sinon mettre la vidéo dans le VideoPlayer")]
+    [Header("0: Violet 1, 1: Violet 2, 2: Sans influence, 3: Vert, 4: Bleu")]
+    [Header("Si cette cam réagit aux nébuleuses, mettre les vidéo dans l'ordre")]
+
     [SerializeField] private VideoClip[] _videos = new VideoClip[5];
+
+    public OnOffButton _onOffButton = null;
     private void OnMouseOver()
     {
         _interactFeedBack.enabled = true;
-
-
     }
 
     private void OnMouseExit()
@@ -31,17 +36,35 @@ public class CamScreenScript : MonoBehaviour
                 float time = (float)GetComponent<VideoPlayer>().time;
                 GetComponent<VideoPlayer>().clip = _videos[(int)NebuleuseType];
                 GetComponent<VideoPlayer>().time = time;
+                if (!_onOffButton.IsActivated)
+                    GetComponent<VideoPlayer>().Stop();
             };
         }
-        
+        OnOff();
+
+
     }
 
 
-
-
-    /*private void Update()
+    public void OnOff()
     {
-        if(Movie.clip != null)
+        if (_onOffButton.IsActivated == false)
+        {
+            GetComponent<VideoPlayer>().Stop();
+            GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().HowManyMachineActivated -= 1;
+        }
+        else
+        {
+            GetComponent<VideoPlayer>().time = GameObject.Find("SliderVideo").GetComponent<Slider>().value;
+            GetComponent<VideoPlayer>().Play();
+            GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().HowManyMachineActivated += 1;
+        }
+    }
+
+    private void Update()
+    {
+
+        /*if(Movie.clip != null)
         {
             //Change la vitesse du film en fonction du TimeManager
             if (!_timeManager.rewindManager.isRewinding)
@@ -72,5 +95,5 @@ public class CamScreenScript : MonoBehaviour
 
 
     }*/
-
+    }
 }

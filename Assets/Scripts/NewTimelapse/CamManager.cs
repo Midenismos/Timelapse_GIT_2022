@@ -31,13 +31,13 @@ public class CamManager : MonoBehaviour
     private bool _isLerping = false;
     private PlayerAxisScript player;
     [SerializeField] private float smooth;
+    public bool isActivated = true;
 
 
     private void Awake()
     {
         player = GameObject.Find("Player").GetComponent<PlayerAxisScript>();
         _sliderTransform = _slider.transform.parent.gameObject.GetComponent<RectTransform>();
-        OnOff();
         _slider.maxValue = (float)_cams[0].clip.length;
 
         GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().ReactedToEnergy += delegate ()
@@ -47,6 +47,7 @@ public class CamManager : MonoBehaviour
                 cam.Stop();
                 _minimap.Stop();
             }
+            isActivated = false;
         };
     }
     private void Update()
@@ -141,6 +142,7 @@ public class CamManager : MonoBehaviour
 
     public void StopSlider()
     {
+        print(player.IDCurrentAxis);
         if (player.IDCurrentAxis == 5 || player.IDCurrentAxis == 4)
         {
             foreach (VideoPlayer cam in _cams)
@@ -156,7 +158,7 @@ public class CamManager : MonoBehaviour
         ChangeTime();
     }
 
-    public void OnOff()
+    /*public void OnOff()
     {
         if(_camOnOffButton.IsActivated == false)
         {
@@ -189,7 +191,7 @@ public class CamManager : MonoBehaviour
         }
 
 
-    }
+    }*/
 
     //Déplacer le slider en fonction de si le joueur est face au cam ou la minimap
     public void StartSliderLerp()

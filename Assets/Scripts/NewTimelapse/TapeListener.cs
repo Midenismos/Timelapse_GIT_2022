@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class TapeListener : MonoBehaviour
 {
     [SerializeField]private GameObject tapeReceiver = null;
-    [SerializeField]private Slider _slider = null;
+    //[SerializeField]private Slider _slider = null;
     private bool isActivated = true;
     public TapeScript CurrentTape = null;
     private void OnTriggerEnter(Collider other)
@@ -15,19 +15,18 @@ public class TapeListener : MonoBehaviour
         {
             if(GetComponent<AudioSource>().clip == null)
             {
-
-                    other.GetComponent<DragObjects>().IsDragable = false;
-                    other.GetComponent<Rigidbody>().isKinematic = true;
-                    other.transform.position = tapeReceiver.transform.position;
-                    other.transform.rotation = tapeReceiver.transform.rotation;
+                other.GetComponent<DragObjects>().IsDragable = false;
+                other.GetComponent<Rigidbody>().isKinematic = true;
+                other.transform.position = tapeReceiver.transform.position;
+                other.transform.rotation = tapeReceiver.transform.rotation;
                 if (isActivated)
                 {
                     CurrentTape = other.GetComponent<TapeScript>();
+                    other.GetComponent<ZoomScript>().IsZoomable = false;
                     GetComponent<AudioSource>().clip = CurrentTape.CurrentSound;
-                    _slider.value = 1;
+                    GameObject.Find("Console").GetComponent<ConsoleManager>().NormalAudio();
                     GetComponent<AudioSource>().time = 0;
                     GetComponent<AudioSource>().Play();
-                    other.GetComponent<ZoomScript>().enabled = false;
                     GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().HowManyMachineActivated += 1;
                 }
             }
@@ -46,11 +45,6 @@ public class TapeListener : MonoBehaviour
         };
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        GetComponent<AudioSource>().pitch = _slider.value;
-    }
 
     public void ChangeSound()
     {

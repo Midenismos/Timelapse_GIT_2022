@@ -7,13 +7,17 @@ public class PlayerAxisScript : MonoBehaviour
     [SerializeField] private Vector3[] _axisRotation;
     [SerializeField] private Vector3[] _camRotation;
     [SerializeField] private Vector3[] _camPosition;
+    [SerializeField] private Vector3[] _consolePosition;
     private Vector3 _currentAxisRotation;
     private Vector3 _currentCamRotation;
     private Vector3 _currentCamPosition;
+    private Vector3 _currentConsolePosition;
 
     private Vector3 _targetRotation;
     private Vector3 _targetPosition;
     private Vector3 _targetCamRotation;
+    private Vector3 _targetConsolePosition;
+
 
     public int IDCurrentAxis = 0;
     [SerializeField] private float _moveLerp = 0;
@@ -21,24 +25,29 @@ public class PlayerAxisScript : MonoBehaviour
     [SerializeField] private float _rotationSpeed = 0.2f;
     private bool _isLerping = false;
     public bool HasItem = false;
+    public GameObject CurrentHoldItem = null;
     private GameObject cam;
+    private GameObject console;
     public bool IsInTI = false;
+    public bool IsDraging = false;
 
     // Start is called before the first frame update
     void Start()
     {
         cam = GameObject.Find("Camera");
+        console = GameObject.Find("Console");
         Cursor.lockState = CursorLockMode.Confined;
         IDCurrentAxis = 0;
         _currentAxisRotation = _axisRotation[IDCurrentAxis];
         _currentCamRotation = _camRotation[IDCurrentAxis];
         _currentCamPosition = _camPosition[IDCurrentAxis];
+        _currentConsolePosition = _consolePosition[IDCurrentAxis];
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(!HasItem)
+        if(!HasItem && !IsDraging)
         {
             if (Input.GetKeyDown("d"))
             {
@@ -53,10 +62,9 @@ public class PlayerAxisScript : MonoBehaviour
                     _moveLerp = 0;
                     _targetRotation = _axisRotation[IDCurrentAxis];
                     _targetPosition = _camPosition[IDCurrentAxis];
+                    _targetConsolePosition = _consolePosition[IDCurrentAxis];
                     _targetCamRotation = _camRotation[IDCurrentAxis];
                     _isLerping = true;
-                    if (IDCurrentAxis == 5 || IDCurrentAxis == 4)
-                        GameObject.Find("ButtonsPanel").GetComponent<CamManager>().StartSliderLerp();
                 }
             }
             if (Input.GetKeyDown("q"))
@@ -72,18 +80,18 @@ public class PlayerAxisScript : MonoBehaviour
                     _moveLerp = 0;
                     _targetRotation = _axisRotation[IDCurrentAxis];
                     _targetPosition = _camPosition[IDCurrentAxis];
+                    _targetConsolePosition = _consolePosition[IDCurrentAxis];
                     _targetCamRotation = _camRotation[IDCurrentAxis];
                     _isLerping = true;
-                    if (IDCurrentAxis == 5 || IDCurrentAxis == 4)
-                        GameObject.Find("ButtonsPanel").GetComponent<CamManager>().StartSliderLerp();
                 }
             }
             if (Input.GetKeyDown("s"))
             {
-                if (!_isLerping && !IsInTI && !HasItem)
+                if (!_isLerping && !IsInTI && CurrentHoldItem == null)
                 {
                     _rotationCountdown = 1;
                     _moveLerp = 0;
+                    _targetConsolePosition = new Vector3(console.transform.localPosition.x-3f, console.transform.localPosition.y, console.transform.localPosition.z);
                     _targetPosition = new Vector3(cam.transform.localPosition.x, 1, 4.5f);
                     _targetCamRotation = new Vector3(90, cam.transform.rotation.eulerAngles.y, cam.transform.rotation.eulerAngles.z);
                     _isLerping = true;
@@ -96,6 +104,7 @@ public class PlayerAxisScript : MonoBehaviour
                 {
                     _rotationCountdown = 1;
                     _moveLerp = 0;
+                    _targetConsolePosition = _consolePosition[IDCurrentAxis];
                     _targetPosition = _camPosition[IDCurrentAxis];
                     _targetCamRotation = _camRotation[IDCurrentAxis];
                     _isLerping = true;
@@ -103,7 +112,6 @@ public class PlayerAxisScript : MonoBehaviour
                 }
             }
         }
-
 
         //Gère le lerp des sons lors d'un changement temporel
 
@@ -116,13 +124,13 @@ public class PlayerAxisScript : MonoBehaviour
                 _currentAxisRotation = transform.rotation.eulerAngles;
                 _currentCamRotation = cam.transform.rotation.eulerAngles;
                 _currentCamPosition = cam.transform.localPosition;
+                _currentConsolePosition = console.transform.localPosition;
                 _isLerping = false;
             }
-
             transform.rotation = Quaternion.Slerp( Quaternion.Euler(_currentAxisRotation), Quaternion.Euler(_targetRotation), _moveLerp);
             cam.transform.localPosition = Vector3.Lerp(_currentCamPosition, _targetPosition, _moveLerp);
             cam.transform.rotation = Quaternion.Slerp(Quaternion.Euler(_currentCamRotation), Quaternion.Euler(_targetCamRotation), _moveLerp);
-
+            console.transform.localPosition = Vector3.Lerp(_currentConsolePosition, _targetConsolePosition, _moveLerp);
             _moveLerp = 1f - _rotationCountdown;
         }
     }
