@@ -990,7 +990,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6ceb86934969ca4bafafef81d22ee0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Image: {fileID: 21300000, guid: 594d4dbea3d2ab7498415d7750acc3de, type: 3}
+  Image: {fileID: 21300000, guid: a132d02027fd3894e8f8f7366ef4757c, type: 3}
   TMText: {fileID: 0}
 --- !u!1 &55431549
 GameObject:
@@ -2310,7 +2310,7 @@ GameObject:
   m_Component:
   - component: {fileID: 118174977}
   m_Layer: 15
-  m_Name: CamParent5
+  m_Name: 'CamParentLabo '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2916,7 +2916,7 @@ GameObject:
   m_Component:
   - component: {fileID: 181299202}
   m_Layer: 15
-  m_Name: CamParent2
+  m_Name: CamParentCouloirLabo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5013,7 +5013,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh15736
+  m_Name: pb_Mesh15932
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5286,7 +5286,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh16658
+  m_Name: pb_Mesh17008
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6052,7 +6052,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh15598
+  m_Name: pb_Mesh15788
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6530,7 +6530,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh16056
+  m_Name: pb_Mesh16346
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6738,7 +6738,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6ceb86934969ca4bafafef81d22ee0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Image: {fileID: 21300000, guid: 8374a112f0933c8449a4d80cc17f61f4, type: 3}
+  Image: {fileID: 21300000, guid: 7cb63a036b74b2545bb72d78e029cce0, type: 3}
   TMText: {fileID: 0}
 --- !u!114 &354297763
 MonoBehaviour:
@@ -7699,7 +7699,7 @@ GameObject:
   m_Component:
   - component: {fileID: 467362042}
   m_Layer: 15
-  m_Name: CamParent6
+  m_Name: 'CamParentPilotage '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8094,7 +8094,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6ceb86934969ca4bafafef81d22ee0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Image: {fileID: 21300000, guid: 8374a112f0933c8449a4d80cc17f61f4, type: 3}
+  Image: {fileID: 21300000, guid: 47b0d3a5c5a198944974e6f1145a850e, type: 3}
   TMText: {fileID: 0}
 --- !u!114 &479068152
 MonoBehaviour:
@@ -9726,7 +9726,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6ceb86934969ca4bafafef81d22ee0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Image: {fileID: 21300000, guid: 8374a112f0933c8449a4d80cc17f61f4, type: 3}
+  Image: {fileID: 21300000, guid: ac4871b603a46ff4d81b075c3f0f0da6, type: 3}
   TMText: {fileID: 0}
 --- !u!114 &595285846
 MonoBehaviour:
@@ -10021,7 +10021,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6ceb86934969ca4bafafef81d22ee0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Image: {fileID: 21300000, guid: 8374a112f0933c8449a4d80cc17f61f4, type: 3}
+  Image: {fileID: 21300000, guid: 1c3a6e0638b68ea489a95e5d567e6e88, type: 3}
   TMText: {fileID: 0}
 --- !u!1 &600367850
 GameObject:
@@ -14694,7 +14694,7 @@ GameObject:
   m_Component:
   - component: {fileID: 910547752}
   m_Layer: 15
-  m_Name: CamParent4
+  m_Name: "CamParentCouloirSalleR\xE9union"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15261,7 +15261,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh17134
+  m_Name: pb_Mesh17592
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -15859,7 +15859,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1017610615}
   m_Layer: 15
-  m_Name: CamParent7
+  m_Name: CamParentQuartierCapitaine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16458,7 +16458,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh17218
+  m_Name: pb_Mesh17688
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -22212,7 +22212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6ceb86934969ca4bafafef81d22ee0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Image: {fileID: 21300000, guid: 0238bcd4d91e79d4d8e36d6b84c9240b, type: 3}
+  Image: {fileID: 21300000, guid: 294f96e149f3ed2488c01652d1e12bc8, type: 3}
   TMText: {fileID: 0}
 --- !u!1 &1545137614
 GameObject:
@@ -23252,7 +23252,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1620554664}
   m_Layer: 15
-  m_Name: CamParent8
+  m_Name: "CamParentSalleR\xE9union"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24191,7 +24191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6ceb86934969ca4bafafef81d22ee0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Image: {fileID: 21300000, guid: 8374a112f0933c8449a4d80cc17f61f4, type: 3}
+  Image: {fileID: 21300000, guid: e029bc683d3dac24b9a41e322d0d2038, type: 3}
   TMText: {fileID: 0}
 --- !u!114 &1709805318
 MonoBehaviour:
@@ -25371,7 +25371,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1805520241}
   m_Layer: 15
-  m_Name: CamParent3
+  m_Name: CamParentCouloirPilotage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25557,7 +25557,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1835579223}
   m_Layer: 15
-  m_Name: CamParent1
+  m_Name: CamParentCouloirchambre
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32486,6 +32486,12 @@ PrefabInstance:
       propertyPath: ZoomPos
       value: 
       objectReference: {fileID: 1720930046}
+    - target: {fileID: 4100787236950156424, guid: 5593ad09390d10841b53181c2692d8dd,
+        type: 3}
+      propertyPath: Image
+      value: 
+      objectReference: {fileID: 21300000, guid: 0b11c76c7e9cd404fbd244507bd9e8e3,
+        type: 3}
     - target: {fileID: 4100787236950156425, guid: 5593ad09390d10841b53181c2692d8dd,
         type: 3}
       propertyPath: ZoomPos
