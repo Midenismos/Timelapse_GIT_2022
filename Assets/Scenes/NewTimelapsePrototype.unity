@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3336,6 +3336,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: EcritFicheTracey
       objectReference: {fileID: 0}
+    - target: {fileID: 2428044789826740234, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: Image
+      value: 
+      objectReference: {fileID: 21300000, guid: 87f56cd2470d1f245a32c7313a7a319c,
+        type: 3}
     - target: {fileID: 2428044789826740238, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: ZoomPos
@@ -7897,6 +7903,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: EcritJournalHelena (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2428044789826740234, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: Image
+      value: 
+      objectReference: {fileID: 21300000, guid: 553f1e5b1fb407e469613f7b2da369de,
+        type: 3}
     - target: {fileID: 2428044789826740238, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: ZoomPos
@@ -9148,6 +9160,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: EcritFicheMarcus
       objectReference: {fileID: 0}
+    - target: {fileID: 2428044789826740234, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: Image
+      value: 
+      objectReference: {fileID: 21300000, guid: 457415056a1b3b24dac9d8921891ca8a,
+        type: 3}
     - target: {fileID: 2428044789826740238, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: ZoomPos
@@ -9414,6 +9432,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: EcritFicheClark
       objectReference: {fileID: 0}
+    - target: {fileID: 2428044789826740234, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: Image
+      value: 
+      objectReference: {fileID: 21300000, guid: 46807b4d93b3c4646a08e96243816f2b,
+        type: 3}
     - target: {fileID: 2428044789826740238, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: ZoomPos
@@ -15039,6 +15063,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: EcritBriefingMission
       objectReference: {fileID: 0}
+    - target: {fileID: 2428044789826740234, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: Image
+      value: 
+      objectReference: {fileID: 21300000, guid: 820daa65fa821ab4594c0be6dfbd5b5f,
+        type: 3}
     - target: {fileID: 2428044789826740238, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: ZoomPos
@@ -15191,6 +15221,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: EcritJournalMarcus
       objectReference: {fileID: 0}
+    - target: {fileID: 2428044789826740234, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: Image
+      value: 
+      objectReference: {fileID: 21300000, guid: 3cd92fd53ff3cff4886106401b3154a7,
+        type: 3}
     - target: {fileID: 2428044789826740238, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: ZoomPos
@@ -17368,7 +17404,7 @@ MonoBehaviour:
   m_StartCorner: 0
   m_StartAxis: 0
   m_CellSize: {x: 15, y: 10}
-  m_Spacing: {x: 2, y: 0}
+  m_Spacing: {x: 2, y: 2}
   m_Constraint: 0
   m_ConstraintCount: 2
 --- !u!1 &1109891907
@@ -18713,6 +18749,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: EcritMailReunion
       objectReference: {fileID: 0}
+    - target: {fileID: 2428044789826740234, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: Image
+      value: 
+      objectReference: {fileID: 21300000, guid: ddd3fa4b7f9892e40adc841ca998e572,
+        type: 3}
     - target: {fileID: 2428044789826740238, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: ZoomPos
@@ -19499,6 +19541,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: EcritJournalHelena (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2428044789826740234, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: Image
+      value: 
+      objectReference: {fileID: 21300000, guid: 553f1e5b1fb407e469613f7b2da369de,
+        type: 3}
     - target: {fileID: 2428044789826740238, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: ZoomPos
@@ -20427,7 +20475,7 @@ PrefabInstance:
     - target: {fileID: 495107012411010359, guid: 14e571308375e3a47a5b63802991bacd,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1334901688100244429, guid: 14e571308375e3a47a5b63802991bacd,
         type: 3}
@@ -22125,6 +22173,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: EcritDernierRapportVaisseau
       objectReference: {fileID: 0}
+    - target: {fileID: 2428044789826740234, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: Image
+      value: 
+      objectReference: {fileID: 21300000, guid: 267e45bff5a0217468fc548ffc9142c7,
+        type: 3}
     - target: {fileID: 2428044789826740238, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: ZoomPos
@@ -24798,6 +24852,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tape (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 495107012411010359, guid: 14e571308375e3a47a5b63802991bacd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1334901688100244429, guid: 14e571308375e3a47a5b63802991bacd,
         type: 3}
       propertyPath: ZoomPos
@@ -26390,6 +26449,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: EcritMailClarkWilliam
       objectReference: {fileID: 0}
+    - target: {fileID: 2428044789826740234, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: Image
+      value: 
+      objectReference: {fileID: 21300000, guid: 4fda106f2617c774497763d7b736cea2,
+        type: 3}
     - target: {fileID: 2428044789826740238, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: ZoomPos
@@ -27026,6 +27091,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: EcritMessageAmi
       objectReference: {fileID: 0}
+    - target: {fileID: 2428044789826740234, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: Image
+      value: 
+      objectReference: {fileID: 21300000, guid: e7ded842c74b8144db22ac777d539add,
+        type: 3}
     - target: {fileID: 2428044789826740238, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: ZoomPos
@@ -32253,6 +32324,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: EcritMailClarkTracey
       objectReference: {fileID: 0}
+    - target: {fileID: 2428044789826740234, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: Image
+      value: 
+      objectReference: {fileID: 21300000, guid: 78146b24cdcb6864c833da513c7a8024,
+        type: 3}
     - target: {fileID: 2428044789826740238, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: ZoomPos
@@ -32749,6 +32826,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: EcritRapportDecouverteSecondVaisseau
       objectReference: {fileID: 0}
+    - target: {fileID: 2428044789826740234, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: Image
+      value: 
+      objectReference: {fileID: 21300000, guid: 53cfc08c1f0a738418af50b81be102a4,
+        type: 3}
     - target: {fileID: 2428044789826740238, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: ZoomPos
@@ -33324,7 +33407,7 @@ PrefabInstance:
     - target: {fileID: 495107012411010359, guid: 14e571308375e3a47a5b63802991bacd,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1334901688100244429, guid: 14e571308375e3a47a5b63802991bacd,
         type: 3}
@@ -33479,6 +33562,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: EcritFicheHelena
       objectReference: {fileID: 0}
+    - target: {fileID: 2428044789826740234, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: Image
+      value: 
+      objectReference: {fileID: 21300000, guid: 4490d23df05d492449f1d7ea1e6e19c1,
+        type: 3}
     - target: {fileID: 2428044789826740238, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: ZoomPos
