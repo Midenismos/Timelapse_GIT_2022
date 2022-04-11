@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class DragObjects : MonoBehaviour
 {
@@ -99,7 +100,6 @@ public class DragObjects : MonoBehaviour
         }
         IsDragged = false;
         GameObject.Find("Player").GetComponent<PlayerAxisScript>().IsDraging = false;
-
     }
 
     private void OnMouseExit()

@@ -1,6 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
+using TMPro;
+
 
 public class ZoomScript : MonoBehaviour
 {
@@ -104,6 +108,13 @@ public class ZoomScript : MonoBehaviour
     }
     private void Update()
     {
+        if(GetComponentInChildren<TMP_InputField>())
+        {
+            if (AxisScript.CurrentHoldItem != this.gameObject)
+                GetComponentInChildren<TMP_InputField>().DeactivateInputField();
+            else
+                GetComponentInChildren<TMP_InputField>().ActivateInputField();
+        }
         if (Input.GetMouseButtonDown(0))
         {
             if (AxisScript.CurrentHoldItem != null && AxisScript.CurrentHoldItem.GetComponent<ZoomScript>().clicked != true)
@@ -198,6 +209,5 @@ public class ZoomScript : MonoBehaviour
         currentItem._isLerping = true;
         AxisScript.HasItem = false;
         AxisScript.CurrentHoldItem = null;
-
     }
 }

@@ -6,12 +6,12 @@ using UnityEngine.UI;
 
 public class CamScreenScript : MonoBehaviour
 {
+    public int WhichPurple;
     [SerializeField] private MeshRenderer _interactFeedBack;
 
-    [SerializeField] private bool isAffectedByNebuleuse;
 
     [Header("Sinon mettre la vidéo dans le VideoPlayer")]
-    [Header("0: Violet 1, 1: Violet 2, 2: Sans influence, 3: Vert, 4: Bleu")]
+    [Header("0: Violet, 1: Sans influence, 2: Vert, 3: Bleu")]
     [Header("Si cette cam réagit aux nébuleuses, mettre les vidéo dans l'ordre")]
 
     [SerializeField] private VideoClip[] _videos = new VideoClip[5];
@@ -29,20 +29,51 @@ public class CamScreenScript : MonoBehaviour
 
     private void Awake()
     {
-        if(isAffectedByNebuleuse)
+        GameObject.Find("LoopManager").GetComponent<NewLoopManager>().ReactedToNebuleuse += delegate (NebuleuseType NebuleuseType)
         {
-            GameObject.Find("LoopManager").GetComponent<NewLoopManager>().ReactedToNebuleuse += delegate (NebuleuseType NebuleuseType)
+            VideoPlayer player = GetComponent<VideoPlayer>();
+            float time = (float)GetComponent<VideoPlayer>().time;
+            if (NebuleuseType == NebuleuseType.PURPLE1)
             {
-                float time = (float)GetComponent<VideoPlayer>().time;
-                GetComponent<VideoPlayer>().clip = _videos[(int)NebuleuseType];
-                GetComponent<VideoPlayer>().time = time;
-                if (!_onOffButton.IsActivated)
-                    GetComponent<VideoPlayer>().Stop();
-            };
-        }
+                if (WhichPurple == 1)
+                    player.clip = _videos[0];
+                else
+                    player.clip = _videos[1];
+            }
+            else if (NebuleuseType == NebuleuseType.PURPLE2)
+            {
+                if (WhichPurple == 2)
+                    player.clip = _videos[0];
+                else
+                    player.clip = _videos[1];
+            }
+            else if (NebuleuseType == NebuleuseType.GREEN)
+            {
+                if (_videos[2] != null)
+                    player.clip = _videos[2];
+                else
+                    player.clip = _videos[1];
+            }
+            else if (NebuleuseType == NebuleuseType.BLUE)
+            {
+                if (_videos[3] != null)
+                    player.clip = _videos[3];
+                else
+                    player.clip = _videos[1];
+            }
+            else if (NebuleuseType == NebuleuseType.YELLOW)
+                player.clip = _videos[1];
+
+            player.time = time;
+            if (!_onOffButton.IsActivated)
+                player.Stop();
+        };
+
+        if (_videos[2] != null)
+            GetComponent<VideoPlayer>().clip = _videos[2];
+        else
+            GetComponent<VideoPlayer>().clip = _videos[1];
         OnOff();
-
-
     }
 
 

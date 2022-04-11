@@ -42,7 +42,7 @@ public class NewLoopManager : MonoBehaviour
     public delegate void ReactToNebuleuse(NebuleuseType NebuleuseType);
     public event ReactToNebuleuse ReactedToNebuleuse;
     //Changer si besoin pour déterminer la période de changement de Nebuleuse
-    public Nebuleuse[] Nebuleuses = new Nebuleuse[5];
+    public Nebuleuse[] Nebuleuses = new Nebuleuse[6];
     
 
     private NebuleuseType _currentNebuleusePhase;

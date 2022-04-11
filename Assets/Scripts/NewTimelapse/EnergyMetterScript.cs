@@ -51,6 +51,7 @@ public class EnergyMetterScript : MonoBehaviour
     public event ReactToEnergy ReactedToEnergy;
     public delegate void ReactToEnergyReset();
     public event ReactToEnergyReset ReactedToEnergyReset;
+    private Coroutine co = null;
 
     private void Awake()
     {
@@ -62,7 +63,8 @@ public class EnergyMetterScript : MonoBehaviour
             else
                 _yellowNebuleuseMultiplier = 1;
         };
-        StartCoroutine(DecreaseEnergy());
+
+        co = StartCoroutine(DecreaseEnergy());
 
 
     }
@@ -73,6 +75,8 @@ public class EnergyMetterScript : MonoBehaviour
         player = GameObject.Find("Player").GetComponent<PlayerAxisScript>();
         _currentRotation = _Rotations[player.IDCurrentAxis];
         _currentPosition = _Positions[player.IDCurrentAxis];
+        HowManyMachineActivated = 0;
+        Energy = 0;
     }
 
     // Update is called once per frame
@@ -121,6 +125,13 @@ public class EnergyMetterScript : MonoBehaviour
         while (Energy < _maxEnergy)
         {
             Energy += _baseDecreaseValue * _yellowNebuleuseMultiplier + (_decreaseValuePerMachine * HowManyMachineActivated) +_decreaseValueWithSpeed;
+            /*print("Energy =" + Energy);
+            print("_baseDecreaseValue =" + _baseDecreaseValue);
+            print("_yellowNebuleuseMultiplier =" + _yellowNebuleuseMultiplier);
+            print("_decreaseValuePerMachine =" + _decreaseValuePerMachine);
+            print("HowManyMachineActivated =" + HowManyMachineActivated);
+            print("_decreaseValueWithSpeed =" + _decreaseValueWithSpeed);*/
+
             yield return new WaitForSeconds(1f);
         }
     }
@@ -131,7 +142,8 @@ public class EnergyMetterScript : MonoBehaviour
         {
             Energy = 0;
             ReactedToEnergyReset();
-            StartCoroutine(DecreaseEnergy());
+            StopCoroutine(co);
+            co = StartCoroutine(DecreaseEnergy());
             ResetButton.SetActive(false);
         }
 

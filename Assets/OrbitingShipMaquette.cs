@@ -19,7 +19,7 @@ public class OrbitingShipMaquette : MonoBehaviour
     [SerializeField] private EllipseRenderer ellipse = null;
     [SerializeField] private Transform ship = null;
     [SerializeField] private Transform[] _nebuleuses;
-    [SerializeField] private float[] MiddleValue = new float[5];
+    [SerializeField] private float[] MiddleValue = new float[6];
 
     [SerializeField] private NewLoopManager timeManager = null;
     private float SceneWidth;
@@ -55,7 +55,7 @@ public class OrbitingShipMaquette : MonoBehaviour
         PositionShip(shipProgress);
         UpdateEllipse();
 
-        for (int i = 0; i <= 4; i++)
+        for (int i = 0; i <= MiddleValue.Length-1; i++)
         { 
             MiddleValue[i] = (timeManager.Nebuleuses[i].end - (timeManager.Nebuleuses[i].end - timeManager.Nebuleuses[i].start) / 2) / timeManager.LoopDuration;
             PositionNebuleuse(_nebuleuses[i], MiddleValue[i]);
