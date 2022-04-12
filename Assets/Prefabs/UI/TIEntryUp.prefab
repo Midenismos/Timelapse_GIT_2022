@@ -169,8 +169,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 9, y: 0.2999723}
-  m_SizeDelta: {x: 9.804852, y: 9.363576}
+  m_AnchoredPosition: {x: 9.2, y: 0.2999723}
+  m_SizeDelta: {x: 13.711441, y: 9.363576}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3849058558026919463
 CanvasRenderer:
@@ -193,13 +193,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.764151, g: 0.764151, b: 0.764151, a: 1}
+  m_Color: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 19ff70b1675297d408c22b5d6a0ef1a3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -234,6 +234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d123059a68b9f914593f04853bc680bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _imageTag: tape
 --- !u!1 &3849058558170518657
 GameObject:
   m_ObjectHideFlags: 0
@@ -476,8 +477,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -7.6, y: 0.2999723}
-  m_SizeDelta: {x: 9.804852, y: 9.363576}
+  m_AnchoredPosition: {x: -7.3, y: 0.2999723}
+  m_SizeDelta: {x: 11.3701, y: 9.363576}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3849058558290331211
 CanvasRenderer:
@@ -500,13 +501,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.764151, g: 0.764151, b: 0.764151, a: 1}
+  m_Color: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 652dd672a5d2a954ca2417882844a641, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -541,6 +542,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d123059a68b9f914593f04853bc680bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _imageTag: written
 --- !u!1 &3849058558481191896
 GameObject:
   m_ObjectHideFlags: 0
@@ -577,8 +579,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -23.6, y: 0.3}
-  m_SizeDelta: {x: 9.804852, y: 9.363576}
+  m_AnchoredPosition: {x: -22.9, y: 0.3}
+  m_SizeDelta: {x: 12.480331, y: 9.363576}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3849058558481191901
 CanvasRenderer:
@@ -601,13 +603,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.764151, g: 0.764151, b: 0.764151, a: 1}
+  m_Color: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 6907306683168a24dbd7e405d15539bd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -642,6 +644,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d123059a68b9f914593f04853bc680bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _imageTag: cam
 --- !u!1 &3849058559015621338
 GameObject:
   m_ObjectHideFlags: 0
@@ -678,8 +681,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 24.4, y: 0.2999723}
-  m_SizeDelta: {x: 9.804852, y: 9.363576}
+  m_AnchoredPosition: {x: 24.93, y: 0.2999723}
+  m_SizeDelta: {x: 10.861431, y: 9.363576}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3849058559015621343
 CanvasRenderer:
@@ -702,13 +705,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.764151, g: 0.764151, b: 0.764151, a: 1}
+  m_Color: {r: 0.26415092, g: 0.26415092, b: 0.26415092, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: d566833da060e6d4bbb18bf876ce576e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -743,6 +746,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d123059a68b9f914593f04853bc680bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _imageTag: map
 --- !u!1 &3849058559238222690
 GameObject:
   m_ObjectHideFlags: 0

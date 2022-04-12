@@ -91,7 +91,6 @@ GameObject:
   - component: {fileID: 4100787236950156428}
   - component: {fileID: 4100787236950156429}
   - component: {fileID: 4100787236950156430}
-  - component: {fileID: 4100787236950156427}
   - component: {fileID: 4100787236950156426}
   - component: {fileID: 4100787236950156425}
   - component: {fileID: 4100787236950156424}
@@ -109,7 +108,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4100787236950156432}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -117,7 +116,7 @@ Transform:
   - {fileID: 7982346232894314742}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -60.000004, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4100787236950156428
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -178,24 +177,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4100787236950156427
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4100787236950156432}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f85c278414ca1e41875797c342105a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  IsDragable: 1
-  IsDragged: 0
-  Is3D: 1
-  IsEntry: 0
-  _interactFeedBack: {fileID: 0}
-  _axisID: 4
 --- !u!54 &4100787236950156426
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -239,6 +220,7 @@ MonoBehaviour:
   ZoomPos: {fileID: 0}
   isCamera: 1
   IsZoomable: 1
+  _interactFeedBack: {fileID: 0}
 --- !u!114 &4100787236950156424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -251,7 +233,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6ceb86934969ca4bafafef81d22ee0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Image: {fileID: 21300000, guid: c7d7a4c278ddbd34083b69e7bcf4e770, type: 3}
+  Image: {fileID: 21300000, guid: 0b11c76c7e9cd404fbd244507bd9e8e3, type: 3}
   TMText: {fileID: 0}
 --- !u!65 &4100787236258472046
 BoxCollider:
@@ -293,6 +275,7 @@ MonoBehaviour:
   ZoomPos: {fileID: 0}
   isCamera: 1
   IsZoomable: 1
+  _interactFeedBack: {fileID: 0}
 --- !u!1001 &4100787236000678658
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -382,6 +365,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6209920559368707063, guid: 38468b3b60159cc4094da98261ebf36f,
         type: 3}
+      propertyPath: WhichPurple
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6209920559368707063, guid: 38468b3b60159cc4094da98261ebf36f,
+        type: 3}
       propertyPath: _onOffButton
       value: 
       objectReference: {fileID: 0}
@@ -397,6 +385,11 @@ PrefabInstance:
       objectReference: {fileID: 4100787235994045266}
     - target: {fileID: 6209920559368707063, guid: 38468b3b60159cc4094da98261ebf36f,
         type: 3}
+      propertyPath: _videos.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6209920559368707063, guid: 38468b3b60159cc4094da98261ebf36f,
+        type: 3}
       propertyPath: _videos.Array.data[0]
       value: 
       objectReference: {fileID: 32900000, guid: 6c9d62c4b0f3ae246a0198a8f87625eb,
@@ -405,20 +398,18 @@ PrefabInstance:
         type: 3}
       propertyPath: _videos.Array.data[1]
       value: 
-      objectReference: {fileID: 32900000, guid: bde57dedada3df846a9b1d13d3beac11,
+      objectReference: {fileID: 32900000, guid: 755a5552ab337b043a26a294e315360e,
         type: 3}
     - target: {fileID: 6209920559368707063, guid: 38468b3b60159cc4094da98261ebf36f,
         type: 3}
       propertyPath: _videos.Array.data[2]
       value: 
-      objectReference: {fileID: 32900000, guid: 755a5552ab337b043a26a294e315360e,
-        type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 6209920559368707063, guid: 38468b3b60159cc4094da98261ebf36f,
         type: 3}
       propertyPath: _videos.Array.data[3]
       value: 
-      objectReference: {fileID: 32900000, guid: b3851995a9b2ae04087548cae800d0d5,
-        type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 6209920559368707063, guid: 38468b3b60159cc4094da98261ebf36f,
         type: 3}
       propertyPath: _videos.Array.data[4]

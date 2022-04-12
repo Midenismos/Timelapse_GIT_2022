@@ -33,16 +33,26 @@ public class ZoomScript : MonoBehaviour
 
     private bool clicked = false;
     public bool IsZoomable = true;
+    [SerializeField] private MeshRenderer _interactFeedBack;
+
     private void Awake()
     {
         AxisScript = GameObject.Find("Player").GetComponent<PlayerAxisScript>();
+        try
+        {
+            _interactFeedBack = transform.GetChild(0).gameObject.GetComponent<MeshRenderer>();
+        }
+        catch
+        {
+            _interactFeedBack = null;
+        }
     }
 
     //Pour faire le double clic
     void OnMouseUp()
     {
         clicked = false;
-        if ((Time.time - clickStart) < 0.3f)
+        if ((Time.time - clickStart) < 0.15f)
         {
             this.OnSimpleClick();
             clickStart = -1;
@@ -131,8 +141,17 @@ public class ZoomScript : MonoBehaviour
         }
         if (!HasZoomed && !_isLerping)
         {
-            _originalPosition = transform.position;
-            _originalRotation = transform.rotation;
+            if(!isCamera)
+            {
+                _originalPosition = transform.position;
+                _originalRotation = transform.rotation;
+            }
+            else
+            {
+                _originalPosition = transform.parent.position;
+                _originalRotation = transform.parent.rotation;
+            }
+
 
         }
         else
@@ -150,7 +169,10 @@ public class ZoomScript : MonoBehaviour
             if (_zoomCountdown == 0)
             {
                 _isLerping = false;
-                HasZoomed = !HasZoomed;
+                if(GameObject.Find("Player").GetComponent<PlayerAxisScript>().CurrentHoldItem == transform.gameObject)
+                    HasZoomed = true;
+                else
+                    HasZoomed = false;
                 if (tag == "Tape")
                 {
                     GetComponent<Rigidbody>().isKinematic = false;
@@ -209,5 +231,17 @@ public class ZoomScript : MonoBehaviour
         currentItem._isLerping = true;
         AxisScript.HasItem = false;
         AxisScript.CurrentHoldItem = null;
+    }
+
+
+    private void OnMouseExit()
+    {
+        if (_interactFeedBack)
+            _interactFeedBack.enabled = false;
+    }
+    private void OnMouseEnter()
+    {
+        if (_interactFeedBack)
+            _interactFeedBack.enabled = true;
     }
 }

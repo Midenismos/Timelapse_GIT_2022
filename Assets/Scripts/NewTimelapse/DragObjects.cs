@@ -78,15 +78,35 @@ public class DragObjects : MonoBehaviour
         {
             if (IsDragable)
             {
-                if (tag == "Minimap" || tag == "Cam")
+                /*if (tag == "Minimap" || tag == "Cam")
                     transform.parent.transform.position = GetMouseWorldPos() + mOffset;
                 else
-                    transform.position = GetMouseWorldPos() + mOffset;
+                    transform.position = GetMouseWorldPos() + mOffset;*/
 
                 IsDragged = true;
                 GameObject.Find("Player").GetComponent<PlayerAxisScript>().IsDraging = true;
                 if (GetComponent<ZoomScript>())
                     GetComponent<ZoomScript>().enabled = true;
+
+                if(Is3D)
+                {
+                    float planeY = -29.5f;
+                    Transform draggingObject = transform;
+
+                    Plane plane = new Plane(Vector3.up, Vector3.up * planeY); // ground plane
+
+                    Ray ray = GameObject.Find("Camera").GetComponent<Camera>().ScreenPointToRay(Input.mousePosition);
+
+                    float distance; // the distance from the ray origin to the ray intersection of the plane
+                    if (plane.Raycast(ray, out distance))
+                        draggingObject.position = ray.GetPoint(Mathf.Clamp(distance, 4, 7)); // distance along the ray
+                }
+                else
+                {
+                    transform.position = GetMouseWorldPos() + mOffset; 
+                }
+
+
             }
         }
     }
