@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3445,9 +3445,9 @@ PrefabInstance:
     - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_text
-      value: "        Fiche de renseignements de Tracey\n  Nom : Walker         
-        Pr\xE9nom : Tracey\r\n  ID : 974-107-034\r\n  Age : 47 ans\r\n  Fonction
-        : Astronome\r\n  Taille : 1m93          Poids : 64,6 kg\r\n  Groupe sanguin
+      value: "        Fiche de renseignements de Tracey\n   Nom : Walker         
+        Pr\xE9nom : Tracey\r\n   ID : 974-107-034\r\n   Age : 47 ans\r\n   Fonction
+        : Astronome\r\n   Taille : 1m93          Poids : 64,6 kg\r\n   Groupe sanguin
         : B-"
       objectReference: {fileID: 0}
     - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
@@ -3490,7 +3490,7 @@ PrefabInstance:
     - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -54.71
+      value: -54.68
       objectReference: {fileID: 0}
     - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
@@ -3543,6 +3543,18 @@ PrefabInstance:
       propertyPath: ZoomPos
       value: 
       objectReference: {fileID: 1109891907}
+    - target: {fileID: 3962323351359523056, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e0ee8278c70ae6a49aa114b1ded7545a,
+        type: 3}
+    - target: {fileID: 6233248368420440654, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e0ee8278c70ae6a49aa114b1ded7545a,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79c745cc6ba32b14db2307ebdd87d0df, type: 3}
 --- !u!1 &200060431
@@ -6095,7 +6107,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh15914
+  m_Name: pb_Mesh16044
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7490,12 +7502,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2048744470006308764, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7f4d4ad0ff18c7f44bdb09c65324238c,
+        type: 3}
+    - target: {fileID: 2048744470006308764, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_text
-      value: "\nEquipage : Composition standard pour une mission d\u2019exploration.\r\n\r\n->
-        Capitaine de vaisseau\r\n-> Chimiste\r\n-> Astronome\r\n-> Technicien\r\n->
-        Ing\xE9nieur\r\n"
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
@@ -7531,22 +7552,65 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8971846431161349768, guid: 5b932b2e4af544f43b0ee9b50e33e25f,
         type: 2}
+    - target: {fileID: 2428044789400484558, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 7.6748996
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428044789400484558, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 7.6748996
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428044789400484558, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 7.6748996
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428044789400484558, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428044789400484558, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 9.8
+      objectReference: {fileID: 0}
     - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_text
-      value: "                            Extrait du journal de bord n\xB01\n\n 
+      value: "                                       Extrait du journal de bord n\xB01\n\n 
         5 juin 2246\r\n\r\n  Vaisseau n\xB08 quitte la Station m\xE8re. D\xE9but
         de la mission 183, protocole standard.\r\n\r\n  Destination : Secteur 12
         de la N\xE9buleuse Delta.\r\n\r\n  Objectifs de la mission :\r\n\r\n-> Etudier
         une nouvelle plan\xE8te d\xE9couverte par un drone de reconnaissance\r\n\r\n->
         Localiser et \xE9tudier un \xE9l\xE9ment se trouvant \xE0 proximit\xE9 de
         cette plan\xE8te. Selon nos informations, cela ressemble \xE0 un ast\xE9ro\xEFde
-        recouvert d\u2019un amas de cristaux.\r"
+        recouvert d\u2019un amas de cristaux.\r\n\nEquipage : Composition standard
+        pour une mission d\u2019exploration.\r\n\r          -> Capitaine de vaisseau\r\n         
+        -> Chimiste\r\n          -> Astronome\r\n          -> Technicien\r\n         
+        -> Ing\xE9nieur\r"
       objectReference: {fileID: 0}
     - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_fontSize
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_margin.w
+      value: -3.0817595
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_margin.x
+      value: -0.0049228584
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_margin.z
+      value: -1.38234
       objectReference: {fileID: 0}
     - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
@@ -7636,6 +7700,53 @@ PrefabInstance:
       propertyPath: ZoomPos
       value: 
       objectReference: {fileID: 1109891907}
+    - target: {fileID: 2815847358846757823, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.9286
+      objectReference: {fileID: 0}
+    - target: {fileID: 2815847358846757823, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.0733
+      objectReference: {fileID: 0}
+    - target: {fileID: 2815847358846757823, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2815847358846757823, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2815847358846757823, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2815847358846757823, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2815847358846757823, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3962323351359523056, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 321b67af9ea100a4ebc939dbc45020ed,
+        type: 3}
+    - target: {fileID: 6233248368420440654, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 321b67af9ea100a4ebc939dbc45020ed,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79c745cc6ba32b14db2307ebdd87d0df, type: 3}
 --- !u!4 &457952566 stripped
@@ -8788,9 +8899,10 @@ PrefabInstance:
     - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_text
-      value: "        Fiche de renseignements de Marcus\n  Nom : Brown          Pr\xE9nom
-        : Marcus\r\n  ID : 680-522-941\r\n  Age : 38 ans\r\n  Fonction : Chimiste\r\n 
-        Taille : 1m80          Poids : 74,8 kg\r\n  Groupe sanguin : B+"
+      value: "        Fiche de renseignements de Marcus\n   Nom : Brown         
+        Pr\xE9nom : Marcus\r\n   ID : 680-522-941\r\n   Age : 38 ans\r\n   Fonction
+        : Chimiste\r\n   Taille : 1m80          Poids : 74,8 kg\r\n   Groupe sanguin
+        : B+"
       objectReference: {fileID: 0}
     - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
@@ -8832,7 +8944,7 @@ PrefabInstance:
     - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -54.778
+      value: -54.68
       objectReference: {fileID: 0}
     - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
@@ -8885,6 +8997,18 @@ PrefabInstance:
       propertyPath: ZoomPos
       value: 
       objectReference: {fileID: 1109891907}
+    - target: {fileID: 3962323351359523056, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e0ee8278c70ae6a49aa114b1ded7545a,
+        type: 3}
+    - target: {fileID: 6233248368420440654, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e0ee8278c70ae6a49aa114b1ded7545a,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79c745cc6ba32b14db2307ebdd87d0df, type: 3}
 --- !u!1 &518452932
@@ -9020,169 +9144,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 518452932}
   m_CullTransparentMesh: 0
---- !u!43 &519838849
-Mesh:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh16472
-  serializedVersion: 10
-  m_SubMeshes:
-  - serializedVersion: 2
-    firstByte: 0
-    indexCount: 264
-    topology: 0
-    baseVertex: 0
-    firstVertex: 0
-    vertexCount: 113
-    localAABB:
-      m_Center: {x: -10, y: 5, z: 0}
-      m_Extent: {x: 10, y: 5, z: 8.6602545}
-  m_Shapes:
-    vertices: []
-    shapes: []
-    channels: []
-    fullWeights: []
-  m_BindPose: []
-  m_BoneNameHashes: 
-  m_RootBoneNameHash: 0
-  m_BonesAABB: []
-  m_VariableBoneCountWeights:
-    m_Data: 
-  m_MeshCompression: 0
-  m_IsReadable: 1
-  m_KeepVertices: 1
-  m_KeepIndices: 1
-  m_IndexFormat: 0
-  m_IndexBuffer: 0000010002000000020003000400050006000700050004000800050007000900050008000a0005000900060005000a00070008000b0008000c000b000d000e000f000e0010000f00060004001100040012001100130014001500140016001500080009000c00090017000c0004000700120007000b00120018000d0019000d000f0019000a0006001a00060011001a001b001c001d001b0002001c00020001001c001e001f0020001f00210020001e00220023001f001e0023002400250026002700240026002800290027002900240027002a002b002c002b00160014002b0014002c00180019002d002d002a002c002d002c0018002e002f00300031002e0030003200330034003500320034003600370038003900360038003a003b003c003d003a003c003e003f00400041003e004000420043004400450042004400460047004500470042004500480049004a004b0048004a004c004d004b004d0048004b004e004f00500051004e0050005200530054005200540055005400560055005700580059005a00570059005b0057005a005c005b005a005d005e005f005d005f0060005f0061006000620063006400650062006400660062006500670066006500680069006a0068006a005d006a005e005d006b00170009000a006b0009001a006b000a000e006c00100013006c000e00130015006c00550056006d006e0055006d006e006d006f0070006e006f00
-  m_VertexData:
-    serializedVersion: 3
-    m_VertexCount: 113
-    m_Channels:
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 3
-    - stream: 0
-      offset: 12
-      format: 0
-      dimension: 3
-    - stream: 0
-      offset: 24
-      format: 0
-      dimension: 4
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 40
-      format: 0
-      dimension: 2
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    m_DataSize: 5424
-    _typelessdata: d53ca9c00000000067900241d7b35dbf00000000010000bf0100003f00000000d7b35dbf000080bf97611bc100000000d53ca9c00000a04067900241d7b35dbf00000000010000bf0100003f00000000d7b35dbf000080bf97611bc10000a0403acd13bf0000a040aaaaaa32000080bf00000000000000000000000000000000000080bf000080bf3ccd93be0000a0403acd13bf00000000aaaaaa32000080bf00000000000000000000000000000000000080bf000080bf3ccd93be000000000100a0c00000000067900a4100000000000080bf00000000000080bf0000000000000000000080bf0100a04067900a41000020c1000000000000000000000000000080bf00000000000080bf0000000000000000000080bf000020410000000000000000000000000000000000000000000080bf00000000000080bf0000000000000000000080bf0000000000000000000070c10000000066900a4100000000000080bf00000000000080bf0000000000000000000080bf0000704166900a410000a0c1000000007aac6ab500000000000080bf00000000000080bf0000000000000000000080bf0000a0417aac6ab5ffff6fc10000000067900ac100000000000080bf00000000000080bf0000000000000000000080bfffff6f4167900ac10200a0c00000000067900ac100000000000080bf00000000000080bf0000000000000000000080bf0200a04067900ac196616bc1000000006690024100000000000080bf00000000000080bf0000000000000000000080bf96616b416690024196619bc1000000007aac62b500000000000080bf00000000000080bf0000000000000000000080bf96619b417aac62b5000000000000204100000000000000000000803f000000000000803f0000000000000000000080bf00000000000000000200a0c00000204167900ac1000000000000803f000000000000803f0000000000000000000080bf0200a0c067900ac13acd13bf00002041aaaaaa32000000000000803f000000000000803f0000000000000000000080bf3acd13bfaaaaaa32d63ca9c000002041679002c1000000000000803f000000000000803f0000000000000000000080bfd63ca9c0679002c13acd13bf00000000aaaaaa3200000000000080bf00000000000080bf0000000000000000000080bf3acd133faaaaaa32d53ca9c0000000006790024100000000000080bf00000000000080bf0000000000000000000080bfd53ca94067900241ffff6fc10000204167900ac1000000000000803f000000000000803f0000000000000000000080bfffff6fc167900ac10000a0c1000020417aac6ab5000000000000803f000000000000803f0000000000000000000080bf0000a0c17aac6ab595616bc100002041679002c1000000000000803f000000000000803f0000000000000000000080bf95616bc1679002c196619bc1000020417aac62b5000000000000803f000000000000803f0000000000000000000080bf96619bc17aac62b595616bc100000000679002c100000000000080bf00000000000080bf0000000000000000000080bf95616b41679002c10100a0c00000204167900a41000000000000803f000000000000803f0000000000000000000080bf0100a0c067900a41d53ca9c00000204167900241000000000000803f000000000000803f0000000000000000000080bfd53ca9c067900241d63ca9c000000000679002c100000000000080bf00000000000080bf0000000000000000000080bfd63ca940679002c13acd13bf00002041aaaaaa32000080bf00000000000000000000000000000000000080bf000080bf3bcd93be00002041d53ca9c00000f04067900241feffffbe917becb3d8b35dbfd8b35d3f8a888833feffffbe000080bf97611bc10000f040d53ca9c00000204167900241feffffbe00000000d9b35dbfd9b35d3f00000000fbffffbe000080bf97611bc100002041000020c10000204166900241415959339a9999b4000080bf0000803fc168822841595933000080bffcff1fc100002041010020c10000f04067900241445959339a9999b4000080bf0000803fc26882a844595933000080bffdff1fc1ffffef4096616bc100002041669002410300003f927becb3d6b35dbfd5b35d3f8c8888330300003f000080bf92616bc10000204196616bc10000f040669002410200003fcbcc4cb4d7b35dbfd6b35d3f8b7bec330200003f000080bf92616bc1ffffef40d53ca9c00000204167900241feffffbe00000000d9b35dbfd8b35d3f00000000feffffbe000080bfcd3ca9c000002041d53ca9c00000f04067900241feffffbe917becb3d8b35dbfd8b35d3f898888b3feffffbe000080bfcd3ca9c0ffffef40318988c10000f04065908240d8b35d3f800505b5000000bfffffff3e800585a8d7b35d3f000080bff2ff9fc00000f04096619bc10000f040245763b50000803fbf3452af2f3a4b348ac038b49ab9f22e0000803f000080bf8f611bc10000f04096619bc1000020417aac62b50000803f9e1b4db4d7b3dd333bcd93b394d6ec330000803f000080bf8f611bc100002041308988c10000204165908240d8b35d3f800505b5000000bf0000003fe046a629d7b35d3f000080bff0ff9fc00000204196616bc100002041669002410300003f927becb3d6b35dbfd5b35d3f8a8888b30200003f000080bf4acc93be0000204196616bc10000f040669002410200003fcbcc4cb4d7b35dbfd7b35d3f8b7becb30200003f000080bf4acc93be0000f04096616bc10000204166900241000000000000803f000000000000803f0000000000000000000080bf96616bc166900241308988c10000204165908240000000000000803f000000000000803f0000000000000000000080bf308988c165908240000070c10000204166900a41000000000000803f000000000000803f0000000000000000000080bf000070c166900a41000020c10000204166900241000000000000803f000000000000803f0000000000000000000080bf000020c16690024181b81fc10000204160c30341ee02a334999919b5000080bf0000803f00000000ee02a334000080bf7db81fc100002041d4ada8c00000204163c30341ee02233500000000000080bf0000803f00000000ee022335000080bfccada8c000002041d4ada8c00000f04063c30341ee02a334999919b5000080bf0000803f00000000ee02a334000080bfccada8c0ffffef4081b81fc10000f04063c3034100000000999999b5000080bf0000803f0000000000000000000080bf7db81fc1ffffef40aef41fc114c4f14020c60241f102a334999919b5000080bf0000803f9a99999ef102a334000080bfaaf41fc113c4f1403126a9c014c4f14023c60241f102233500000000000080bf0000803f00000000f1022335000080bf2926a9c013c4f1403126a9c014c4a14023c60241f102a334999919b5000080bf0000803f9a99999ef102a334000080bf2926a9c013c4a140aef41fc114c4a14023c6024100000000999999b5000080bf0000803f0000000000000000000080bfaaf41fc113c4a140aef41fc16c1ba64020c60241f102a334999919b5000080bf0000803f9a99999ef102a334000080bfaaf41fc16b1ba6403126a9c06c1ba64023c60241f102233500000000000080bf0000803f00000000f1022335000080bf2926a9c06b1ba6403126a9c0d8362c4023c60241f102a334999919b5000080bf0000803f9a99999ef102a334000080bf2926a9c0d6362c40aef41fc1d8362c4023c6024100000000999999b5000080bf0000803f0000000000000000000080bfaaf41fc1d6362c40692f6bc16c1ba64020c60241f002a3349a9919b5000080bf0000803f00000000f002a334000080bf652f6bc16b1ba640d3cd1fc16c1ba64023c60241f002233500000000000080bf0000803f00000000f0022335000080bfcfcd1fc16b1ba640d3cd1fc1d8362c4023c60241f002a3349a9919b5000080bf0000803f00000000f002a334000080bfcfcd1fc1d6362c40692f6bc1d8362c4023c60241000000009a9999b5000080bf0000803f0000000000000000000080bf652f6bc1d6362c40692f6bc114c4f14020c60241f002a3349a9919b5000080bf0000803f00000000f002a334000080bf652f6bc113c4f140d3cd1fc114c4f14023c60241f002233500000000000080bf0000803f00000000f0022335000080bfcfcd1fc113c4f140d3cd1fc114c4a14023c60241f002a3349a9919b5000080bf0000803f00000000f002a334000080bfcfcd1fc113c4a140692f6bc114c4a14023c60241000000009a9999b5000080bf0000803f0000000000000000000080bf652f6bc113c4a140328988c16828a14066908240d6b35d3f7f0585b5020000bf0200003f800585aad7b35d3f000080bff3ff9fc06828a14096619bc16828a14000635932dcb35d3f00000000f1ffffbef1ffff3e00000000dcb35d3f000080bf8e611bc16828a14096619bc16828f14000635932d9b35d3fab5c31b5fcffffbefcffff3eac5cb128d9b35d3f000080bf8e611bc16828f140308988c16828f14066908240d6b35d3f800585b5020000bf0200003f4088c729d6b35d3f000080bfefff9fc06828f14096616bc16828f14066900241d9b35d3f00000000fbffffbefbffff3e00000000d8b35d3f000080bf4acc93be6828f14096616bc16828a14066900241d6b35d3fa85c31b5020000bf0200003f7d058529d6b35d3f000080bf4acc93be6828a140338988c1d8522c4066908240d5b35d3f3d88c7b5050000bf0600003fed698fabd5b35d3f000080bff5ff9fc0d8522c4096619bc1d8522c4000635932dfb35d3f00000000e6ffffbee6ffff3e00000000dfb35d3f000080bf8e611bc1d8522c4096619bc16c29a64000635932dab35d3f800585b5f6ffffbef6ffff3e00000000dab35d3f000080bf8e611bc16c29a640308988c16c29a64066908240d5b35d3f3e88c7b5040000bf0500003f3f88c7a9d5b35d3f000080bfefff9fc06c29a64096616bc16c29a64066900241d9b35d3f00000000fbffffbefbffff3e00000000d8b35d3f000080bf4acc93be6c29a64096616bc1d8522c4066900241d4b35d3f7c0585b5050000bf0500003f7c0505a9d4b35d3f000080bf4acc93bed8522c40338988c100085c3e66908240dab35d3f800585b5f6ffffbef6ffff3e00000000dab35d3f000080bff5ff9fc000085c3e96619bc100085c3e00635932dfb35d3f00000000e6ffffbee6ffff3e00000000dfb35d3f000080bf8e611bc100085c3e96619bc180c02d4000635932dab35d3f800585b5f6ffffbef6ffff3e00000000dab35d3f000080bf8e611bc180c02d40308988c180c02d4066908240d6b35d3f800505b6030000bf0400003f81058529d6b35d3f000080bfefff9fc080c02d4096619bc1000000007aac62b5d6b35d3f6888882f0200003f020000bf00000000d7b35d3f000080bf98611b410000000095616bc100000000679002c1ffffff3e00000000d8b35d3fd9b35dbf00000000feffff3e000080bf5acd933e0000000095616bc100002040679002c1ffffff3ebf34d22ed8b35d3fd8b35dbf9ab972aefeffff3e000080bf5acd933e0000204096619bc10000a040cf0164b5d6b35d3f0000cea60200003f020000bf00000000d7b35d3f000080bf98611b410000a04095616bc10000a040679002c1d7b35d3f000000000200003f020000bf00000000d7b35d3f000080bf5acd933e0000a040000020c100000000679002c100000000000000000000803f000080bf0000000000000000000080bf0000204100000000d63ca9c000000000679002c1000000bf00000000d8b35d3fd8b35dbf00000000010000bf000080bfd63ca94000000000d63ca9c000002040679002c1000000bf00000000d8b35d3fd8b35dbf00000000010000bf000080bfd63ca94000002040000020c100002040679002c100000000000000000000803f000080bf0000000000000000000080bf000020410000204095616bc100000000679002c1ffffff3e00000000d8b35d3fd8b35dbf000000000000003f000080bf95616b410000000095616bc100002040679002c1ffffff3ebf34d22ed8b35d3fd8b35dbf9ab9722e0000003f000080bf95616b41000020403acd13bf0000a040aaaaaa32000080bf00000000000000000000000000000000000080bf000080bf3ccd933e0000a040d63ca9c00000a040679002c1d7b35dbf000000000100003f020000bf00000000d7b35dbf000080bf98611b410000a040d63ca9c000002040679002c1000000bf00000000d8b35d3fd8b35dbf00000000000000bf000080bf98611b41000020403acd13bf00000000aaaaaa32000080bf00000000000000000000000000000000000080bf000080bf3ccd933e749a2fb0d63ca9c000000000679002c1000000bf00000000d8b35d3fd8b35dbf00000000fdffffbe000080bf98611b41679a2fb0000020c10000f040679002c100000000000000000000803f000080bf0000000000000000000080bf000020410000f040d63ca9c00000f040679002c1000000bf00000000d8b35d3fd8b35dbf00000000010000bf000080bfd63ca9400000f040d63ca9c000002041679002c1000000bf00000000d8b35d3fd8b35dbf00000000010000bf000080bfd63ca94000002041000020c100002041679002c100000000000000000000803f000080bf0000000000000000000080bf000020410000204195616bc10000f040679002c1ffffff3e5e35d2aed8b35d3fd8b35dbf52ba72ae0000003f000080bf95616b410000f04095616bc100002041679002c1ffffff3e1aa71dafd8b35d3fd8b35dbfac0ab6ae0000003f000080bf95616b41000020413acd13bf00002041aaaaaa32000080bf00000000000000000000000000000000000080bf000080bf3ccd933e00002041d63ca9c000002041679002c1000000bf00000000d8b35d3fd8b35dbf00000000fdffffbe000080bf98611b4100002041d63ca9c00000f040679002c1000000bf00000000d8b35d3fd8b35dbf00000000000000bf000080bf98611b410000f040000020c100000000679002c100000000000080bf00000000000080bf0000000000000000000080bf00002041679002c1000020c100002041679002c1000000000000803f000000000000803f0000000000000000000080bf000020c1679002c195616bc10000f040679002c1ffffff3e5e35d2aed8b35d3fd8b35dbf51ba722efeffff3e000080bf5acd933e0000f04096619bc10000f040245763b50000803fbf3452af2f3a4b34a31145b49ab9f2ae0000803f000080bf98611b410000f04095616bc100002041679002c1ffffff3e1aa71dafd8b35d3fd9b35dbfad0ab62efeffff3e000080bf5acd933e0000204196619bc1000020417aac62b50000803f9e1b4db4d7b3dd33d9b3ddb393d6ecb30000803f000080bf98611b4100002041
-  m_CompressedMesh:
-    m_Vertices:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UV:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Normals:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Tangents:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Weights:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_NormalSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_TangentSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_FloatColors:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_BoneIndices:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Triangles:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UVInfo: 0
-  m_LocalAABB:
-    m_Center: {x: -10, y: 5, z: 0}
-    m_Extent: {x: 10, y: 5, z: 8.6602545}
-  m_MeshUsageFlags: 0
-  m_BakedConvexCollisionMesh: 
-  m_BakedTriangleCollisionMesh: 
-  m_MeshMetrics[0]: 1
-  m_MeshMetrics[1]: 1
-  m_MeshOptimizationFlags: 1
-  m_StreamData:
-    offset: 0
-    size: 0
-    path: 
 --- !u!1001 &530307798
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9222,9 +9183,9 @@ PrefabInstance:
     - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_text
-      value: "         Fiche de renseignements de Clark\n  Nom : Anderson         
-        Pr\xE9nom : Clark\r\n  ID : 681-607-462\r\n  Age : 30 ans\r\n  Fonction :
-        Technicien\r\n  Taille : 1m78          Poids : 78,5 kg\r\n  Groupe sanguin
+      value: "         Fiche de renseignements de Clark\n   Nom : Anderson         
+        Pr\xE9nom : Clark\r\n   ID : 681-607-462\r\n   Age : 30 ans\r\n   Fonction
+        : Technicien\r\n   Taille : 1m78          Poids : 78,5 kg\r\n   Groupe sanguin
         : AB+"
       objectReference: {fileID: 0}
     - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
@@ -9267,7 +9228,7 @@ PrefabInstance:
     - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -54.71
+      value: -54.68
       objectReference: {fileID: 0}
     - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
@@ -9320,6 +9281,18 @@ PrefabInstance:
       propertyPath: ZoomPos
       value: 
       objectReference: {fileID: 1109891907}
+    - target: {fileID: 3962323351359523056, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e0ee8278c70ae6a49aa114b1ded7545a,
+        type: 3}
+    - target: {fileID: 6233248368420440654, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e0ee8278c70ae6a49aa114b1ded7545a,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79c745cc6ba32b14db2307ebdd87d0df, type: 3}
 --- !u!1 &531717538
@@ -10445,7 +10418,7 @@ MeshCollider:
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 519838849}
+  m_Mesh: {fileID: 1499211132}
 --- !u!33 &600367852
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -10453,7 +10426,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 600367850}
-  m_Mesh: {fileID: 519838849}
+  m_Mesh: {fileID: 1499211132}
 --- !u!23 &600367853
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11833,7 +11806,7 @@ MonoBehaviour:
     m_AreaError: 15
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
-  m_Mesh: {fileID: 519838849}
+  m_Mesh: {fileID: 1499211132}
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -15381,20 +15354,7 @@ PrefabInstance:
     - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_text
-      value: "Une heure et demie apr\xE8s l\u2019envoie de ce rapport, Marcus Brown,
-        le chimiste de l\u2019\xE9quipage, s\u2019est introduit dans la salle de
-        pilotage et a coup\xE9 toutes les communications du vaisseau ainsi que le
-        syst\xE8me de surveillance vid\xE9o. Nous ignorons pourquoi il a fait cela.
-        Depuis, l\u2019\xE9quipage n\u2019a plus donn\xE9 signe de vie.\r\n\r\nVotre
-        mission est de vous rendre \xE0 la derni\xE8re position connue du vaisseau
-        et de d\xE9couvrir ce qui est arriv\xE9 \xE0 l\u2019\xE9quipage.\r\n\r\nVous
-        avez interdiction de p\xE9n\xE9trer \xE0 l\u2019int\xE9rieur du vaisseau,
-        sauf dans le cas o\xF9 l\u2019ordre vous serait donn\xE9. Pour le moment,
-        vous devez utiliser vos comp\xE9tences en informatique pour acc\xE9der \xE0
-        toutes les donn\xE9es que vous pouvez afin de d\xE9terminer la chronologie
-        des \xE9v\xE9nements ainsi que la nature des \xE9v\xE9nements en question.
-        Une fois que vous penserez avoir termin\xE9, envoyez-nous votre rapport.\r\n\r\n                                                       
-        Station m\xE8re, colonel Prescott\r\n"
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
@@ -15430,27 +15390,83 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8971846431161349768, guid: 5b932b2e4af544f43b0ee9b50e33e25f,
         type: 2}
+    - target: {fileID: 2428044789400484558, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 6.4890885
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428044789400484558, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 6.4890885
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428044789400484558, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 6.4890885
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428044789400484558, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428044789400484558, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -5.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428044789400484558, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 17.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_text
-      value: "                                    Briefing de mission\n      Mission
-        184 : Enqu\xEAte li\xE9e \xE0 la \u201Cdisparition\u201D de l\u2019\xE9quipage
-        (mission 183)\n\r\n  Date du d\xE9but de la mission : 7 septembre 2246\r\n 
-        A l\u2019attention de : 854-186-429          Fonction : Informaticien\r\n\r\n 
-        D\xE9tails de la mission :\r\nDepuis le 2 septembre, nous avons perdu tout
-        contact avec l\u2019\xE9quipage du capitaine Davis. Ils avaient \xE9t\xE9
-        envoy\xE9s \xE9tudier une nouvelle plan\xE8te d\xE9couverte par un drone
-        de reconnaissance.\r\n\r\nSur place, leurs premiers rapports font \xE9galement
-        \xE9tat de la d\xE9couverte d\u2019un autre vaisseau qui semblait \xE0 l\u2019abandon
-        ainsi que de plusieurs ast\xE9ro\xEFdes recouverts de cristaux d\u2019un
-        genre inconnu. L\u2019ordre leur avait \xE9t\xE9 donn\xE9 d\u2019\xE9tudier
-        ces cristaux, mais leur dernier rapport, envoy\xE9 le 2 septembre, signale
-        la mort de William Hartley, l\u2019un des membres d\u2019\xE9quipage.\r\n"
+      value: "                                                       Briefing de
+        mission\n\nMission 184 : Enqu\xEAte li\xE9e \xE0 la \u201Cdisparition\u201D
+        de l\u2019\xE9quipage (mission 183)\r\n\r\nDate du d\xE9but de la mission
+        : 7 septembre 2246\r\n\r\nA l\u2019attention de : 854-186-429          Fonction
+        : Informaticien\r\n\r\nDepuis le 2 septembre, nous avons perdu tout contact
+        avec l\u2019\xE9quipage du capitaine Davis. Ils avaient \xE9t\xE9 envoy\xE9s
+        \xE9tudier une nouvelle plan\xE8te d\xE9couverte par un drone de reconnaissance.\r\n\r\nSur
+        place, leurs premiers rapports font \xE9galement \xE9tat de la d\xE9couverte
+        d\u2019un autre vaisseau qui semblait \xE0 l\u2019abandon ainsi que de plusieurs
+        ast\xE9ro\xEFdes recouverts de cristaux d\u2019un genre inconnu. L\u2019ordre
+        leur avait \xE9t\xE9 donn\xE9 d\u2019\xE9tudier ces cristaux, mais leur dernier
+        rapport, envoy\xE9 le 2 septembre, signale la mort de William Hartley, l\u2019un
+        des membres d\u2019\xE9quipage.\r\n\r\nUne heure et demie apr\xE8s l\u2019envoie
+        de ce rapport, Marcus Brown, le chimiste de l\u2019\xE9quipage, s\u2019est
+        introduit dans la salle de pilotage et a coup\xE9 toutes les communications
+        du vaisseau ainsi que le syst\xE8me de surveillance vid\xE9o. Nous ignorons
+        pourquoi il a fait cela. Depuis, l\u2019\xE9quipage n\u2019a plus donn\xE9
+        signe de vie.\r\n\r\nVotre mission est de vous rendre \xE0 la derni\xE8re
+        position connue du vaisseau et de d\xE9couvrir ce qui est arriv\xE9 \xE0
+        l\u2019\xE9quipage. Utilisez vos comp\xE9tences en informatique pour acc\xE9der
+        \xE0 toutes les donn\xE9es que vous pouvez afin de d\xE9terminer la chronologie
+        des \xE9v\xE9nements ainsi que la nature des \xE9v\xE9nements en question.
+        Une fois que vous penserez avoir termin\xE9, envoyez-nous votre rapport.\r\n\r\n                                                                                                     
+        Station m\xE8re, colonel Prescott\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_fontSize
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_margin.w
+      value: -5.7662945
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_margin.x
+      value: -1.0167608
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_margin.z
+      value: -2.5777082
       objectReference: {fileID: 0}
     - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
@@ -15476,18 +15492,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
       propertyPath: m_LocalPosition.x
-      value: -37.958
+      value: -38.587
       objectReference: {fileID: 0}
     - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -29.739
+      value: -29.526
       objectReference: {fileID: 0}
     - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -55.583
+      value: -54.951
       objectReference: {fileID: 0}
     - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
@@ -15588,10 +15614,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8971846431161349768, guid: 5b932b2e4af544f43b0ee9b50e33e25f,
         type: 2}
+    - target: {fileID: 2428044789400484558, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 9.0757
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428044789400484558, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 9.0757
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428044789400484558, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 9.0757
+      objectReference: {fileID: 0}
     - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_text
-      value: "                            Extrait du journal de Marcus\n\n30 ao\xFBt
+      value: "                               Extrait du journal de Marcus\n\n30 ao\xFBt
         : J\u2019ai d\xE9couvert que les cristaux abritent des parasites d\u2019un
         genre que je n\u2019avais jamais vu auparavant. Plus j\u2019y pense et plus
         je me dis que nos sup\xE9rieurs \xE9taient au courant de tout.\r\n\nMalgr\xE9
@@ -15609,6 +15650,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_fontSize
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_margin.z
+      value: -0.35230112
       objectReference: {fileID: 0}
     - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
@@ -15698,6 +15744,18 @@ PrefabInstance:
       propertyPath: ZoomPos
       value: 
       objectReference: {fileID: 1109891907}
+    - target: {fileID: 3962323351359523056, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 321b67af9ea100a4ebc939dbc45020ed,
+        type: 3}
+    - target: {fileID: 6233248368420440654, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 321b67af9ea100a4ebc939dbc45020ed,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79c745cc6ba32b14db2307ebdd87d0df, type: 3}
 --- !u!1 &910547751
@@ -15807,10 +15865,10 @@ PrefabInstance:
     - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_text
-      value: "        Fiche de renseignements de William\n  Nom : Hartley         
-        Pr\xE9nom : William\r\n  ID : 852-349-464\r\n  Age : 52 ans\r\n  Fonction
-        : Ing\xE9nieur\r\n  Taille : 1m70          Poids : 80,1 kg\r\n  Groupe sanguin
-        : A+"
+      value: "        Fiche de renseignements de William\n   Nom : Hartley         
+        Pr\xE9nom : William\r\n   ID : 852-349-464\r\n   Age : 52 ans\r\n   Fonction
+        : Ing\xE9nieur\r\n   Taille : 1m70          Poids : 80,1 kg\r\n   Groupe
+        sanguin : A+"
       objectReference: {fileID: 0}
     - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
@@ -15852,7 +15910,7 @@ PrefabInstance:
     - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -54.742
+      value: -54.68
       objectReference: {fileID: 0}
     - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
@@ -15899,6 +15957,18 @@ PrefabInstance:
       propertyPath: ZoomPos
       value: 
       objectReference: {fileID: 1109891907}
+    - target: {fileID: 3962323351359523056, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e0ee8278c70ae6a49aa114b1ded7545a,
+        type: 3}
+    - target: {fileID: 6233248368420440654, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e0ee8278c70ae6a49aa114b1ded7545a,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79c745cc6ba32b14db2307ebdd87d0df, type: 3}
 --- !u!1 &928552225
@@ -16093,7 +16163,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh16062
+  m_Name: pb_Mesh16196
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -17250,7 +17320,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh17156
+  m_Name: pb_Mesh17294
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -19893,14 +19963,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2048744470006308764, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d0cb01405a0e42f4d96e8ab2596f603d,
+        type: 3}
+    - target: {fileID: 2048744470006308764, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_text
-      value: "\nDe m\xEAme, nous devons \xE9tudier la plan\xE8te se trouvant \xE0
-        proximit\xE9, mais sans entrer dans son atmosph\xE8re. D\u2019apr\xE8s les
-        photos prises par le drone de reconnaissance, la couleur violac\xE9e de la
-        plan\xE8te indiquerait qu\u2019elle a un lien direct avec les cristaux se
-        trouvant sur l\u2019ast\xE9ro\xEFde.\r"
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
@@ -19936,10 +20013,35 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8971846431161349768, guid: 5b932b2e4af544f43b0ee9b50e33e25f,
         type: 2}
+    - target: {fileID: 2428044789400484558, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 7.8757
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428044789400484558, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 7.8757
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428044789400484558, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 7.8757
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428044789400484558, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428044789400484558, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_text
-      value: "                          Extrait du journal de bord n\xB02\n\nD\xE9tails
+      value: "                                    Extrait du journal de bord n\xB02\n\nD\xE9tails
         de la mission : Le secteur 12 de la N\xE9buleuse Delta est connu pour sa
         grande quantit\xE9 d\u2019ast\xE9ro\xEFdes de taille diverse. En d\xE9but
         d\u2019ann\xE9e, la base lunaire a constat\xE9 que la grande majorit\xE9
@@ -19951,12 +20053,26 @@ PrefabInstance:
         aux couleurs violac\xE9es. Mon \xE9quipage et moi-m\xEAme avons pour missions
         d\u2019\xE9tudier ces cristaux afin de d\xE9terminer s\u2019ils pourraient
         s\u2019agir d\u2019une nouvelle ressource pour le d\xE9veloppement de la
-        colonisation spatiale.\r"
+        colonisation spatiale.\r\n\nDe m\xEAme, nous devons \xE9tudier la plan\xE8te
+        se trouvant \xE0 proximit\xE9, mais sans entrer dans son atmosph\xE8re. D\u2019apr\xE8s
+        les photos prises par le drone de reconnaissance, la couleur violac\xE9e
+        de la plan\xE8te indiquerait qu\u2019elle a un lien direct avec les cristaux
+        se trouvant sur l\u2019ast\xE9ro\xEFde.\r"
       objectReference: {fileID: 0}
     - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_fontSize
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_margin.x
+      value: 0.24110794
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_margin.z
+      value: -1.2222738
       objectReference: {fileID: 0}
     - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
@@ -20046,6 +20162,28 @@ PrefabInstance:
       propertyPath: ZoomPos
       value: 
       objectReference: {fileID: 1109891907}
+    - target: {fileID: 2815847358846757823, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.4004
+      objectReference: {fileID: 0}
+    - target: {fileID: 2815847358846757823, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5395
+      objectReference: {fileID: 0}
+    - target: {fileID: 3962323351359523056, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 321b67af9ea100a4ebc939dbc45020ed,
+        type: 3}
+    - target: {fileID: 6233248368420440654, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 321b67af9ea100a4ebc939dbc45020ed,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79c745cc6ba32b14db2307ebdd87d0df, type: 3}
 --- !u!4 &1296348212 stripped
@@ -20442,7 +20580,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh17834
+  m_Name: pb_Mesh17974
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -22918,17 +23056,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2048744470006308764, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: eb42a68493e8b3a418aae55f358230e8,
+        type: 3}
+    - target: {fileID: 2048744470006308764, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_text
-      value: "\nDe toute \xE9vidence, l\u2019\xEAtre humain a une tol\xE9rance limit\xE9e
-        aux effets des cristaux. \xC9tant donn\xE9 que nous ne savons pas quand est-ce
-        que William a commenc\xE9 \xE0 s\u2019injecter le produit en cachette, il
-        est pour le moment difficile d\u2019estimer le niveau de cette tol\xE9rance.\r\n\r\n\xC0
-        pr\xE9sent, nous allons nous r\xE9unir pour discuter de cet \xE9v\xE9nement.
-        J\u2019en profiterai pour faire part \xE0 l\u2019\xE9quipage de mes toutes
-        derni\xE8res d\xE9couvertes sur les cristaux, des d\xE9couvertes qui remettent
-        tout en cause.\r"
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
@@ -22964,6 +23106,31 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8971846431161349768, guid: 5b932b2e4af544f43b0ee9b50e33e25f,
         type: 2}
+    - target: {fileID: 2428044789400484558, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 8.2424
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428044789400484558, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 8.2424
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428044789400484558, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 8.2424
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428044789400484558, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428044789400484558, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 6.2
+      objectReference: {fileID: 0}
     - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_text
@@ -22979,12 +23146,30 @@ PrefabInstance:
         il est facile de comprendre la cause de ce ph\xE9nom\xE8ne. Il a d\xFB s\u2019injecter
         en cachette plusieurs seringues contenant le produit des cristaux, d\xE9passant
         ainsi le dosage qu\u2019il avait initialement re\xE7u durant l\u2019exp\xE9rience
-        du 27 juillet.\r"
+        du 27 juillet.\r\n\r\n\xC0 pr\xE9sent, nous allons nous r\xE9unir pour discuter
+        de cet \xE9v\xE9nement. J\u2019en profiterai pour faire part \xE0 l\u2019\xE9quipage
+        de mes toutes derni\xE8res d\xE9couvertes sur les cristaux, des d\xE9couvertes
+        qui remettent tout en cause.\r"
       objectReference: {fileID: 0}
     - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_fontSize
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_margin.w
+      value: -1.9947577
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_margin.x
+      value: 0.377995
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_margin.z
+      value: -0.909451
       objectReference: {fileID: 0}
     - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
@@ -23074,8 +23259,183 @@ PrefabInstance:
       propertyPath: ZoomPos
       value: 
       objectReference: {fileID: 1109891907}
+    - target: {fileID: 3962323351359523056, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cc3418af6417fda4db165b7a90389a1e,
+        type: 3}
+    - target: {fileID: 6233248368420440654, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cc3418af6417fda4db165b7a90389a1e,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79c745cc6ba32b14db2307ebdd87d0df, type: 3}
+--- !u!43 &1499211132
+Mesh:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: pb_Mesh16606
+  serializedVersion: 10
+  m_SubMeshes:
+  - serializedVersion: 2
+    firstByte: 0
+    indexCount: 264
+    topology: 0
+    baseVertex: 0
+    firstVertex: 0
+    vertexCount: 113
+    localAABB:
+      m_Center: {x: -10, y: 5, z: 0}
+      m_Extent: {x: 10, y: 5, z: 8.6602545}
+  m_Shapes:
+    vertices: []
+    shapes: []
+    channels: []
+    fullWeights: []
+  m_BindPose: []
+  m_BoneNameHashes: 
+  m_RootBoneNameHash: 0
+  m_BonesAABB: []
+  m_VariableBoneCountWeights:
+    m_Data: 
+  m_MeshCompression: 0
+  m_IsReadable: 1
+  m_KeepVertices: 1
+  m_KeepIndices: 1
+  m_IndexFormat: 0
+  m_IndexBuffer: 0000010002000000020003000400050006000700050004000800050007000900050008000a0005000900060005000a00070008000b0008000c000b000d000e000f000e0010000f00060004001100040012001100130014001500140016001500080009000c00090017000c0004000700120007000b00120018000d0019000d000f0019000a0006001a00060011001a001b001c001d001b0002001c00020001001c001e001f0020001f00210020001e00220023001f001e0023002400250026002700240026002800290027002900240027002a002b002c002b00160014002b0014002c00180019002d002d002a002c002d002c0018002e002f00300031002e0030003200330034003500320034003600370038003900360038003a003b003c003d003a003c003e003f00400041003e004000420043004400450042004400460047004500470042004500480049004a004b0048004a004c004d004b004d0048004b004e004f00500051004e0050005200530054005200540055005400560055005700580059005a00570059005b0057005a005c005b005a005d005e005f005d005f0060005f0061006000620063006400650062006400660062006500670066006500680069006a0068006a005d006a005e005d006b00170009000a006b0009001a006b000a000e006c00100013006c000e00130015006c00550056006d006e0055006d006e006d006f0070006e006f00
+  m_VertexData:
+    serializedVersion: 3
+    m_VertexCount: 113
+    m_Channels:
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 3
+    - stream: 0
+      offset: 12
+      format: 0
+      dimension: 3
+    - stream: 0
+      offset: 24
+      format: 0
+      dimension: 4
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 40
+      format: 0
+      dimension: 2
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    m_DataSize: 5424
+    _typelessdata: d53ca9c00000000067900241d7b35dbf00000000010000bf0100003f00000000d7b35dbf000080bf97611bc100000000d53ca9c00000a04067900241d7b35dbf00000000010000bf0100003f00000000d7b35dbf000080bf97611bc10000a0403acd13bf0000a040aaaaaa32000080bf00000000000000000000000000000000000080bf000080bf3ccd93be0000a0403acd13bf00000000aaaaaa32000080bf00000000000000000000000000000000000080bf000080bf3ccd93be000000000100a0c00000000067900a4100000000000080bf00000000000080bf0000000000000000000080bf0100a04067900a41000020c1000000000000000000000000000080bf00000000000080bf0000000000000000000080bf000020410000000000000000000000000000000000000000000080bf00000000000080bf0000000000000000000080bf0000000000000000000070c10000000066900a4100000000000080bf00000000000080bf0000000000000000000080bf0000704166900a410000a0c1000000007aac6ab500000000000080bf00000000000080bf0000000000000000000080bf0000a0417aac6ab5ffff6fc10000000067900ac100000000000080bf00000000000080bf0000000000000000000080bfffff6f4167900ac10200a0c00000000067900ac100000000000080bf00000000000080bf0000000000000000000080bf0200a04067900ac196616bc1000000006690024100000000000080bf00000000000080bf0000000000000000000080bf96616b416690024196619bc1000000007aac62b500000000000080bf00000000000080bf0000000000000000000080bf96619b417aac62b5000000000000204100000000000000000000803f000000000000803f0000000000000000000080bf00000000000000000200a0c00000204167900ac1000000000000803f000000000000803f0000000000000000000080bf0200a0c067900ac13acd13bf00002041aaaaaa32000000000000803f000000000000803f0000000000000000000080bf3acd13bfaaaaaa32d63ca9c000002041679002c1000000000000803f000000000000803f0000000000000000000080bfd63ca9c0679002c13acd13bf00000000aaaaaa3200000000000080bf00000000000080bf0000000000000000000080bf3acd133faaaaaa32d53ca9c0000000006790024100000000000080bf00000000000080bf0000000000000000000080bfd53ca94067900241ffff6fc10000204167900ac1000000000000803f000000000000803f0000000000000000000080bfffff6fc167900ac10000a0c1000020417aac6ab5000000000000803f000000000000803f0000000000000000000080bf0000a0c17aac6ab595616bc100002041679002c1000000000000803f000000000000803f0000000000000000000080bf95616bc1679002c196619bc1000020417aac62b5000000000000803f000000000000803f0000000000000000000080bf96619bc17aac62b595616bc100000000679002c100000000000080bf00000000000080bf0000000000000000000080bf95616b41679002c10100a0c00000204167900a41000000000000803f000000000000803f0000000000000000000080bf0100a0c067900a41d53ca9c00000204167900241000000000000803f000000000000803f0000000000000000000080bfd53ca9c067900241d63ca9c000000000679002c100000000000080bf00000000000080bf0000000000000000000080bfd63ca940679002c13acd13bf00002041aaaaaa32000080bf00000000000000000000000000000000000080bf000080bf3bcd93be00002041d53ca9c00000f04067900241feffffbe917becb3d8b35dbfd8b35d3f8a888833feffffbe000080bf97611bc10000f040d53ca9c00000204167900241feffffbe00000000d9b35dbfd9b35d3f00000000fbffffbe000080bf97611bc100002041000020c10000204166900241415959339a9999b4000080bf0000803fc168822841595933000080bffcff1fc100002041010020c10000f04067900241445959339a9999b4000080bf0000803fc26882a844595933000080bffdff1fc1ffffef4096616bc100002041669002410300003f927becb3d6b35dbfd5b35d3f8c8888330300003f000080bf92616bc10000204196616bc10000f040669002410200003fcbcc4cb4d7b35dbfd6b35d3f8b7bec330200003f000080bf92616bc1ffffef40d53ca9c00000204167900241feffffbe00000000d9b35dbfd8b35d3f00000000feffffbe000080bfcd3ca9c000002041d53ca9c00000f04067900241feffffbe917becb3d8b35dbfd8b35d3f898888b3feffffbe000080bfcd3ca9c0ffffef40318988c10000f04065908240d8b35d3f800505b5000000bfffffff3e800585a8d7b35d3f000080bff2ff9fc00000f04096619bc10000f040245763b50000803fbf3452af2f3a4b348ac038b49ab9f22e0000803f000080bf8f611bc10000f04096619bc1000020417aac62b50000803f9e1b4db4d7b3dd333bcd93b394d6ec330000803f000080bf8f611bc100002041308988c10000204165908240d8b35d3f800505b5000000bf0000003fe046a629d7b35d3f000080bff0ff9fc00000204196616bc100002041669002410300003f927becb3d6b35dbfd5b35d3f8a8888b30200003f000080bf4acc93be0000204196616bc10000f040669002410200003fcbcc4cb4d7b35dbfd7b35d3f8b7becb30200003f000080bf4acc93be0000f04096616bc10000204166900241000000000000803f000000000000803f0000000000000000000080bf96616bc166900241308988c10000204165908240000000000000803f000000000000803f0000000000000000000080bf308988c165908240000070c10000204166900a41000000000000803f000000000000803f0000000000000000000080bf000070c166900a41000020c10000204166900241000000000000803f000000000000803f0000000000000000000080bf000020c16690024181b81fc10000204160c30341ee02a334999919b5000080bf0000803f00000000ee02a334000080bf7db81fc100002041d4ada8c00000204163c30341ee02233500000000000080bf0000803f00000000ee022335000080bfccada8c000002041d4ada8c00000f04063c30341ee02a334999919b5000080bf0000803f00000000ee02a334000080bfccada8c0ffffef4081b81fc10000f04063c3034100000000999999b5000080bf0000803f0000000000000000000080bf7db81fc1ffffef40aef41fc114c4f14020c60241f102a334999919b5000080bf0000803f9a99999ef102a334000080bfaaf41fc113c4f1403126a9c014c4f14023c60241f102233500000000000080bf0000803f00000000f1022335000080bf2926a9c013c4f1403126a9c014c4a14023c60241f102a334999919b5000080bf0000803f9a99999ef102a334000080bf2926a9c013c4a140aef41fc114c4a14023c6024100000000999999b5000080bf0000803f0000000000000000000080bfaaf41fc113c4a140aef41fc16c1ba64020c60241f102a334999919b5000080bf0000803f9a99999ef102a334000080bfaaf41fc16b1ba6403126a9c06c1ba64023c60241f102233500000000000080bf0000803f00000000f1022335000080bf2926a9c06b1ba6403126a9c0d8362c4023c60241f102a334999919b5000080bf0000803f9a99999ef102a334000080bf2926a9c0d6362c40aef41fc1d8362c4023c6024100000000999999b5000080bf0000803f0000000000000000000080bfaaf41fc1d6362c40692f6bc16c1ba64020c60241f002a3349a9919b5000080bf0000803f00000000f002a334000080bf652f6bc16b1ba640d3cd1fc16c1ba64023c60241f002233500000000000080bf0000803f00000000f0022335000080bfcfcd1fc16b1ba640d3cd1fc1d8362c4023c60241f002a3349a9919b5000080bf0000803f00000000f002a334000080bfcfcd1fc1d6362c40692f6bc1d8362c4023c60241000000009a9999b5000080bf0000803f0000000000000000000080bf652f6bc1d6362c40692f6bc114c4f14020c60241f002a3349a9919b5000080bf0000803f00000000f002a334000080bf652f6bc113c4f140d3cd1fc114c4f14023c60241f002233500000000000080bf0000803f00000000f0022335000080bfcfcd1fc113c4f140d3cd1fc114c4a14023c60241f002a3349a9919b5000080bf0000803f00000000f002a334000080bfcfcd1fc113c4a140692f6bc114c4a14023c60241000000009a9999b5000080bf0000803f0000000000000000000080bf652f6bc113c4a140328988c16828a14066908240d6b35d3f7f0585b5020000bf0200003f800585aad7b35d3f000080bff3ff9fc06828a14096619bc16828a14000635932dcb35d3f00000000f1ffffbef1ffff3e00000000dcb35d3f000080bf8e611bc16828a14096619bc16828f14000635932d9b35d3fab5c31b5fcffffbefcffff3eac5cb128d9b35d3f000080bf8e611bc16828f140308988c16828f14066908240d6b35d3f800585b5020000bf0200003f4088c729d6b35d3f000080bfefff9fc06828f14096616bc16828f14066900241d9b35d3f00000000fbffffbefbffff3e00000000d8b35d3f000080bf4acc93be6828f14096616bc16828a14066900241d6b35d3fa85c31b5020000bf0200003f7d058529d6b35d3f000080bf4acc93be6828a140338988c1d8522c4066908240d5b35d3f3d88c7b5050000bf0600003fed698fabd5b35d3f000080bff5ff9fc0d8522c4096619bc1d8522c4000635932dfb35d3f00000000e6ffffbee6ffff3e00000000dfb35d3f000080bf8e611bc1d8522c4096619bc16c29a64000635932dab35d3f800585b5f6ffffbef6ffff3e00000000dab35d3f000080bf8e611bc16c29a640308988c16c29a64066908240d5b35d3f3e88c7b5040000bf0500003f3f88c7a9d5b35d3f000080bfefff9fc06c29a64096616bc16c29a64066900241d9b35d3f00000000fbffffbefbffff3e00000000d8b35d3f000080bf4acc93be6c29a64096616bc1d8522c4066900241d4b35d3f7c0585b5050000bf0500003f7c0505a9d4b35d3f000080bf4acc93bed8522c40338988c100085c3e66908240dab35d3f800585b5f6ffffbef6ffff3e00000000dab35d3f000080bff5ff9fc000085c3e96619bc100085c3e00635932dfb35d3f00000000e6ffffbee6ffff3e00000000dfb35d3f000080bf8e611bc100085c3e96619bc180c02d4000635932dab35d3f800585b5f6ffffbef6ffff3e00000000dab35d3f000080bf8e611bc180c02d40308988c180c02d4066908240d6b35d3f800505b6030000bf0400003f81058529d6b35d3f000080bfefff9fc080c02d4096619bc1000000007aac62b5d6b35d3f6888882f0200003f020000bf00000000d7b35d3f000080bf98611b410000000095616bc100000000679002c1ffffff3e00000000d8b35d3fd9b35dbf00000000feffff3e000080bf5acd933e0000000095616bc100002040679002c1ffffff3ebf34d22ed8b35d3fd8b35dbf9ab972aefeffff3e000080bf5acd933e0000204096619bc10000a040cf0164b5d6b35d3f0000cea60200003f020000bf00000000d7b35d3f000080bf98611b410000a04095616bc10000a040679002c1d7b35d3f000000000200003f020000bf00000000d7b35d3f000080bf5acd933e0000a040000020c100000000679002c100000000000000000000803f000080bf0000000000000000000080bf0000204100000000d63ca9c000000000679002c1000000bf00000000d8b35d3fd8b35dbf00000000010000bf000080bfd63ca94000000000d63ca9c000002040679002c1000000bf00000000d8b35d3fd8b35dbf00000000010000bf000080bfd63ca94000002040000020c100002040679002c100000000000000000000803f000080bf0000000000000000000080bf000020410000204095616bc100000000679002c1ffffff3e00000000d8b35d3fd8b35dbf000000000000003f000080bf95616b410000000095616bc100002040679002c1ffffff3ebf34d22ed8b35d3fd8b35dbf9ab9722e0000003f000080bf95616b41000020403acd13bf0000a040aaaaaa32000080bf00000000000000000000000000000000000080bf000080bf3ccd933e0000a040d63ca9c00000a040679002c1d7b35dbf000000000100003f020000bf00000000d7b35dbf000080bf98611b410000a040d63ca9c000002040679002c1000000bf00000000d8b35d3fd8b35dbf00000000000000bf000080bf98611b41000020403acd13bf00000000aaaaaa32000080bf00000000000000000000000000000000000080bf000080bf3ccd933e749a2fb0d63ca9c000000000679002c1000000bf00000000d8b35d3fd8b35dbf00000000fdffffbe000080bf98611b41679a2fb0000020c10000f040679002c100000000000000000000803f000080bf0000000000000000000080bf000020410000f040d63ca9c00000f040679002c1000000bf00000000d8b35d3fd8b35dbf00000000010000bf000080bfd63ca9400000f040d63ca9c000002041679002c1000000bf00000000d8b35d3fd8b35dbf00000000010000bf000080bfd63ca94000002041000020c100002041679002c100000000000000000000803f000080bf0000000000000000000080bf000020410000204195616bc10000f040679002c1ffffff3e5e35d2aed8b35d3fd8b35dbf52ba72ae0000003f000080bf95616b410000f04095616bc100002041679002c1ffffff3e1aa71dafd8b35d3fd8b35dbfac0ab6ae0000003f000080bf95616b41000020413acd13bf00002041aaaaaa32000080bf00000000000000000000000000000000000080bf000080bf3ccd933e00002041d63ca9c000002041679002c1000000bf00000000d8b35d3fd8b35dbf00000000fdffffbe000080bf98611b4100002041d63ca9c00000f040679002c1000000bf00000000d8b35d3fd8b35dbf00000000000000bf000080bf98611b410000f040000020c100000000679002c100000000000080bf00000000000080bf0000000000000000000080bf00002041679002c1000020c100002041679002c1000000000000803f000000000000803f0000000000000000000080bf000020c1679002c195616bc10000f040679002c1ffffff3e5e35d2aed8b35d3fd8b35dbf51ba722efeffff3e000080bf5acd933e0000f04096619bc10000f040245763b50000803fbf3452af2f3a4b34a31145b49ab9f2ae0000803f000080bf98611b410000f04095616bc100002041679002c1ffffff3e1aa71dafd8b35d3fd9b35dbfad0ab62efeffff3e000080bf5acd933e0000204196619bc1000020417aac62b50000803f9e1b4db4d7b3dd33d9b3ddb393d6ecb30000803f000080bf98611b4100002041
+  m_CompressedMesh:
+    m_Vertices:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UV:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Normals:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Tangents:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Weights:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_NormalSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_TangentSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_FloatColors:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_BoneIndices:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Triangles:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UVInfo: 0
+  m_LocalAABB:
+    m_Center: {x: -10, y: 5, z: 0}
+    m_Extent: {x: 10, y: 5, z: 8.6602545}
+  m_MeshUsageFlags: 0
+  m_BakedConvexCollisionMesh: 
+  m_BakedTriangleCollisionMesh: 
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
+  m_MeshOptimizationFlags: 1
+  m_StreamData:
+    offset: 0
+    size: 0
+    path: 
 --- !u!1 &1499908950
 GameObject:
   m_ObjectHideFlags: 0
@@ -27201,12 +27561,23 @@ PrefabInstance:
     - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_text
-      value: 
+      value: "\nVu le go\xFBt, \xE7a m'\xE9tonnerait que ce soit les m\xEAmes \xE9l\xE9ments
+        que l'on retrouve dans les fruits..."
       objectReference: {fileID: 0}
     - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_fontSize
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_margin.x
+      value: 0.0077826986
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_margin.z
+      value: -0.0011301048
       objectReference: {fileID: 0}
     - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
@@ -27237,6 +27608,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8971846431161349768, guid: 5b932b2e4af544f43b0ee9b50e33e25f,
         type: 2}
+    - target: {fileID: 2428044789400484558, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 9.0171995
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428044789400484558, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 9.0171995
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428044789400484558, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 9.0171995
+      objectReference: {fileID: 0}
     - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_text
@@ -27256,6 +27642,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_fontSize
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_margin.z
+      value: -0.36155844
       objectReference: {fileID: 0}
     - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
@@ -27345,6 +27736,18 @@ PrefabInstance:
       propertyPath: ZoomPos
       value: 
       objectReference: {fileID: 1109891907}
+    - target: {fileID: 3962323351359523056, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cc3418af6417fda4db165b7a90389a1e,
+        type: 3}
+    - target: {fileID: 6233248368420440654, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cc3418af6417fda4db165b7a90389a1e,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79c745cc6ba32b14db2307ebdd87d0df, type: 3}
 --- !u!1 &1835579222
@@ -27877,10 +28280,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8971846431161349768, guid: 5b932b2e4af544f43b0ee9b50e33e25f,
         type: 2}
+    - target: {fileID: 2428044789400484558, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 9.178835
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428044789400484558, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 9.178835
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428044789400484558, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 9.178835
+      objectReference: {fileID: 0}
     - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_text
-      value: "                                     Message inconnu\n\n  Salut.\r\nJ\u2019ai
+      value: "                                     Message inconnu\n\nSalut.\r\nJ\u2019ai
         h\xE9sit\xE9 \xE0 t\u2019en parler, mais au dernier moment, j\u2019ai pr\xE9f\xE9r\xE9
         te laisser ce message. S\u2019il te pla\xEEt, ne tarde pas \xE0 t\u2019en
         d\xE9barrasser apr\xE8s l\u2019avoir lu.\r\n\nJe voulais te dire que ta mission
@@ -27934,7 +28352,7 @@ PrefabInstance:
     - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -54.734
+      value: -54.68
       objectReference: {fileID: 0}
     - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
@@ -27987,6 +28405,18 @@ PrefabInstance:
       propertyPath: ZoomPos
       value: 
       objectReference: {fileID: 1109891907}
+    - target: {fileID: 3962323351359523056, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ff75e12738490a1489cac37cf6987400,
+        type: 3}
+    - target: {fileID: 6233248368420440654, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ff75e12738490a1489cac37cf6987400,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79c745cc6ba32b14db2307ebdd87d0df, type: 3}
 --- !u!1 &1881093696
@@ -33137,6 +33567,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8971846431161349768, guid: 5b932b2e4af544f43b0ee9b50e33e25f,
         type: 2}
+    - target: {fileID: 2428044789400484558, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 9.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428044789400484558, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 9.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428044789400484558, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 9.1
+      objectReference: {fileID: 0}
     - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_text
@@ -33159,6 +33604,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_fontSize
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_margin.z
+      value: -0.36943054
       objectReference: {fileID: 0}
     - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
@@ -33248,6 +33698,18 @@ PrefabInstance:
       propertyPath: ZoomPos
       value: 
       objectReference: {fileID: 1109891907}
+    - target: {fileID: 3962323351359523056, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cc3418af6417fda4db165b7a90389a1e,
+        type: 3}
+    - target: {fileID: 6233248368420440654, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cc3418af6417fda4db165b7a90389a1e,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79c745cc6ba32b14db2307ebdd87d0df, type: 3}
 --- !u!1 &2079889582
@@ -33598,16 +34060,24 @@ PrefabInstance:
     - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_text
-      value: "\nR\xE9ponse de la Station m\xE8re, envoy\xE9e le 19 juillet 2246,
-        \xE0 15H42.\r\n\nNous n\u2019avons pas connaissance d\u2019un autre vaisseau
-        envoy\xE9 dans ce secteur.\r\n\nContinuez votre mission sans y pr\xEAter
-        attention. Nous enverrons un vaisseau sp\xE9cialis\xE9 lorsque vous aurez
-        termin\xE9 votre mission.\r"
+      value: '
+
+        J''ai l''impression qu''ils nous prennent pour des idiots'
       objectReference: {fileID: 0}
     - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_fontSize
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_margin.x
+      value: 0.047631502
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_margin.z
+      value: -0.015107632
       objectReference: {fileID: 0}
     - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
@@ -33638,12 +34108,37 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8971846431161349768, guid: 5b932b2e4af544f43b0ee9b50e33e25f,
         type: 2}
+    - target: {fileID: 2428044789400484558, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 7.2285004
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428044789400484558, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 7.2285004
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428044789400484558, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 7.2285004
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428044789400484558, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428044789400484558, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 11.3
+      objectReference: {fileID: 0}
     - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_text
-      value: "                                        Rapport n\xB01\nRapport envoy\xE9
-        \xE0 la Station m\xE8re le 19 juillet 2246, \xE0 14H36.\r\nDans le cadre
-        de la mission 183, nous avons d\xE9couvert un vaisseau d\u2019exploration,
+      value: "                                                      Rapport n\xB01\n\nRapport
+        envoy\xE9 \xE0 la Station m\xE8re le 19 juillet 2246, \xE0 14H36.\r\nDans
+        le cadre de la mission 183, nous avons d\xE9couvert un vaisseau d\u2019exploration,
         en orbite autour de la plan\xE8te que nous devons \xE9tudier.\r\n\nTout en
         maintenant une distance de s\xE9curit\xE9, nous avons tent\xE9 \xE0 plusieurs
         reprises d\u2019\xE9tablir le contact avec l\u2019int\xE9rieur du vaisseau,
@@ -33655,12 +34150,31 @@ PrefabInstance:
         devons tenter une op\xE9ration de reconnaissance en p\xE9n\xE9trant dans
         le vaisseau, \xE0 la recherche de survivants ?\r\n                                                                                                              
         \n                                                                       
-        ID : 428-526-719\r\n"
+        ID : 428-526-719\r\n\nR\xE9ponse de la Station m\xE8re, envoy\xE9e le 19
+        juillet 2246, \xE0 15H42.\r\n\nNous n\u2019avons pas connaissance d\u2019un
+        autre vaisseau envoy\xE9 dans ce secteur.\r\nContinuez votre mission sans
+        y pr\xEAter attention. Nous enverrons un vaisseau sp\xE9cialis\xE9 lorsque
+        vous aurez termin\xE9 votre mission.\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_fontSize
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_margin.w
+      value: -3.6643991
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_margin.x
+      value: -0.34908673
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_margin.z
+      value: -1.8297281
       objectReference: {fileID: 0}
     - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
@@ -33750,6 +34264,18 @@ PrefabInstance:
       propertyPath: ZoomPos
       value: 
       objectReference: {fileID: 1109891907}
+    - target: {fileID: 3962323351359523056, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cc3418af6417fda4db165b7a90389a1e,
+        type: 3}
+    - target: {fileID: 6233248368420440654, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cc3418af6417fda4db165b7a90389a1e,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79c745cc6ba32b14db2307ebdd87d0df, type: 3}
 --- !u!43 &2112047756
@@ -33758,7 +34284,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh17738
+  m_Name: pb_Mesh17878
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -34578,9 +35104,9 @@ PrefabInstance:
     - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_text
-      value: "         Fiche de renseignements de Helena\n  Nom : Davis         
-        Pr\xE9nom : Helena\r\n  ID : 428-526-719\r\n  Age : 34 ans\r\n  Fonction
-        : Capitaine de vaisseau\r\n  Taille : 1m78          Poids : 68,6 kg\r\n 
+      value: "         Fiche de renseignements de Helena\n   Nom : Davis         
+        Pr\xE9nom : Helena\r\n   ID : 428-526-719\r\n   Age : 34 ans\r\n   Fonction
+        : Capitaine de vaisseau\r\n   Taille : 1m78          Poids : 68,6 kg\r\n  
         Groupe sanguin : A-"
       objectReference: {fileID: 0}
     - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
@@ -34628,7 +35154,7 @@ PrefabInstance:
     - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -54.791
+      value: -54.68
       objectReference: {fileID: 0}
     - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
@@ -34681,6 +35207,18 @@ PrefabInstance:
       propertyPath: ZoomPos
       value: 
       objectReference: {fileID: 1109891907}
+    - target: {fileID: 3962323351359523056, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e0ee8278c70ae6a49aa114b1ded7545a,
+        type: 3}
+    - target: {fileID: 6233248368420440654, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e0ee8278c70ae6a49aa114b1ded7545a,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79c745cc6ba32b14db2307ebdd87d0df, type: 3}
 --- !u!1001 &4100787236391822655
