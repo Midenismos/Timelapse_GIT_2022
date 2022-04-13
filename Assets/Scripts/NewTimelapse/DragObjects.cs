@@ -28,6 +28,15 @@ public class DragObjects : MonoBehaviour
             _interactFeedBack = null;
         }
     }
+    public void StartDrag() { StartCoroutine("SyntheticDrag"); }
+    private void Start()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Debug.Log("Prefab created");
+            StartCoroutine(SyntheticDrag());
+        }
+    }
     public void OnMouseDown()
     {
         if (tag == "PanelImage" || tag == "Entry" || GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == _axisID)
@@ -88,7 +97,7 @@ public class DragObjects : MonoBehaviour
                 if (GetComponent<ZoomScript>())
                     GetComponent<ZoomScript>().enabled = true;
 
-                if(Is3D)
+                if(Is3D && tag != "Cam")
                 {
                     float planeY = -29.5f;
                     Transform draggingObject = transform;
@@ -99,14 +108,10 @@ public class DragObjects : MonoBehaviour
 
                     float distance; // the distance from the ray origin to the ray intersection of the plane
                     if (plane.Raycast(ray, out distance))
-                        draggingObject.position = new Vector3(ray.GetPoint(Mathf.Clamp(distance, 4, 7)).x, -29.5f, ray.GetPoint(Mathf.Clamp(distance, 4, 7)).z); // distance along the ray
+                        draggingObject.position = new Vector3(ray.GetPoint(Mathf.Clamp(distance, 3, 4)).x, -29.5f, ray.GetPoint(Mathf.Clamp(distance, 3, 4)).z); // distance along the ray
                 }
                 else
-                {
                     transform.position = GetMouseWorldPos() + mOffset; 
-                }
-
-
             }
         }
     }
@@ -120,6 +125,12 @@ public class DragObjects : MonoBehaviour
         }
         IsDragged = false;
         GameObject.Find("Player").GetComponent<PlayerAxisScript>().IsDraging = false;
+
+        if (tag == "Cam")
+        {
+            if(IsDragable)
+                Destroy(this.gameObject);
+        }
     }
 
     private void OnMouseExit()
@@ -131,5 +142,22 @@ public class DragObjects : MonoBehaviour
     {
         if(_interactFeedBack)
             _interactFeedBack.enabled = true;
+    }
+
+    IEnumerator SyntheticDrag()
+    {
+        // Process the start of our drag, and then wait a frame.
+        OnMouseDown();
+        yield return null;
+
+        // Keep updating our dragged position each frame
+        // until the mouse button is released.
+        while (Input.GetMouseButton(0))
+        {
+            OnMouseDrag();
+            yield return null;
+        }
+        OnMouseUp();
+        yield return null;
     }
 }

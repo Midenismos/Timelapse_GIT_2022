@@ -178,7 +178,7 @@ public class ZoomScript : MonoBehaviour
                     GetComponent<Rigidbody>().isKinematic = false;
                     GetComponent<DragObjects>().IsDragable = true;
                 }
-                if(GameObject.Find("Player").GetComponent<PlayerAxisScript>().CurrentHoldItem == transform.gameObject)
+                if(GameObject.Find("Player").GetComponent<PlayerAxisScript>().CurrentHoldItem == transform.gameObject && tag != "Cam")
                 {
                     transform.position = ZoomPos.transform.position;
                     transform.rotation = ZoomPos.transform.rotation;

@@ -55,7 +55,8 @@ public class PanelBasketScript : MonoBehaviour
                     other.transform.SetParent(this.transform, false);
                     other.transform.position = GameObject.Find("start").transform.position;
                     other.GetComponent<DragObjects>().IsDragable = false;
-                    other.GetComponent<ZoomScript>().IsZoomable = false;
+                    if(other.GetComponent<ZoomScript>())
+                        other.GetComponent<ZoomScript>().IsZoomable = false;
                     GetComponent<AudioSource>().Play();
                     _zoomCountdown = 1;
                     _zoomLerp = 0;
@@ -77,13 +78,21 @@ public class PanelBasketScript : MonoBehaviour
             if (_zoomCountdown == 0)
             {
                 _isLerping = false;
-                scannedItem.GetComponent<DragObjects>().IsDragable = true;
-                scannedItem.GetComponent<ZoomScript>().IsZoomable = true;
-                scannedItem.GetComponent<Rigidbody>().isKinematic = false;
-                scannedItem.GetComponent<Rigidbody>().AddForce((GameObject.Find("start").transform.forward+ GameObject.Find("start").transform.up) * 200);
-                scannedItem.transform.SetParent(null, false);
-                scannedItem.transform.position = GameObject.Find("start").transform.position;
-                scannedItem = null;
+                if(scannedItem.gameObject.tag != "Cam")
+                {
+                    scannedItem.GetComponent<DragObjects>().IsDragable = true;
+                    scannedItem.GetComponent<ZoomScript>().IsZoomable = true;
+                    scannedItem.GetComponent<Rigidbody>().isKinematic = false;
+                    scannedItem.GetComponent<Rigidbody>().AddForce((GameObject.Find("start").transform.forward + GameObject.Find("start").transform.up) * 200);
+                    scannedItem.transform.SetParent(null, false);
+                    scannedItem.transform.position = GameObject.Find("start").transform.position;
+                    scannedItem = null;
+                }
+                else
+                {
+                    Destroy(scannedItem);
+                }
+
             }
 
             if(scannedItem)

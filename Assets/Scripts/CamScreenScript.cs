@@ -16,6 +16,7 @@ public class CamScreenScript : MonoBehaviour
 
     [SerializeField] private VideoClip[] _videos = new VideoClip[5];
 
+
     public OnOffButton _onOffButton = null;
     private void OnMouseOver()
     {
@@ -127,4 +128,5 @@ public class CamScreenScript : MonoBehaviour
 
     }*/
     }
+
 }
