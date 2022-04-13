@@ -99,7 +99,7 @@ public class DragObjects : MonoBehaviour
 
                     float distance; // the distance from the ray origin to the ray intersection of the plane
                     if (plane.Raycast(ray, out distance))
-                        draggingObject.position = ray.GetPoint(Mathf.Clamp(distance, 4, 7)); // distance along the ray
+                        draggingObject.position = new Vector3(ray.GetPoint(Mathf.Clamp(distance, 4, 7)).x, -29.5f, ray.GetPoint(Mathf.Clamp(distance, 4, 7)).z); // distance along the ray
                 }
                 else
                 {

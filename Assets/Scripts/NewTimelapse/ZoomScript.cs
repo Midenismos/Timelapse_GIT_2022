@@ -173,11 +173,17 @@ public class ZoomScript : MonoBehaviour
                     HasZoomed = true;
                 else
                     HasZoomed = false;
-                if (tag == "Tape")
+                if (tag == "Tape" || tag == "Written")
                 {
                     GetComponent<Rigidbody>().isKinematic = false;
                     GetComponent<DragObjects>().IsDragable = true;
                 }
+                if(GameObject.Find("Player").GetComponent<PlayerAxisScript>().CurrentHoldItem == transform.gameObject)
+                {
+                    transform.position = ZoomPos.transform.position;
+                    transform.rotation = ZoomPos.transform.rotation;
+                }
+
             }
 
             if (!isCamera)
