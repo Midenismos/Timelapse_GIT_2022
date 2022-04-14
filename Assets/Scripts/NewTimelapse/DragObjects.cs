@@ -160,4 +160,18 @@ public class DragObjects : MonoBehaviour
         OnMouseUp();
         yield return null;
     }
+
+    private void Update()
+    {
+        if(transform.position.y <= -31 && Is3D)
+        {
+            transform.position = GameObject.Find("SpittingPoint").transform.position;
+            GetComponent<Rigidbody>().velocity = Vector3.zero;
+            if(gameObject.CompareTag("Written"))
+                GetComponent<Rigidbody>().AddForce((GameObject.Find("PosWrittenThrow").transform.position - transform.position) *50);
+            if (gameObject.CompareTag("Tape"))
+                GetComponent<Rigidbody>().AddForce((GameObject.Find("PosTapeThrow").transform.position - transform.position) *50);
+
+        }
+    }
 }

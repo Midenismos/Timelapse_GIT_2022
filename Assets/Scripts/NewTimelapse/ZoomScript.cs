@@ -173,7 +173,7 @@ public class ZoomScript : MonoBehaviour
                     HasZoomed = true;
                 else
                     HasZoomed = false;
-                if (tag == "Tape" || tag == "Written")
+                if (gameObject.CompareTag("Tape") || gameObject.CompareTag("Written"))
                 {
                     GetComponent<Rigidbody>().isKinematic = false;
                     GetComponent<DragObjects>().IsDragable = true;
@@ -228,6 +228,18 @@ public class ZoomScript : MonoBehaviour
     {
         ZoomScript currentItem = AxisScript.CurrentHoldItem.GetComponent<ZoomScript>();
         currentItem.posB = currentItem._originalPosition;
+        if (currentItem.gameObject.CompareTag("Written"))
+        {
+            currentItem.posB.y = -30;
+            currentItem.posB.z = Mathf.Clamp(currentItem.posB.z, -55, Mathf.Infinity);
+        }
+        else if (currentItem.gameObject.CompareTag("Tape"))
+        {
+            currentItem.posB.x = Mathf.Clamp(currentItem.posB.x, -27, Mathf.Infinity);
+            currentItem.posB.y = -30;
+            currentItem.posB.z = Mathf.Clamp(currentItem.posB.z, -61, Mathf.Infinity);
+        }
+
         currentItem.posA = currentItem.ZoomPos.transform.position;
         currentItem.rotB = currentItem._originalRotation;
         currentItem.rotA = currentItem.ZoomPos.transform.rotation;

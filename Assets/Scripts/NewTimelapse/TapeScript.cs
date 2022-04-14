@@ -21,13 +21,15 @@ public class TapeScript : MonoBehaviour
         //Change l'audio en fonction des nébuleuse
         GameObject.Find("LoopManager").GetComponent<NewLoopManager>().ReactedToNebuleuse += delegate (NebuleuseType NebuleuseType)
         {
-            /*switch (NebuleuseType)
+            switch (NebuleuseType)
             {
                 case (NebuleuseType.PURPLE1):
-                    CurrentSound = sounds[1];
+                    if(sounds[1] != null)
+                        CurrentSound = sounds[1];
                     break;
                 case (NebuleuseType.PURPLE2):
-                    CurrentSound = sounds[1];
+                    if (sounds[1] != null)
+                        CurrentSound = sounds[1];
                     break;
                 case (NebuleuseType.BLUE):
                     if(isAffectedByBlueGreen)
@@ -44,7 +46,7 @@ public class TapeScript : MonoBehaviour
                 default:
                     CurrentSound = sounds[0];
                     break;
-            }*/
+            }
             if (GameObject.Find("Radio").GetComponent<TapeListener>().CurrentTape == this)
                 GameObject.Find("Radio").GetComponent<TapeListener>().ChangeSound();
         };
