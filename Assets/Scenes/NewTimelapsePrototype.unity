@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3429,7 +3429,13 @@ PrefabInstance:
     - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_text
-      value: 
+      value: "\nTr\xE8s passionn\xE9e par son m\xE9tier, ce qui fait qu'elle a souvent
+        la t\xEAte en l'air"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_margin.x
+      value: 0.22920108
       objectReference: {fileID: 0}
     - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
@@ -3458,9 +3464,9 @@ PrefabInstance:
     - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_text
-      value: "        Fiche de renseignements de Tracey\n   Nom : Walker         
-        Pr\xE9nom : Tracey\r\n   ID : 974-107-034\r\n   Age : 47 ans\r\n   Fonction
-        : Astronome\r\n   Taille : 1m93          Poids : 64,6 kg\r\n   Groupe sanguin
+      value: "        Fiche de renseignements de Tracey\n\n   Nom : Walker         
+        Pr\xE9nom : Tracey\r\n   ID : 974-107-034\r\n   Age : 36 ans\r\n   Fonction
+        : Astronome\r\n   Taille : 1m93\n   Poids : 64,6 kg\r\n   Groupe sanguin
         : B-"
       objectReference: {fileID: 0}
     - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
@@ -3562,12 +3568,33 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: e0ee8278c70ae6a49aa114b1ded7545a,
         type: 3}
+    - target: {fileID: 5634539268414123593, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 148bcd0945653ab40a883833001ff7fc,
+        type: 3}
+    - target: {fileID: 5634539268414123593, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6233248368420440654, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: e0ee8278c70ae6a49aa114b1ded7545a,
         type: 3}
+    - target: {fileID: 8248064704625926498, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 21.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8248064704625926498, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -23
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79c745cc6ba32b14db2307ebdd87d0df, type: 3}
 --- !u!1 &200060431
@@ -8748,7 +8775,14 @@ PrefabInstance:
     - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_text
-      value: 
+      value: '
+
+        Pauvre con'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_margin.x
+      value: 0.27167082
       objectReference: {fileID: 0}
     - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
@@ -8777,10 +8811,10 @@ PrefabInstance:
     - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_text
-      value: "        Fiche de renseignements de Marcus\n   Nom : Brown         
+      value: "        Fiche de renseignements de Marcus\n\n   Nom : Brown         
         Pr\xE9nom : Marcus\r\n   ID : 680-522-941\r\n   Age : 38 ans\r\n   Fonction
-        : Chimiste\r\n   Taille : 1m80          Poids : 74,8 kg\r\n   Groupe sanguin
-        : B+"
+        : Chimiste\r\n   Taille : 1m80\n   Poids : 74,8 kg\r\n   Groupe sanguin :
+        B+"
       objectReference: {fileID: 0}
     - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
@@ -8881,12 +8915,33 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: e0ee8278c70ae6a49aa114b1ded7545a,
         type: 3}
+    - target: {fileID: 5634539268414123593, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e52a429d8b66d854bac33e8a353ae46f,
+        type: 3}
+    - target: {fileID: 5634539268414123593, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6233248368420440654, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: e0ee8278c70ae6a49aa114b1ded7545a,
         type: 3}
+    - target: {fileID: 8248064704625926498, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 20.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8248064704625926498, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -23
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79c745cc6ba32b14db2307ebdd87d0df, type: 3}
 --- !u!1 &518452932
@@ -9032,7 +9087,14 @@ PrefabInstance:
     - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_text
-      value: 
+      value: "\nJe ne l'ai rencontr\xE9 qu'une fois, mais il m'a fait bonne impression.
+        C'est le genre de personne qui veut toujours bien faire et faire plaisir
+        \xE0 tout le monde"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_margin.x
+      value: 0.23188925
       objectReference: {fileID: 0}
     - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
@@ -9061,9 +9123,9 @@ PrefabInstance:
     - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_text
-      value: "         Fiche de renseignements de Clark\n   Nom : Anderson         
+      value: "         Fiche de renseignements de Clark\n\n   Nom : Anderson         
         Pr\xE9nom : Clark\r\n   ID : 681-607-462\r\n   Age : 30 ans\r\n   Fonction
-        : Technicien\r\n   Taille : 1m78          Poids : 78,5 kg\r\n   Groupe sanguin
+        : Technicien\r\n   Taille : 1m78\n   Poids : 78,5 kg\r\n   Groupe sanguin
         : AB+"
       objectReference: {fileID: 0}
     - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
@@ -9165,12 +9227,33 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: e0ee8278c70ae6a49aa114b1ded7545a,
         type: 3}
+    - target: {fileID: 5634539268414123593, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c362d1abb055e0940bb5a8bcc9b527b6,
+        type: 3}
+    - target: {fileID: 5634539268414123593, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6233248368420440654, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: e0ee8278c70ae6a49aa114b1ded7545a,
         type: 3}
+    - target: {fileID: 8248064704625926498, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 21.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8248064704625926498, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -23
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79c745cc6ba32b14db2307ebdd87d0df, type: 3}
 --- !u!1 &531717538
@@ -15543,7 +15626,7 @@ PrefabInstance:
     - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_text
-      value: "                                                       Briefing de
+      value: "                                                         Briefing de
         mission\n\nMission 184 : Enqu\xEAte li\xE9e \xE0 la \u201Cdisparition\u201D
         de l\u2019\xE9quipage (mission 183)\r\n\r\nDate du d\xE9but de la mission
         : 7 septembre 2246\r\n\r\nA l\u2019attention de : 854-186-429          Fonction
@@ -15956,7 +16039,15 @@ PrefabInstance:
     - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_text
-      value: 
+      value: '
+
+        Un peu trop enfantin, mais au moins, avec lui, on s''amuse
+        bien'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_margin.x
+      value: 0.23719811
       objectReference: {fileID: 0}
     - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
@@ -15985,10 +16076,10 @@ PrefabInstance:
     - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_text
-      value: "        Fiche de renseignements de William\n   Nom : Hartley         
-        Pr\xE9nom : William\r\n   ID : 852-349-464\r\n   Age : 52 ans\r\n   Fonction
-        : Ing\xE9nieur\r\n   Taille : 1m70          Poids : 80,1 kg\r\n   Groupe
-        sanguin : A+"
+      value: "        Fiche de renseignements de William\n\n   Nom : Hartley         
+        Pr\xE9nom : William\r\n   ID : 852-349-464\r\n   Age : 33 ans\r\n   Fonction
+        : Ing\xE9nieur\r\n   Taille : 1m70\n   Poids : 80,1 kg\r\n   Groupe sanguin
+        : A+"
       objectReference: {fileID: 0}
     - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
@@ -16083,12 +16174,33 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: e0ee8278c70ae6a49aa114b1ded7545a,
         type: 3}
+    - target: {fileID: 5634539268414123593, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d6e7774084df84d4389e045110348c39,
+        type: 3}
+    - target: {fileID: 5634539268414123593, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6233248368420440654, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: e0ee8278c70ae6a49aa114b1ded7545a,
         type: 3}
+    - target: {fileID: 8248064704625926498, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 20.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8248064704625926498, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -23
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79c745cc6ba32b14db2307ebdd87d0df, type: 3}
 --- !u!1 &928552225
@@ -23559,6 +23671,16 @@ PrefabInstance:
       propertyPath: ZoomPos
       value: 
       objectReference: {fileID: 1109891907}
+    - target: {fileID: 2815847358846757823, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5398
+      objectReference: {fileID: 0}
+    - target: {fileID: 2815847358846757823, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5237784
+      objectReference: {fileID: 0}
     - target: {fileID: 3962323351359523056, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_Sprite
@@ -33708,6 +33830,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2048744470006308764, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1932e6be6c276f94f8b1995a5e242bd1,
+        type: 3}
+    - target: {fileID: 2048744470006308764, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_text
@@ -33878,6 +34011,16 @@ PrefabInstance:
       propertyPath: ZoomPos
       value: 
       objectReference: {fileID: 1109891907}
+    - target: {fileID: 2815847358846757823, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 2815847358846757823, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.6134
+      objectReference: {fileID: 0}
     - target: {fileID: 3962323351359523056, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_Sprite
@@ -35274,7 +35417,13 @@ PrefabInstance:
     - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_text
-      value: 
+      value: "\nVraiment sympa. De toute fa\xE7on, vu son rang, il vaut mieux l'avoir
+        comme amie"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_margin.x
+      value: 0.33517313
       objectReference: {fileID: 0}
     - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
@@ -35303,10 +35452,10 @@ PrefabInstance:
     - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_text
-      value: "         Fiche de renseignements de Helena\n   Nom : Davis         
+      value: "         Fiche de renseignements de Helena\n\n   Nom : Davis         
         Pr\xE9nom : Helena\r\n   ID : 428-526-719\r\n   Age : 34 ans\r\n   Fonction
-        : Capitaine de vaisseau\r\n   Taille : 1m78          Poids : 68,6 kg\r\n  
-        Groupe sanguin : A-"
+        : Capitaine de vaisseau\r\n   Taille : 1m78\n   Poids : 68,6 kg\r\n   Groupe
+        sanguin : A-"
       objectReference: {fileID: 0}
     - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
@@ -35412,12 +35561,38 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: e0ee8278c70ae6a49aa114b1ded7545a,
         type: 3}
+    - target: {fileID: 5634539268414123593, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 34349f070eee9984d99e111ac4430206,
+        type: 3}
+    - target: {fileID: 5634539268414123593, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6233248368420440654, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: e0ee8278c70ae6a49aa114b1ded7545a,
         type: 3}
+    - target: {fileID: 8248064704625926498, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8248064704625926498, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 20.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8248064704625926498, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -23
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79c745cc6ba32b14db2307ebdd87d0df, type: 3}
 --- !u!1001 &4100787236391822655
