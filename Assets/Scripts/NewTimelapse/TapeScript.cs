@@ -31,7 +31,7 @@ public class TapeScript : MonoBehaviour
                     if (sounds[1] != null)
                         CurrentSound = sounds[1];
                     break;
-                case (NebuleuseType.BLUE):
+                /*case (NebuleuseType.BLUE):
                     if(isAffectedByBlueGreen)
                         CurrentSound = sounds[2];
                     else
@@ -42,16 +42,22 @@ public class TapeScript : MonoBehaviour
                         CurrentSound = sounds[3];
                     else
                         CurrentSound = sounds[0];
-                    break;
+                    break;*/
                 default:
                     CurrentSound = sounds[0];
                     break;
             }
             if (GameObject.Find("Radio").GetComponent<TapeListener>().CurrentTape == this)
+            {
                 GameObject.Find("Radio").GetComponent<TapeListener>().ChangeSound();
+                print(CurrentSound);
+            }
         };
 
-        CurrentSound = sounds[0];
+        if (sounds[1] != null)
+            CurrentSound = sounds[1];
+        else
+            CurrentSound = sounds[0];
     }
     private void OnMouseDown()
     {

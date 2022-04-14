@@ -48,7 +48,7 @@ public class CamScreenScript : MonoBehaviour
                 else
                     player.clip = _videos[1];
             }
-            else if (NebuleuseType == NebuleuseType.GREEN)
+            /*else if (NebuleuseType == NebuleuseType.GREEN)
             {
                 if (_videos[2] != null)
                     player.clip = _videos[2];
@@ -61,7 +61,7 @@ public class CamScreenScript : MonoBehaviour
                     player.clip = _videos[3];
                 else
                     player.clip = _videos[1];
-            }
+            }*/
             else if (NebuleuseType == NebuleuseType.YELLOW)
                 player.clip = _videos[1];
 
@@ -69,11 +69,11 @@ public class CamScreenScript : MonoBehaviour
             if (!_onOffButton.IsActivated)
                 player.Stop();
         };
-
-        if (_videos[2] != null)
-            GetComponent<VideoPlayer>().clip = _videos[2];
+        if (WhichPurple == 1)
+            GetComponent<VideoPlayer>().clip = _videos[0];
         else
             GetComponent<VideoPlayer>().clip = _videos[1];
+
         OnOff();
     }
 
