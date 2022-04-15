@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NebuleuseLight : MonoBehaviour
+public class OldNebuleuseLight : MonoBehaviour
 {
     private TimeManager _timeManager = null;
 

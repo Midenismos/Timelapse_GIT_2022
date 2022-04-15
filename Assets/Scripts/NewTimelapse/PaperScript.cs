@@ -29,7 +29,7 @@ public class PaperScript : MonoBehaviour
         if(GetComponent<ZoomScript>().HasZoomed)
         {
             float CurrentDistanceBetweenMousePositions = (Input.mousePosition - PressPoint).x;
-            transform.rotation = StartRotation * Quaternion.Euler(Vector3.forward * (CurrentDistanceBetweenMousePositions / SceneWidth) * 360);
+            transform.rotation = StartRotation * Quaternion.Euler(-Vector3.forward * (CurrentDistanceBetweenMousePositions / SceneWidth) * 360);
         }
     }
 }

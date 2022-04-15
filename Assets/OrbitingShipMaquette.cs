@@ -26,10 +26,20 @@ public class OrbitingShipMaquette : MonoBehaviour
     private Vector3 PressPoint;
     private Quaternion StartRotation;
 
+    private MeshRenderer _interactFeedBack;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        try
+        {
+            _interactFeedBack = transform.GetChild(0).gameObject.GetComponent<MeshRenderer>();
+        }
+        catch
+        {
+            _interactFeedBack = null;
+        }
         SceneWidth = Screen.width;
 
         /*if (standartMode)
@@ -106,5 +116,16 @@ public class OrbitingShipMaquette : MonoBehaviour
             float CurrentDistanceBetweenMousePositions = (Input.mousePosition - PressPoint).x;
             transform.rotation = StartRotation * Quaternion.Euler(Vector3.up * (CurrentDistanceBetweenMousePositions / SceneWidth) * 360);
         }
+    }
+
+    private void OnMouseExit()
+    {
+        if (_interactFeedBack)
+            _interactFeedBack.enabled = false;
+    }
+    private void OnMouseEnter()
+    {
+        if (_interactFeedBack)
+            _interactFeedBack.enabled = true;
     }
 }

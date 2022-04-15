@@ -84,8 +84,6 @@ public class NewLoopManager : MonoBehaviour
                 Multiplier = 2f;
                 break;
         }
-
-        print(CurrentNebuleusePhase);
         //Quand est-ce que les Nébuleuses ont lieu
 
         for(int i = 0; i<= Nebuleuses.Length-1; i++) 
