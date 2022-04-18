@@ -31,7 +31,7 @@ public class ConsoleManager : MonoBehaviour
     {
         _sliderTransform = _slider.transform.parent.gameObject.GetComponent<RectTransform>();
         OnOff();
-        _slider.maxValue = (float)_cams[0].clip.length;
+        _slider.maxValue = (float)_cams[0].GetComponent<CamScreenScript>().Videos[1].length;
 
         GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().ReactedToEnergy += delegate ()
         {
@@ -49,14 +49,18 @@ public class ConsoleManager : MonoBehaviour
     }
     private void Update()
     {
-        for(int i = 0; i <= _cams.Length-1;i++)
+
+        for (int i = 0; i <= _cams.Length-1;i++)
         {
-            if(_cams[i].isPlaying)
+            if(_cams[i].isPlaying && _cams[i].clip != _cams[i].GetComponent<CamScreenScript>().Videos[0] && !currentModelCam)
             {
                 currentModelCam = _cams[i];
                 break;
             }
         }
+
+        if (currentModelCam && !currentModelCam.isPlaying)
+            currentModelCam = null;
         if (!_cams.Any(cam => cam.isPlaying))
             currentModelCam = null;
 
@@ -67,8 +71,17 @@ public class ConsoleManager : MonoBehaviour
             {
                 foreach (VideoPlayer cam in _cams)
                 {
-                    if (currentModelCam)
-                        cam.time = currentModelCam.time - 1;
+                    if (currentModelCam && cam.isPlaying)
+                    {
+                        if(cam.clip != cam.GetComponent<CamScreenScript>().Videos[0])
+                        {
+                            cam.playbackSpeed = 0;
+                            cam.time = currentModelCam.time - 1;
+                        }
+                        else
+                            cam.playbackSpeed = 1;
+
+                    }
                 }
                 if (currentModelCam)
                     _minimap.time = currentModelCam.time - 1;
@@ -145,8 +158,6 @@ public class ConsoleManager : MonoBehaviour
     public void RewindCam()
     {
         _isRewinding = true;
-        foreach (VideoPlayer cam in _cams)
-            cam.playbackSpeed = 0;
         _minimap.playbackSpeed = 0;
     }
     public void StopCam()
@@ -180,16 +191,19 @@ public class ConsoleManager : MonoBehaviour
 
     public void ChangeTime()
     {
+
         foreach (VideoPlayer cam in _cams)
         {
             if(!_isRewinding)
             {
-                cam.time = _slider.value;
+                if(cam.clip != cam.GetComponent<CamScreenScript>().Videos[0])
+                    cam.time = _slider.value;
                 _minimap.time = _slider.value;
             }
             else
             {
-                currentModelCam.time = _slider.value;
+                if(currentModelCam)
+                    currentModelCam.time = _slider.value;
             }
 
 
@@ -197,7 +211,6 @@ public class ConsoleManager : MonoBehaviour
                 cam.Play();
             if (_minimap.GetComponent<CamScreenScript>()._onOffButton.IsActivated)
                 _minimap.Play();
-
         }
 
     }

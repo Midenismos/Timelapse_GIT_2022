@@ -134,12 +134,15 @@ public class EnergyMetterScript : MonoBehaviour
 
             yield return new WaitForSeconds(1f);
         }
+        if (Energy < _maxEnergy)
+            StopCoroutine(co);
     }
 
     public void ResetEnergy()
     {
         if(Energy >= _maxEnergy)
         {
+            HowManyMachineActivated = 0;
             Energy = 0;
             ReactedToEnergyReset();
             StopCoroutine(co);

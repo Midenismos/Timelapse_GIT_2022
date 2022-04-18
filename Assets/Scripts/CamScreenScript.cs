@@ -14,7 +14,7 @@ public class CamScreenScript : MonoBehaviour
     [Header("0: Violet, 1: Sans influence, 2: Vert, 3: Bleu")]
     [Header("Si cette cam réagit aux nébuleuses, mettre les vidéo dans l'ordre")]
 
-    [SerializeField] private VideoClip[] _videos = new VideoClip[5];
+    [SerializeField] public VideoClip[] Videos = new VideoClip[5];
 
 
     public OnOffButton _onOffButton = null;
@@ -37,16 +37,16 @@ public class CamScreenScript : MonoBehaviour
             if (NebuleuseType == NebuleuseType.PURPLE1)
             {
                 if (WhichPurple == 1)
-                    player.clip = _videos[0];
+                    player.clip = Videos[0];
                 else
-                    player.clip = _videos[1];
+                    player.clip = Videos[1];
             }
             else if (NebuleuseType == NebuleuseType.PURPLE2)
             {
                 if (WhichPurple == 2)
-                    player.clip = _videos[0];
+                    player.clip = Videos[0];
                 else
-                    player.clip = _videos[1];
+                    player.clip = Videos[1];
             }
             /*else if (NebuleuseType == NebuleuseType.GREEN)
             {
@@ -63,16 +63,18 @@ public class CamScreenScript : MonoBehaviour
                     player.clip = _videos[1];
             }*/
             else if (NebuleuseType == NebuleuseType.YELLOW)
-                player.clip = _videos[1];
+                player.clip = Videos[1];
 
-            player.time = time;
+            /*if(player.clip = Videos[1])
+                player.time = time;*/
+            GameObject.Find("Console").GetComponent<ConsoleManager>().ChangeTime();
             if (!_onOffButton.IsActivated)
                 player.Stop();
         };
         if (WhichPurple == 1)
-            GetComponent<VideoPlayer>().clip = _videos[0];
+            GetComponent<VideoPlayer>().clip = Videos[0];
         else
-            GetComponent<VideoPlayer>().clip = _videos[1];
+            GetComponent<VideoPlayer>().clip = Videos[1];
 
         OnOff();
     }
