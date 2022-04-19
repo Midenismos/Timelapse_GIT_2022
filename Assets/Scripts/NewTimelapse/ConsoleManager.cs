@@ -29,6 +29,10 @@ public class ConsoleManager : MonoBehaviour
 
     private void Awake()
     {
+        GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().ReactedToEnergyReset += delegate ()
+        {
+            isActivated = true;
+        };
         _sliderTransform = _slider.transform.parent.gameObject.GetComponent<RectTransform>();
         OnOff();
         _slider.maxValue = (float)_cams[0].GetComponent<CamScreenScript>().Videos[1].length;
@@ -42,10 +46,7 @@ public class ConsoleManager : MonoBehaviour
             }
             isActivated = false;
         };
-        GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().ReactedToEnergyReset += delegate ()
-        {
-            isActivated = true;
-        };
+
     }
     private void Update()
     {

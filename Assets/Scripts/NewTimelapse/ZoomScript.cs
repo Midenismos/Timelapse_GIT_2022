@@ -46,6 +46,12 @@ public class ZoomScript : MonoBehaviour
         {
             _interactFeedBack = null;
         }
+
+        if(isCamera)
+        {
+            _originalPosition = transform.parent.position;
+            _originalRotation = transform.parent.rotation;
+        }
     }
 
     //Pour faire le double clic
@@ -145,11 +151,6 @@ public class ZoomScript : MonoBehaviour
             {
                 _originalPosition = transform.position;
                 _originalRotation = transform.rotation;
-            }
-            else
-            {
-                _originalPosition = transform.parent.position;
-                _originalRotation = transform.parent.rotation;
             }
 
 

@@ -17,16 +17,15 @@ public class EnergyMetterScript : MonoBehaviour
     [SerializeField] private float smooth;
 
     [SerializeField] private Slider _slider;
-    [SerializeField] private float _maxEnergy;
+    [SerializeField] public float MaxEnergy;
     [SerializeField] private float _baseDecreaseValue;
     private float _yellowNebuleuseMultiplier = 1;
     [SerializeField] private float _decreaseValuePerMachine = 0.5f;
     public int HowManyMachineActivated = 0;
     private float _decreaseValueWithSpeed = 0.2f;
-
-    [SerializeField] private GameObject ResetButton = null;
-
     private float _energy;
+
+    public BatteryScript CurrentBattery = null;
     public float Energy
     {
         get
@@ -36,11 +35,10 @@ public class EnergyMetterScript : MonoBehaviour
             if (value != _energy)
             {
                 _energy = value;
-                if(_energy >= _maxEnergy)
+                if(_energy <= 0)
                 {
                     if (ReactedToEnergy != null)
                         ReactedToEnergy();
-                    ResetButton.SetActive(true);
                 }
 
             }
@@ -51,7 +49,7 @@ public class EnergyMetterScript : MonoBehaviour
     public event ReactToEnergy ReactedToEnergy;
     public delegate void ReactToEnergyReset();
     public event ReactToEnergyReset ReactedToEnergyReset;
-    private Coroutine co = null;
+    public Coroutine co = null;
 
     private void Awake()
     {
@@ -64,24 +62,24 @@ public class EnergyMetterScript : MonoBehaviour
                 _yellowNebuleuseMultiplier = 1;
         };
 
-        co = StartCoroutine(DecreaseEnergy());
-
-
     }
     // Start is called before the first frame update
     void Start()
     {
-        _slider.maxValue = _maxEnergy;
+        _slider.maxValue = MaxEnergy;
         player = GameObject.Find("Player").GetComponent<PlayerAxisScript>();
         _currentRotation = _Rotations[player.IDCurrentAxis];
         _currentPosition = _Positions[player.IDCurrentAxis];
         HowManyMachineActivated = 0;
-        Energy = 0;
+        //Energy = 0;
+        //ReactedToEnergy();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (CurrentBattery)
+            Energy = CurrentBattery.Energy;
         _slider.value = Energy;
 
         if (Input.GetKeyDown("d") || Input.GetKeyDown("q"))
@@ -122,9 +120,10 @@ public class EnergyMetterScript : MonoBehaviour
     //Baisse la quantité d'energie en fonction de la présence de la Nébuleuse Jaunne, des machines et de la vitesse du vaisseau
     private IEnumerator DecreaseEnergy()
     {
-        while (Energy < _maxEnergy)
+        while (Energy > 0)
         {
-            Energy += _baseDecreaseValue * _yellowNebuleuseMultiplier + (_decreaseValuePerMachine * HowManyMachineActivated) +_decreaseValueWithSpeed;
+            if(CurrentBattery)
+                CurrentBattery.Energy -= _baseDecreaseValue * _yellowNebuleuseMultiplier + (_decreaseValuePerMachine * HowManyMachineActivated) +_decreaseValueWithSpeed;
             /*print("Energy =" + Energy);
             print("_baseDecreaseValue =" + _baseDecreaseValue);
             print("_yellowNebuleuseMultiplier =" + _yellowNebuleuseMultiplier);
@@ -134,13 +133,13 @@ public class EnergyMetterScript : MonoBehaviour
 
             yield return new WaitForSeconds(1f);
         }
-        if (Energy < _maxEnergy)
+        if (Energy <= 0)
             StopCoroutine(co);
     }
 
-    public void ResetEnergy()
+    /*public void ResetEnergy()
     {
-        if(Energy >= _maxEnergy)
+        if(Energy >= MaxEnergy)
         {
             HowManyMachineActivated = 0;
             Energy = 0;
@@ -149,7 +148,24 @@ public class EnergyMetterScript : MonoBehaviour
             co = StartCoroutine(DecreaseEnergy());
             ResetButton.SetActive(false);
         }
+    }*/
 
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Battery" && CurrentBattery == null)
+        {
+            HowManyMachineActivated = 0;
+            other.transform.SetParent(GameObject.Find("BatteryPosition").transform, true);
+            other.GetComponent<BatteryScript>().isPluged = true;
+            other.GetComponent<DragObjects>().IsDragable = false;
+            other.GetComponent<Rigidbody>().isKinematic = true;
+            other.transform.position = GameObject.Find("BatteryPosition").transform.position;
+            other.transform.rotation = GameObject.Find("BatteryPosition").transform.rotation;
+            CurrentBattery = other.GetComponent<BatteryScript>();
+            Energy = CurrentBattery.Energy;
+            ReactedToEnergyReset();
+            co = StartCoroutine(DecreaseEnergy());
 
+        }
     }
 }

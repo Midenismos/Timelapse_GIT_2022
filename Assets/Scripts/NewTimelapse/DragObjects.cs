@@ -51,7 +51,9 @@ public class DragObjects : MonoBehaviour
             else
             {
                 GetComponent<DragObjects>().IsDragable = true;
-                if (tag == "PanelImage")
+                if (tag == "Battery")
+                    transform.SetParent(null, true);
+                else if (tag == "PanelImage")
                     transform.SetParent(GameObject.Find("TI").transform, true);
 
             }
@@ -97,7 +99,8 @@ public class DragObjects : MonoBehaviour
                 if (GetComponent<ZoomScript>())
                     GetComponent<ZoomScript>().enabled = true;
 
-                if(Is3D && tag != "Cam")
+
+                if(Is3D && tag != "Cam" && tag != "Battery")
                 {
                     float planeY = -29.5f;
                     Transform draggingObject = transform;
@@ -111,7 +114,13 @@ public class DragObjects : MonoBehaviour
                         draggingObject.position = new Vector3(ray.GetPoint(Mathf.Clamp(distance, 3, 4)).x, -29.5f, ray.GetPoint(Mathf.Clamp(distance, 3, 4)).z); // distance along the ray
                 }
                 else
-                    transform.position = GetMouseWorldPos() + mOffset; 
+                {
+                    if (tag == "Battery")
+                        transform.position = new Vector3(GetMouseWorldPos().x + mOffset.x, GetMouseWorldPos().y + mOffset.y, -74f);
+                    else
+                        transform.position = GetMouseWorldPos() + mOffset;
+
+                }
             }
         }
     }
@@ -163,7 +172,7 @@ public class DragObjects : MonoBehaviour
 
     private void Update()
     {
-        if(transform.position.y <= -31 && Is3D)
+        if(transform.position.y <= -31 && Is3D && tag != "Battery")
         {
             transform.position = GameObject.Find("SpittingPoint").transform.position;
             GetComponent<Rigidbody>().velocity = Vector3.zero;

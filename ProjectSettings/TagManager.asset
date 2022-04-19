@@ -17,6 +17,7 @@ TagManager:
   - Written
   - Minimap
   - ResetEnergy
+  - Battery
   layers:
   - Default
   - TransparentFX
