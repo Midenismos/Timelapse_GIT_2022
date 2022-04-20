@@ -44,9 +44,7 @@ public class DragObjects : MonoBehaviour
             if (GetComponent<ZoomScript>())
             {
                 if (!GetComponent<ZoomScript>().HasZoomed)
-                {
                     GetComponent<DragObjects>().IsDragable = true;
-                }
             }
             else
             {
@@ -60,8 +58,10 @@ public class DragObjects : MonoBehaviour
 
             if (IsDragable)
             {
-                if (GetComponent<Rigidbody>())
+                if (GetComponent<Rigidbody>() && tag != "Battery" && tag != "Written" && tag != "Tape")
                     GetComponent<Rigidbody>().isKinematic = true;
+                else if (tag == "Battery" || tag == "Written" || tag == "Tape")
+                    GetComponent<Rigidbody>().isKinematic = false;
                 mZCoord = GameObject.Find("Camera").GetComponent<Camera>().WorldToScreenPoint(gameObject.transform.position).z;
                 mOffset = gameObject.transform.position - GetMouseWorldPos();
             }
@@ -111,12 +111,13 @@ public class DragObjects : MonoBehaviour
 
                     float distance; // the distance from the ray origin to the ray intersection of the plane
                     if (plane.Raycast(ray, out distance))
-                        draggingObject.position = new Vector3(ray.GetPoint(Mathf.Clamp(distance, 3, 4)).x, -29.5f, ray.GetPoint(Mathf.Clamp(distance, 3, 4)).z); // distance along the ray
+                        draggingObject.GetComponent<Rigidbody>().velocity = (new Vector3(ray.GetPoint(Mathf.Clamp(distance, 3, 6)).x, -29.5f, ray.GetPoint(Mathf.Clamp(distance, 3, 6)).z) - draggingObject.transform.position) * 20; // distance along the ray
                 }
                 else
                 {
                     if (tag == "Battery")
-                        transform.position = new Vector3(GetMouseWorldPos().x + mOffset.x, GetMouseWorldPos().y + mOffset.y, -74f);
+                        GetComponent<Rigidbody>().velocity = (GetMouseWorldPos() + mOffset - transform.position) * 20;
+                    //GetComponent<Rigidbody>().position = new Vector3(GetMouseWorldPos().x + mOffset.x, GetMouseWorldPos().y + mOffset.y, -74f); 
                     else
                         transform.position = GetMouseWorldPos() + mOffset;
 
@@ -144,13 +145,20 @@ public class DragObjects : MonoBehaviour
 
     private void OnMouseExit()
     {
-        if (_interactFeedBack)
-            _interactFeedBack.enabled = false;
+        if(GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == _axisID)
+        {
+            if (_interactFeedBack)
+                _interactFeedBack.enabled = false;
+        }
+
     }
     private void OnMouseEnter()
     {
-        if(_interactFeedBack)
-            _interactFeedBack.enabled = true;
+        if (GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == _axisID)
+        {
+            if (_interactFeedBack)
+                _interactFeedBack.enabled = true;
+        }
     }
 
     IEnumerator SyntheticDrag()

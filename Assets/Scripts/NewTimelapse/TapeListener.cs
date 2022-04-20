@@ -9,9 +9,11 @@ public class TapeListener : MonoBehaviour
     //[SerializeField]private Slider _slider = null;
     [SerializeField] private bool isActivated = true;
     public TapeScript CurrentTape = null;
+    private bool isAvailable = true;
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Tape")
+        if (other.tag == "Tape" && isAvailable)
         {
             if(GetComponent<AudioSource>().clip == null)
             {
@@ -31,6 +33,10 @@ public class TapeListener : MonoBehaviour
                 }
             }
         }
+    }
+    public void StartCooldown()
+    {
+        StartCoroutine(Cooldown());
     }
 
     private void Awake()
@@ -56,5 +62,12 @@ public class TapeListener : MonoBehaviour
         GetComponent<AudioSource>().clip = CurrentTape.CurrentSound;
         GetComponent<AudioSource>().Play();
         GetComponent<AudioSource>().time = time;
+    }
+
+    IEnumerator Cooldown()
+    {
+        isAvailable = false;
+        yield return new WaitForSeconds(1f);
+        isAvailable = true;
     }
 }

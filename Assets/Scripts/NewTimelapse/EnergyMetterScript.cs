@@ -24,6 +24,7 @@ public class EnergyMetterScript : MonoBehaviour
     public int HowManyMachineActivated = 0;
     private float _decreaseValueWithSpeed = 0.2f;
     private float _energy;
+    private bool isAvailable = true;
 
     public BatteryScript CurrentBattery = null;
     public float Energy
@@ -152,7 +153,7 @@ public class EnergyMetterScript : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Battery" && CurrentBattery == null)
+        if (other.gameObject.tag == "Battery" && CurrentBattery == null && isAvailable)
         {
             HowManyMachineActivated = 0;
             other.transform.SetParent(GameObject.Find("BatteryPosition").transform, true);
@@ -167,5 +168,17 @@ public class EnergyMetterScript : MonoBehaviour
             co = StartCoroutine(DecreaseEnergy());
 
         }
+    }
+
+
+    IEnumerator Cooldown()
+    {
+        isAvailable = false;
+        yield return new WaitForSeconds(1f);
+        isAvailable = true;
+    }
+    public void StartCooldown()
+    {
+        StartCoroutine(Cooldown());
     }
 }
