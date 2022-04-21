@@ -3143,7 +3143,7 @@ PrefabInstance:
     - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -53.5
+      value: -53.35
       objectReference: {fileID: 0}
     - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
@@ -4002,6 +4002,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
+      propertyPath: m_fontSize
+      value: 4.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
       propertyPath: m_margin.x
       value: 0.22920108
       objectReference: {fileID: 0}
@@ -4009,19 +4014,24 @@ PrefabInstance:
         type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 5b932b2e4af544f43b0ee9b50e33e25f,
+      objectReference: {fileID: 11400000, guid: 6abfd85b468a01a48978d449e00d8706,
         type: 2}
+    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 4.4
+      objectReference: {fileID: 0}
     - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 8971846431161349768, guid: 5b932b2e4af544f43b0ee9b50e33e25f,
+      objectReference: {fileID: -4961310600536069339, guid: 6abfd85b468a01a48978d449e00d8706,
         type: 2}
     - target: {fileID: 2428044788833346526, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 8971846431161349768, guid: 5b932b2e4af544f43b0ee9b50e33e25f,
+      objectReference: {fileID: -4961310600536069339, guid: 6abfd85b468a01a48978d449e00d8706,
         type: 2}
     - target: {fileID: 2428044789400484557, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
@@ -10678,6 +10688,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
+      propertyPath: m_fontSize
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
       propertyPath: m_margin.x
       value: 0.27167082
       objectReference: {fileID: 0}
@@ -10685,19 +10700,24 @@ PrefabInstance:
         type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 5b932b2e4af544f43b0ee9b50e33e25f,
+      objectReference: {fileID: 11400000, guid: 6abfd85b468a01a48978d449e00d8706,
         type: 2}
+    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 8971846431161349768, guid: 5b932b2e4af544f43b0ee9b50e33e25f,
+      objectReference: {fileID: -4961310600536069339, guid: 6abfd85b468a01a48978d449e00d8706,
         type: 2}
     - target: {fileID: 2428044788833346526, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 8971846431161349768, guid: 5b932b2e4af544f43b0ee9b50e33e25f,
+      objectReference: {fileID: -4961310600536069339, guid: 6abfd85b468a01a48978d449e00d8706,
         type: 2}
     - target: {fileID: 2428044789400484557, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
@@ -11376,6 +11396,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
+      propertyPath: m_fontSize
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
       propertyPath: m_margin.x
       value: 0.23188925
       objectReference: {fileID: 0}
@@ -11383,19 +11408,24 @@ PrefabInstance:
         type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 5b932b2e4af544f43b0ee9b50e33e25f,
+      objectReference: {fileID: 11400000, guid: 6abfd85b468a01a48978d449e00d8706,
         type: 2}
+    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 8971846431161349768, guid: 5b932b2e4af544f43b0ee9b50e33e25f,
+      objectReference: {fileID: -4961310600536069339, guid: 6abfd85b468a01a48978d449e00d8706,
         type: 2}
     - target: {fileID: 2428044788833346526, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 8971846431161349768, guid: 5b932b2e4af544f43b0ee9b50e33e25f,
+      objectReference: {fileID: -4961310600536069339, guid: 6abfd85b468a01a48978d449e00d8706,
         type: 2}
     - target: {fileID: 2428044789400484557, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
@@ -17321,7 +17351,7 @@ PrefabInstance:
     - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -53.39
+      value: -53.35
       objectReference: {fileID: 0}
     - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
@@ -17584,7 +17614,7 @@ PrefabInstance:
     - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -53.34
+      value: -53.35
       objectReference: {fileID: 0}
     - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
@@ -19200,6 +19230,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
+      propertyPath: m_fontSize
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
       propertyPath: m_margin.x
       value: 0.23719811
       objectReference: {fileID: 0}
@@ -19207,19 +19242,24 @@ PrefabInstance:
         type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 5b932b2e4af544f43b0ee9b50e33e25f,
+      objectReference: {fileID: 11400000, guid: 6abfd85b468a01a48978d449e00d8706,
         type: 2}
+    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 8971846431161349768, guid: 5b932b2e4af544f43b0ee9b50e33e25f,
+      objectReference: {fileID: -4961310600536069339, guid: 6abfd85b468a01a48978d449e00d8706,
         type: 2}
     - target: {fileID: 2428044788833346526, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 8971846431161349768, guid: 5b932b2e4af544f43b0ee9b50e33e25f,
+      objectReference: {fileID: -4961310600536069339, guid: 6abfd85b468a01a48978d449e00d8706,
         type: 2}
     - target: {fileID: 2428044789400484557, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
@@ -20580,7 +20620,7 @@ PrefabInstance:
     - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -53.45
+      value: -53.35
       objectReference: {fileID: 0}
     - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
@@ -24623,12 +24663,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: d0cb01405a0e42f4d96e8ab2596f603d,
-        type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 2048744470006308764, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
@@ -25084,7 +25123,7 @@ PrefabInstance:
     - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -53.43
+      value: -53.35
       objectReference: {fileID: 0}
     - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
@@ -29154,22 +29193,22 @@ PrefabInstance:
     - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_text
-      value: "                                         Rapport n\xB02 \n\n  Rapport
-        r\xE9dig\xE9 par : Marcus Brown     Date : 2 septembre 2246\n\r\n  Sujet
-        : Mort de William Hartley \xE0 13H15\r\n\r\nWilliam a \xE9t\xE9 victime du
-        ph\xE9nom\xE8ne que nous appelons \u201Ccristallisation\u201D . Des cristaux
-        sont sortis de diff\xE9rentes parties de sa t\xEAte : les yeux, la bouche,
-        les oreilles\u2026 Le ph\xE9nom\xE8ne s\u2019est ensuite r\xE9pandu sur une
-        grande partie de son corps : les bras, les jambes, le ventre\u2026 Son corps
-        a \xE9t\xE9 plac\xE9 dans la section m\xE9dicale.\r\n\r\nPuisque William
-        a \xE9t\xE9 la seule victime de la cristallisation jusqu\u2019\xE0 pr\xE9sent,
-        il est facile de comprendre la cause de ce ph\xE9nom\xE8ne. Il a d\xFB s\u2019injecter
-        en cachette plusieurs seringues contenant le produit des cristaux, d\xE9passant
-        ainsi le dosage qu\u2019il avait initialement re\xE7u durant l\u2019exp\xE9rience
-        du 27 juillet.\r\n\r\n\xC0 pr\xE9sent, nous allons nous r\xE9unir pour discuter
-        de cet \xE9v\xE9nement. J\u2019en profiterai pour faire part \xE0 l\u2019\xE9quipage
-        de mes toutes derni\xE8res d\xE9couvertes sur les cristaux, des d\xE9couvertes
-        qui remettent tout en cause.\r"
+      value: "                                         Rapport n\xB02 \n\nRapport
+        r\xE9dig\xE9 par : Marcus Brown     Date : 2 septembre 2246\n\r\nSujet :
+        Mort de William Hartley \xE0 13H15\r\n\r\nWilliam a \xE9t\xE9 victime du
+        ph\xE9nom\xE8ne que nous appelons \u201Ccristallisation\u201D alors qu'il
+        se trouvait dans sa chambre. Des cristaux sont sortis de diff\xE9rentes parties
+        de sa t\xEAte : les yeux, la bouche, les oreilles\u2026 Le ph\xE9nom\xE8ne
+        s\u2019est ensuite r\xE9pandu sur une grande partie de son corps : les bras,
+        les jambes, le ventre\u2026\n\r\nPuisque William a \xE9t\xE9 la seule victime
+        de la cristallisation jusqu\u2019\xE0 pr\xE9sent, il est facile de comprendre
+        la cause de ce ph\xE9nom\xE8ne. Il a d\xFB s\u2019injecter en cachette plusieurs
+        seringues contenant le produit des cristaux, d\xE9passant ainsi le dosage
+        qu\u2019il avait initialement re\xE7u durant l\u2019exp\xE9rience du 27 juillet.\r\n\r\n\xC0
+        pr\xE9sent, nous allons nous r\xE9unir pour discuter de cet \xE9v\xE9nement.
+        J\u2019en profiterai pour faire part \xE0 l\u2019\xE9quipage de mes toutes
+        derni\xE8res d\xE9couvertes sur les cristaux, des d\xE9couvertes qui remettent
+        tout en cause.\r"
       objectReference: {fileID: 0}
     - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
@@ -29226,7 +29265,7 @@ PrefabInstance:
     - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -55.733
+      value: -55.56
       objectReference: {fileID: 0}
     - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
@@ -35742,17 +35781,16 @@ PrefabInstance:
       propertyPath: m_text
       value: "                                     Message inconnu\n\nSalut.\r\nJ\u2019ai
         h\xE9sit\xE9 \xE0 t\u2019en parler, mais au dernier moment, j\u2019ai pr\xE9f\xE9r\xE9
-        te laisser ce message. S\u2019il te pla\xEEt, ne tarde pas \xE0 t\u2019en
-        d\xE9barrasser apr\xE8s l\u2019avoir lu.\r\n\nJe voulais te dire que ta mission
-        est des plus importantes. Pas seulement pour la Station m\xE8re, mais aussi
-        et surtout pour toi. J\u2019ai entendu des discussions qui parlaient de toi
-        et j\u2019ai vite compris que tu \xE9tais dans la ligne de mire de plusieurs
-        hauts grad\xE9s. Je pense qu\u2019ils t\u2019ont confi\xE9 cette mission
-        pour que tu te plantes, ce qui leur donnera une excuse pour te renvoyer car
-        de toute \xE9vidence, ils ne sont pas satisfaits de ton travail.\r\n\nLoin
-        de moi l\u2019id\xE9e de vouloir te mettre la pression, mais je tenais \xE0
-        te pr\xE9venir. Pense \xE0 ta famille et je suis certain que \xE7a te donnera
-        la motivation n\xE9cessaire pour accomplir ta mission. Bonne chance.\r"
+        te laisser ce message.\n\nJe voulais te dire que ta mission est des plus
+        importantes. Pas seulement pour la Station m\xE8re, mais aussi et surtout
+        pour toi. J\u2019ai entendu des discussions qui parlaient de toi et j\u2019ai
+        vite compris que tu \xE9tais dans la ligne de mire de plusieurs dirigeants.
+        Je pense qu\u2019ils t\u2019ont confi\xE9 cette mission pour que tu te plantes,
+        ce qui leur donnera une excuse pour te renvoyer car de toute \xE9vidence,
+        ils ne sont pas satisfaits de ton travail.\r\n\nLoin de moi l\u2019id\xE9e
+        de vouloir te mettre la pression, mais je tenais \xE0 te pr\xE9venir. Pense
+        \xE0 ta famille et je suis certain que \xE7a te donnera la motivation n\xE9cessaire
+        pour accomplir ta mission. Bonne chance.\r"
       objectReference: {fileID: 0}
     - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
@@ -43374,6 +43412,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
+      propertyPath: m_fontSize
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
       propertyPath: m_margin.x
       value: 0.33517313
       objectReference: {fileID: 0}
@@ -43381,19 +43424,24 @@ PrefabInstance:
         type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 5b932b2e4af544f43b0ee9b50e33e25f,
+      objectReference: {fileID: 11400000, guid: 6abfd85b468a01a48978d449e00d8706,
         type: 2}
+    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 8971846431161349768, guid: 5b932b2e4af544f43b0ee9b50e33e25f,
+      objectReference: {fileID: -4961310600536069339, guid: 6abfd85b468a01a48978d449e00d8706,
         type: 2}
     - target: {fileID: 2428044788833346526, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 8971846431161349768, guid: 5b932b2e4af544f43b0ee9b50e33e25f,
+      objectReference: {fileID: -4961310600536069339, guid: 6abfd85b468a01a48978d449e00d8706,
         type: 2}
     - target: {fileID: 2428044789400484557, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
