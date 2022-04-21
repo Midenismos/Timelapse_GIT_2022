@@ -17,6 +17,7 @@ public class EnergyMetterScript : MonoBehaviour
     [SerializeField] private float smooth;
 
     [SerializeField] private Slider _slider;
+    [SerializeField] private Image _sliderImage;
     [SerializeField] public float MaxEnergy;
     [SerializeField] private float _baseDecreaseValue;
     private float _yellowNebuleuseMultiplier = 1;
@@ -40,6 +41,7 @@ public class EnergyMetterScript : MonoBehaviour
                 {
                     if (ReactedToEnergy != null)
                         ReactedToEnergy();
+                    _sliderImage.enabled = false;
                 }
 
             }
@@ -80,7 +82,11 @@ public class EnergyMetterScript : MonoBehaviour
     void Update()
     {
         if (CurrentBattery)
+        {
+            CurrentBattery.transform.position = GameObject.Find("BatteryPosition").transform.position;
+            CurrentBattery.transform.rotation = GameObject.Find("BatteryPosition").transform.rotation;
             Energy = CurrentBattery.Energy;
+        }
         _slider.value = Energy;
 
         if (Input.GetKeyDown("d") || Input.GetKeyDown("q"))
@@ -153,19 +159,17 @@ public class EnergyMetterScript : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Battery" && CurrentBattery == null && isAvailable)
+        if (other.gameObject.tag == "Battery" && CurrentBattery == null && isAvailable && other.GetComponent<BatteryScript>().Energy > 0)
         {
             HowManyMachineActivated = 0;
-            other.transform.SetParent(GameObject.Find("BatteryPosition").transform, true);
             other.GetComponent<BatteryScript>().isPluged = true;
             other.GetComponent<DragObjects>().IsDragable = false;
             other.GetComponent<Rigidbody>().isKinematic = true;
-            other.transform.position = GameObject.Find("BatteryPosition").transform.position;
-            other.transform.rotation = GameObject.Find("BatteryPosition").transform.rotation;
             CurrentBattery = other.GetComponent<BatteryScript>();
             Energy = CurrentBattery.Energy;
             ReactedToEnergyReset();
             co = StartCoroutine(DecreaseEnergy());
+            _sliderImage.enabled = true;
 
         }
     }

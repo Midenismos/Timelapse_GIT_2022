@@ -8,7 +8,25 @@ public class BatteryScript : MonoBehaviour
     private float _multiplier = 0;
     public bool isPluged = false;
     public bool isInBox = false;
-    public float Energy = 0;
+    [SerializeField] private Image _sliderImage;
+
+    public float Energy
+    {
+        get
+        { return _energy; }
+        set
+        {
+            if (value != _energy)
+            {
+                _energy = value;
+                if (_energy <= 0)
+                    _sliderImage.enabled = false;
+                else
+                    _sliderImage.enabled = true;
+            }
+        }
+    }
+    [SerializeField]private float _energy;
     private void Awake()
     {
         _slider.maxValue = GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().MaxEnergy;
