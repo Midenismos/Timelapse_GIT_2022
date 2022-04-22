@@ -4,19 +4,23 @@ using UnityEngine;
 
 public class RotateWithTimeLoop : MonoBehaviour
 {
-    private TimeManager timeManager = null;
+    private NewLoopManager timeManager = null;
+
+    private float offset = 0;
+
     // Start is called before the first frame update
     void Start()
     {
-        timeManager = FindObjectOfType<TimeManager>();
-        if (!timeManager) Debug.LogError("RotateWithTimeLoop component needs a TimeManger in scene to function");
+        timeManager = FindObjectOfType<NewLoopManager>();
+        if (!timeManager) Debug.LogError("RotateWithTimeLoop component needs a NewLoopManager in scene to function");
+        offset = transform.eulerAngles.y;
     }
 
     private void Update()
     {
         if (timeManager)
         {
-            transform.rotation = Quaternion.Euler(0, timeManager.currentLoopTime / timeManager.LoopDuration * -360f, 0);
+            transform.rotation = Quaternion.Euler(0, timeManager.CurrentLoopTime / timeManager.LoopDuration * -360f + offset, 0);
         }
     }
 }

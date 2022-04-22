@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.PostProcessing;
 
-public class NebuleuseLight : MonoBehaviour
+public class NebulaPostProcessing : MonoBehaviour
 {
     private NewLoopManager _loopManager = null;
     public float _colorLerp = 0;
@@ -11,14 +12,17 @@ public class NebuleuseLight : MonoBehaviour
     public bool _isLerping = false;
     private Color _colorA;
     private Color _colorB;
-    private Light _light;
 
     [SerializeField] private Color yellowNebulaColor = Color.yellow;
     [SerializeField] private Color purpleNebulaColor = Color.magenta;
+    [SerializeField] private PostProcessVolume volume = null;
+
+    private ChromaticAberration chromaticAberration;
+    private ColorGrading colorGrading;
 
     private void Awake()
     {
-        _light = GetComponent<Light>();
+
         _loopManager = GameObject.Find("LoopManager").GetComponent<NewLoopManager>();
         _loopManager.ReactedToNebuleuse += delegate (NebuleuseType NebuleuseType)
         {
@@ -37,8 +41,16 @@ public class NebuleuseLight : MonoBehaviour
             _isLerping = true;
 
         };
-        _light.color = purpleNebulaColor;
+        //volume.profile.TryGetSettings(out colorGrading);
+        //colorGrading.colorFilter.value = Color.Lerp(_colorA, _colorB, _colorLerp);
 
+    }
+
+    private void Start()
+    {
+        volume.profile.TryGetSettings(out colorGrading);
+        Debug.Log(_colorB);
+        colorGrading.colorFilter.value = purpleNebulaColor;
     }
 
     private void Update()
@@ -52,7 +64,9 @@ public class NebuleuseLight : MonoBehaviour
                 _isLerping = false;
             }
 
-            _light.color = Color.Lerp(_colorA, _colorB, _colorLerp);
+            volume.profile.TryGetSettings(out colorGrading);
+            colorGrading.colorFilter.value = Color.Lerp(_colorA, _colorB, _colorLerp);
+            //_light.color = Color.Lerp(_colorA, _colorB, _colorLerp);
             _colorLerp = 1f - _LerpCooldown;
         }
     }
