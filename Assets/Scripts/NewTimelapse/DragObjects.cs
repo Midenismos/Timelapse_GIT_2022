@@ -116,7 +116,11 @@ public class DragObjects : MonoBehaviour
                 else
                 {
                     if (tag == "Battery")
-                        GetComponent<Rigidbody>().velocity = (GetMouseWorldPos() + mOffset - transform.position) * 20;
+                    {
+                        Rigidbody r = GetComponent<Rigidbody>();
+                        r.velocity = (GetMouseWorldPos() + mOffset - transform.position) * 20;
+                        transform.position = new Vector3(transform.position.x, transform.position.y, -74f);
+                    }
                     //GetComponent<Rigidbody>().position = new Vector3(GetMouseWorldPos().x + mOffset.x, GetMouseWorldPos().y + mOffset.y, -74f); 
                     else
                         transform.position = GetMouseWorldPos() + mOffset;
