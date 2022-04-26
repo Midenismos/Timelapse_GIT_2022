@@ -159,7 +159,7 @@ public class EnergyMetterScript : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Battery" && CurrentBattery == null && isAvailable && other.GetComponent<BatteryScript>().Energy > 0)
+        if (other.gameObject.tag == "Battery" && CurrentBattery == null && isAvailable)
         {
             HowManyMachineActivated = 0;
             other.GetComponent<BatteryScript>().isPluged = true;
@@ -167,9 +167,14 @@ public class EnergyMetterScript : MonoBehaviour
             other.GetComponent<Rigidbody>().isKinematic = true;
             CurrentBattery = other.GetComponent<BatteryScript>();
             Energy = CurrentBattery.Energy;
-            ReactedToEnergyReset();
-            co = StartCoroutine(DecreaseEnergy());
-            _sliderImage.enabled = true;
+            if(CurrentBattery.Energy>0)
+            {
+                ReactedToEnergyReset();
+                co = StartCoroutine(DecreaseEnergy());
+                _sliderImage.enabled = true;
+            }
+
+
 
         }
     }

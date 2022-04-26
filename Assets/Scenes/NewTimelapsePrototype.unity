@@ -74375,7 +74375,7 @@ MonoBehaviour:
   isPluged: 0
   isInBox: 0
   _sliderImage: {fileID: 1823166193}
-  _energy: 50
+  _energy: 100
 --- !u!1 &1884530691
 GameObject:
   m_ObjectHideFlags: 0
@@ -81621,7 +81621,7 @@ MonoBehaviour:
   isPluged: 1
   isInBox: 0
   _sliderImage: {fileID: 885620864}
-  _energy: 50
+  _energy: 100
 --- !u!114 &2128020572
 MonoBehaviour:
   m_ObjectHideFlags: 0
