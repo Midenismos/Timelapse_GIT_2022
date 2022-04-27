@@ -31,6 +31,7 @@ public class PanelBasketScript : MonoBehaviour
                         image.GetComponent<Image>().sprite = other.GetComponent<PanelImageData>().Image;
                         image.transform.SetParent(_panels[2].transform, false);
                         image.GetComponent<PanelTag>().ImageTag = "cam";
+                        image.GetComponent<PanelTag>().IsCorrupted = GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().Energy <= 0 ? true : false;
                     }
                     if (other.tag == "Written")
                     {
@@ -38,12 +39,14 @@ public class PanelBasketScript : MonoBehaviour
                         image.GetComponent<Image>().sprite = other.GetComponent<PanelImageData>().Image;
                         image.transform.SetParent(_panels[1].transform, false);
                         image.GetComponent<PanelTag>().ImageTag = "written";
+                        image.GetComponent<PanelTag>().IsCorrupted = GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().Energy <= 0 ? true : false;
                     }
                     else if (other.tag == "Tape")
                     {
                         image = Instantiate(_panelImageTape, this.transform);
                         image.transform.GetChild(0).GetComponent<TMP_Text>().text = other.GetComponent<PanelImageData>().TMText.text;
                         image.transform.SetParent(_panels[0].transform, false);
+                        image.GetComponent<PanelTag>().IsCorrupted = GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().Energy <= 0 ? true : false;
                     }
                     else if (other.tag == "Minimap")
                     {
@@ -51,7 +54,11 @@ public class PanelBasketScript : MonoBehaviour
                         image.GetComponent<Image>().sprite = other.GetComponent<PanelImageData>().Image;
                         image.transform.SetParent(_panels[3].transform, false);
                         image.GetComponent<PanelTag>().ImageTag = "map";
+                        image.GetComponent<PanelTag>().IsCorrupted = GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().Energy <= 0 ? true : false;
                     }
+
+                    
+
                     other.transform.SetParent(this.transform, false);
                     other.transform.position = GameObject.Find("start").transform.position;
                     other.GetComponent<DragObjects>().IsDragable = false;
@@ -83,9 +90,10 @@ public class PanelBasketScript : MonoBehaviour
                     scannedItem.GetComponent<DragObjects>().IsDragable = true;
                     scannedItem.GetComponent<ZoomScript>().IsZoomable = true;
                     scannedItem.GetComponent<Rigidbody>().isKinematic = false;
-                    scannedItem.GetComponent<Rigidbody>().AddForce((GameObject.Find("start").transform.forward + GameObject.Find("start").transform.up) * 200);
+                    scannedItem.GetComponent<Rigidbody>().velocity = new Vector3(0,0,0);
                     scannedItem.transform.SetParent(null, false);
                     scannedItem.transform.position = GameObject.Find("start").transform.position;
+                    scannedItem.GetComponent<Rigidbody>().AddForce((GameObject.Find("start").transform.forward + GameObject.Find("start").transform.up) * 200);
                     scannedItem = null;
                 }
                 else

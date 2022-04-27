@@ -48,10 +48,7 @@ public class TapeScript : MonoBehaviour
                     break;
             }
             if (GameObject.Find("Radio").GetComponent<TapeListener>().CurrentTape == this)
-            {
                 GameObject.Find("Radio").GetComponent<TapeListener>().ChangeSound();
-                print(CurrentSound);
-            }
         };
 
         if (sounds[1] != null)

@@ -17,13 +17,7 @@ public class BatteryScript : MonoBehaviour
         set
         {
             if (value != _energy)
-            {
                 _energy = value;
-                if (_energy <= 0)
-                    _sliderImage.enabled = false;
-                else
-                    _sliderImage.enabled = true;
-            }
         }
     }
     [SerializeField]private float _energy;
@@ -71,6 +65,15 @@ public class BatteryScript : MonoBehaviour
     {
         if (!isPluged && !isInBox)
             Energy = Mathf.Clamp(Energy + _multiplier * 0.01f, 0, 100) ;
+        
+        if (isPluged)
+            _sliderImage.enabled = false;
+        else
+        {
+            if(Energy >0 )
+                _sliderImage.enabled = true;
+        }
+
         _slider.value = Energy;
     }
 }
