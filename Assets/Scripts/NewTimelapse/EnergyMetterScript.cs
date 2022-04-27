@@ -20,7 +20,6 @@ public class EnergyMetterScript : MonoBehaviour
     [SerializeField] private Image _sliderImage;
     [SerializeField] public float MaxEnergy;
     [SerializeField] private float _baseDecreaseValue;
-    private float _yellowNebuleuseMultiplier = 1;
     [SerializeField] private float _decreaseValuePerMachine = 0.5f;
     public int HowManyMachineActivated = 0;
     private float _decreaseValueWithSpeed = 0.2f;
@@ -54,18 +53,6 @@ public class EnergyMetterScript : MonoBehaviour
     public event ReactToEnergyReset ReactedToEnergyReset;
     public Coroutine co = null;
 
-    private void Awake()
-    {
-        //Accélére la perte d'énergie en cas de Nebuleuse Jaune.
-        GameObject.Find("LoopManager").GetComponent<NewLoopManager>().ReactedToNebuleuse += delegate (NebuleuseType NebuleuseType)
-        {
-            if (NebuleuseType == NebuleuseType.YELLOW)
-                _yellowNebuleuseMultiplier = 5;
-            else
-                _yellowNebuleuseMultiplier = 1;
-        };
-
-    }
     // Start is called before the first frame update
     void Start()
     {
@@ -130,7 +117,7 @@ public class EnergyMetterScript : MonoBehaviour
         while (Energy > 0)
         {
             if(CurrentBattery)
-                CurrentBattery.Energy -= _baseDecreaseValue * _yellowNebuleuseMultiplier + (_decreaseValuePerMachine * HowManyMachineActivated) +_decreaseValueWithSpeed;
+                CurrentBattery.Energy -= _baseDecreaseValue + (_decreaseValuePerMachine * HowManyMachineActivated) +_decreaseValueWithSpeed;
             /*print("Energy =" + Energy);
             print("_baseDecreaseValue =" + _baseDecreaseValue);
             print("_yellowNebuleuseMultiplier =" + _yellowNebuleuseMultiplier);

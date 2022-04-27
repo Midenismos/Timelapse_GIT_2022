@@ -68,7 +68,6 @@ public class TapeScript : MonoBehaviour
             Radio.Stop();
             Radio.GetComponent<TapeListener>().CurrentTape = null;
             Radio.clip = null;
-            GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().HowManyMachineActivated -= 1;
             Radio.GetComponent<TapeListener>().StartCooldown();
         }
         clicked = true;

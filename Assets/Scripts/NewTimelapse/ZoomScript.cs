@@ -91,6 +91,8 @@ public class ZoomScript : MonoBehaviour
                     _isLerping = true;
                     AxisScript.HasItem = true;
                     AxisScript.CurrentHoldItem = this.gameObject;
+                    if( tag == "Written")
+                        AxisScript.PutConsoleDown();
 
                 }
                 /*else
@@ -233,6 +235,7 @@ public class ZoomScript : MonoBehaviour
         {
             currentItem.posB.y = -30;
             currentItem.posB.z = Mathf.Clamp(currentItem.posB.z, -55, Mathf.Infinity);
+            AxisScript.PutConsoleUp();
         }
         else if (currentItem.gameObject.CompareTag("Tape"))
         {
@@ -249,7 +252,7 @@ public class ZoomScript : MonoBehaviour
         currentItem.ZoomPos.GetComponent<ZoomPoint>().IsEmpty = true;
         currentItem._isLerping = true;
         AxisScript.HasItem = false;
-        AxisScript.CurrentHoldItem = null;
+        AxisScript.CurrentHoldItem = null;            
     }
 
 

@@ -6,7 +6,7 @@ public class TIDeleteScript : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Entry")
+        if (other.tag == "Entry" || other.tag == "PanelImage")
             Destroy(other.gameObject);
     }
 }

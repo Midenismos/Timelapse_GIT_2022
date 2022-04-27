@@ -134,4 +134,28 @@ public class PlayerAxisScript : MonoBehaviour
             _moveLerp = 1f - _rotationCountdown;
         }
     }
+
+    public void PutConsoleDown()
+    {
+        _rotationCountdown = 1;
+        _moveLerp = 0;
+        _currentConsolePosition = _consolePosition[IDCurrentAxis];
+        _targetConsolePosition = new Vector3(console.transform.localPosition.x, console.transform.localPosition.y-0.2f, console.transform.localPosition.z);
+        _targetPosition = _camPosition[IDCurrentAxis];
+        _targetCamRotation = _camRotation[IDCurrentAxis];
+        _isLerping = true;
+        IsInTI = false;
+    }
+
+    public void PutConsoleUp()
+    {
+        _rotationCountdown = 1;
+        _moveLerp = 0;
+        _currentConsolePosition = new Vector3(console.transform.localPosition.x, console.transform.localPosition.y - 0.2f, console.transform.localPosition.z);
+        _targetConsolePosition = _consolePosition[IDCurrentAxis];
+        _targetPosition = _camPosition[IDCurrentAxis];
+        _targetCamRotation = _camRotation[IDCurrentAxis];
+        _isLerping = true;
+        IsInTI = false;
+    }
 }

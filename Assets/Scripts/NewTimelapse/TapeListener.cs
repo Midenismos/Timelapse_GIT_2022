@@ -8,6 +8,7 @@ public class TapeListener : MonoBehaviour
     [SerializeField]private GameObject tapeReceiver = null;
     //[SerializeField]private Slider _slider = null;
     [SerializeField] private bool isActivated = true;
+    public OnOffButton _onOffButton = null;
     public TapeScript CurrentTape = null;
     private bool isAvailable = true;
 
@@ -21,16 +22,13 @@ public class TapeListener : MonoBehaviour
                 other.GetComponent<Rigidbody>().isKinematic = true;
                 other.transform.position = tapeReceiver.transform.position;
                 other.transform.rotation = tapeReceiver.transform.rotation;
-                if (isActivated)
-                {
-                    CurrentTape = other.GetComponent<TapeScript>();
-                    other.GetComponent<ZoomScript>().IsZoomable = false;
-                    GetComponent<AudioSource>().clip = CurrentTape.CurrentSound;
-                    GameObject.Find("Console").GetComponent<ConsoleManager>().NormalAudio();
-                    GetComponent<AudioSource>().time = 0;
+                CurrentTape = other.GetComponent<TapeScript>();
+                other.GetComponent<ZoomScript>().IsZoomable = false;
+                GetComponent<AudioSource>().clip = CurrentTape.CurrentSound;
+                GameObject.Find("Console").GetComponent<ConsoleManager>().NormalAudio();
+                GetComponent<AudioSource>().time = 0;
+                if (isActivated && _onOffButton.IsActivated)
                     GetComponent<AudioSource>().Play();
-                    GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().HowManyMachineActivated += 1;
-                }
             }
         }
     }
@@ -43,7 +41,6 @@ public class TapeListener : MonoBehaviour
     {
         GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().ReactedToEnergy += delegate ()
         {
-            GetComponent<AudioSource>().clip = null;
             GetComponent<AudioSource>().Stop();
             isActivated = false;
         };
@@ -56,12 +53,30 @@ public class TapeListener : MonoBehaviour
 
     public void ChangeSound()
     {
-        //Change l'audio en fonction des nébuleuse
-        float time = GetComponent<AudioSource>().time;
-        GetComponent<AudioSource>().Stop();
-        GetComponent<AudioSource>().clip = CurrentTape.CurrentSound;
-        GetComponent<AudioSource>().Play();
-        GetComponent<AudioSource>().time = time;
+        if(_onOffButton.IsActivated)
+        {
+            //Change l'audio en fonction des nébuleuse
+            float time = GetComponent<AudioSource>().time;
+            GetComponent<AudioSource>().Stop();
+            GetComponent<AudioSource>().clip = CurrentTape.CurrentSound;
+            GetComponent<AudioSource>().Play();
+            GetComponent<AudioSource>().time = time;
+        }
+
+    }
+
+    public void OnOff()
+    {
+        if (_onOffButton.IsActivated == false)
+        {
+            GetComponent<AudioSource>().Stop();
+            GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().HowManyMachineActivated -= 1;
+        }
+        else
+        {
+            GetComponent<AudioSource>().Play();
+            GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().HowManyMachineActivated += 1;
+        }
     }
 
     IEnumerator Cooldown()

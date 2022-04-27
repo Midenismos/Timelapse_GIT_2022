@@ -16,7 +16,6 @@ public class BatteryBoxScript : MonoBehaviour
         if(isOpen)
         {
             _animator.Play("Ceilling.CloseCeilling", 0);
-            _animator.Play("Door.CloseDoor", 1);
             _colOpen.enabled = true;
             _colClose.enabled = false;
             isOpen = false;
@@ -24,7 +23,6 @@ public class BatteryBoxScript : MonoBehaviour
         else
         {
             _animator.Play("Ceilling.OpenCeilling", 0);
-            _animator.Play("Door.OpenDoor", 1);
             _colOpen.enabled = false;
             _colClose.enabled = true;
             isOpen = true;
