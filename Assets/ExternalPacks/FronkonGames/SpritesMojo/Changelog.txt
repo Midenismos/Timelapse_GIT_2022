@@ -1,0 +1,6 @@
+## [1.0.1] - 2020-03-28
+### Fixed
+- "Mode" property of the "Dissolve" effect changed from "EnumVariable" to "KeywordsVariable".
+
+## [1.0.0] - 2020-03-10
+- Initial release.
