@@ -14,9 +14,7 @@ public class VaultScript : MonoBehaviour
         if(GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().Energy <=0 && GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == 4)
         {
             if (isOpen)
-            {
                 CloseDoor();
-            }
             else
             {
                 _animator.Play("Door.VaultOpen", 0);

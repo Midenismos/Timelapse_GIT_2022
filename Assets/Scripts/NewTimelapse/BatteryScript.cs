@@ -7,6 +7,7 @@ public class BatteryScript : MonoBehaviour
     [SerializeField]private Slider _slider = null;
     private float _multiplier = 0;
     public bool isPluged = false;
+    public bool isVaultPluged = false;
     public bool isInBox = false;
     [SerializeField] private Image _sliderImage;
 
@@ -59,14 +60,24 @@ public class BatteryScript : MonoBehaviour
             isInBox = false;
             Box.StartCooldown();
         }
+
+        VaultPlug Plug = GameObject.Find("VaultPlug").GetComponent<VaultPlug>();
+        if (Plug.CurrentBattery == this && GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == 3)
+        {
+            Plug.CurrentBattery.isVaultPluged = false;
+            Plug.CurrentBattery = null;
+            Plug.StartCooldown();
+        }
     }
 
     private void Update()
     {
-        if (!isPluged && !isInBox)
-            Energy = Mathf.Clamp(Energy + _multiplier * 0.01f, 0, 100) ;
-        
-        if (isPluged)
+        if (!isPluged && !isInBox && !isVaultPluged)
+            Energy = Mathf.Clamp(Energy + _multiplier * 0.01f, 0, 100);
+        else if (isVaultPluged)
+            Energy = Mathf.Clamp(Energy - 0.01f, 0, 100);
+
+            if (isPluged)
             _sliderImage.enabled = false;
         else
         {

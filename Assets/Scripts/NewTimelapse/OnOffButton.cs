@@ -44,7 +44,7 @@ public class OnOffButton : MonoBehaviour
             _interactFeedBack.enabled = true;
             if (Input.GetMouseButtonDown(0))
             {
-                if (GameObject.Find("Console").GetComponent<ConsoleManager>().isActivated || tag == "ResetEnergy")
+                if (GameObject.Find("Console").GetComponent<ConsoleManager>().isActivated || tag == "ResetEnergy" || tag == "VaultButton")
                 {
                     IsActivated = !IsActivated;
                     onClicked?.Invoke();

@@ -18,6 +18,7 @@ TagManager:
   - Minimap
   - ResetEnergy
   - Battery
+  - VaultButton
   layers:
   - Default
   - TransparentFX
