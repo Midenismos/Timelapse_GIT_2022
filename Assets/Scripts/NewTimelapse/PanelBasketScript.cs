@@ -15,7 +15,13 @@ public class PanelBasketScript : MonoBehaviour
     public bool _isLerping = false;
     public bool HasZoomed = false;
     private GameObject scannedItem = null;
+    [SerializeField] private Color _normalColor;
+    [SerializeField] private Color _scanningColor;
+    [SerializeField] private Color _glitchedColor;
+    [SerializeField] private Color _glitchedScanningColor;
 
+    private Color _colorA;
+    private Color _colorB;
     private void OnTriggerEnter(Collider other)
     {
         if(other.GetComponent<DragObjects>())
@@ -44,7 +50,7 @@ public class PanelBasketScript : MonoBehaviour
                     else if (other.tag == "Tape")
                     {
                         image = Instantiate(_panelImageTape, this.transform);
-                        image.transform.GetChild(0).GetComponent<TMP_Text>().text = other.GetComponent<PanelImageData>().TMText.text;
+                        image.transform.GetChild(1).GetComponent<TMP_Text>().text = other.GetComponent<PanelImageData>().TMText.text;
                         image.transform.SetParent(_panels[0].transform, false);
                         image.GetComponent<PanelTag>().IsCorrupted = GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().Energy <= 0 ? true : false;
                     }
@@ -56,8 +62,12 @@ public class PanelBasketScript : MonoBehaviour
                         image.GetComponent<PanelTag>().ImageTag = "map";
                         image.GetComponent<PanelTag>().IsCorrupted = GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().Energy <= 0 ? true : false;
                     }
+                    _colorA = GetComponent<MeshRenderer>().material.GetColor("_EmissionColor");
+                    if (GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().Energy <= 0)
+                        _colorB = _glitchedScanningColor;
+                    else
+                        _colorB = _scanningColor;
 
-                    
 
                     other.transform.SetParent(this.transform, false);
                     other.transform.position = GameObject.Find("start").transform.position;
@@ -85,7 +95,8 @@ public class PanelBasketScript : MonoBehaviour
             if (_zoomCountdown == 0)
             {
                 _isLerping = false;
-                if(scannedItem.gameObject.tag != "Cam")
+                GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", _colorA);
+                if (scannedItem.gameObject.tag != "Cam")
                 {
                     scannedItem.GetComponent<DragObjects>().IsDragable = true;
                     scannedItem.GetComponent<ZoomScript>().IsZoomable = true;
@@ -103,9 +114,21 @@ public class PanelBasketScript : MonoBehaviour
 
             }
 
-            if(scannedItem)
+
+            if (scannedItem)
                 scannedItem.transform.position = Vector3.Lerp(GameObject.Find("start").transform.position, GameObject.Find("interior").transform.position, _zoomLerp);
+            GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", Color.Lerp(_colorA, _colorB, _zoomLerp));
             _zoomLerp = 1f - _zoomCountdown;
         }
+        else
+        {
+            if (GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().Energy <= 0)
+                GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", _glitchedColor);
+            else
+                GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", _normalColor);
+        }
+
+
     }
+
 }

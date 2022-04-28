@@ -59,14 +59,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.78431374}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 5108601841118324724, guid: 630f620adfc6430489270a491de5239b,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: 68867219dbfd0cb489f2a6ca16615bf6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -84,7 +83,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6858635875137724276}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 151685037d4329f459dac8ca69128904, type: 2}
   m_CullingMode: 0
@@ -234,5 +233,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ImageTag: null
-  IsCorrupted: 0
   _glitchEffect: {fileID: 4472820870156719503}

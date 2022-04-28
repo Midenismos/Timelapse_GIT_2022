@@ -179,7 +179,8 @@ public class ZoomScript : MonoBehaviour
                 if (gameObject.CompareTag("Tape") || gameObject.CompareTag("Written"))
                 {
                     GetComponent<Rigidbody>().isKinematic = false;
-                    GetComponent<DragObjects>().IsDragable = true;
+                    if(GetComponent<DragObjects>())
+                        GetComponent<DragObjects>().IsDragable = true;
                 }
                 if(GameObject.Find("Player").GetComponent<PlayerAxisScript>().CurrentHoldItem == transform.gameObject && tag != "Cam")
                 {
@@ -233,8 +234,11 @@ public class ZoomScript : MonoBehaviour
         currentItem.posB = currentItem._originalPosition;
         if (currentItem.gameObject.CompareTag("Written"))
         {
-            currentItem.posB.y = -30;
-            currentItem.posB.z = Mathf.Clamp(currentItem.posB.z, -55, Mathf.Infinity);
+            if(AxisScript.IDCurrentAxis == 0)
+            {
+                currentItem.posB.y = -30;
+                currentItem.posB.z = Mathf.Clamp(currentItem.posB.z, -55, Mathf.Infinity);
+            }
             AxisScript.PutConsoleUp();
         }
         else if (currentItem.gameObject.CompareTag("Tape"))

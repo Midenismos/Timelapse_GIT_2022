@@ -31,6 +31,7 @@ public class PlayerAxisScript : MonoBehaviour
     public bool IsInTI = false;
     public bool IsDraging = false;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -51,7 +52,7 @@ public class PlayerAxisScript : MonoBehaviour
         {
             if (Input.GetKeyDown("d"))
             {
-                if (!_isLerping && !IsInTI)
+                if (!_isLerping && !IsInTI && !GameObject.Find("PanelBasket").GetComponent<PanelBasketScript>()._isLerping)
                 {
                     IDCurrentAxis += 1;
                     if (IDCurrentAxis < 0)
@@ -69,7 +70,7 @@ public class PlayerAxisScript : MonoBehaviour
             }
             if (Input.GetKeyDown("q"))
             {
-                if (!_isLerping && !IsInTI)
+                if (!_isLerping && !IsInTI && !GameObject.Find("PanelBasket").GetComponent<PanelBasketScript>()._isLerping)
                 {
                     IDCurrentAxis -= 1;
                     if (IDCurrentAxis < 0)
