@@ -2834,176 +2834,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 133482425}
   m_CullTransparentMesh: 0
---- !u!1001 &136489434
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_text
-      value: "\nDe toute \xE9vidence, l\u2019\xEAtre humain a une tol\xE9rance limit\xE9e
-        aux effets des cristaux. \xC9tant donn\xE9 que nous ne savons pas quand est-ce
-        que William a commenc\xE9 \xE0 s\u2019injecter le produit en cachette, il
-        est pour le moment difficile d\u2019estimer le niveau de cette tol\xE9rance.\r\n\r\n\xC0
-        pr\xE9sent, nous allons nous r\xE9unir pour discuter de cet \xE9v\xE9nement.
-        J\u2019en profiterai pour faire part \xE0 l\u2019\xE9quipage de mes toutes
-        derni\xE8res d\xE9couvertes sur les cristaux, des d\xE9couvertes qui remettent
-        tout en cause.\r"
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_fontSize
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 5b932b2e4af544f43b0ee9b50e33e25f,
-        type: 2}
-    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_fontSizeBase
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 8971846431161349768, guid: 5b932b2e4af544f43b0ee9b50e33e25f,
-        type: 2}
-    - target: {fileID: 2428044788833346526, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 8971846431161349768, guid: 5b932b2e4af544f43b0ee9b50e33e25f,
-        type: 2}
-    - target: {fileID: 2428044789400484557, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: -4961310600536069339, guid: 6abfd85b468a01a48978d449e00d8706,
-        type: 2}
-    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_text
-      value: "                           Rapport n\xB02 \n\n  Rapport r\xE9dig\xE9
-        par : Marcus Brown     Date : 2 septembre 2246\n\r\n  Sujet : Mort de William
-        Hartley \xE0 13H15\r\n\r\nWilliam a \xE9t\xE9 victime du ph\xE9nom\xE8ne
-        que nous appelons \u201Ccristallisation\u201D . Des cristaux sont sortis
-        de diff\xE9rentes parties de sa t\xEAte : les yeux, la bouche, les oreilles\u2026
-        Le ph\xE9nom\xE8ne s\u2019est ensuite r\xE9pandu sur une grande partie de
-        son corps : les bras, les jambes, le ventre\u2026 Son corps a \xE9t\xE9 plac\xE9
-        dans la section m\xE9dicale.\r\n\r\nPuisque William a \xE9t\xE9 la seule
-        victime de la cristallisation jusqu\u2019\xE0 pr\xE9sent, il est facile de
-        comprendre la cause de ce ph\xE9nom\xE8ne. Il a d\xFB s\u2019injecter en
-        cachette plusieurs seringues contenant le produit des cristaux, d\xE9passant
-        ainsi le dosage qu\u2019il avait initialement re\xE7u durant l\u2019exp\xE9rience
-        du 27 juillet.\r"
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_fontSize
-      value: 4.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 6abfd85b468a01a48978d449e00d8706,
-        type: 2}
-    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_fontSizeBase
-      value: 4.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: -4961310600536069339, guid: 6abfd85b468a01a48978d449e00d8706,
-        type: 2}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 56
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -32.417
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -29.966
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -53.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740229, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_Name
-      value: EcritTest6
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740234, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: Image
-      value: 
-      objectReference: {fileID: 21300000, guid: 53cfc08c1f0a738418af50b81be102a4,
-        type: 3}
-    - target: {fileID: 2428044789826740238, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: ZoomPos
-      value: 
-      objectReference: {fileID: 1109891907}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 79c745cc6ba32b14db2307ebdd87d0df, type: 3}
 --- !u!114 &137577808 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7982346232894314741, guid: 5593ad09390d10841b53181c2692d8dd,
@@ -10443,7 +10273,7 @@ Transform:
   m_LocalScale: {x: 1.5, y: 1, z: 1.5}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 66
+  m_RootOrder: 55
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &232065051
 GameObject:
@@ -15482,7 +15312,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 88
+  m_RootOrder: 77
   m_LocalEulerAnglesHint: {x: 0, y: 60, z: 0}
 --- !u!1 &251826903
 GameObject:
@@ -15827,7 +15657,7 @@ Transform:
   - {fileID: 496272431}
   - {fileID: 1851040586}
   m_Father: {fileID: 0}
-  m_RootOrder: 58
+  m_RootOrder: 47
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &293904531
 GameObject:
@@ -17690,7 +17520,7 @@ Transform:
   m_LocalScale: {x: 1.5, y: 1, z: 1.5}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 69
+  m_RootOrder: 58
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &378415589
 GameObject:
@@ -17734,7 +17564,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 90
+  m_RootOrder: 79
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &385707316
 GameObject:
@@ -23806,7 +23636,7 @@ PrefabInstance:
     - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_RootOrder
-      value: 47
+      value: 44
       objectReference: {fileID: 0}
     - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
@@ -30056,7 +29886,7 @@ Transform:
   m_LocalScale: {x: 8.367471, y: 0.9999998, z: 4.597269}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 64
+  m_RootOrder: 53
   m_LocalEulerAnglesHint: {x: 0, y: -60.002003, z: 0}
 --- !u!1 &500716288
 GameObject:
@@ -30631,7 +30461,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 79
+  m_RootOrder: 68
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &510849705
 GameObject:
@@ -31356,211 +31186,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 549050096}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1001 &553475860
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1718356763766671435, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_text
-      value: "\n                  Rapport n\xB02 : test sur des souris"
-      objectReference: {fileID: 0}
-    - target: {fileID: 1718356763766671435, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_fontSize
-      value: 4.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1718356763766671435, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 6abfd85b468a01a48978d449e00d8706,
-        type: 2}
-    - target: {fileID: 1718356763766671435, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_fontSizeBase
-      value: 4.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1718356763766671435, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: -4961310600536069339, guid: 6abfd85b468a01a48978d449e00d8706,
-        type: 2}
-    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_text
-      value: "\nDe toute \xE9vidence, l\u2019\xEAtre humain a une tol\xE9rance limit\xE9e
-        aux effets des cristaux. \xC9tant donn\xE9 que nous ne savons pas quand est-ce
-        que William a commenc\xE9 \xE0 s\u2019injecter le produit en cachette, il
-        est pour le moment difficile d\u2019estimer le niveau de cette tol\xE9rance.\r\n\r\n\xC0
-        pr\xE9sent, nous allons nous r\xE9unir pour discuter de cet \xE9v\xE9nement.
-        J\u2019en profiterai pour faire part \xE0 l\u2019\xE9quipage de mes toutes
-        derni\xE8res d\xE9couvertes sur les cristaux, des d\xE9couvertes qui remettent
-        tout en cause.\r"
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_fontSize
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 5b932b2e4af544f43b0ee9b50e33e25f,
-        type: 2}
-    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_fontSizeBase
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 8971846431161349768, guid: 5b932b2e4af544f43b0ee9b50e33e25f,
-        type: 2}
-    - target: {fileID: 2428044788833346526, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 8971846431161349768, guid: 5b932b2e4af544f43b0ee9b50e33e25f,
-        type: 2}
-    - target: {fileID: 2428044789400484557, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_text
-      value: "                   \n\n  Rapport r\xE9dig\xE9 par : Marcus Brown    
-        Date : 2 septembre 2246\n\r\n  Sujet : Mort de William Hartley \xE0 13H15\r\n\r\nWilliam
-        a \xE9t\xE9 victime du ph\xE9nom\xE8ne que nous appelons \u201Ccristallisation\u201D
-        . Des cristaux sont sortis de diff\xE9rentes parties de sa t\xEAte : les
-        yeux, la bouche, les oreilles\u2026 Le ph\xE9nom\xE8ne s\u2019est ensuite
-        r\xE9pandu sur une grande partie de son corps : les bras, les jambes, le
-        ventre\u2026 Son corps a \xE9t\xE9 plac\xE9 dans la section m\xE9dicale.\r\n\r\nPuisque
-        William a \xE9t\xE9 la seule victime de la cristallisation jusqu\u2019\xE0
-        pr\xE9sent, il est facile de comprendre la cause de ce ph\xE9nom\xE8ne. Il
-        a d\xFB s\u2019injecter en cachette plusieurs seringues contenant le produit
-        des cristaux, d\xE9passant ainsi le dosage qu\u2019il avait initialement
-        re\xE7u durant l\u2019exp\xE9rience du 27 juillet.\r"
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_fontSize
-      value: 3.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee,
-        type: 2}
-    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_fontSizeBase
-      value: 3.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 49
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -38.069
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -29.966
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -53.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740229, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_Name
-      value: EcritTest0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740234, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: Image
-      value: 
-      objectReference: {fileID: 21300000, guid: 53cfc08c1f0a738418af50b81be102a4,
-        type: 3}
-    - target: {fileID: 2428044789826740238, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: ZoomPos
-      value: 
-      objectReference: {fileID: 1109891907}
-    - target: {fileID: 2552726465310881752, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: -4961310600536069339, guid: 6abfd85b468a01a48978d449e00d8706,
-        type: 2}
-    - target: {fileID: 5023047299795160136, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 79c745cc6ba32b14db2307ebdd87d0df, type: 3}
 --- !u!1 &554759265
 GameObject:
   m_ObjectHideFlags: 0
@@ -33039,174 +32664,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 10.000005, y: 0.000011920931, z: 10.000002}
   m_Center: {x: 0.000030517578, y: -0.00012207031, z: 0.000015258789}
---- !u!1001 &604425380
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_text
-      value: "\nDe toute \xE9vidence, l\u2019\xEAtre humain a une tol\xE9rance limit\xE9e
-        aux effets des cristaux. \xC9tant donn\xE9 que nous ne savons pas quand est-ce
-        que William a commenc\xE9 \xE0 s\u2019injecter le produit en cachette, il
-        est pour le moment difficile d\u2019estimer le niveau de cette tol\xE9rance.\r\n\r\n\xC0
-        pr\xE9sent, nous allons nous r\xE9unir pour discuter de cet \xE9v\xE9nement.
-        J\u2019en profiterai pour faire part \xE0 l\u2019\xE9quipage de mes toutes
-        derni\xE8res d\xE9couvertes sur les cristaux, des d\xE9couvertes qui remettent
-        tout en cause.\r"
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_fontSize
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 5b932b2e4af544f43b0ee9b50e33e25f,
-        type: 2}
-    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_fontSizeBase
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 8971846431161349768, guid: 5b932b2e4af544f43b0ee9b50e33e25f,
-        type: 2}
-    - target: {fileID: 2428044788833346526, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 8971846431161349768, guid: 5b932b2e4af544f43b0ee9b50e33e25f,
-        type: 2}
-    - target: {fileID: 2428044789400484557, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_text
-      value: "                                 Rapport n\xB02 \n\n  Rapport r\xE9dig\xE9
-        par : Marcus Brown     Date : 2 septembre 2246\n\r\n  Sujet : Mort de William
-        Hartley \xE0 13H15\r\n\r\nWilliam a \xE9t\xE9 victime du ph\xE9nom\xE8ne
-        que nous appelons \u201Ccristallisation\u201D . Des cristaux sont sortis
-        de diff\xE9rentes parties de sa t\xEAte : les yeux, la bouche, les oreilles\u2026
-        Le ph\xE9nom\xE8ne s\u2019est ensuite r\xE9pandu sur une grande partie de
-        son corps : les bras, les jambes, le ventre\u2026 Son corps a \xE9t\xE9 plac\xE9
-        dans la section m\xE9dicale.\r\n\r\nPuisque William a \xE9t\xE9 la seule
-        victime de la cristallisation jusqu\u2019\xE0 pr\xE9sent, il est facile de
-        comprendre la cause de ce ph\xE9nom\xE8ne. Il a d\xFB s\u2019injecter en
-        cachette plusieurs seringues contenant le produit des cristaux, d\xE9passant
-        ainsi le dosage qu\u2019il avait initialement re\xE7u durant l\u2019exp\xE9rience
-        du 27 juillet.\r"
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_fontSize
-      value: 3.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee,
-        type: 2}
-    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_fontSizeBase
-      value: 3.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 52
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -35.77
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -29.966
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -53.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740229, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_Name
-      value: EcritTest2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740234, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: Image
-      value: 
-      objectReference: {fileID: 21300000, guid: 53cfc08c1f0a738418af50b81be102a4,
-        type: 3}
-    - target: {fileID: 2428044789826740238, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: ZoomPos
-      value: 
-      objectReference: {fileID: 1109891907}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 79c745cc6ba32b14db2307ebdd87d0df, type: 3}
 --- !u!1 &616500728
 GameObject:
   m_ObjectHideFlags: 0
@@ -33363,7 +32820,7 @@ Transform:
   - {fileID: 1828185328}
   - {fileID: 1481268339}
   m_Father: {fileID: 0}
-  m_RootOrder: 93
+  m_RootOrder: 82
   m_LocalEulerAnglesHint: {x: 0, y: 150, z: 90.00001}
 --- !u!65 &621016911
 BoxCollider:
@@ -33545,7 +33002,7 @@ Transform:
   - {fileID: 802122485}
   - {fileID: 434731392}
   m_Father: {fileID: 0}
-  m_RootOrder: 82
+  m_RootOrder: 71
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &635720527
 Rigidbody:
@@ -35076,7 +34533,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 483054, guid: 857b9bcf7311f5a49b829c4fd3cc791f, type: 3}
       propertyPath: m_RootOrder
-      value: 84
+      value: 73
       objectReference: {fileID: 0}
     - target: {fileID: 483054, guid: 857b9bcf7311f5a49b829c4fd3cc791f, type: 3}
       propertyPath: m_LocalScale.x
@@ -36363,7 +35820,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 80
+  m_RootOrder: 69
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &789252710
 GameObject:
@@ -37164,7 +36621,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 76
+  m_RootOrder: 65
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &827729020
 GameObject:
@@ -37265,176 +36722,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!1001 &832531864
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_text
-      value: "\nDe toute \xE9vidence, l\u2019\xEAtre humain a une tol\xE9rance limit\xE9e
-        aux effets des cristaux. \xC9tant donn\xE9 que nous ne savons pas quand est-ce
-        que William a commenc\xE9 \xE0 s\u2019injecter le produit en cachette, il
-        est pour le moment difficile d\u2019estimer le niveau de cette tol\xE9rance.\r\n\r\n\xC0
-        pr\xE9sent, nous allons nous r\xE9unir pour discuter de cet \xE9v\xE9nement.
-        J\u2019en profiterai pour faire part \xE0 l\u2019\xE9quipage de mes toutes
-        derni\xE8res d\xE9couvertes sur les cristaux, des d\xE9couvertes qui remettent
-        tout en cause.\r"
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_fontSize
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 5b932b2e4af544f43b0ee9b50e33e25f,
-        type: 2}
-    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_fontSizeBase
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 8971846431161349768, guid: 5b932b2e4af544f43b0ee9b50e33e25f,
-        type: 2}
-    - target: {fileID: 2428044788833346526, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 8971846431161349768, guid: 5b932b2e4af544f43b0ee9b50e33e25f,
-        type: 2}
-    - target: {fileID: 2428044789400484557, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 5316117735289615991, guid: b1ec8530386854748a54962648bc8e6d,
-        type: 2}
-    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_text
-      value: "                                    Rapport n\xB02 \n\n  Rapport r\xE9dig\xE9
-        par : Marcus Brown     Date : 2 septembre 2246\n\r\n  Sujet : Mort de William
-        Hartley \xE0 13H15\r\n\r\nWilliam a \xE9t\xE9 victime du ph\xE9nom\xE8ne
-        que nous appelons \u201Ccristallisation\u201D . Des cristaux sont sortis
-        de diff\xE9rentes parties de sa t\xEAte : les yeux, la bouche, les oreilles\u2026
-        Le ph\xE9nom\xE8ne s\u2019est ensuite r\xE9pandu sur une grande partie de
-        son corps : les bras, les jambes, le ventre\u2026 Son corps a \xE9t\xE9 plac\xE9
-        dans la section m\xE9dicale.\r\n\r\nPuisque William a \xE9t\xE9 la seule
-        victime de la cristallisation jusqu\u2019\xE0 pr\xE9sent, il est facile de
-        comprendre la cause de ce ph\xE9nom\xE8ne. Il a d\xFB s\u2019injecter en
-        cachette plusieurs seringues contenant le produit des cristaux, d\xE9passant
-        ainsi le dosage qu\u2019il avait initialement re\xE7u durant l\u2019exp\xE9rience
-        du 27 juillet.\r"
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_fontSize
-      value: 3.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: b1ec8530386854748a54962648bc8e6d,
-        type: 2}
-    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_fontSizeBase
-      value: 3.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 5316117735289615991, guid: b1ec8530386854748a54962648bc8e6d,
-        type: 2}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 53
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -34.92
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -29.966
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -53.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740229, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_Name
-      value: EcritTest3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740234, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: Image
-      value: 
-      objectReference: {fileID: 21300000, guid: 53cfc08c1f0a738418af50b81be102a4,
-        type: 3}
-    - target: {fileID: 2428044789826740238, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: ZoomPos
-      value: 
-      objectReference: {fileID: 1109891907}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 79c745cc6ba32b14db2307ebdd87d0df, type: 3}
 --- !u!1 &833583725
 GameObject:
   m_ObjectHideFlags: 0
@@ -37526,178 +36813,8 @@ Transform:
   m_LocalScale: {x: 17.113428, y: 1.676575, z: 5.894832}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 57
+  m_RootOrder: 46
   m_LocalEulerAnglesHint: {x: 0, y: 238.754, z: 0}
---- !u!1001 &842622388
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_text
-      value: "\nDe toute \xE9vidence, l\u2019\xEAtre humain a une tol\xE9rance limit\xE9e
-        aux effets des cristaux. \xC9tant donn\xE9 que nous ne savons pas quand est-ce
-        que William a commenc\xE9 \xE0 s\u2019injecter le produit en cachette, il
-        est pour le moment difficile d\u2019estimer le niveau de cette tol\xE9rance.\r\n\r\n\xC0
-        pr\xE9sent, nous allons nous r\xE9unir pour discuter de cet \xE9v\xE9nement.
-        J\u2019en profiterai pour faire part \xE0 l\u2019\xE9quipage de mes toutes
-        derni\xE8res d\xE9couvertes sur les cristaux, des d\xE9couvertes qui remettent
-        tout en cause.\r"
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_fontSize
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 5b932b2e4af544f43b0ee9b50e33e25f,
-        type: 2}
-    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_fontSizeBase
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 8971846431161349768, guid: 5b932b2e4af544f43b0ee9b50e33e25f,
-        type: 2}
-    - target: {fileID: 2428044788833346526, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 8971846431161349768, guid: 5b932b2e4af544f43b0ee9b50e33e25f,
-        type: 2}
-    - target: {fileID: 2428044789400484557, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 8971846431161349768, guid: 5b932b2e4af544f43b0ee9b50e33e25f,
-        type: 2}
-    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_text
-      value: "                                         Rapport n\xB02 \n\n  Rapport
-        r\xE9dig\xE9 par : Marcus Brown     Date : 2 septembre 2246\n\r\n  Sujet
-        : Mort de William Hartley \xE0 13H15\r\n\r\nWilliam a \xE9t\xE9 victime du
-        ph\xE9nom\xE8ne que nous appelons \u201Ccristallisation\u201D . Des cristaux
-        sont sortis de diff\xE9rentes parties de sa t\xEAte : les yeux, la bouche,
-        les oreilles\u2026 Le ph\xE9nom\xE8ne s\u2019est ensuite r\xE9pandu sur une
-        grande partie de son corps : les bras, les jambes, le ventre\u2026 Son corps
-        a \xE9t\xE9 plac\xE9 dans la section m\xE9dicale.\r\n\r\nPuisque William
-        a \xE9t\xE9 la seule victime de la cristallisation jusqu\u2019\xE0 pr\xE9sent,
-        il est facile de comprendre la cause de ce ph\xE9nom\xE8ne. Il a d\xFB s\u2019injecter
-        en cachette plusieurs seringues contenant le produit des cristaux, d\xE9passant
-        ainsi le dosage qu\u2019il avait initialement re\xE7u durant l\u2019exp\xE9rience
-        du 27 juillet.\r"
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_fontSize
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 5b932b2e4af544f43b0ee9b50e33e25f,
-        type: 2}
-    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_fontSizeBase
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 8971846431161349768, guid: 5b932b2e4af544f43b0ee9b50e33e25f,
-        type: 2}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 51
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -36.719997
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -29.966
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -53.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740229, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_Name
-      value: EcritTest1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740234, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: Image
-      value: 
-      objectReference: {fileID: 21300000, guid: 53cfc08c1f0a738418af50b81be102a4,
-        type: 3}
-    - target: {fileID: 2428044789826740238, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: ZoomPos
-      value: 
-      objectReference: {fileID: 1109891907}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 79c745cc6ba32b14db2307ebdd87d0df, type: 3}
 --- !u!1 &864223584
 GameObject:
   m_ObjectHideFlags: 0
@@ -38003,7 +37120,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 73
+  m_RootOrder: 62
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &864844081
 GameObject:
@@ -38984,196 +38101,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 906355153}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1001 &909382357
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_text
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_fontSize
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 5b932b2e4af544f43b0ee9b50e33e25f,
-        type: 2}
-    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_fontSizeBase
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 8971846431161349768, guid: 5b932b2e4af544f43b0ee9b50e33e25f,
-        type: 2}
-    - target: {fileID: 2428044788833346526, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 8971846431161349768, guid: 5b932b2e4af544f43b0ee9b50e33e25f,
-        type: 2}
-    - target: {fileID: 2428044789400484557, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 8971846431161349768, guid: 5b932b2e4af544f43b0ee9b50e33e25f,
-        type: 2}
-    - target: {fileID: 2428044789400484558, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 9.0757
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789400484558, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 9.0757
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789400484558, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 9.0757
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_text
-      value: "                               Extrait du journal de Marcus\n\n30 ao\xFBt
-        : J\u2019ai d\xE9couvert que les cristaux abritent des parasites d\u2019un
-        genre que je n\u2019avais jamais vu auparavant. Plus j\u2019y pense et plus
-        je me dis que nos sup\xE9rieurs \xE9taient au courant de tout.\r\n\nMalgr\xE9
-        ce qu\u2019ils disent, je suis s\xFBr qu\u2019ils avaient d\xE9j\xE0 envoy\xE9
-        un premier vaisseau \xE9tudier les cristaux. Je ne cesse de me demander ce
-        qui est arriv\xE9 \xE0 son \xE9quipage. Sans doute sont-ils morts et peut-\xEAtre
-        m\xEAme que cela est li\xE9 aux cristaux, ou plut\xF4t aux parasites.\r\n\nPourtant
-        je suis certain que si nous parvenons \xE0 les \xE9tudier correctement et
-        \xE0 percer tous leurs secrets, nous serons en mesure de nous en servir pour
-        permettre \xE0 l\u2019esp\xE8ce humaine d\u2019\xE9voluer. Je ne le fais
-        pas pour les dirigeants de la Station m\xE8re qui sont des enfoir\xE9s, mais
-        je le fais pour moi et pour le reste de l\u2019humanit\xE9.\r"
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_fontSize
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_margin.z
-      value: -0.35230112
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 5b932b2e4af544f43b0ee9b50e33e25f,
-        type: 2}
-    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_fontSizeBase
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 8971846431161349768, guid: 5b932b2e4af544f43b0ee9b50e33e25f,
-        type: 2}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 46
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -34
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -29.966
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -55.56
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740229, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_Name
-      value: EcritJournalMarcus
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740234, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: Image
-      value: 
-      objectReference: {fileID: 21300000, guid: 3cd92fd53ff3cff4886106401b3154a7,
-        type: 3}
-    - target: {fileID: 2428044789826740238, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: ZoomPos
-      value: 
-      objectReference: {fileID: 1109891907}
-    - target: {fileID: 3962323351359523056, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 321b67af9ea100a4ebc939dbc45020ed,
-        type: 3}
-    - target: {fileID: 6233248368420440654, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 321b67af9ea100a4ebc939dbc45020ed,
-        type: 3}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 79c745cc6ba32b14db2307ebdd87d0df, type: 3}
 --- !u!1 &910547751
 GameObject:
   m_ObjectHideFlags: 0
@@ -44796,7 +43723,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 89
+  m_RootOrder: 78
   m_LocalEulerAnglesHint: {x: 0, y: 60, z: 0}
 --- !u!1001 &968742561
 PrefabInstance:
@@ -45063,7 +43990,7 @@ Transform:
   m_LocalScale: {x: 8.367471, y: 0.9999998, z: 4.597269}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 63
+  m_RootOrder: 52
   m_LocalEulerAnglesHint: {x: 0.003, y: -1199.7631, z: 0.004}
 --- !u!1 &993427922
 GameObject:
@@ -45238,7 +44165,7 @@ Transform:
   m_LocalScale: {x: 8.367471, y: 0.9999998, z: 4.597269}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 61
+  m_RootOrder: 50
   m_LocalEulerAnglesHint: {x: -0.002, y: -59.764004, z: 0.004}
 --- !u!1 &1011754755
 GameObject:
@@ -45435,176 +44362,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1021884012
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_text
-      value: "\nDe toute \xE9vidence, l\u2019\xEAtre humain a une tol\xE9rance limit\xE9e
-        aux effets des cristaux. \xC9tant donn\xE9 que nous ne savons pas quand est-ce
-        que William a commenc\xE9 \xE0 s\u2019injecter le produit en cachette, il
-        est pour le moment difficile d\u2019estimer le niveau de cette tol\xE9rance.\r\n\r\n\xC0
-        pr\xE9sent, nous allons nous r\xE9unir pour discuter de cet \xE9v\xE9nement.
-        J\u2019en profiterai pour faire part \xE0 l\u2019\xE9quipage de mes toutes
-        derni\xE8res d\xE9couvertes sur les cristaux, des d\xE9couvertes qui remettent
-        tout en cause.\r"
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_fontSize
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 5b932b2e4af544f43b0ee9b50e33e25f,
-        type: 2}
-    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_fontSizeBase
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 8971846431161349768, guid: 5b932b2e4af544f43b0ee9b50e33e25f,
-        type: 2}
-    - target: {fileID: 2428044788833346526, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 8971846431161349768, guid: 5b932b2e4af544f43b0ee9b50e33e25f,
-        type: 2}
-    - target: {fileID: 2428044789400484557, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: -7771989631263859204, guid: 411c20a58bbaf9946a0d71d19bbe57b5,
-        type: 2}
-    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_text
-      value: "                                          Rapport n\xB02 \n\n  Rapport
-        r\xE9dig\xE9 par : Marcus Brown     Date : 2 septembre 2246\n\r\n  Sujet
-        : Mort de William Hartley \xE0 13H15\r\n\r\nWilliam a \xE9t\xE9 victime du
-        ph\xE9nom\xE8ne que nous appelons \u201Ccristallisation\u201D . Des cristaux
-        sont sortis de diff\xE9rentes parties de sa t\xEAte : les yeux, la bouche,
-        les oreilles\u2026 Le ph\xE9nom\xE8ne s\u2019est ensuite r\xE9pandu sur une
-        grande partie de son corps : les bras, les jambes, le ventre\u2026 Son corps
-        a \xE9t\xE9 plac\xE9 dans la section m\xE9dicale.\r\n\r\nPuisque William
-        a \xE9t\xE9 la seule victime de la cristallisation jusqu\u2019\xE0 pr\xE9sent,
-        il est facile de comprendre la cause de ce ph\xE9nom\xE8ne. Il a d\xFB s\u2019injecter
-        en cachette plusieurs seringues contenant le produit des cristaux, d\xE9passant
-        ainsi le dosage qu\u2019il avait initialement re\xE7u durant l\u2019exp\xE9rience
-        du 27 juillet.\r"
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_fontSize
-      value: 4.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 411c20a58bbaf9946a0d71d19bbe57b5,
-        type: 2}
-    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_fontSizeBase
-      value: 4.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: -7771989631263859204, guid: 411c20a58bbaf9946a0d71d19bbe57b5,
-        type: 2}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 55
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -33.27
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -29.966
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -53.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740229, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_Name
-      value: EcritTest5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740234, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: Image
-      value: 
-      objectReference: {fileID: 21300000, guid: 53cfc08c1f0a738418af50b81be102a4,
-        type: 3}
-    - target: {fileID: 2428044789826740238, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: ZoomPos
-      value: 
-      objectReference: {fileID: 1109891907}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 79c745cc6ba32b14db2307ebdd87d0df, type: 3}
 --- !u!1 &1032071527
 GameObject:
   m_ObjectHideFlags: 0
@@ -46402,7 +45159,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 67
+  m_RootOrder: 56
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1086502708
 GameObject:
@@ -47018,7 +45775,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 85
+  m_RootOrder: 74
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1131015786
 GameObject:
@@ -47861,7 +46618,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 75
+  m_RootOrder: 64
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &1174047911
 GameObject:
@@ -48582,7 +47339,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 72
+  m_RootOrder: 61
   m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 21.982}
 --- !u!1 &1182516823
 GameObject:
@@ -50509,7 +49266,7 @@ PrefabInstance:
     - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_RootOrder
-      value: 48
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
@@ -50728,176 +49485,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1297915869}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1001 &1304542679
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_text
-      value: "\nDe toute \xE9vidence, l\u2019\xEAtre humain a une tol\xE9rance limit\xE9e
-        aux effets des cristaux. \xC9tant donn\xE9 que nous ne savons pas quand est-ce
-        que William a commenc\xE9 \xE0 s\u2019injecter le produit en cachette, il
-        est pour le moment difficile d\u2019estimer le niveau de cette tol\xE9rance.\r\n\r\n\xC0
-        pr\xE9sent, nous allons nous r\xE9unir pour discuter de cet \xE9v\xE9nement.
-        J\u2019en profiterai pour faire part \xE0 l\u2019\xE9quipage de mes toutes
-        derni\xE8res d\xE9couvertes sur les cristaux, des d\xE9couvertes qui remettent
-        tout en cause.\r"
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_fontSize
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 5b932b2e4af544f43b0ee9b50e33e25f,
-        type: 2}
-    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_fontSizeBase
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 8971846431161349768, guid: 5b932b2e4af544f43b0ee9b50e33e25f,
-        type: 2}
-    - target: {fileID: 2428044788833346526, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 8971846431161349768, guid: 5b932b2e4af544f43b0ee9b50e33e25f,
-        type: 2}
-    - target: {fileID: 2428044789400484557, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: -4849859290214181873, guid: 606905de589fff14e81409061cdb8604,
-        type: 2}
-    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_text
-      value: "                            Rapport n\xB02 \n\n  Rapport r\xE9dig\xE9
-        par : Marcus Brown     Date : 2 septembre 2246\n\r\n  Sujet : Mort de William
-        Hartley \xE0 13H15\r\n\r\nWilliam a \xE9t\xE9 victime du ph\xE9nom\xE8ne
-        que nous appelons \u201Ccristallisation\u201D . Des cristaux sont sortis
-        de diff\xE9rentes parties de sa t\xEAte : les yeux, la bouche, les oreilles\u2026
-        Le ph\xE9nom\xE8ne s\u2019est ensuite r\xE9pandu sur une grande partie de
-        son corps : les bras, les jambes, le ventre\u2026 Son corps a \xE9t\xE9 plac\xE9
-        dans la section m\xE9dicale.\r\n\r\nPuisque William a \xE9t\xE9 la seule
-        victime de la cristallisation jusqu\u2019\xE0 pr\xE9sent, il est facile de
-        comprendre la cause de ce ph\xE9nom\xE8ne. Il a d\xFB s\u2019injecter en
-        cachette plusieurs seringues contenant le produit des cristaux, d\xE9passant
-        ainsi le dosage qu\u2019il avait initialement re\xE7u durant l\u2019exp\xE9rience
-        du 27 juillet.\r"
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_fontSize
-      value: 4.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 606905de589fff14e81409061cdb8604,
-        type: 2}
-    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_fontSizeBase
-      value: 4.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: -4849859290214181873, guid: 606905de589fff14e81409061cdb8604,
-        type: 2}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 54
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -34.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -29.966
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -53.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740229, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_Name
-      value: EcritTest4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740234, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: Image
-      value: 
-      objectReference: {fileID: 21300000, guid: 53cfc08c1f0a738418af50b81be102a4,
-        type: 3}
-    - target: {fileID: 2428044789826740238, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: ZoomPos
-      value: 
-      objectReference: {fileID: 1109891907}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 79c745cc6ba32b14db2307ebdd87d0df, type: 3}
 --- !u!1 &1305605446
 GameObject:
   m_ObjectHideFlags: 0
@@ -50940,7 +49527,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 91
+  m_RootOrder: 80
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1319078850
 GameObject:
@@ -51247,7 +49834,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 74
+  m_RootOrder: 63
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!328 &1321207984 stripped
 VideoPlayer:
@@ -52746,7 +51333,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 81
+  m_RootOrder: 70
   m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 21.815}
 --- !u!1 &1400365190
 GameObject:
@@ -53243,7 +51830,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 65
+  m_RootOrder: 54
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1404576849
 PrefabInstance:
@@ -64330,7 +62917,7 @@ PrefabInstance:
     - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_RootOrder
-      value: 45
+      value: 43
       objectReference: {fileID: 0}
     - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
@@ -65952,7 +64539,7 @@ Transform:
   m_LocalScale: {x: 9.651461, y: 0.99999976, z: 4.8697686}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 60
+  m_RootOrder: 49
   m_LocalEulerAnglesHint: {x: -0.004, y: 0.23700002, z: 0.001}
 --- !u!1 &1567826180
 GameObject:
@@ -66988,7 +65575,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 71
+  m_RootOrder: 60
   m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 21.982}
 --- !u!43 &1630592228
 Mesh:
@@ -67488,7 +66075,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 87
+  m_RootOrder: 76
   m_LocalEulerAnglesHint: {x: 0, y: 60, z: 0}
 --- !u!1 &1668229756
 GameObject:
@@ -68986,7 +67573,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 68
+  m_RootOrder: 57
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1734579290
 GameObject:
@@ -74917,205 +73504,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1815426286
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_text
-      value: "\nVu le go\xFBt, \xE7a m'\xE9tonnerait que ce soit les m\xEAmes \xE9l\xE9ments
-        que l'on retrouve dans les fruits..."
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_fontSize
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_margin.x
-      value: 0.0077826986
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_margin.z
-      value: -0.0011301048
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 5b932b2e4af544f43b0ee9b50e33e25f,
-        type: 2}
-    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_fontSizeBase
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 8971846431161349768, guid: 5b932b2e4af544f43b0ee9b50e33e25f,
-        type: 2}
-    - target: {fileID: 2428044788833346526, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 8971846431161349768, guid: 5b932b2e4af544f43b0ee9b50e33e25f,
-        type: 2}
-    - target: {fileID: 2428044789400484557, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 8971846431161349768, guid: 5b932b2e4af544f43b0ee9b50e33e25f,
-        type: 2}
-    - target: {fileID: 2428044789400484558, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 9.0171995
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789400484558, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 9.0171995
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789400484558, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 9.0171995
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_text
-      value: "                       Rapport : premi\xE8res analyses du cristal\n\nTracey
-        et moi-m\xEAme avons pass\xE9 la semaine \xE0 \xE9tudier les cristaux que
-        nous avons r\xE9cup\xE9r\xE9s. Nous pouvons en tirer les conclusions suivantes
-        :\r\n\r\nLa structure des cristaux est extr\xEAmement r\xE9sistante en elle-m\xEAme.
-        Cependant, lorsque les cristaux sont pr\xE9lev\xE9s de l\u2019ast\xE9ro\xEFde
-        sur lequel ils se trouvaient, ils se ramollissent grandement.\r\n\r\nApr\xE8s
-        avoir ouvert plusieurs cristaux, nous avons constat\xE9 qu\u2019ils contenaient
-        une substance liquide assez \xE9trange. En l\u2019observant au microscope,
-        il s\u2019est av\xE9r\xE9 que cette substance abritait des \xE9l\xE9ments
-        nutritifs qui s\u2019apparentent \xE0 ceux que l\u2019on retrouve dans certains
-        aliments, notamment des fruits.\r"
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_fontSize
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_margin.z
-      value: -0.36155844
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 5b932b2e4af544f43b0ee9b50e33e25f,
-        type: 2}
-    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_fontSizeBase
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 8971846431161349768, guid: 5b932b2e4af544f43b0ee9b50e33e25f,
-        type: 2}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 42
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -36.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -29.966
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -55.56
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740229, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_Name
-      value: RapportPremieresAnalysesCristal
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740234, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: Image
-      value: 
-      objectReference: {fileID: 21300000, guid: 4fda106f2617c774497763d7b736cea2,
-        type: 3}
-    - target: {fileID: 2428044789826740238, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: ZoomPos
-      value: 
-      objectReference: {fileID: 1109891907}
-    - target: {fileID: 3962323351359523056, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: cc3418af6417fda4db165b7a90389a1e,
-        type: 3}
-    - target: {fileID: 6233248368420440654, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: cc3418af6417fda4db165b7a90389a1e,
-        type: 3}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 79c745cc6ba32b14db2307ebdd87d0df, type: 3}
 --- !u!1 &1823166191
 GameObject:
   m_ObjectHideFlags: 0
@@ -75588,7 +73976,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 70
+  m_RootOrder: 59
   m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 21.982}
 --- !u!1 &1835422137
 GameObject:
@@ -76773,7 +75161,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 86
+  m_RootOrder: 75
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &1888669493
 Mesh:
@@ -79420,7 +77808,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 77
+  m_RootOrder: 66
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &1923679784
 GameObject:
@@ -81743,213 +80131,8 @@ Transform:
   m_LocalScale: {x: 8.1046715, y: 0.99999976, z: 4.5433373}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 59
+  m_RootOrder: 48
   m_LocalEulerAnglesHint: {x: -0.004, y: 0.23700002, z: 0.001}
---- !u!1001 &2016551971
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1718356763766671435, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_text
-      value: "\n                  Rapport n\xB02 : test sur des souris"
-      objectReference: {fileID: 0}
-    - target: {fileID: 1718356763766671435, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_fontSize
-      value: 3.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1718356763766671435, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee,
-        type: 2}
-    - target: {fileID: 1718356763766671435, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_fontSizeBase
-      value: 3.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1718356763766671435, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_text
-      value: "\nDe toute \xE9vidence, l\u2019\xEAtre humain a une tol\xE9rance limit\xE9e
-        aux effets des cristaux. \xC9tant donn\xE9 que nous ne savons pas quand est-ce
-        que William a commenc\xE9 \xE0 s\u2019injecter le produit en cachette, il
-        est pour le moment difficile d\u2019estimer le niveau de cette tol\xE9rance.\r\n\r\n\xC0
-        pr\xE9sent, nous allons nous r\xE9unir pour discuter de cet \xE9v\xE9nement.
-        J\u2019en profiterai pour faire part \xE0 l\u2019\xE9quipage de mes toutes
-        derni\xE8res d\xE9couvertes sur les cristaux, des d\xE9couvertes qui remettent
-        tout en cause.\r"
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_fontSize
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 5b932b2e4af544f43b0ee9b50e33e25f,
-        type: 2}
-    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_fontSizeBase
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 8971846431161349768, guid: 5b932b2e4af544f43b0ee9b50e33e25f,
-        type: 2}
-    - target: {fileID: 2428044788833346526, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 8971846431161349768, guid: 5b932b2e4af544f43b0ee9b50e33e25f,
-        type: 2}
-    - target: {fileID: 2428044789400484557, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: -4961310600536069339, guid: 6abfd85b468a01a48978d449e00d8706,
-        type: 2}
-    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_text
-      value: "                   \n\n  Rapport r\xE9dig\xE9 par : Marcus Brown    
-        Date : 2 septembre 2246\n\r\n  Sujet : Mort de William Hartley \xE0 13H15\r\n\r\nWilliam
-        a \xE9t\xE9 victime du ph\xE9nom\xE8ne que nous appelons \u201Ccristallisation\u201D
-        . Des cristaux sont sortis de diff\xE9rentes parties de sa t\xEAte : les
-        yeux, la bouche, les oreilles\u2026 Le ph\xE9nom\xE8ne s\u2019est ensuite
-        r\xE9pandu sur une grande partie de son corps : les bras, les jambes, le
-        ventre\u2026 Son corps a \xE9t\xE9 plac\xE9 dans la section m\xE9dicale.\r\n\r\nPuisque
-        William a \xE9t\xE9 la seule victime de la cristallisation jusqu\u2019\xE0
-        pr\xE9sent, il est facile de comprendre la cause de ce ph\xE9nom\xE8ne. Il
-        a d\xFB s\u2019injecter en cachette plusieurs seringues contenant le produit
-        des cristaux, d\xE9passant ainsi le dosage qu\u2019il avait initialement
-        re\xE7u durant l\u2019exp\xE9rience du 27 juillet.\r"
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_fontSize
-      value: 4.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 6abfd85b468a01a48978d449e00d8706,
-        type: 2}
-    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_fontSizeBase
-      value: 4.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: -4961310600536069339, guid: 6abfd85b468a01a48978d449e00d8706,
-        type: 2}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -37.406
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -29.966
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -53.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740229, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_Name
-      value: EcritTest
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740234, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: Image
-      value: 
-      objectReference: {fileID: 21300000, guid: 53cfc08c1f0a738418af50b81be102a4,
-        type: 3}
-    - target: {fileID: 2428044789826740238, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: ZoomPos
-      value: 
-      objectReference: {fileID: 1109891907}
-    - target: {fileID: 2552726465310881752, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-    - target: {fileID: 5023047299795160136, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 79c745cc6ba32b14db2307ebdd87d0df, type: 3}
 --- !u!1 &2024961554
 GameObject:
   m_ObjectHideFlags: 0
@@ -82239,7 +80422,7 @@ Transform:
   m_LocalScale: {x: 7.2293916, y: 0.9999998, z: 4.223218}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 62
+  m_RootOrder: 51
   m_LocalEulerAnglesHint: {x: 0.003, y: -1199.7631, z: 0.004}
 --- !u!1001 &2047623137
 PrefabInstance:
@@ -82519,225 +80702,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 92
+  m_RootOrder: 81
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
---- !u!1001 &2063566696
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2048744470006308764, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 1932e6be6c276f94f8b1995a5e242bd1,
-        type: 3}
-    - target: {fileID: 2048744470006308764, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_text
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_fontSize
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 5b932b2e4af544f43b0ee9b50e33e25f,
-        type: 2}
-    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_fontSizeBase
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044788833346512, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 8971846431161349768, guid: 5b932b2e4af544f43b0ee9b50e33e25f,
-        type: 2}
-    - target: {fileID: 2428044788833346526, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 8971846431161349768, guid: 5b932b2e4af544f43b0ee9b50e33e25f,
-        type: 2}
-    - target: {fileID: 2428044789150277391, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789400484557, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 8971846431161349768, guid: 5b932b2e4af544f43b0ee9b50e33e25f,
-        type: 2}
-    - target: {fileID: 2428044789400484558, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 9.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789400484558, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 9.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789400484558, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 9.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_text
-      value: "                              Rapport : tests sur des souris\n\nSuite
-        \xE0 la d\xE9couverte d\u2019\xE9l\xE9ments nutritifs dans les cristaux,
-        nous avons pris la d\xE9cision de faire ing\xE9rer la substance liquide contenant
-        ces \xE9l\xE9ments \xE0 des souris.\r\n\nD\xE8s le premier test, nous avons
-        observ\xE9 un ph\xE9nom\xE8ne des plus \xE9tranges. Nous avons d\u2019abord
-        cru que la souris s\u2019\xE9tait t\xE9l\xE9port\xE9e d\u2019un bout \xE0
-        l\u2019autre de la table sur laquelle elle se trouvait. Apr\xE8s de nouveaux
-        tests, nous avons constat\xE9 que certaines souris semblaient bien se t\xE9l\xE9porter
-        sur une courte distance, tandis que d\u2019autres changeaient simplement
-        de position.\r\n\nC\u2019est l\xE0 que Tracey a \xE9mis l\u2019hypoth\xE8se
-        que ce ne sont pas les souris qui se t\xE9l\xE9portent, mais qu\u2019elles
-        stoppent le temps pendant un court moment, ce qui nous donne l\u2019impression
-        qu\u2019elles se d\xE9placent \xE0 la vitesse de la lumi\xE8re. Cette th\xE9orie
-        semble totalement surr\xE9aliste et pourtant\u2026\r"
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_fontSize
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_margin.z
-      value: -0.36943054
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 5b932b2e4af544f43b0ee9b50e33e25f,
-        type: 2}
-    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_fontSizeBase
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789400484559, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 8971846431161349768, guid: 5b932b2e4af544f43b0ee9b50e33e25f,
-        type: 2}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 43
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -36.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -29.966
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -55.56
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740229, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_Name
-      value: RapportTestsSouris
-      objectReference: {fileID: 0}
-    - target: {fileID: 2428044789826740234, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: Image
-      value: 
-      objectReference: {fileID: 21300000, guid: 78146b24cdcb6864c833da513c7a8024,
-        type: 3}
-    - target: {fileID: 2428044789826740238, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: ZoomPos
-      value: 
-      objectReference: {fileID: 1109891907}
-    - target: {fileID: 2815847358846757823, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.65
-      objectReference: {fileID: 0}
-    - target: {fileID: 2815847358846757823, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.6134
-      objectReference: {fileID: 0}
-    - target: {fileID: 3962323351359523056, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: cc3418af6417fda4db165b7a90389a1e,
-        type: 3}
-    - target: {fileID: 6233248368420440654, guid: 79c745cc6ba32b14db2307ebdd87d0df,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: cc3418af6417fda4db165b7a90389a1e,
-        type: 3}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 79c745cc6ba32b14db2307ebdd87d0df, type: 3}
 --- !u!1 &2070688880 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4100787236950156432, guid: 5593ad09390d10841b53181c2692d8dd,
@@ -83062,7 +81028,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 78
+  m_RootOrder: 67
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &2079889582
 GameObject:
@@ -83548,7 +81514,7 @@ PrefabInstance:
     - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
       propertyPath: m_RootOrder
-      value: 44
+      value: 42
       objectReference: {fileID: 0}
     - target: {fileID: 2428044789826740225, guid: 79c745cc6ba32b14db2307ebdd87d0df,
         type: 3}
@@ -83964,7 +81930,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 483054, guid: 857b9bcf7311f5a49b829c4fd3cc791f, type: 3}
       propertyPath: m_RootOrder
-      value: 83
+      value: 72
       objectReference: {fileID: 0}
     - target: {fileID: 483054, guid: 857b9bcf7311f5a49b829c4fd3cc791f, type: 3}
       propertyPath: m_LocalScale.x
