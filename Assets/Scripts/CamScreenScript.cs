@@ -8,6 +8,9 @@ public class CamScreenScript : MonoBehaviour
 {
     public int WhichPurple;
     [SerializeField] private MeshRenderer _interactFeedBack;
+    [SerializeField] private Material _videoMat = null;
+    [SerializeField] private Material _nonVideoMat = null;
+
 
 
     [Header("Sinon mettre la vidéo dans le VideoPlayer")]
@@ -77,6 +80,7 @@ public class CamScreenScript : MonoBehaviour
             GetComponent<VideoPlayer>().clip = Videos[1];
 
         OnOff();
+
     }
 
 
@@ -97,7 +101,10 @@ public class CamScreenScript : MonoBehaviour
 
     private void Update()
     {
-
+        if (_onOffButton.IsActivated == true)
+            GetComponent<MeshRenderer>().material = _videoMat;
+        else
+            GetComponent<MeshRenderer>().material = _nonVideoMat;
         /*if(Movie.clip != null)
         {
             //Change la vitesse du film en fonction du TimeManager

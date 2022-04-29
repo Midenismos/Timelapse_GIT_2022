@@ -1,7 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering.PostProcessing;
+using UnityEngine.Rendering.Universal;
+using UnityEngine.Rendering;
 
 public class NebulaPostProcessing : MonoBehaviour
 {
@@ -15,14 +16,13 @@ public class NebulaPostProcessing : MonoBehaviour
 
     [SerializeField] private Color yellowNebulaColor = Color.yellow;
     [SerializeField] private Color purpleNebulaColor = Color.magenta;
-    [SerializeField] private PostProcessVolume volume = null;
+    [SerializeField] private Volume volume = null;
 
     private ChromaticAberration chromaticAberration;
-    private ColorGrading colorGrading;
+    private ColorAdjustments colorGrading;
 
     private void Awake()
     {
-
         _loopManager = GameObject.Find("LoopManager").GetComponent<NewLoopManager>();
         _loopManager.ReactedToNebuleuse += delegate (NebuleuseType NebuleuseType)
         {
@@ -48,7 +48,7 @@ public class NebulaPostProcessing : MonoBehaviour
 
     private void Start()
     {
-        volume.profile.TryGetSettings(out colorGrading);
+        volume.profile.TryGet<ColorAdjustments>(out colorGrading);
         Debug.Log(_colorB);
         colorGrading.colorFilter.value = purpleNebulaColor;
     }
@@ -64,7 +64,7 @@ public class NebulaPostProcessing : MonoBehaviour
                 _isLerping = false;
             }
 
-            volume.profile.TryGetSettings(out colorGrading);
+            volume.profile.TryGet<ColorAdjustments>(out colorGrading);
             colorGrading.colorFilter.value = Color.Lerp(_colorA, _colorB, _colorLerp);
             //_light.color = Color.Lerp(_colorA, _colorB, _colorLerp);
             _colorLerp = 1f - _LerpCooldown;

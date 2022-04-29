@@ -211,3 +211,4 @@ Material:
     - _SkyblendA: {r: 0.4731502, g: 0.2653524, b: 0.6320754, a: 0}
     - _SunsetColor: {r: 0.3685, g: 0.55275, b: 0.737, a: 0}
     - _WaterColor: {r: 0, g: 0, b: 0, a: 0}
+  m_BuildTextureStacks: []
