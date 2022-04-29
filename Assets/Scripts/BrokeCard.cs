@@ -5,7 +5,7 @@ using UnityEngine;
 public class BrokeCard : MonoBehaviour
 {
     [SerializeField]
-    private Card card = null;
+    //private Card card = null;
 
 
     //Casse la carte si le joueur marche dessus (entre en contact avec le boxCollider du GameObject Whole
@@ -13,8 +13,8 @@ public class BrokeCard : MonoBehaviour
     {
         if (other.gameObject.name == "FeetCollider")
         {
-            card.isBroken = true;
-            card.timerSinceBroken = 0;
+            //card.isBroken = true;
+            //card.timerSinceBroken = 0;
             FindObjectOfType<SoundManager>().Play("BreakingCard", 0f);
             FindObjectOfType<SoundManager>().RandomisePitch("BreakingCard");
         }

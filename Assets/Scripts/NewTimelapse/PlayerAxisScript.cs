@@ -122,6 +122,9 @@ public class PlayerAxisScript : MonoBehaviour
 
             if (_rotationCountdown == 0)
             {
+                transform.rotation = Quaternion.Euler(_targetRotation);
+                cam.transform.localPosition = _targetPosition;
+                cam.transform.rotation = Quaternion.Euler(_targetCamRotation);
                 _currentAxisRotation = transform.rotation.eulerAngles;
                 _currentCamRotation = cam.transform.rotation.eulerAngles;
                 _currentCamPosition = cam.transform.localPosition;

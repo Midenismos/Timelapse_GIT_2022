@@ -35,8 +35,8 @@ public partial class Deck : MonoBehaviour
 #else
     rampCanvas.gameObject.SetActive(true);
 
-    rampButton.onClick.RemoveAllListeners();
-    rampButton.onClick.AddListener(() =>
+    //rampButton.onClick.RemoveAllListeners();
+    /*rampButton.onClick.AddListener(() =>
     {
       if (string.IsNullOrEmpty(rampInput.text) == false && rampInput.text.Length > 3)
       {
@@ -63,7 +63,7 @@ public partial class Deck : MonoBehaviour
       }
 
       rampInput.text = string.Empty;
-    });
+    });*/
 #endif
   }
 }

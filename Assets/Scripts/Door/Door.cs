@@ -93,7 +93,7 @@ public class Door : Rewindable, ITimeStoppable
             {
                 if (player.pickup.name == cardName)
                 {
-                    if (player.pickup.GetComponent<Card>().isBroken == false)
+                    /*if (player.pickup.GetComponent<Card>().isBroken == false)
                     {
 
                         OpenDoor();
@@ -102,7 +102,7 @@ public class Door : Rewindable, ITimeStoppable
                     else
                     {
                         FindObjectOfType<SoundManager>().Play("Fail", 0f);
-                    }
+                    }*/
                 }
                 else
                 {

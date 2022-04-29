@@ -11,9 +11,9 @@ public class VaultScript : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if(GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().Energy <=0 && GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == 4)
+        if(GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().Energy <=0 && GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == 4 )
         {
-            if (isOpen)
+            if (isOpen && !GameObject.Find("Player").GetComponent<PlayerAxisScript>().HasItem)
                 CloseDoor();
             else
             {

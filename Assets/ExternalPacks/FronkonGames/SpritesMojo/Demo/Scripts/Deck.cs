@@ -215,8 +215,8 @@ public partial class Deck : MonoBehaviour
 
   private void EnumLeftButton<T>(Button button, Text label, Material material, EnumVariable enumVariable, int max) where T : struct, IComparable
   {
-    button.onClick.RemoveAllListeners();
-    button.onClick.AddListener(() =>
+    //button.onClick.RemoveAllListeners();
+    /*button.onClick.AddListener(() =>
     {
       int mode = Convert.ToInt32(enumVariable.Get<T>(material));
       if (mode > 0)
@@ -225,13 +225,13 @@ public partial class Deck : MonoBehaviour
         enumVariable.Set(material, max);
 
       label.text = Card.FromCamelCase(Enum.GetNames(typeof(T)).GetValue(material.GetInt(enumVariable.Variable)).ToString());
-    });
+    });*/
   }
 
   private void EnumRightButton<T>(Button button, Text label, Material material, EnumVariable enumVariable, int max) where T : struct, IComparable
   {
-    button.onClick.RemoveAllListeners();
-    button.onClick.AddListener(() =>
+    //button.onClick.RemoveAllListeners();
+    /*button.onClick.AddListener(() =>
     {
       int mode = Convert.ToInt32(enumVariable.Get<T>(material));
       if (mode < max)
@@ -240,13 +240,13 @@ public partial class Deck : MonoBehaviour
         enumVariable.Set(material, 0);
 
       label.text = Card.FromCamelCase(Enum.GetNames(typeof(T)).GetValue(material.GetInt(enumVariable.Variable)).ToString());
-    });
+    });*/
   }
 
   private void EnumLeftButton<T>(Button button, Text label, Material material, KeywordsVariable keywordsVariable, int max) where T : struct, IComparable
   {
-    button.onClick.RemoveAllListeners();
-    button.onClick.AddListener(() =>
+    //button.onClick.RemoveAllListeners();
+    /*button.onClick.AddListener(() =>
     {
       int mode = keywordsVariable.Get(material);
       if (mode > 0)
@@ -255,13 +255,13 @@ public partial class Deck : MonoBehaviour
         keywordsVariable.Set(material, max);
 
       label.text = Card.FromCamelCase(keywordsVariable.Names[keywordsVariable.Get(material)]);
-    });
+    });*/
   }
 
   private void EnumRightButton<T>(Button button, Text label, Material material, KeywordsVariable keywordsVariable, int max) where T : struct, IComparable
   {
-    button.onClick.RemoveAllListeners();
-    button.onClick.AddListener(() =>
+    //button.onClick.RemoveAllListeners();
+    /*button.onClick.AddListener(() =>
     {
       int mode = keywordsVariable.Get(material);
       if (mode < max)
@@ -270,7 +270,7 @@ public partial class Deck : MonoBehaviour
         keywordsVariable.Set(material, 0);
 
       label.text = Card.FromCamelCase(keywordsVariable.Names[keywordsVariable.Get(material)]);
-    });
+    });*/
   }
 
   private void UpdateSlider(Slider slider, float value, Material material, UnityAction<float> onValueChanged)

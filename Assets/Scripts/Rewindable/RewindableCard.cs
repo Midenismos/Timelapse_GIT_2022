@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RewindableCard : Rewindable
 {
-    [SerializeField] private Card card = null;
+    //[SerializeField] private Card card = null;
     public override void StartRewind(float timestamp)
     {
         base.StartRewind(timestamp);
@@ -15,9 +15,9 @@ public class RewindableCard : Rewindable
         base.Rewind(deltaGameTime, totalTime);
         
         // Fait reculer le temps passé depuis que la carte a été cassée
-        if (card.isBroken == true)
+        /*if (card.isBroken == true)
         {
             card.timerSinceBroken -= deltaGameTime;
-        }
+        }*/
     }
 }

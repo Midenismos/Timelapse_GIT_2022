@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Card : MonoBehaviour
+/*public class Card : MonoBehaviour
 {
     public bool isBroken = false;
     public GameObject whole;
@@ -56,4 +56,4 @@ public class Card : MonoBehaviour
         }
     }
 
-}
+}*/

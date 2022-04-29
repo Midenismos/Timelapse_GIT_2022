@@ -42,6 +42,7 @@ public class VaultListener : MonoBehaviour
     public void StopSound()
     {
         GetComponent<AudioSource>().Stop();
+        _onOffButton.IsActivated = false;
         isActivated = false;
     }
 }
