@@ -1,11 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class LeverScript : MonoBehaviour
 {
+    [SerializeField] private Slider _slider = null;
+    [SerializeField] private InterfaceAnimManager _animManager = null;
 
-    private float SceneHeight;
+    /*private float SceneHeight;
     private Vector3 PressPoint;
     private Quaternion StartRotation;
     private Quaternion Rotation;
@@ -45,18 +49,32 @@ public class LeverScript : MonoBehaviour
         if (angle > 360F)
             angle -= 360F;
         return Mathf.Clamp(angle, min, max);
-    }
-
+    }*/
 
     private void Update()
     {
-        //Change la vitesse du vaisseau en fonction de l'angle du levier.
-        if (transform.parent.transform.localRotation.eulerAngles.z > 15 && transform.parent.transform.localRotation.eulerAngles.z < 20.1)
-            GameObject.Find("LoopManager").GetComponent<NewLoopManager>().Speed = SpeedType.SLOW;
-        else if (transform.parent.transform.localRotation.eulerAngles.z > 339.1 && transform.parent.transform.localRotation.eulerAngles.z < 345)
-            GameObject.Find("LoopManager").GetComponent<NewLoopManager>().Speed = SpeedType.FAST;
+
+        if (GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == 2)
+        {
+            if (_animManager.currentState == CSFHIAnimableState.disappeared)
+                _animManager.startAppear();
+        }
         else
-            GameObject.Find("LoopManager").GetComponent<NewLoopManager>().Speed = SpeedType.NORMAL;
+        {
+            if (_animManager.currentState == CSFHIAnimableState.appeared)
+                _animManager.startDisappear();
+        }
+            //Change la vitesse du vaisseau en fonction du slider.
+        if (_slider.gameObject.activeInHierarchy)
+        {
+            if (_slider.value >= 0.5f && _slider.value < 0.75f)
+                GameObject.Find("LoopManager").GetComponent<NewLoopManager>().Speed = SpeedType.SLOW;
+            else if (_slider.value > 1.5f && _slider.value <= 2)
+                GameObject.Find("LoopManager").GetComponent<NewLoopManager>().Speed = SpeedType.FAST;
+            else
+                GameObject.Find("LoopManager").GetComponent<NewLoopManager>().Speed = SpeedType.NORMAL;
+        }
+
 
     }
 }

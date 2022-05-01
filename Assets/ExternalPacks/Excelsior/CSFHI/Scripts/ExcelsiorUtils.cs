@@ -15,7 +15,7 @@ public class ExcelsiorUtils:MonoBehaviour {
 	void Start () {
 	
 	}
-    private void playSound() {
+    public void playSound() {
         if (audioSource && audioSource.enabled)
             audioSource.clip = audioClip;
             audioSource.Play();

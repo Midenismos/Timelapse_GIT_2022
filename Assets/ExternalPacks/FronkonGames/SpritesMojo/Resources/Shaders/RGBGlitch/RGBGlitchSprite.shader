@@ -31,6 +31,14 @@ Shader "Fronkon Games/Sprites Mojo/RGB Glitch"
     [HideInInspector] _RenderQueue("__queue", Float) = 0.0
     [HideInInspector] _Cull("__cull", Float) = 0.0
 
+             // required for UI.Mask
+         _StencilComp ("Stencil Comparison", Float) = 8
+         _Stencil ("Stencil ID", Float) = 0
+         _StencilOp ("Stencil Operation", Float) = 0
+         _StencilWriteMask ("Stencil Write Mask", Float) = 255
+         _StencilReadMask ("Stencil Read Mask", Float) = 255
+         _ColorMask ("Color Mask", Float) = 15
+
     // Common.
     _Amount("Amount", Range(0.0, 1.0)) = 1.0
 
@@ -60,7 +68,16 @@ Shader "Fronkon Games/Sprites Mojo/RGB Glitch"
     }
 
     LOD 100
-
+             // required for UI.Mask
+         Stencil
+         {
+             Ref [_Stencil]
+             Comp [_StencilComp]
+             Pass [_StencilOp] 
+             ReadMask [_StencilReadMask]
+             WriteMask [_StencilWriteMask]
+         }
+          ColorMask [_ColorMask]
     Pass
     {
       Blend [_SrcBlend] [_DstBlend]

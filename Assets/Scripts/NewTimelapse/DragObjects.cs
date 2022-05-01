@@ -75,9 +75,9 @@ public class DragObjects : MonoBehaviour
         Vector3 mousePoint = Input.mousePosition;
 
         mousePoint.z = mZCoord;
-        if (Is3D)
-            mousePoint.y = Mathf.Clamp(mousePoint.y, 150, 5000);
-        else if (IsEntry)
+        /*if (Is3D)
+            mousePoint.y = Mathf.Clamp(mousePoint.y, 150, 5000);*/
+        if (IsEntry)
             mousePoint.y = transform.position.y;
 
 

@@ -31,6 +31,7 @@ public class PlayerAxisScript : MonoBehaviour
     public bool IsInTI = false;
     public bool IsDraging = false;
 
+    [SerializeField] private InterfaceAnimManager _TI = null;
 
     // Start is called before the first frame update
     void Start()
@@ -97,6 +98,7 @@ public class PlayerAxisScript : MonoBehaviour
                     _targetCamRotation = new Vector3(90, cam.transform.rotation.eulerAngles.y, cam.transform.rotation.eulerAngles.z);
                     _isLerping = true;
                     IsInTI = true;
+                    _TI.startAppear();
                 }
             }
             if (Input.GetKeyDown("z"))
@@ -110,6 +112,7 @@ public class PlayerAxisScript : MonoBehaviour
                     _targetCamRotation = _camRotation[IDCurrentAxis];
                     _isLerping = true;
                     IsInTI = false;
+                    _TI.startDisappear();
                 }
             }
         }
