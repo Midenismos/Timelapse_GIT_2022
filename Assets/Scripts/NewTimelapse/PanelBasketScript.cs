@@ -68,7 +68,7 @@ public class PanelBasketScript : MonoBehaviour
                         image.GetComponent<PanelTag>().ImageTag = "map";
                         image.GetComponent<PanelTag>().IsCorrupted = GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().Energy <= 0 ? true : false;
                     }
-                    _colorA = _mat.GetColor("_EmissionColor");
+                  //  _colorA = _mat.GetColor("_EmissionColor");
                     if (GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().Energy <= 0)
                         _colorB = _glitchedScanningColor;
                     else
@@ -101,7 +101,7 @@ public class PanelBasketScript : MonoBehaviour
             if (_zoomCountdown == 0)
             {
                 _isLerping = false;
-                _mat.SetColor("_EmissionColor", _colorA);
+               // _mat.SetColor("_EmissionColor", _colorA);
                 if (scannedItem.gameObject.tag != "Cam")
                 {
                     scannedItem.GetComponent<DragObjects>().IsDragable = true;
@@ -123,15 +123,15 @@ public class PanelBasketScript : MonoBehaviour
 
             if (scannedItem)
                 scannedItem.transform.position = Vector3.Lerp(GameObject.Find("start").transform.position, GameObject.Find("interior").transform.position, _zoomLerp);
-            _mat.SetColor("_EmissionColor", Color.Lerp(_colorA, _colorB, _zoomLerp));
+           // _mat.SetColor("_EmissionColor", Color.Lerp(_colorA, _colorB, _zoomLerp));
             _zoomLerp = 1f - _zoomCountdown;
         }
         else
         {
-            if (GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().Energy <= 0)
-                _mat.SetColor("_EmissionColor", _glitchedColor);
-            else
-                _mat.SetColor("_EmissionColor", _normalColor);
+            //if (GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().Energy <= 0)
+            //    _mat.SetColor("_EmissionColor", _glitchedColor);
+           // else
+            //    _mat.SetColor("_EmissionColor", _normalColor);
         }
 
 
