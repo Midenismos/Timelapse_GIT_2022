@@ -19,6 +19,7 @@ TagManager:
   - ResetEnergy
   - Battery
   - VaultButton
+  - Panel
   layers:
   - Default
   - TransparentFX
