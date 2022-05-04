@@ -75,7 +75,8 @@ public class PanelBasketScript : MonoBehaviour
                         _colorB = _scanningColor;
 
 
-                    other.transform.SetParent(this.transform, false);
+                    //other.transform.SetParent(this.transform, false);
+                    other.transform.rotation = Quaternion.Euler(new Vector3(90, 0, 90));
                     other.transform.position = GameObject.Find("start").transform.position;
                     other.GetComponent<DragObjects>().IsDragable = false;
                     if(other.GetComponent<ZoomScript>())
@@ -108,7 +109,7 @@ public class PanelBasketScript : MonoBehaviour
                     scannedItem.GetComponent<ZoomScript>().IsZoomable = true;
                     scannedItem.GetComponent<Rigidbody>().isKinematic = false;
                     scannedItem.GetComponent<Rigidbody>().velocity = new Vector3(0,0,0);
-                    scannedItem.transform.SetParent(null, false);
+                    //scannedItem.transform.SetParent(null, false);
                     scannedItem.transform.position = GameObject.Find("start").transform.position;
                     scannedItem.GetComponent<Rigidbody>().AddForce((GameObject.Find("start").transform.forward + GameObject.Find("start").transform.up) * 200);
                     scannedItem = null;

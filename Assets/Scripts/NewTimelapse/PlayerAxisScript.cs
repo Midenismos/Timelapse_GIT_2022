@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PlayerAxisScript : MonoBehaviour
 {
@@ -103,7 +104,7 @@ public class PlayerAxisScript : MonoBehaviour
             }
             if (Input.GetKeyDown("z"))
             {
-                if (!_isLerping && IsInTI)
+                if (!_isLerping && IsInTI && GameObject.Find("EventSystem").GetComponent<EventSystem>().currentSelectedGameObject == null)
                 {
                     _rotationCountdown = 1;
                     _moveLerp = 0;

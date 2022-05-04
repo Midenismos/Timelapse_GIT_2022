@@ -9,11 +9,16 @@ public class TIEntryScript : MonoBehaviour
     [SerializeField] private GameObject _fullSheet = null;
     [SerializeField] private AudioSource _openSound = null;
     [SerializeField] private AudioSource _closeSound = null;
+    [SerializeField] private Sprite minimiseImage = null;
+    [SerializeField] private Sprite maximiseImage = null;
+    [SerializeField] private Image circleImage = null;
+
     public void OnMouseUp()
     {
         if ((Time.time - _clickStart) < 0.3f)
         {
             _fullSheet.SetActive(!_fullSheet.activeInHierarchy);
+            circleImage.sprite = _fullSheet.activeInHierarchy ? minimiseImage : maximiseImage;
             if (_fullSheet.activeInHierarchy)
                 _openSound.Play();
             else
