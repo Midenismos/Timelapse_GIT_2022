@@ -53,9 +53,12 @@ public class EnergyMetterScript : MonoBehaviour
     public event ReactToEnergyReset ReactedToEnergyReset;
     public Coroutine co = null;
 
+    [SerializeField] GameObject TIBarPosition = null;
+
     // Start is called before the first frame update
     void Start()
     {
+        TIBarPosition = GameObject.Find("TIEnergyBarPosition");
         _slider.maxValue = MaxEnergy;
         player = GameObject.Find("Player").GetComponent<PlayerAxisScript>();
         _currentRotation = _Rotations[player.IDCurrentAxis];
@@ -76,7 +79,16 @@ public class EnergyMetterScript : MonoBehaviour
         }
         _slider.value = Energy;
 
-        if (Input.GetKeyDown("d") || Input.GetKeyDown("q"))
+        if (Input.GetKeyDown("d") || Input.GetKeyDown("q") || Input.GetKeyDown("z"))
+        {
+            _rotationCountdown = 1;
+            _moveLerp = 0;
+            _isLerping = true;
+            _currentRotation = transform.rotation.eulerAngles;
+            _currentPosition = transform.position;
+            smooth = 1;
+        }
+        if(Input.GetKeyDown("s"))
         {
             _rotationCountdown = 1;
             _moveLerp = 0;
@@ -103,8 +115,16 @@ public class EnergyMetterScript : MonoBehaviour
             {
                 _isLerping = false;
             }
-            transform.position = Vector3.Lerp(_currentPosition, _Positions[player.IDCurrentAxis], _moveLerp);
-            transform.rotation = Quaternion.Slerp(Quaternion.Euler(_currentRotation), Quaternion.Euler(_Rotations[player.IDCurrentAxis]), _moveLerp);
+            if(!player.IsInTI)
+            {
+                transform.position = Vector3.Lerp(_currentPosition, _Positions[player.IDCurrentAxis], _moveLerp);
+                transform.rotation = Quaternion.Slerp(Quaternion.Euler(_currentRotation), Quaternion.Euler(_Rotations[player.IDCurrentAxis]), _moveLerp);
+            }
+            else
+            {
+                transform.position = Vector3.Lerp(_currentPosition, TIBarPosition.transform.position, _moveLerp);
+                transform.rotation = Quaternion.Slerp(Quaternion.Euler(_currentRotation), TIBarPosition.transform.rotation, _moveLerp);
+            }
             smooth = Mathf.Clamp(_rotationCountdown+0.25f, 0.25f, 1f);
             _moveLerp = (1f - _rotationCountdown);
             

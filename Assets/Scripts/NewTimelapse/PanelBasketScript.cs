@@ -20,6 +20,7 @@ public class PanelBasketScript : MonoBehaviour
     [SerializeField] private Color _glitchedColor;
     [SerializeField] private Color _glitchedScanningColor;
     private Material _mat = null;
+    [SerializeField] private TIBellScript[] Bells;
 
     private Color _colorA;
     private Color _colorB;
@@ -44,6 +45,7 @@ public class PanelBasketScript : MonoBehaviour
                         image.transform.SetParent(_panels[2].transform, false);
                         image.GetComponent<PanelTag>().ImageTag = "cam";
                         image.GetComponent<PanelTag>().IsCorrupted = GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().Energy <= 0 ? true : false;
+                        Bells[1].NewPanelImageNumber += 1;
                     }
                     if (other.tag == "Written")
                     {
@@ -52,6 +54,7 @@ public class PanelBasketScript : MonoBehaviour
                         image.transform.SetParent(_panels[1].transform, false);
                         image.GetComponent<PanelTag>().ImageTag = "written";
                         image.GetComponent<PanelTag>().IsCorrupted = GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().Energy <= 0 ? true : false;
+                        Bells[0].NewPanelImageNumber += 1;
                     }
                     else if (other.tag == "Tape")
                     {
@@ -59,15 +62,16 @@ public class PanelBasketScript : MonoBehaviour
                         image.transform.GetChild(1).GetComponent<TMP_Text>().text = other.GetComponent<PanelImageData>().TMText.text;
                         image.transform.SetParent(_panels[0].transform, false);
                         image.GetComponent<PanelTag>().IsCorrupted = GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().Energy <= 0 ? true : false;
+                        Bells[2].NewPanelImageNumber += 1;
                     }
-                    else if (other.tag == "Minimap")
+                    /*else if (other.tag == "Minimap")
                     {
                         image = Instantiate(_panelImageTape, this.transform);
                         image.GetComponent<Image>().sprite = other.GetComponent<PanelImageData>().Image;
                         image.transform.SetParent(_panels[3].transform, false);
                         image.GetComponent<PanelTag>().ImageTag = "map";
                         image.GetComponent<PanelTag>().IsCorrupted = GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().Energy <= 0 ? true : false;
-                    }
+                    }*/
                   //  _colorA = _mat.GetColor("_EmissionColor");
                     if (GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().Energy <= 0)
                         _colorB = _glitchedScanningColor;

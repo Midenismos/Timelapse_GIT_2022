@@ -12,7 +12,7 @@ public class TIEntryScript : MonoBehaviour
     [SerializeField] private Sprite minimiseImage = null;
     [SerializeField] private Sprite maximiseImage = null;
     [SerializeField] private Image circleImage = null;
-
+    public DispenserManager Manager = null;
     public void OnMouseUp()
     {
         if ((Time.time - _clickStart) < 0.3f)
@@ -31,6 +31,12 @@ public class TIEntryScript : MonoBehaviour
     public void OnMouseDown()
     {
         _clickStart = Time.time;
+    }
+
+    public void DeleteEntry()
+    {
+        Manager.IncreaseNumber();
+        Destroy(gameObject);
     }
 
 

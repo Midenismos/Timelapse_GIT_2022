@@ -15,6 +15,7 @@ public class SheetImageScript : MonoBehaviour
                 if( _imageTag == other.GetComponent<PanelTag>().ImageTag)
                 {
                     other.transform.SetParent(this.transform, false);
+                    other.GetComponent<RectTransform>().localScale = new Vector3(4, 4, 4);
                     other.transform.position = this.transform.position;
                     other.GetComponent<DragObjects>().IsDragable = false;
                 }

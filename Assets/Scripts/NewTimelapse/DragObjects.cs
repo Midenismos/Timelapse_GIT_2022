@@ -13,9 +13,10 @@ public class DragObjects : MonoBehaviour
     public bool IsDragable = true;
     public bool IsDragged = false;
     public bool Is3D = true;
-    public bool IsEntry = false;
+    public bool IsFixedInTI = false;
     [SerializeField] private MeshRenderer _interactFeedBack;
     [SerializeField] private int _axisID = 0;
+    public GameObject EntryDispenser = null;
 
     private void Awake()
     {
@@ -27,18 +28,34 @@ public class DragObjects : MonoBehaviour
         {
             _interactFeedBack = null;
         }
+
+        if (tag == "Entry")
+        {
+            IsDragable = false;      
+            StartCoroutine(EntryCoolDown());
+
+        }
     }
     public void StartDrag() { StartCoroutine("SyntheticDrag"); }
     private void Start()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && tag == "Cam")
         {
-            Debug.Log("Prefab created");
             StartCoroutine(SyntheticDrag());
         }
     }
     public void OnMouseDown()
     {
+        if (tag == "Entry")
+        {
+            if (EntryDispenser != null)
+            {
+                EntryDispenser.GetComponent<DispenserManager>().CurrentDrag = null;
+                EntryDispenser = null;
+                transform.SetParent(GameObject.Find("TI").transform, true);
+                GameObject.Find("TI").GetComponent<InterfaceAnimManager>().UpdateAnimClips();
+            }
+        }
         if (tag == "PanelImage" || tag == "Entry" || GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == _axisID)
         {
             if (GetComponent<ZoomScript>())
@@ -51,7 +68,7 @@ public class DragObjects : MonoBehaviour
                 GetComponent<DragObjects>().IsDragable = true;
                 if (tag == "Battery")
                     transform.SetParent(null, true);
-                else if (tag == "PanelImage")
+                else if (tag == "PanelImage" )
                     transform.SetParent(GameObject.Find("TI").transform, true);
 
             }
@@ -62,6 +79,7 @@ public class DragObjects : MonoBehaviour
                     GetComponent<Rigidbody>().isKinematic = true;
                 else if (tag == "Battery" || tag == "Written" || tag == "Tape")
                     GetComponent<Rigidbody>().isKinematic = false;
+
                 mZCoord = GameObject.Find("Camera").GetComponent<Camera>().WorldToScreenPoint(gameObject.transform.position).z;
                 mOffset = gameObject.transform.position - GetMouseWorldPos();
             }
@@ -70,21 +88,28 @@ public class DragObjects : MonoBehaviour
 
     }
 
-    private Vector3 GetMouseWorldPos()
+    public Vector3 GetMouseWorldPos()
     {
         Vector3 mousePoint = Input.mousePosition;
 
         mousePoint.z = mZCoord;
         /*if (Is3D)
             mousePoint.y = Mathf.Clamp(mousePoint.y, 150, 5000);*/
-        if (IsEntry)
-            mousePoint.y = transform.position.y;
+       if (IsFixedInTI)
+            mousePoint.y = 0;
+
+
 
 
         return GameObject.Find("Camera").GetComponent<Camera>().ScreenToWorldPoint(mousePoint);
     }
     public void OnMouseDrag()
     {
+        if (tag == "PanelImage")
+        {
+            GetComponent<RectTransform>().localScale = new Vector3(4f, 4f, 4);
+            GameObject.Find("TI").GetComponent<InterfaceAnimManager>().UpdateAnimClips();
+        }
         if (tag == "PanelImage" || tag == "Entry" || GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == _axisID)
         {
             if (IsDragable)
@@ -99,8 +124,7 @@ public class DragObjects : MonoBehaviour
                 if (GetComponent<ZoomScript>())
                     GetComponent<ZoomScript>().enabled = true;
 
-
-                if(Is3D && tag != "Cam" && tag != "Battery")
+                if (Is3D && tag != "Cam" && tag != "Battery")
                 {
                     float planeY = -29.5f;
                     Transform draggingObject = transform;
@@ -123,7 +147,13 @@ public class DragObjects : MonoBehaviour
                     }
                     //GetComponent<Rigidbody>().position = new Vector3(GetMouseWorldPos().x + mOffset.x, GetMouseWorldPos().y + mOffset.y, -74f); 
                     else
-                        transform.position = GetMouseWorldPos() + mOffset;
+                    {
+                        if (IsFixedInTI)
+                            transform.position = new Vector3(GetMouseWorldPos().x + mOffset.x, transform.position.y, transform.position.z);
+                        else
+                            transform.position = GetMouseWorldPos() + mOffset;
+
+                    }
 
                 }
             }
@@ -192,7 +222,19 @@ public class DragObjects : MonoBehaviour
                 GetComponent<Rigidbody>().AddForce((GameObject.Find("PosWrittenThrow").transform.position - transform.position) *50);
             if (gameObject.CompareTag("Tape"))
                 GetComponent<Rigidbody>().AddForce((GameObject.Find("PosTapeThrow").transform.position - transform.position) *50);
-
         }
+        if (IsFixedInTI && !IsDragged)
+            transform.localPosition = new Vector3(transform.localPosition.x, -15.7f, 0);
+        if(IsFixedInTI && IsDragged)
+            transform.localPosition = new Vector3(transform.localPosition.x, -15.7f, 0);
+
+
+    }
+
+    IEnumerator EntryCoolDown()
+    {
+        yield return new WaitForSeconds(0.5f);
+        IsDragable = true;
+        
     }
 }
