@@ -41,7 +41,7 @@ public class NebulaPostProcessing : MonoBehaviour
             _isLerping = true;
 
         };
-        //volume.profile.TryGetSettings(out colorGrading);
+        //volume.profile.TryGet<ColorAdjustments>(out colorGrading);
         //colorGrading.colorFilter.value = Color.Lerp(_colorA, _colorB, _colorLerp);
 
     }
