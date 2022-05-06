@@ -985,6 +985,7 @@ MonoBehaviour:
   maximiseImage: {fileID: 21300000, guid: e804d67d5ecdb884eb87ead790affaab, type: 3}
   circleImage: {fileID: 668855148416820351}
   Manager: {fileID: 0}
+  text: {fileID: 620407704370745522}
 --- !u!114 &1259736151
 MonoBehaviour:
   m_ObjectHideFlags: 0

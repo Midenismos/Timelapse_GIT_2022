@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class TIEntryScript : MonoBehaviour
 {
@@ -13,6 +14,9 @@ public class TIEntryScript : MonoBehaviour
     [SerializeField] private Sprite maximiseImage = null;
     [SerializeField] private Image circleImage = null;
     public DispenserManager Manager = null;
+    [SerializeField] private TMP_Text text = null;
+
+
     public void OnMouseUp()
     {
         if ((Time.time - _clickStart) < 0.3f)
@@ -39,5 +43,9 @@ public class TIEntryScript : MonoBehaviour
         Destroy(gameObject);
     }
 
+    public void ChangeHour(string minute)
+    {
+        text.text = "15 : " + minute;
+    }
 
 }
