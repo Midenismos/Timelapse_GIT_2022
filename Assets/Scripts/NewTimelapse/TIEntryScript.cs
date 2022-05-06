@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Linq;
 
 public class TIEntryScript : MonoBehaviour
 {
@@ -14,8 +15,12 @@ public class TIEntryScript : MonoBehaviour
     [SerializeField] private Sprite maximiseImage = null;
     [SerializeField] private Image circleImage = null;
     public DispenserManager Manager = null;
-    [SerializeField] private TMP_Text text = null;
+    public TMP_Text text = null;
 
+    [SerializeField] private SheetImageScript[] Slots;
+    private bool entryFilled = false;
+
+    [SerializeField] public GameObject DeleteButton = null;
 
     public void OnMouseUp()
     {
@@ -39,13 +44,46 @@ public class TIEntryScript : MonoBehaviour
 
     public void DeleteEntry()
     {
+        if (Slots.All(Slot => Slot.IsFilled == true))
+            GameObject.Find("ProgressCircle").GetComponent<ProgressCircle>().DecreaseEntryNumber();
+
         Manager.IncreaseNumber();
         Destroy(gameObject);
     }
 
-    public void ChangeHour(string minute)
+    public void ChangeHour(string minute, bool isTutoZone)
     {
-        text.text = "15 : " + minute;
+        if (!isTutoZone)
+            text.text = "15 : " + minute;
+        else
+            text.text = minute;
+    }
+
+    private void Update()
+    {
+        if(Slots.All(Slot => Slot.IsFilled == true))
+        {
+            if (entryFilled == false)
+            {
+                GameObject.Find("ProgressCircle").GetComponent<ProgressCircle>().IncreaseEntryNumber();
+                print("hey");
+                entryFilled = true;
+            }
+        }
+        else
+        {
+            if (entryFilled == true)
+            {
+                GameObject.Find("ProgressCircle").GetComponent<ProgressCircle>().DecreaseEntryNumber();
+                entryFilled = false;
+            }
+        }
+
+        if (GameObject.Find("TI").GetComponent<TutorialTI>().TutorialActivated == false && DeleteButton != null)
+        {
+            DeleteButton.SetActive(false);
+            GetComponent<BoxCollider>().enabled = false;
+        }
     }
 
 }

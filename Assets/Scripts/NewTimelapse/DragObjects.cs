@@ -17,6 +17,7 @@ public class DragObjects : MonoBehaviour
     [SerializeField] private MeshRenderer _interactFeedBack;
     [SerializeField] private int _axisID = 0;
     public GameObject EntryDispenser = null;
+    public GameObject EntrySlot = null;
 
     private void Awake()
     {
@@ -69,7 +70,14 @@ public class DragObjects : MonoBehaviour
                 if (tag == "Battery")
                     transform.SetParent(null, true);
                 else if (tag == "PanelImage" )
+                {
+                    if(EntrySlot != null)
+                    {
+                        EntrySlot.GetComponent<SheetImageScript>().IsFilled = false;
+                        EntrySlot = null;
+                    }
                     transform.SetParent(GameObject.Find("TI").transform, true);
+                }
 
             }
 
@@ -223,10 +231,10 @@ public class DragObjects : MonoBehaviour
             if (gameObject.CompareTag("Tape"))
                 GetComponent<Rigidbody>().AddForce((GameObject.Find("PosTapeThrow").transform.position - transform.position) *50);
         }
-        if (IsFixedInTI && !IsDragged)
-            transform.localPosition = new Vector3(transform.localPosition.x, -15.7f, 0);
-        if(IsFixedInTI && IsDragged)
-            transform.localPosition = new Vector3(transform.localPosition.x, -15.7f, 0);
+        if (IsFixedInTI && !IsDragged && GetComponent<TIEntryScript>().DeleteButton == null)
+            transform.localPosition = new Vector3(GameObject.Find("TI").GetComponent<TutorialTI>().TutorialActivated ? Mathf.Clamp(transform.localPosition.x, -300, 300) : Mathf.Clamp(transform.localPosition.x, -200, 300), - 15.7f, 0);
+        if(IsFixedInTI && IsDragged )
+            transform.localPosition = new Vector3(GameObject.Find("TI").GetComponent<TutorialTI>().TutorialActivated ? Mathf.Clamp(transform.localPosition.x, -300, 300) : Mathf.Clamp(transform.localPosition.x, -200, 300), -15.7f, 0);
 
 
     }

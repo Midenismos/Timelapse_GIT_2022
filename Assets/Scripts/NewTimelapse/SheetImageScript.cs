@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class SheetImageScript : MonoBehaviour
 {
     [SerializeField] private string _imageTag = null;
+    public bool IsFilled = false;
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "PanelImage")
@@ -18,8 +19,9 @@ public class SheetImageScript : MonoBehaviour
                     other.GetComponent<RectTransform>().localScale = new Vector3(4, 4, 4);
                     other.transform.position = this.transform.position;
                     other.GetComponent<DragObjects>().IsDragable = false;
+                    other.GetComponent<DragObjects>().EntrySlot = gameObject;
+                    IsFilled = true;
                 }
-
             }
         }
     }

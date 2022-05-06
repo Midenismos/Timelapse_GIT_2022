@@ -358,6 +358,7 @@ MonoBehaviour:
   _interactFeedBack: {fileID: 0}
   _axisID: 0
   EntryDispenser: {fileID: 0}
+  EntrySlot: {fileID: 0}
 --- !u!114 &1321735764834811691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -372,6 +373,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ImageTag: null
   _glitchEffect: {fileID: 4472820870156719503}
+  deleteButton: {fileID: 1693247686688234282}
 --- !u!95 &7443893920544766382
 Animator:
   serializedVersion: 3

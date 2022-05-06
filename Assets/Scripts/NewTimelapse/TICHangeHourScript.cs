@@ -5,11 +5,13 @@ using TMPro;
 public class TICHangeHourScript : MonoBehaviour
 {
     [SerializeField] private string minute = "";
-    private void OnTriggerEnter(Collider other)
+    [SerializeField] private bool isTutoZone = false;
+    private void OnTriggerStay(Collider other)
     {
-        if (other.tag == "Entry")
+        if (other.tag == "EntryChangeHour")
         {
-            other.GetComponentInChildren<TIEntryScript>().ChangeHour(minute);
+            if(other.GetComponentInParent<TIEntryScript>().text.text != "15 : " + minute)
+                other.GetComponentInParent<TIEntryScript>().ChangeHour(minute, isTutoZone);
         }
     }
 }
