@@ -53,7 +53,7 @@ public class BatteryScript : MonoBehaviour
             EnergyMetter.StartCooldown();
         }
 
-        BatteryBoxScript Box = GameObject.Find("Box").GetComponent<BatteryBoxScript>();
+        BatteryBoxScript Box = GameObject.Find("BatteryBox").GetComponent<BatteryBoxScript>();
         if (Box.CurrentBattery == this.gameObject && GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == 3)
         {
             Box.CurrentBattery = null;

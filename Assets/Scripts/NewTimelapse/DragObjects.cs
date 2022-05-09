@@ -54,7 +54,6 @@ public class DragObjects : MonoBehaviour
                 EntryDispenser.GetComponent<DispenserManager>().CurrentDrag = null;
                 EntryDispenser = null;
                 transform.SetParent(GameObject.Find("TI").transform, true);
-                GameObject.Find("TI").GetComponent<InterfaceAnimManager>().UpdateAnimClips();
             }
         }
         if (tag == "PanelImage" || tag == "Entry" || GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == _axisID)
@@ -116,7 +115,6 @@ public class DragObjects : MonoBehaviour
         if (tag == "PanelImage")
         {
             GetComponent<RectTransform>().localScale = new Vector3(4f, 4f, 4);
-            GameObject.Find("TI").GetComponent<InterfaceAnimManager>().UpdateAnimClips();
         }
         if (tag == "PanelImage" || tag == "Entry" || GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == _axisID)
         {

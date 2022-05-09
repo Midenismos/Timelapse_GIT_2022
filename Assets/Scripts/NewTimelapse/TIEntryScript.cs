@@ -66,7 +66,6 @@ public class TIEntryScript : MonoBehaviour
             if (entryFilled == false)
             {
                 GameObject.Find("ProgressCircle").GetComponent<ProgressCircle>().IncreaseEntryNumber();
-                print("hey");
                 entryFilled = true;
             }
         }
@@ -85,5 +84,4 @@ public class TIEntryScript : MonoBehaviour
             GetComponent<BoxCollider>().enabled = false;
         }
     }
-
 }

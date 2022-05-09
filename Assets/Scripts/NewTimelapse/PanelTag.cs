@@ -50,4 +50,9 @@ public class PanelTag : MonoBehaviour
         Destroy(gameObject);
     }
 
+    private void OnDestroy()
+    {
+        GameObject.Find("TI").GetComponent<InterfaceAnimManager>().UpdateAnimClips();
+    }
+
 }

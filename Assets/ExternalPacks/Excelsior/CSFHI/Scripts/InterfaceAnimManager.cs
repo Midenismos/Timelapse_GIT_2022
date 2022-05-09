@@ -71,7 +71,12 @@ public class InterfaceAnimManager : MonoBehaviour {
         }
     }
 
+    private void OnTransformChildrenChanged()
+    {
+        UpdateAnimClips();
+    }
     void Update() {
+
         if (Application.isPlaying) {
             switch (currentState) {
                 /// ------------------------------------APPEARING------------------------------------------------------------
@@ -427,6 +432,8 @@ public class InterfaceAnimManager : MonoBehaviour {
                 _element.gameObjectRef.GetComponent<InterfaceAnimManager>().currentState = CSFHIAnimableState.disappeared;
             }
             _element.gameObjectRef.SetActive(false);
+
+
         }
         waitElementFullAnim = null;
         StopCoroutine(Disable_OnDisappearEnd());
