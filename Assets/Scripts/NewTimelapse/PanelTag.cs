@@ -47,8 +47,8 @@ public class PanelTag : MonoBehaviour
             GetComponent<DragObjects>().EntrySlot.GetComponent<SheetImageScript>().IsFilled = false;
             GetComponent<DragObjects>().EntrySlot = null;
         }
+        transform.parent = null;
         Destroy(gameObject);
     }
-
 
 }

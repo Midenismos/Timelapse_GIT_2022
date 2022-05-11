@@ -74,8 +74,9 @@ public class InterfaceAnimManager : MonoBehaviour {
     void OnTransformChildrenChanged()
     {
         UpdateAnimClips();
+
     }
-    void Update() {
+        void Update() {
 
         if (Application.isPlaying) {
             switch (currentState) {
