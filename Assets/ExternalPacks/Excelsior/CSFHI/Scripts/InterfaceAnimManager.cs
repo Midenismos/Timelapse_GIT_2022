@@ -71,7 +71,7 @@ public class InterfaceAnimManager : MonoBehaviour {
         }
     }
 
-    private void OnTransformChildrenChanged()
+    void OnTransformChildrenChanged()
     {
         UpdateAnimClips();
     }

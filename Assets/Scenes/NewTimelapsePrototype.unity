@@ -50904,6 +50904,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _txt: {fileID: 0}
+  _bellImage: {fileID: 10566461}
   NewPanelImageNumber: 0
   panel: {fileID: 1535740543}
 --- !u!1 &879708090
@@ -87378,6 +87379,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _txt: {fileID: 0}
+  _bellImage: {fileID: 1222328446}
   NewPanelImageNumber: 0
   panel: {fileID: 1559180806}
 --- !u!1 &1530584354
@@ -107143,6 +107145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _txt: {fileID: 0}
+  _bellImage: {fileID: 2029818323}
   NewPanelImageNumber: 0
   panel: {fileID: 928552225}
 --- !u!1 &1864217356
