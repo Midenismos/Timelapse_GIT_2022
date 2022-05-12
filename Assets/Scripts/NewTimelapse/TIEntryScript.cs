@@ -20,7 +20,8 @@ public class TIEntryScript : MonoBehaviour
     [SerializeField] private SheetImageScript[] Slots;
     private bool entryFilled = false;
 
-    [SerializeField] public GameObject DeleteButton = null;
+    public GameObject DeleteButton = null;
+    public bool IsTuto = false;
 
     public void OnMouseUp()
     {
@@ -78,7 +79,7 @@ public class TIEntryScript : MonoBehaviour
             }
         }
 
-        if (GameObject.Find("TI").GetComponent<TutorialTI>().TutorialActivated == false && DeleteButton != null)
+        if (GameObject.Find("TI").GetComponent<TutorialTI>().TutorialActivated == false && IsTuto)
         {
             DeleteButton.SetActive(false);
             GetComponent<BoxCollider>().enabled = false;
