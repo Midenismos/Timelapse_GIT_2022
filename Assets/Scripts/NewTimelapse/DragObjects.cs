@@ -235,6 +235,8 @@ public class DragObjects : MonoBehaviour
             transform.localPosition = new Vector3(GameObject.Find("TI").GetComponent<TutorialTI>().TutorialActivated ? Mathf.Clamp(transform.localPosition.x, -300, 300) : Mathf.Clamp(transform.localPosition.x, -200, 300), -7f, 0);
         if (IsFixedInTI && !IsDragged && GetComponent<TIEntryScript>().IsTuto)
             transform.localPosition = new Vector3(Mathf.Clamp(transform.localPosition.x, -300, -200) , -7f, 0);
+        if (IsFixedInTI && IsDragged && GetComponent<TIEntryScript>().IsTuto)
+            transform.localPosition = new Vector3(Mathf.Clamp(transform.localPosition.x, -300, -200), -7f, 0);
 
 
 

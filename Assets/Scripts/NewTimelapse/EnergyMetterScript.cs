@@ -119,11 +119,13 @@ public class EnergyMetterScript : MonoBehaviour
             {
                 transform.position = Vector3.Lerp(_currentPosition, _Positions[player.IDCurrentAxis], _moveLerp);
                 transform.rotation = Quaternion.Slerp(Quaternion.Euler(_currentRotation), Quaternion.Euler(_Rotations[player.IDCurrentAxis]), _moveLerp);
+                transform.localScale = Vector3.Lerp(transform.localScale, new Vector3(1,1,1), _moveLerp);
             }
             else
             {
                 transform.position = Vector3.Lerp(_currentPosition, TIBarPosition.transform.position, _moveLerp);
                 transform.rotation = Quaternion.Slerp(Quaternion.Euler(_currentRotation), TIBarPosition.transform.rotation, _moveLerp);
+                transform.localScale = Vector3.Lerp(transform.localScale, TIBarPosition.transform.localScale, _moveLerp);
             }
             smooth = Mathf.Clamp(_rotationCountdown+0.25f, 0.25f, 1f);
             _moveLerp = (1f - _rotationCountdown);
