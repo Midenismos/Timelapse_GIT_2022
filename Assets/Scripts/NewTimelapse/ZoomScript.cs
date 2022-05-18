@@ -35,6 +35,8 @@ public class ZoomScript : MonoBehaviour
     public bool IsZoomable = true;
     [SerializeField] private MeshRenderer _interactFeedBack;
 
+    public bool IsFixed = false;
+
     private void Awake()
     {
         AxisScript = GameObject.Find("Player").GetComponent<PlayerAxisScript>();
@@ -51,6 +53,11 @@ public class ZoomScript : MonoBehaviour
         {
             _originalPosition = transform.parent.position;
             _originalRotation = transform.parent.rotation;
+        }
+        if(IsFixed)
+        {
+            _originalPosition = transform.position;
+            _originalRotation = transform.rotation;
         }
     }
 
@@ -149,7 +156,7 @@ public class ZoomScript : MonoBehaviour
         }
         if (!HasZoomed && !_isLerping)
         {
-            if(!isCamera)
+            if(!isCamera && !IsFixed)
             {
                 _originalPosition = transform.position;
                 _originalRotation = transform.rotation;
@@ -159,7 +166,7 @@ public class ZoomScript : MonoBehaviour
         }
         else
         {
-            if (GetComponent<Rigidbody>())
+            if (GetComponent<Rigidbody>() && !IsFixed)
                 GetComponent<Rigidbody>().isKinematic = true;
             if (GetComponent<DragObjects>())
                 GetComponent<DragObjects>().IsDragable = false;
@@ -178,7 +185,8 @@ public class ZoomScript : MonoBehaviour
                     HasZoomed = false;
                 if (gameObject.CompareTag("Tape") || gameObject.CompareTag("Written"))
                 {
-                    GetComponent<Rigidbody>().isKinematic = false;
+                    if(!IsFixed)
+                        GetComponent<Rigidbody>().isKinematic = false;
                     if(GetComponent<DragObjects>())
                         GetComponent<DragObjects>().IsDragable = true;
                 }
@@ -234,9 +242,9 @@ public class ZoomScript : MonoBehaviour
         currentItem.posB = currentItem._originalPosition;
         if (currentItem.gameObject.CompareTag("Written"))
         {
-            if(AxisScript.IDCurrentAxis == 0)
+            if(AxisScript.IDCurrentAxis == 0 && !currentItem.IsFixed)
             {
-                currentItem.posB.y = -30;
+                currentItem.posB.y = -29.75f;
                 currentItem.posB.z = Mathf.Clamp(currentItem.posB.z, -55, Mathf.Infinity);
             }
             AxisScript.PutConsoleUp();

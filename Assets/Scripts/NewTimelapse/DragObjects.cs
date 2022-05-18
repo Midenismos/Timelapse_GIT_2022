@@ -141,7 +141,7 @@ public class DragObjects : MonoBehaviour
 
                     float distance; // the distance from the ray origin to the ray intersection of the plane
                     if (plane.Raycast(ray, out distance))
-                        draggingObject.GetComponent<Rigidbody>().velocity = (new Vector3(ray.GetPoint(Mathf.Clamp(distance, 3, 6)).x, -29.5f, ray.GetPoint(Mathf.Clamp(distance, 3, 6)).z) - draggingObject.transform.position) * 20; // distance along the ray
+                        draggingObject.GetComponent<Rigidbody>().velocity = (new Vector3(ray.GetPoint(Mathf.Clamp(distance, 3, 6)).x, -29.5f, ray.GetPoint(Mathf.Clamp(distance, 3, 4)).z) - draggingObject.transform.position) * 20; // distance along the ray
                 }
                 else
                 {
@@ -220,7 +220,7 @@ public class DragObjects : MonoBehaviour
 
     private void Update()
     {
-        if(transform.position.y <= -31 && Is3D && tag != "Battery")
+        if(transform.position.y <= -30.5f && Is3D && tag != "Battery")
         {
             transform.position = GameObject.Find("SpittingPoint").transform.position;
             GetComponent<Rigidbody>().velocity = Vector3.zero;
