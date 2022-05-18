@@ -99,23 +99,37 @@ public class PanelBasketScript : MonoBehaviour
 
     private void Update()
     {
+        if (GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == 5)
+        {
+           GetComponent<BoxCollider>().size = new Vector3(0.05f, 0.4f, 0.4f);
+           GetComponent<BoxCollider>().center = new Vector3(0, 0.07f, 0.04f);
+
+        }
+        else
+        {
+            GetComponent<BoxCollider>().center = new Vector3(0, 0.07f, -0.025f);
+            GetComponent<BoxCollider>().size = new Vector3(0.05f, 0.4f, 0.1f);
+        }
+
+
         if (_isLerping)
         {
             _zoomCountdown = Mathf.Clamp(_zoomCountdown - Time.unscaledDeltaTime * _zoomSpeed, 0f, 1f);
-
+            if (scannedItem.gameObject.tag == "Cam")
+                scannedItem.GetComponent<DragObjects>().enabled = false;
             if (_zoomCountdown == 0)
             {
                 _isLerping = false;
-               // _mat.SetColor("_EmissionColor", _colorA);
+                // _mat.SetColor("_EmissionColor", _colorA);
                 if (scannedItem.gameObject.tag != "Cam")
                 {
                     scannedItem.GetComponent<DragObjects>().IsDragable = true;
                     scannedItem.GetComponent<ZoomScript>().IsZoomable = true;
                     scannedItem.GetComponent<Rigidbody>().isKinematic = false;
-                    scannedItem.GetComponent<Rigidbody>().velocity = new Vector3(0,0,0);
+                    scannedItem.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
                     //scannedItem.transform.SetParent(null, false);
                     scannedItem.transform.position = GameObject.Find("start").transform.position;
-                    if(scannedItem.gameObject.tag == "Written")
+                    if (scannedItem.gameObject.tag == "Written")
                         scannedItem.GetComponent<Rigidbody>().AddForce((GameObject.Find("PosWrittenThrow").transform.position - GameObject.Find("start").transform.position) * 75);
                     else if (scannedItem.gameObject.tag == "Tape")
                         scannedItem.GetComponent<Rigidbody>().AddForce((GameObject.Find("PosTapeThrow").transform.position - GameObject.Find("start").transform.position) * 25);
@@ -128,17 +142,16 @@ public class PanelBasketScript : MonoBehaviour
 
             }
 
-
             if (scannedItem)
                 scannedItem.transform.position = Vector3.Lerp(GameObject.Find("start").transform.position, GameObject.Find("interior").transform.position, _zoomLerp);
-           // _mat.SetColor("_EmissionColor", Color.Lerp(_colorA, _colorB, _zoomLerp));
+            // _mat.SetColor("_EmissionColor", Color.Lerp(_colorA, _colorB, _zoomLerp));
             _zoomLerp = 1f - _zoomCountdown;
         }
         else
         {
             //if (GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().Energy <= 0)
             //    _mat.SetColor("_EmissionColor", _glitchedColor);
-           // else
+            // else
             //    _mat.SetColor("_EmissionColor", _normalColor);
         }
 
