@@ -7,6 +7,8 @@ public class BatteryBoxScript : MonoBehaviour
     [SerializeField] private Animator _animator = null;
     [SerializeField] private BoxCollider _colOpen = null;
     [SerializeField] private BoxCollider _colClose = null;
+    [SerializeField] private AudioSource _colOpenSound = null;
+    [SerializeField] private AudioSource _colCloseSound = null;
     private bool isOpen = false;
     public GameObject CurrentBattery = null;
     private bool isAvailable = true;
@@ -19,6 +21,7 @@ public class BatteryBoxScript : MonoBehaviour
             _colOpen.enabled = true;
             _colClose.enabled = false;
             isOpen = false;
+            _colCloseSound.Play();
         }
         else
         {
@@ -26,8 +29,9 @@ public class BatteryBoxScript : MonoBehaviour
             _colOpen.enabled = false;
             _colClose.enabled = true;
             isOpen = true;
+            _colOpenSound.Play();
         }
-            
+
     }
     // Start is called before the first frame update
     void Awake()

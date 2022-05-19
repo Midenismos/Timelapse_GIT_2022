@@ -593,6 +593,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _imageTag: tape
   IsFilled: 0
+  _entryFilledFeedback: {fileID: 8300000, guid: 1f870e77788ca544084156bf6e24c84d,
+    type: 3}
 --- !u!1 &3849058558170518657
 GameObject:
   m_ObjectHideFlags: 0
@@ -902,6 +904,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _imageTag: cam
   IsFilled: 0
+  _entryFilledFeedback: {fileID: 8300000, guid: 1f870e77788ca544084156bf6e24c84d,
+    type: 3}
 --- !u!1 &3849058559238222690
 GameObject:
   m_ObjectHideFlags: 0
@@ -1007,10 +1011,13 @@ MonoBehaviour:
   circleImage: {fileID: 668855148416820351}
   Manager: {fileID: 0}
   text: {fileID: 620407704370745522}
+  _entryCompletedFeedback: {fileID: 8300000, guid: 4a6bdf8b759458547a281db23057e8b8,
+    type: 3}
   Slots:
   - {fileID: 636939503}
   - {fileID: 47911189}
   DeleteButton: {fileID: 5384545077364981587}
+  IsTuto: 0
 --- !u!114 &1259736151
 MonoBehaviour:
   m_ObjectHideFlags: 0

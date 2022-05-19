@@ -68,6 +68,8 @@ public class PlayerAxisScript : MonoBehaviour
                     _targetConsolePosition = _consolePosition[IDCurrentAxis];
                     _targetCamRotation = _camRotation[IDCurrentAxis];
                     _isLerping = true;
+                    GetComponent<AudioSource>().pitch = Random.Range(0.8f, 1.2f);
+                    GetComponent<AudioSource>().Play();
                 }
             }
             if (Input.GetKeyDown("q"))
@@ -86,6 +88,8 @@ public class PlayerAxisScript : MonoBehaviour
                     _targetConsolePosition = _consolePosition[IDCurrentAxis];
                     _targetCamRotation = _camRotation[IDCurrentAxis];
                     _isLerping = true;
+                    GetComponent<AudioSource>().pitch = Random.Range(0.8f, 1.2f);
+                    GetComponent<AudioSource>().Play();
                 }
             }
             if (Input.GetKeyDown("s"))

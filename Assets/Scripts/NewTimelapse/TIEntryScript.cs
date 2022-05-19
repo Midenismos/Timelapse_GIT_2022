@@ -17,6 +17,8 @@ public class TIEntryScript : MonoBehaviour
     public DispenserManager Manager = null;
     public TMP_Text text = null;
 
+    [SerializeField] private AudioClip _entryCompletedFeedback = null;
+
     [SerializeField] private SheetImageScript[] Slots;
     private bool entryFilled = false;
 
@@ -67,6 +69,8 @@ public class TIEntryScript : MonoBehaviour
             if (entryFilled == false)
             {
                 GameObject.Find("ProgressCircle").GetComponent<ProgressCircle>().IncreaseEntryNumber();
+                GameObject.Find("TI").GetComponent<AudioSource>().clip = _entryCompletedFeedback; 
+                GameObject.Find("TI").GetComponent<AudioSource>().Play();
                 entryFilled = true;
             }
         }

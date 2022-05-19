@@ -26,7 +26,11 @@ public class EnergyMetterScript : MonoBehaviour
     private float _energy;
     private bool isAvailable = true;
 
+    [SerializeField] private AudioClip _plugSound;
+    [SerializeField] private AudioClip _unPlugSound;
     public BatteryScript CurrentBattery = null;
+    private bool waitBeforeTriggerSounds = false;
+    private float timerBeforeTriggerSounds = 0;
     public float Energy
     {
         get
@@ -38,6 +42,8 @@ public class EnergyMetterScript : MonoBehaviour
                 _energy = value;
                 if(_energy <= 0)
                 {
+                    GetComponent<AudioSource>().clip = _unPlugSound;
+                    GetComponent<AudioSource>().Play();
                     if (ReactedToEnergy != null)
                         ReactedToEnergy();
                     _sliderImage.enabled = false;
@@ -71,6 +77,10 @@ public class EnergyMetterScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (timerBeforeTriggerSounds < 5)
+            timerBeforeTriggerSounds += Time.deltaTime;
+        else
+            waitBeforeTriggerSounds = true;
         if (CurrentBattery)
         {
             CurrentBattery.transform.position = GameObject.Find("BatteryPosition").transform.position;
@@ -176,15 +186,18 @@ public class EnergyMetterScript : MonoBehaviour
             other.GetComponent<Rigidbody>().isKinematic = true;
             CurrentBattery = other.GetComponent<BatteryScript>();
             Energy = CurrentBattery.Energy;
+
             if(CurrentBattery.Energy>0)
             {
+                if (waitBeforeTriggerSounds == true)
+                {
+                    GetComponent<AudioSource>().clip = _plugSound;
+                    GetComponent<AudioSource>().Play();
+                }
                 ReactedToEnergyReset();
                 co = StartCoroutine(DecreaseEnergy());
                 _sliderImage.enabled = true;
             }
-
-
-
         }
     }
 

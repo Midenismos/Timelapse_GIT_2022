@@ -88,4 +88,14 @@ public class TapeScript : MonoBehaviour
 
     }
 
+    public void PlayWrittingSound()
+    {
+        AudioSource writtingTape = GetComponent<AudioSource>();
+        if (!writtingTape.isPlaying)
+        {
+            writtingTape.pitch = Random.Range(1.0f, 1.5f);
+            writtingTape.Play();
+        }
+    }
+
 }

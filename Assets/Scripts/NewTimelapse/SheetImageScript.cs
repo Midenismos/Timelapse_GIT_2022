@@ -7,6 +7,8 @@ public class SheetImageScript : MonoBehaviour
 {
     [SerializeField] private string _imageTag = null;
     public bool IsFilled = false;
+    [SerializeField] private AudioClip _entryFilledFeedback = null;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "PanelImage")
@@ -20,6 +22,8 @@ public class SheetImageScript : MonoBehaviour
                     other.transform.position = this.transform.position;
                     other.GetComponent<DragObjects>().IsDragable = false;
                     StartCoroutine(CheckIfChildren());
+                    GameObject.Find("TI").GetComponent<AudioSource>().clip = _entryFilledFeedback;
+                    GameObject.Find("TI").GetComponent<AudioSource>().Play();
                 }
             }
         }
