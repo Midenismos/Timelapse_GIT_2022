@@ -9,6 +9,7 @@ public class BatteryBoxScript : MonoBehaviour
     [SerializeField] private BoxCollider _colClose = null;
     [SerializeField] private AudioSource _colOpenSound = null;
     [SerializeField] private AudioSource _colCloseSound = null;
+    [SerializeField] private AudioSource _putBatterySound = null;
     private bool isOpen = false;
     public GameObject CurrentBattery = null;
     private bool isAvailable = true;
@@ -53,6 +54,7 @@ public class BatteryBoxScript : MonoBehaviour
             other.transform.position = GameObject.Find("BoxBatteryPosition").transform.position;
             other.transform.rotation = GameObject.Find("BoxBatteryPosition").transform.rotation;
             CurrentBattery = other.gameObject;
+            _putBatterySound.Play();
         }
     }
     private void Update()

@@ -37,6 +37,10 @@ public class ZoomScript : MonoBehaviour
 
     public bool IsFixed = false;
 
+    public AudioClip PutDownSound;
+    [SerializeField] private AudioClip _pickupSound;
+
+
     private void Awake()
     {
         AxisScript = GameObject.Find("Player").GetComponent<PlayerAxisScript>();
@@ -98,6 +102,11 @@ public class ZoomScript : MonoBehaviour
                     _isLerping = true;
                     AxisScript.HasItem = true;
                     AxisScript.CurrentHoldItem = this.gameObject;
+                    if(GetComponent<AudioSource>())
+                    {
+                        GetComponent<AudioSource>().clip = _pickupSound;
+                        GetComponent<AudioSource>().Play();
+                    }
                     if( tag == "Written")
                         AxisScript.PutConsoleDown();
 
@@ -240,6 +249,12 @@ public class ZoomScript : MonoBehaviour
     {
         ZoomScript currentItem = AxisScript.CurrentHoldItem.GetComponent<ZoomScript>();
         currentItem.posB = currentItem._originalPosition;
+        print(currentItem.GetComponent<AudioSource>());
+        if (currentItem.GetComponent<AudioSource>() != null)
+        {
+            currentItem.GetComponent<AudioSource>().clip = currentItem.PutDownSound;
+            currentItem.GetComponent<AudioSource>().Play();
+        }
         if (currentItem.gameObject.CompareTag("Written"))
         {
             if(AxisScript.IDCurrentAxis == 0 && !currentItem.IsFixed)

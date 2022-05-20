@@ -7,6 +7,8 @@ public class VaultScript : MonoBehaviour
     [SerializeField] private Animator _animator = null;
     [SerializeField] private BoxCollider[] _colOpen = null;
     [SerializeField] private BoxCollider _colClose = null;
+    [SerializeField] private AudioSource _vaultOpenSound = null;
+    [SerializeField] private AudioSource _vaultCloseSound = null;
     private bool isOpen = false;
 
     private void OnMouseDown()
@@ -17,6 +19,7 @@ public class VaultScript : MonoBehaviour
                 CloseDoor();
             else
             {
+                _vaultOpenSound.Play();
                 _animator.Play("Door.VaultOpen", 0);
                 foreach (BoxCollider col in _colOpen)
                     col.enabled = true;
@@ -62,5 +65,10 @@ public class VaultScript : MonoBehaviour
             if (isOpen)
                 CloseDoor();
         }
+    }
+
+    public void PlayCloseDoorSound()
+    {
+        _vaultCloseSound.Play();
     }
 }
