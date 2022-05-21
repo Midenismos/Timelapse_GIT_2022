@@ -47,6 +47,8 @@ public class DragObjects : MonoBehaviour
     }
     public void OnMouseDown()
     {
+        if (tag == "PanelImage")
+            GetComponent<AudioSource>().Play();
         if (tag == "Entry")
         {
             if (EntryDispenser != null)

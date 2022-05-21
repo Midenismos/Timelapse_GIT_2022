@@ -51,6 +51,7 @@ public class BatteryScript : MonoBehaviour
             EnergyMetter.StopCoroutine(EnergyMetter.co);
             isPluged = false;
             EnergyMetter.StartCooldown();
+            EnergyMetter.PlayUnPlugSound();
         }
 
         BatteryBoxScript Box = GameObject.Find("BatteryBox").GetComponent<BatteryBoxScript>();

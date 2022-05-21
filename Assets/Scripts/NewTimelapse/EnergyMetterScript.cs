@@ -26,8 +26,9 @@ public class EnergyMetterScript : MonoBehaviour
     private float _energy;
     private bool isAvailable = true;
 
-    [SerializeField] private AudioClip _plugSound;
-    [SerializeField] private AudioClip _unPlugSound;
+    private AudioClip _plugSound;
+    private AudioClip _unPlugSound;
+    private AudioClip _EnergyDownSound;
     public BatteryScript CurrentBattery = null;
     private bool waitBeforeTriggerSounds = false;
     private float timerBeforeTriggerSounds = 0;
@@ -42,7 +43,7 @@ public class EnergyMetterScript : MonoBehaviour
                 _energy = value;
                 if(_energy <= 0)
                 {
-                    GetComponent<AudioSource>().clip = _unPlugSound;
+                    GetComponent<AudioSource>().clip = _EnergyDownSound;
                     GetComponent<AudioSource>().Play();
                     if (ReactedToEnergy != null)
                         ReactedToEnergy();
@@ -64,6 +65,9 @@ public class EnergyMetterScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _unPlugSound = Resources.Load("Sound/Snd_UnPlugBattery") as AudioClip;
+        _plugSound = Resources.Load("Sound/Snd_PlugBattery") as AudioClip;
+        _EnergyDownSound = Resources.Load("Sound/Snd_EnergyDown") as AudioClip;
         TIBarPosition = GameObject.Find("TIEnergyBarPosition");
         _slider.maxValue = MaxEnergy;
         player = GameObject.Find("Player").GetComponent<PlayerAxisScript>();
@@ -211,5 +215,11 @@ public class EnergyMetterScript : MonoBehaviour
     public void StartCooldown()
     {
         StartCoroutine(Cooldown());
+    }
+
+    public void PlayUnPlugSound()
+    {
+        GetComponent<AudioSource>().clip = _unPlugSound;
+        GetComponent<AudioSource>().Play();
     }
 }

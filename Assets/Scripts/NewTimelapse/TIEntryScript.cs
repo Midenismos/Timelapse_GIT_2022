@@ -9,15 +9,16 @@ public class TIEntryScript : MonoBehaviour
 {
     private float _clickStart = 0;
     [SerializeField] private GameObject _fullSheet = null;
-    [SerializeField] private AudioSource _openSound = null;
-    [SerializeField] private AudioSource _closeSound = null;
+    private AudioClip _openSound = null;
+    private AudioClip _closeSound = null;
+    private AudioClip _clickSound = null;
     [SerializeField] private Sprite minimiseImage = null;
     [SerializeField] private Sprite maximiseImage = null;
     [SerializeField] private Image circleImage = null;
     public DispenserManager Manager = null;
     public TMP_Text text = null;
 
-    [SerializeField] private AudioClip _entryCompletedFeedback = null;
+    private AudioClip _entryCompletedFeedback = null;
 
     [SerializeField] private SheetImageScript[] Slots;
     private bool entryFilled = false;
@@ -25,6 +26,13 @@ public class TIEntryScript : MonoBehaviour
     public GameObject DeleteButton = null;
     public bool IsTuto = false;
 
+    private void Awake()
+    {
+        _openSound = Resources.Load("Sound/Snd_Investigation/Snd_Open") as AudioClip;
+        _closeSound = Resources.Load("Sound/Snd_Investigation/Snd_Close") as AudioClip;
+        _clickSound = Resources.Load("Sound/MMSequencingClick") as AudioClip;
+        _entryCompletedFeedback = Resources.Load("Sound/Snd_Table/Snd_Table_Open") as AudioClip;
+    }
     public void OnMouseUp()
     {
         if ((Time.time - _clickStart) < 0.3f)
@@ -32,10 +40,15 @@ public class TIEntryScript : MonoBehaviour
             _fullSheet.SetActive(!_fullSheet.activeInHierarchy);
             circleImage.sprite = _fullSheet.activeInHierarchy ? minimiseImage : maximiseImage;
             if (_fullSheet.activeInHierarchy)
-                _openSound.Play();
+            {
+                GetComponent<AudioSource>().clip = _openSound;
+                GetComponent<AudioSource>().Play();
+            }
             else
-                _closeSound.Play();
-
+            {
+                GetComponent<AudioSource>().clip = _closeSound;
+                GetComponent<AudioSource>().Play();
+            }
            _clickStart = -1;
         }
     }
@@ -43,6 +56,9 @@ public class TIEntryScript : MonoBehaviour
     public void OnMouseDown()
     {
         _clickStart = Time.time;
+        GetComponent<AudioSource>().clip = _clickSound;
+        GetComponent<AudioSource>().Play();
+
     }
 
     public void DeleteEntry()
@@ -51,6 +67,8 @@ public class TIEntryScript : MonoBehaviour
             GameObject.Find("ProgressCircle").GetComponent<ProgressCircle>().DecreaseEntryNumber();
 
         Manager.IncreaseNumber();
+        GameObject.Find("TI").GetComponent<AudioSource>().clip = Resources.Load("Sound/Snd_Investigation/Snd_Delete") as AudioClip;
+        GameObject.Find("TI").GetComponent<AudioSource>().Play();
         Destroy(gameObject);
     }
 

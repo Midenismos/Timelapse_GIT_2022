@@ -10,8 +10,11 @@ public class CamScreenScript : MonoBehaviour
     [SerializeField] private MeshRenderer _interactFeedBack;
     [SerializeField] private Material _videoMat = null;
     [SerializeField] private Material _nonVideoMat = null;
+    private AudioClip _cameraOff;
+    private AudioClip _cameraOn;
 
-
+    private bool waitBeforeTriggerSounds = false;
+    private float timerBeforeTriggerSounds = 0;
 
     [Header("Sinon mettre la vidéo dans le VideoPlayer")]
     [Header("0: Violet, 1: Sans influence, 2: Vert, 3: Bleu")]
@@ -33,6 +36,8 @@ public class CamScreenScript : MonoBehaviour
 
     private void Awake()
     {
+        _cameraOn = Resources.Load("Sound/Snd_CameraOpen") as AudioClip;
+        _cameraOff = Resources.Load("Sound/Snd_CameraClose") as AudioClip;
         GameObject.Find("LoopManager").GetComponent<NewLoopManager>().ReactedToNebuleuse += delegate (NebuleuseType NebuleuseType)
         {
             VideoPlayer player = GetComponent<VideoPlayer>();
@@ -89,11 +94,22 @@ public class CamScreenScript : MonoBehaviour
         if (_onOffButton.IsActivated == false)
         {
             GetComponent<VideoPlayer>().Stop();
+            if(waitBeforeTriggerSounds == true)
+            {
+                GameObject.Find("Cameras").GetComponent<AudioSource>().clip = _cameraOff;
+                GameObject.Find("Cameras").GetComponent<AudioSource>().Play();
+            }
+
             GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().HowManyMachineActivated -= 1;
         }
         else
         {
             GetComponent<VideoPlayer>().time = GameObject.Find("SliderVideo").GetComponent<Slider>().value;
+            if (waitBeforeTriggerSounds == true)
+            {
+                GameObject.Find("Cameras").GetComponent<AudioSource>().clip = _cameraOn;
+                GameObject.Find("Cameras").GetComponent<AudioSource>().Play();
+            }
             GetComponent<VideoPlayer>().Play();
             GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().HowManyMachineActivated += 1;
         }
@@ -101,6 +117,10 @@ public class CamScreenScript : MonoBehaviour
 
     private void Update()
     {
+        if (timerBeforeTriggerSounds < 5)
+            timerBeforeTriggerSounds += Time.deltaTime;
+        else
+            waitBeforeTriggerSounds = true;
         if (_onOffButton.IsActivated == true)
             GetComponent<MeshRenderer>().material = _videoMat;
         else

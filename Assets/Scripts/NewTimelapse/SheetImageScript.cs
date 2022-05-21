@@ -7,8 +7,12 @@ public class SheetImageScript : MonoBehaviour
 {
     [SerializeField] private string _imageTag = null;
     public bool IsFilled = false;
-    [SerializeField] private AudioClip _entryFilledFeedback = null;
+    private AudioClip _entryFilledFeedback = null;
 
+    private void Awake()
+    {
+        _entryFilledFeedback = Resources.Load("Sound/Snd_Table/Snd_Table_Link") as AudioClip;
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "PanelImage")

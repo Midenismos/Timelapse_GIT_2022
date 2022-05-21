@@ -7,7 +7,7 @@ public class PanelTag : MonoBehaviour
 {
     public string ImageTag = "null";
     private bool _isCorrupted;
-    [SerializeField] private Image _glitchEffect = null;
+    //[SerializeField] private Image _glitchEffect = null;
     [SerializeField] private GameObject deleteButton = null;
 
     public bool IsCorrupted
@@ -18,17 +18,17 @@ public class PanelTag : MonoBehaviour
         {
             if (value != _isCorrupted)
                 _isCorrupted = value;
-            if (_isCorrupted == true)
+            /*if (_isCorrupted == true)
                 _glitchEffect.enabled = true;
             else
-                _glitchEffect.enabled = false;
+                _glitchEffect.enabled = false;*/
         }
     }
 
     private void Update()
     {
-        if (_glitchEffect.GetComponent<RectTransform>().sizeDelta != new Vector2(GetComponent<RectTransform>().sizeDelta.x, GetComponent<RectTransform>().sizeDelta.y))
-            _glitchEffect.GetComponent<RectTransform>().sizeDelta = new Vector2(GetComponent<RectTransform>().sizeDelta.x, GetComponent<RectTransform>().sizeDelta.y);
+        //if (_glitchEffect.GetComponent<RectTransform>().sizeDelta != new Vector2(GetComponent<RectTransform>().sizeDelta.x, GetComponent<RectTransform>().sizeDelta.y))
+           // _glitchEffect.GetComponent<RectTransform>().sizeDelta = new Vector2(GetComponent<RectTransform>().sizeDelta.x, GetComponent<RectTransform>().sizeDelta.y);
         
         if (GameObject.Find("TI").GetComponent<TutorialTI>().TutorialActivated == false && ImageTag == "written")
         {
@@ -47,6 +47,8 @@ public class PanelTag : MonoBehaviour
             GetComponent<DragObjects>().EntrySlot.GetComponent<SheetImageScript>().IsFilled = false;
             GetComponent<DragObjects>().EntrySlot = null;
         }
+        GameObject.Find("TI").GetComponent<AudioSource>().clip = Resources.Load("Sound/Snd_Investigation/Snd_Delete") as AudioClip;
+        GameObject.Find("TI").GetComponent<AudioSource>().Play();
         transform.parent = null;
         Destroy(gameObject);
     }
