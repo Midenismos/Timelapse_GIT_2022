@@ -10,6 +10,8 @@ public class VaultScript : MonoBehaviour
     [SerializeField] private AudioSource _vaultOpenSound = null;
     [SerializeField] private AudioSource _vaultCloseSound = null;
     private bool isOpen = false;
+    private bool waitBeforeTriggerSounds = false;
+    private float timerBeforeTriggerSounds = 0;
 
     private void OnMouseDown()
     {
@@ -60,6 +62,10 @@ public class VaultScript : MonoBehaviour
 
     private void Update()
     {
+        if (timerBeforeTriggerSounds < 5)
+            timerBeforeTriggerSounds += Time.deltaTime;
+        else
+            waitBeforeTriggerSounds = true;
         if (GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis != 4)
         {
             if (isOpen)
@@ -69,6 +75,7 @@ public class VaultScript : MonoBehaviour
 
     public void PlayCloseDoorSound()
     {
-        _vaultCloseSound.Play();
+        if(waitBeforeTriggerSounds == true)
+            _vaultCloseSound.Play();
     }
 }

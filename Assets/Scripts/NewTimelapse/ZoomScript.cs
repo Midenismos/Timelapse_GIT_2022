@@ -249,7 +249,6 @@ public class ZoomScript : MonoBehaviour
     {
         ZoomScript currentItem = AxisScript.CurrentHoldItem.GetComponent<ZoomScript>();
         currentItem.posB = currentItem._originalPosition;
-        print(currentItem.GetComponent<AudioSource>());
         if (currentItem.GetComponent<AudioSource>() != null)
         {
             currentItem.GetComponent<AudioSource>().clip = currentItem.PutDownSound;
