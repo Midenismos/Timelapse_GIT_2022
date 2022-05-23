@@ -68,6 +68,8 @@ public class PlayerAxisScript : MonoBehaviour
                     _targetConsolePosition = _consolePosition[IDCurrentAxis];
                     _targetCamRotation = _camRotation[IDCurrentAxis];
                     _isLerping = true;
+                    GetComponent<AudioSource>().pitch = Random.Range(0.8f, 1.2f);
+                    GetComponent<AudioSource>().Play();
                 }
             }
             if (Input.GetKeyDown("q"))
@@ -86,6 +88,8 @@ public class PlayerAxisScript : MonoBehaviour
                     _targetConsolePosition = _consolePosition[IDCurrentAxis];
                     _targetCamRotation = _camRotation[IDCurrentAxis];
                     _isLerping = true;
+                    GetComponent<AudioSource>().pitch = Random.Range(0.8f, 1.2f);
+                    GetComponent<AudioSource>().Play();
                 }
             }
             if (Input.GetKeyDown("s"))
@@ -95,7 +99,7 @@ public class PlayerAxisScript : MonoBehaviour
                     _rotationCountdown = 1;
                     _moveLerp = 0;
                     _targetConsolePosition = new Vector3(console.transform.localPosition.x-3f, console.transform.localPosition.y, console.transform.localPosition.z);
-                    _targetPosition = new Vector3(cam.transform.localPosition.x, 1, 4.5f);
+                    _targetPosition = new Vector3(cam.transform.localPosition.x, 1, 4f);
                     _targetCamRotation = new Vector3(90, cam.transform.rotation.eulerAngles.y, cam.transform.rotation.eulerAngles.z);
                     _isLerping = true;
                     IsInTI = true;

@@ -71,11 +71,12 @@ public class InterfaceAnimManager : MonoBehaviour {
         }
     }
 
-    private void OnTransformChildrenChanged()
+    void OnTransformChildrenChanged()
     {
         UpdateAnimClips();
+
     }
-    void Update() {
+        void Update() {
 
         if (Application.isPlaying) {
             switch (currentState) {

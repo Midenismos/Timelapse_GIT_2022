@@ -7,7 +7,11 @@ public class VaultScript : MonoBehaviour
     [SerializeField] private Animator _animator = null;
     [SerializeField] private BoxCollider[] _colOpen = null;
     [SerializeField] private BoxCollider _colClose = null;
+    [SerializeField] private AudioSource _vaultOpenSound = null;
+    [SerializeField] private AudioSource _vaultCloseSound = null;
     private bool isOpen = false;
+    private bool waitBeforeTriggerSounds = false;
+    private float timerBeforeTriggerSounds = 0;
 
     private void OnMouseDown()
     {
@@ -17,6 +21,7 @@ public class VaultScript : MonoBehaviour
                 CloseDoor();
             else
             {
+                _vaultOpenSound.Play();
                 _animator.Play("Door.VaultOpen", 0);
                 foreach (BoxCollider col in _colOpen)
                     col.enabled = true;
@@ -57,10 +62,20 @@ public class VaultScript : MonoBehaviour
 
     private void Update()
     {
+        if (timerBeforeTriggerSounds < 5)
+            timerBeforeTriggerSounds += Time.deltaTime;
+        else
+            waitBeforeTriggerSounds = true;
         if (GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis != 4)
         {
             if (isOpen)
                 CloseDoor();
         }
+    }
+
+    public void PlayCloseDoorSound()
+    {
+        if(waitBeforeTriggerSounds == true)
+            _vaultCloseSound.Play();
     }
 }

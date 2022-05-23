@@ -47,6 +47,8 @@ public class DragObjects : MonoBehaviour
     }
     public void OnMouseDown()
     {
+        if (tag == "PanelImage")
+            GetComponent<AudioSource>().Play();
         if (tag == "Entry")
         {
             if (EntryDispenser != null)
@@ -141,7 +143,7 @@ public class DragObjects : MonoBehaviour
 
                     float distance; // the distance from the ray origin to the ray intersection of the plane
                     if (plane.Raycast(ray, out distance))
-                        draggingObject.GetComponent<Rigidbody>().velocity = (new Vector3(ray.GetPoint(Mathf.Clamp(distance, 3, 6)).x, -29.5f, ray.GetPoint(Mathf.Clamp(distance, 3, 6)).z) - draggingObject.transform.position) * 20; // distance along the ray
+                        draggingObject.GetComponent<Rigidbody>().velocity = (new Vector3(ray.GetPoint(Mathf.Clamp(distance, 3, 6)).x, -29.5f, ray.GetPoint(Mathf.Clamp(distance, 3, 4)).z) - draggingObject.transform.position) * 20; // distance along the ray
                 }
                 else
                 {
@@ -220,7 +222,7 @@ public class DragObjects : MonoBehaviour
 
     private void Update()
     {
-        if(transform.position.y <= -31 && Is3D && tag != "Battery")
+        if(transform.position.y <= -30.5f && Is3D && tag != "Battery")
         {
             transform.position = GameObject.Find("SpittingPoint").transform.position;
             GetComponent<Rigidbody>().velocity = Vector3.zero;
@@ -229,10 +231,15 @@ public class DragObjects : MonoBehaviour
             if (gameObject.CompareTag("Tape"))
                 GetComponent<Rigidbody>().AddForce((GameObject.Find("PosTapeThrow").transform.position - transform.position) *50);
         }
-        if (IsFixedInTI && !IsDragged && GetComponent<TIEntryScript>().DeleteButton == null)
-            transform.localPosition = new Vector3(GameObject.Find("TI").GetComponent<TutorialTI>().TutorialActivated ? Mathf.Clamp(transform.localPosition.x, -300, 300) : Mathf.Clamp(transform.localPosition.x, -200, 300), - 15.7f, 0);
-        if(IsFixedInTI && IsDragged )
-            transform.localPosition = new Vector3(GameObject.Find("TI").GetComponent<TutorialTI>().TutorialActivated ? Mathf.Clamp(transform.localPosition.x, -300, 300) : Mathf.Clamp(transform.localPosition.x, -200, 300), -15.7f, 0);
+        if (IsFixedInTI && !IsDragged && !GetComponent<TIEntryScript>().IsTuto)
+            transform.localPosition = new Vector3(GameObject.Find("TI").GetComponent<TutorialTI>().TutorialActivated ? Mathf.Clamp(transform.localPosition.x, -300, 300) : Mathf.Clamp(transform.localPosition.x, -200, 300), -7f, 0);
+        if (IsFixedInTI && IsDragged && !GetComponent<TIEntryScript>().IsTuto)
+            transform.localPosition = new Vector3(GameObject.Find("TI").GetComponent<TutorialTI>().TutorialActivated ? Mathf.Clamp(transform.localPosition.x, -300, 300) : Mathf.Clamp(transform.localPosition.x, -200, 300), -7f, 0);
+        if (IsFixedInTI && !IsDragged && GetComponent<TIEntryScript>().IsTuto)
+            transform.localPosition = new Vector3(Mathf.Clamp(transform.localPosition.x, -300, -200) , -7f, 0);
+        if (IsFixedInTI && IsDragged && GetComponent<TIEntryScript>().IsTuto)
+            transform.localPosition = new Vector3(Mathf.Clamp(transform.localPosition.x, -300, -200), -7f, 0);
+
 
 
     }

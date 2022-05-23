@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class ProgressCircle : MonoBehaviour
 {
     private int _filledEntryNumber = 0;
+    [SerializeField] GameObject _circle = null;
 
     // Update is called once per frame
     void Update()
@@ -23,6 +24,7 @@ public class ProgressCircle : MonoBehaviour
     public void IncreaseEntryNumber()
     {
         _filledEntryNumber += 1;
+        _circle.GetComponent<Animator>().Play("Rotate.rotateFeedback", 1);
     }
     public void DecreaseEntryNumber()
     {

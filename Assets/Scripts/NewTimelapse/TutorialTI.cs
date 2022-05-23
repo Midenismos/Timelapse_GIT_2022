@@ -6,6 +6,8 @@ public class TutorialTI : MonoBehaviour
 {
     public bool TutorialActivated = true;
     [SerializeField] private GameObject[] WrittenButtonsPanels = null;
+    [SerializeField] private GameObject _greyedOut = null;
+
 
     private void Update()
     {
@@ -13,6 +15,7 @@ public class TutorialTI : MonoBehaviour
         {
             foreach (GameObject ButtonAndPanel in WrittenButtonsPanels)
                 ButtonAndPanel.SetActive(false);
+            _greyedOut.SetActive(true);
         }
 
     }

@@ -104,17 +104,22 @@ public class OrbitingShipMaquette : MonoBehaviour
         if (GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == 2)
         {
             PressPoint = Input.mousePosition;
-            StartRotation = transform.rotation;
+            GetComponent<AudioSource>().Play();
         }
 
+    }
+    private void OnMouseUp()
+    {
+        GetComponent<AudioSource>().Stop();
     }
 
     private void OnMouseDrag()
     {
         if (GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == 2)
         {
-            float CurrentDistanceBetweenMousePositions = (Input.mousePosition - PressPoint).x;
-            transform.rotation = StartRotation * Quaternion.Euler(Vector3.up * (CurrentDistanceBetweenMousePositions / SceneWidth) * 360);
+            float Speed = Mathf.Clamp((Input.mousePosition - PressPoint).x, -200, 200);
+            GetComponent<Rigidbody>().MoveRotation(GetComponent<Rigidbody>().rotation * Quaternion.Euler(Vector3.up * (Speed / SceneWidth)*10));
+            GetComponent<AudioSource>().pitch = (Speed / 200) * 1.05f;
         }
     }
 

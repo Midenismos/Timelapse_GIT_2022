@@ -26,7 +26,12 @@ public class EnergyMetterScript : MonoBehaviour
     private float _energy;
     private bool isAvailable = true;
 
+    private AudioClip _plugSound;
+    private AudioClip _unPlugSound;
+    private AudioClip _EnergyDownSound;
     public BatteryScript CurrentBattery = null;
+    private bool waitBeforeTriggerSounds = false;
+    private float timerBeforeTriggerSounds = 0;
     public float Energy
     {
         get
@@ -38,6 +43,8 @@ public class EnergyMetterScript : MonoBehaviour
                 _energy = value;
                 if(_energy <= 0)
                 {
+                    GetComponent<AudioSource>().clip = _EnergyDownSound;
+                    GetComponent<AudioSource>().Play();
                     if (ReactedToEnergy != null)
                         ReactedToEnergy();
                     _sliderImage.enabled = false;
@@ -58,6 +65,9 @@ public class EnergyMetterScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _unPlugSound = Resources.Load("Sound/Snd_UnPlugBattery") as AudioClip;
+        _plugSound = Resources.Load("Sound/Snd_PlugBattery") as AudioClip;
+        _EnergyDownSound = Resources.Load("Sound/Snd_EnergyDown") as AudioClip;
         TIBarPosition = GameObject.Find("TIEnergyBarPosition");
         _slider.maxValue = MaxEnergy;
         player = GameObject.Find("Player").GetComponent<PlayerAxisScript>();
@@ -71,6 +81,10 @@ public class EnergyMetterScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (timerBeforeTriggerSounds < 5)
+            timerBeforeTriggerSounds += Time.deltaTime;
+        else
+            waitBeforeTriggerSounds = true;
         if (CurrentBattery)
         {
             CurrentBattery.transform.position = GameObject.Find("BatteryPosition").transform.position;
@@ -119,11 +133,13 @@ public class EnergyMetterScript : MonoBehaviour
             {
                 transform.position = Vector3.Lerp(_currentPosition, _Positions[player.IDCurrentAxis], _moveLerp);
                 transform.rotation = Quaternion.Slerp(Quaternion.Euler(_currentRotation), Quaternion.Euler(_Rotations[player.IDCurrentAxis]), _moveLerp);
+                transform.localScale = Vector3.Lerp(transform.localScale, new Vector3(1,1,1), _moveLerp);
             }
             else
             {
                 transform.position = Vector3.Lerp(_currentPosition, TIBarPosition.transform.position, _moveLerp);
                 transform.rotation = Quaternion.Slerp(Quaternion.Euler(_currentRotation), TIBarPosition.transform.rotation, _moveLerp);
+                transform.localScale = Vector3.Lerp(transform.localScale, TIBarPosition.transform.localScale, _moveLerp);
             }
             smooth = Mathf.Clamp(_rotationCountdown+0.25f, 0.25f, 1f);
             _moveLerp = (1f - _rotationCountdown);
@@ -174,15 +190,18 @@ public class EnergyMetterScript : MonoBehaviour
             other.GetComponent<Rigidbody>().isKinematic = true;
             CurrentBattery = other.GetComponent<BatteryScript>();
             Energy = CurrentBattery.Energy;
+
             if(CurrentBattery.Energy>0)
             {
+                if (waitBeforeTriggerSounds == true)
+                {
+                    GetComponent<AudioSource>().clip = _plugSound;
+                    GetComponent<AudioSource>().Play();
+                }
                 ReactedToEnergyReset();
                 co = StartCoroutine(DecreaseEnergy());
                 _sliderImage.enabled = true;
             }
-
-
-
         }
     }
 
@@ -196,5 +215,11 @@ public class EnergyMetterScript : MonoBehaviour
     public void StartCooldown()
     {
         StartCoroutine(Cooldown());
+    }
+
+    public void PlayUnPlugSound()
+    {
+        GetComponent<AudioSource>().clip = _unPlugSound;
+        GetComponent<AudioSource>().Play();
     }
 }
