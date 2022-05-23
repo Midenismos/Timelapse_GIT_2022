@@ -45,6 +45,7 @@ public class PanelBasketScript : MonoBehaviour
                         image.transform.SetParent(_panels[2].transform, false);
                         image.GetComponent<PanelTag>().ImageTag = "cam";
                         image.GetComponent<PanelTag>().IsCorrupted = GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().Energy <= 0 ? true : false;
+
                         Bells[1].NewPanelImageNumber += 1;
                     }
                     if (other.tag == "Written")
@@ -53,7 +54,7 @@ public class PanelBasketScript : MonoBehaviour
                         image.GetComponent<Image>().sprite = other.GetComponent<PanelImageData>().Image;
                         image.transform.SetParent(_panels[1].transform, false);
                         image.GetComponent<PanelTag>().ImageTag = "written";
-                        image.GetComponent<PanelTag>().IsCorrupted = GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().Energy <= 0 ? true : false;
+                        image.GetComponent<PanelTag>().Init(GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().Energy <= 0 ? true : false);
                         Bells[0].NewPanelImageNumber += 1;
                     }
                     else if (other.tag == "Tape")

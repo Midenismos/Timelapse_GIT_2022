@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class PanelTag : MonoBehaviour
 {
     public string ImageTag = "null";
+    public Material corruptedMaterial = null;
     private bool _isCorrupted;
     //[SerializeField] private Image _glitchEffect = null;
     [SerializeField] private GameObject deleteButton = null;
@@ -22,6 +23,17 @@ public class PanelTag : MonoBehaviour
                 _glitchEffect.enabled = true;
             else
                 _glitchEffect.enabled = false;*/
+        }
+    }
+
+    public void Init(bool isCorrupted)
+    {
+        IsCorrupted = isCorrupted;
+        Debug.Log(IsCorrupted);
+        if(IsCorrupted)
+        {
+            GetComponent<Image>().material = corruptedMaterial;
+            Debug.Log(GetComponent<Image>().material = corruptedMaterial);
         }
     }
 
