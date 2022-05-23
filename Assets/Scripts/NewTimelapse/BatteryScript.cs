@@ -74,9 +74,9 @@ public class BatteryScript : MonoBehaviour
     private void Update()
     {
         if (!isPluged && !isInBox && !isVaultPluged)
-            Energy = Mathf.Clamp(Energy + _multiplier * 0.01f, 0, 100);
+            Energy = Mathf.Clamp(Energy + _multiplier * 0.01f, 0, 250);
         else if (isVaultPluged)
-            Energy = Mathf.Clamp(Energy - 0.01f, 0, 100);
+            Energy = Mathf.Clamp(Energy - 0.01f, 0, 250);
 
             if (isPluged)
             _sliderImage.enabled = false;
