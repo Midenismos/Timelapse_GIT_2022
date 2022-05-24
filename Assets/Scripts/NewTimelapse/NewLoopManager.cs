@@ -75,13 +75,13 @@ public class NewLoopManager : MonoBehaviour
         switch(Speed)
         {
             case (SpeedType.SLOW):
-                Multiplier = 0.5f;
+                Multiplier = -4f;
                 break;
             case (SpeedType.NORMAL):
                 Multiplier = 1f;
                 break;
             case (SpeedType.FAST):
-                Multiplier = 2f;
+                Multiplier = 4f;
                 break;
         }
         //Quand est-ce que les Nébuleuses ont lieu
