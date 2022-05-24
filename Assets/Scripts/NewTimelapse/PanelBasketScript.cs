@@ -60,7 +60,7 @@ public class PanelBasketScript : MonoBehaviour
                     else if (other.tag == "Tape")
                     {
                         image = Instantiate(_panelImageTape, this.transform);
-                        image.transform.GetChild(1).GetComponent<TMP_Text>().text = other.GetComponent<PanelImageData>().TMText.text;
+                        image.transform.GetChild(0).GetComponent<TMP_Text>().text = other.GetComponent<PanelImageData>().TMText.text;
                         image.transform.SetParent(_panels[0].transform, false);
                         image.GetComponent<PanelTag>().IsCorrupted = GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().Energy <= 0 ? true : false;
                         Bells[2].NewPanelImageNumber += 1;

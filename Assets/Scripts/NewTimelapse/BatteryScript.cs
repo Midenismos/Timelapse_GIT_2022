@@ -50,6 +50,7 @@ public class BatteryScript : MonoBehaviour
             EnergyMetter.Energy = 0;
             EnergyMetter.StopCoroutine(EnergyMetter.co);
             isPluged = false;
+            gameObject.transform.parent = GameObject.Find("Batteries").transform;
             EnergyMetter.StartCooldown();
             EnergyMetter.PlayUnPlugSound();
         }
