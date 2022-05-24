@@ -81,14 +81,20 @@ public class EnergyMetterScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Gère la couleur de la barre d'énergie
+        if (Energy > 75 && Energy <= 150)
+            _sliderImage.color = Color.Lerp(Color.yellow, Color.green, (Energy - 75) / 75);
+        else if (Energy >= 0 && Energy <= 75)
+            _sliderImage.color = Color.Lerp(Color.red, Color.yellow, Energy / 75);
+
         if (timerBeforeTriggerSounds < 5)
             timerBeforeTriggerSounds += Time.deltaTime;
         else
             waitBeforeTriggerSounds = true;
         if (CurrentBattery)
         {
-            CurrentBattery.transform.position = GameObject.Find("BatteryPosition").transform.position;
-            CurrentBattery.transform.rotation = GameObject.Find("BatteryPosition").transform.rotation;
+            //CurrentBattery.transform.position = GameObject.Find("BatteryPosition").transform.position;
+             //CurrentBattery.transform.rotation = GameObject.Find("BatteryPosition").transform.rotation;
             Energy = CurrentBattery.Energy;
         }
         _slider.value = Energy;
@@ -134,12 +140,16 @@ public class EnergyMetterScript : MonoBehaviour
                 transform.position = Vector3.Lerp(_currentPosition, _Positions[player.IDCurrentAxis], _moveLerp);
                 transform.rotation = Quaternion.Slerp(Quaternion.Euler(_currentRotation), Quaternion.Euler(_Rotations[player.IDCurrentAxis]), _moveLerp);
                 transform.localScale = Vector3.Lerp(transform.localScale, new Vector3(1,1,1), _moveLerp);
+                GetComponent<Animator>().Play("Base Layer.EnergyMetter", 0);
+
             }
             else
             {
                 transform.position = Vector3.Lerp(_currentPosition, TIBarPosition.transform.position, _moveLerp);
                 transform.rotation = Quaternion.Slerp(Quaternion.Euler(_currentRotation), TIBarPosition.transform.rotation, _moveLerp);
                 transform.localScale = Vector3.Lerp(transform.localScale, TIBarPosition.transform.localScale, _moveLerp);
+                GetComponent<Animator>().Play("Base Layer.EnergyMetterTI", 0);
+
             }
             smooth = Mathf.Clamp(_rotationCountdown+0.25f, 0.25f, 1f);
             _moveLerp = (1f - _rotationCountdown);
@@ -185,6 +195,9 @@ public class EnergyMetterScript : MonoBehaviour
         if (other.gameObject.tag == "Battery" && CurrentBattery == null && isAvailable)
         {
             HowManyMachineActivated = 0;
+            other.transform.parent = GameObject.Find("BatteryPosition").transform;
+            other.transform.position = GameObject.Find("BatteryPosition").transform.position;
+            other.transform.rotation = GameObject.Find("BatteryPosition").transform.rotation;
             other.GetComponent<BatteryScript>().isPluged = true;
             other.GetComponent<DragObjects>().IsDragable = false;
             other.GetComponent<Rigidbody>().isKinematic = true;
