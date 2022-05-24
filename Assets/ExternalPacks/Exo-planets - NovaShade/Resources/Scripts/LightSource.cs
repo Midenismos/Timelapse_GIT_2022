@@ -73,7 +73,7 @@ public void Start ()
 				AtmosphereM.SetPropertyBlock(_propBlockAtmosphere);
 			}
 
-			if (Rings != null)
+			if (RingsM != null)
             {
 				_propBlockRings = new MaterialPropertyBlock();	   
 	   RingsM.GetPropertyBlock(_propBlockRings);

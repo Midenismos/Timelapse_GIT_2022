@@ -104,8 +104,8 @@ Material:
     m_Floats:
     - _Alpha: 1
     - _AlphaClip: 0
-    - _BandAxisLength: 0.18
-    - _BandCenterLength: 0
+    - _BandAxisLength: 0.095
+    - _BandCenterLength: -0.1
     - _BandSpeed: 0.5
     - _BandTransitionLength: 0.02
     - _Blend: 0
