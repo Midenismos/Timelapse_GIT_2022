@@ -45,6 +45,7 @@ public class EnergyMetterScript : MonoBehaviour
                 {
                     GetComponent<AudioSource>().clip = _EnergyDownSound;
                     GetComponent<AudioSource>().Play();
+                    GetComponent<Animator>().Play("Base Layer.EnergyMetterDown", 0);
                     if (ReactedToEnergy != null)
                         ReactedToEnergy();
                     _sliderImage.enabled = false;
@@ -107,8 +108,11 @@ public class EnergyMetterScript : MonoBehaviour
             _currentRotation = transform.rotation.eulerAngles;
             _currentPosition = transform.position;
             smooth = 1;
+            if (Energy != 0)
+                GetComponent<Animator>().Play("Base Layer.EnergyMetter", 0);
+
         }
-        if(Input.GetKeyDown("s"))
+        if (Input.GetKeyDown("s"))
         {
             _rotationCountdown = 1;
             _moveLerp = 0;
@@ -116,6 +120,8 @@ public class EnergyMetterScript : MonoBehaviour
             _currentRotation = transform.rotation.eulerAngles;
             _currentPosition = transform.position;
             smooth = 1;
+            if (Energy != 0)
+                GetComponent<Animator>().Play("Base Layer.EnergyMetterTI", 0);
         }
 
         //Change la quantité d'énergie consommée en fonctionne de la vitesse.
@@ -140,7 +146,6 @@ public class EnergyMetterScript : MonoBehaviour
                 transform.position = Vector3.Lerp(_currentPosition, _Positions[player.IDCurrentAxis], _moveLerp);
                 transform.rotation = Quaternion.Slerp(Quaternion.Euler(_currentRotation), Quaternion.Euler(_Rotations[player.IDCurrentAxis]), _moveLerp);
                 transform.localScale = Vector3.Lerp(transform.localScale, new Vector3(1,1,1), _moveLerp);
-                GetComponent<Animator>().Play("Base Layer.EnergyMetter", 0);
 
             }
             else
@@ -148,7 +153,7 @@ public class EnergyMetterScript : MonoBehaviour
                 transform.position = Vector3.Lerp(_currentPosition, TIBarPosition.transform.position, _moveLerp);
                 transform.rotation = Quaternion.Slerp(Quaternion.Euler(_currentRotation), TIBarPosition.transform.rotation, _moveLerp);
                 transform.localScale = Vector3.Lerp(transform.localScale, TIBarPosition.transform.localScale, _moveLerp);
-                GetComponent<Animator>().Play("Base Layer.EnergyMetterTI", 0);
+
 
             }
             smooth = Mathf.Clamp(_rotationCountdown+0.25f, 0.25f, 1f);
@@ -211,6 +216,7 @@ public class EnergyMetterScript : MonoBehaviour
                     GetComponent<AudioSource>().clip = _plugSound;
                     GetComponent<AudioSource>().Play();
                 }
+                GetComponent<Animator>().Play("Base Layer.EnergyMetterUp", 0);
                 ReactedToEnergyReset();
                 co = StartCoroutine(DecreaseEnergy());
                 _sliderImage.enabled = true;

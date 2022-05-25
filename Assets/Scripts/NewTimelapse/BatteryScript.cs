@@ -53,6 +53,7 @@ public class BatteryScript : MonoBehaviour
             gameObject.transform.parent = GameObject.Find("Batteries").transform;
             EnergyMetter.StartCooldown();
             EnergyMetter.PlayUnPlugSound();
+            transform.localScale = new Vector3(0.2048901f, 0.12f, 0.28f);
         }
 
         BatteryBoxScript Box = GameObject.Find("BatteryBox").GetComponent<BatteryBoxScript>();
