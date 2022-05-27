@@ -102,14 +102,15 @@ public class PanelBasketScript : MonoBehaviour
     {
         if (GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == 5)
         {
-           GetComponent<BoxCollider>().size = new Vector3(0.05f, 0.4f, 0.4f);
-           GetComponent<BoxCollider>().center = new Vector3(0, 0.07f, 0.04f);
+           GetComponent<BoxCollider>().size = new Vector3(0.57f, 0.7238138f, 2.029248f);
+           GetComponent<BoxCollider>().center = new Vector3(0, 0.07919898f, 0.6650302f);
 
         }
         else
         {
-            GetComponent<BoxCollider>().center = new Vector3(0, 0.07f, -0.025f);
-            GetComponent<BoxCollider>().size = new Vector3(0.05f, 0.4f, 0.1f);
+            GetComponent<BoxCollider>().size = new Vector3(0.57f, 1.24f, 0.7f);
+            GetComponent<BoxCollider>().center = new Vector3(0, 0.33f, 0);
+
         }
 
 

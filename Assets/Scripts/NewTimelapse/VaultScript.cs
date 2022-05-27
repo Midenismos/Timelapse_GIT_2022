@@ -15,20 +15,28 @@ public class VaultScript : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if(GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().Energy <=0 && GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == 4 )
-        {
-            if (isOpen && !GameObject.Find("Player").GetComponent<PlayerAxisScript>().HasItem)
-                CloseDoor();
+        if (GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == 4)
+        { 
+            if (GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().Energy <= 0)
+            {
+                if (isOpen && !GameObject.Find("Player").GetComponent<PlayerAxisScript>().HasItem)
+                    CloseDoor();
+                else
+                {
+                    _vaultOpenSound.Play();
+                    _animator.Play("Door.VaultOpen", 0);
+                    foreach (BoxCollider col in _colOpen)
+                        col.enabled = true;
+                    _colClose.enabled = false;
+                    isOpen = true;
+                }
+            }
             else
             {
-                _vaultOpenSound.Play();
-                _animator.Play("Door.VaultOpen", 0);
-                foreach (BoxCollider col in _colOpen)
-                    col.enabled = true;
-                _colClose.enabled = false;
-                isOpen = true;
+                GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().LaunchRandomAntiCasierDialogue();
             }
         }
+
 
 
     }
