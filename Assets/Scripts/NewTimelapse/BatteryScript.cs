@@ -56,7 +56,7 @@ public class BatteryScript : MonoBehaviour
             transform.localScale = new Vector3(0.2048901f, 0.12f, 0.28f);
         }
 
-        BatteryBoxScript Box = GameObject.Find("BatteryBox").GetComponent<BatteryBoxScript>();
+        BatteryBoxScript Box = GameObject.Find("NewBatteryBox").GetComponent<BatteryBoxScript>();
         if (Box.CurrentBattery == this.gameObject && GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == 3)
         {
             Box.CurrentBattery = null;
