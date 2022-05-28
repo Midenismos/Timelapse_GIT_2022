@@ -10,11 +10,11 @@ public class BatteryBoxScript : MonoBehaviour
     [SerializeField] private AudioSource _colOpenSound = null;
     [SerializeField] private AudioSource _colCloseSound = null;
     [SerializeField] private AudioSource _putBatterySound = null;
-    private bool isOpen = false;
+    [SerializeField] private bool isOpen = false;
     public GameObject CurrentBattery = null;
     private bool isAvailable = true;
 
-    private void OnMouseDown()
+    /*private void OnMouseDown()
     {
         if(isOpen)
         {
@@ -33,7 +33,7 @@ public class BatteryBoxScript : MonoBehaviour
             _colOpenSound.Play();
         }
 
-    }
+    }*/
     // Start is called before the first frame update
     void Awake()
     {
@@ -59,16 +59,16 @@ public class BatteryBoxScript : MonoBehaviour
     }
     private void Update()
     {
-        if (isOpen)
-        {
-            if (CurrentBattery)
-                CurrentBattery.GetComponent<BatteryScript>().isInBox = false;
-        }
-        else
-        {
+        //if (isOpen)
+        //{
+            //if (CurrentBattery)
+                //CurrentBattery.GetComponent<BatteryScript>().isInBox = false;
+        //}
+        //else
+        //{
             if (CurrentBattery)
                 CurrentBattery.GetComponent<BatteryScript>().isInBox = true;
-        }
+        //}
     }
 
     IEnumerator Cooldown()

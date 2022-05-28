@@ -68,11 +68,12 @@ public class NewLoopManager : MonoBehaviour
         CurrentLoopTime += Time.deltaTime * Multiplier;
 
         if (CurrentLoopTime >= LoopDuration)
-        {
             CurrentLoopTime = 0;
-        }
+        else if (CurrentLoopTime < 0)
+            CurrentLoopTime = LoopDuration;
 
-        switch(Speed)
+
+        switch (Speed)
         {
             case (SpeedType.SLOW):
                 Multiplier = -4f;
