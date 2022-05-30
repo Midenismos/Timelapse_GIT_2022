@@ -593,8 +593,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _imageTag: tape
   IsFilled: 0
-  _entryFilledFeedback: {fileID: 8300000, guid: 1f870e77788ca544084156bf6e24c84d,
-    type: 3}
 --- !u!1 &3849058558170518657
 GameObject:
   m_ObjectHideFlags: 0
@@ -898,15 +896,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _fullSheet: {fileID: 3849058559449168958}
-  _openSound: {fileID: 6568273110181875433}
-  _closeSound: {fileID: 5130378454672403110}
   minimiseImage: {fileID: 21300000, guid: f61eea3f74a22f34995f088c9de0b945, type: 3}
   maximiseImage: {fileID: 21300000, guid: e804d67d5ecdb884eb87ead790affaab, type: 3}
   circleImage: {fileID: 668855148416820351}
   Manager: {fileID: 0}
   text: {fileID: 620407704370745522}
-  _entryCompletedFeedback: {fileID: 8300000, guid: 4a6bdf8b759458547a281db23057e8b8,
-    type: 3}
   Slots:
   - {fileID: 47911189}
   DeleteButton: {fileID: 6636617442230974216}
@@ -1017,7 +1011,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 28d01286da8efeb4dbe0f18700068e52, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.25
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
