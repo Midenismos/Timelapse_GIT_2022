@@ -140,7 +140,7 @@ Material:
     - _SrcBlend: 1
     - _Surface: 0
     - _TimeFPS: 5
-    - _TimeFrequency: 2
+    - _TimeFrequency: 10
     - _TimeRange: 0.5
     - _TimeScale: 1
     - _TimeSettings: 3
@@ -157,6 +157,6 @@ Material:
     - _GlitchMaskScale: {r: 0, g: 0.2, b: 0, a: 0}
     - _GlitchMaskSpeed: {r: 0, g: 4, b: 0, a: 0}
     - _GlitchNoiseScale: {r: 0, g: 3, b: 0, a: 0}
-    - _GlitchNoiseSpeed: {r: 0, g: 0.01, b: 0, a: 0}
+    - _GlitchNoiseSpeed: {r: 0, g: 0.2, b: 0, a: 0}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_BuildTextureStacks: []

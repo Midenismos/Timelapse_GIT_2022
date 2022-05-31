@@ -25,6 +25,8 @@ public class IAVoiceManager : MonoBehaviour
     private TMP_Text txt = null;
     private bool _inCooldown = false;
 
+    public Action OnDialogueFinished;
+
     private void Awake()
     {
         DialogueList = new Dialogue[]
@@ -772,6 +774,8 @@ public class IAVoiceManager : MonoBehaviour
             DialogueSounds = null;
             dialogueHappening = false;
             txt.text = "";
+
+            OnDialogueFinished?.Invoke();
         }
         else if(i != 0)
         {

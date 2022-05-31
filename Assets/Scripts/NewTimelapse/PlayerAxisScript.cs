@@ -31,6 +31,7 @@ public class PlayerAxisScript : MonoBehaviour
     private GameObject console;
     public bool IsInTI = false;
     public bool IsDraging = false;
+    public bool canMove = true;
 
     [SerializeField] private InterfaceAnimManager _TI = null;
 
@@ -50,7 +51,7 @@ public class PlayerAxisScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!HasItem && !IsDraging)
+        if(!HasItem && !IsDraging && canMove)
         {
             if (Input.GetKeyDown("d"))
             {
@@ -145,6 +146,19 @@ public class PlayerAxisScript : MonoBehaviour
             console.transform.localPosition = Vector3.Lerp(_currentConsolePosition, _targetConsolePosition, _moveLerp);
             _moveLerp = 1f - _rotationCountdown;
         }
+    }
+
+    public void RotateToAxis(int axisNumber)
+    {
+        IDCurrentAxis = axisNumber;
+
+        _rotationCountdown = 1;
+        _moveLerp = 0;
+        _targetRotation = _axisRotation[IDCurrentAxis];
+        _targetPosition = _camPosition[IDCurrentAxis];
+        _targetConsolePosition = _consolePosition[IDCurrentAxis];
+        _targetCamRotation = _camRotation[IDCurrentAxis];
+        _isLerping = true;
     }
 
     public void PutConsoleDown()

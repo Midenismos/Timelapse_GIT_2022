@@ -49,7 +49,6 @@ public class NebulaPostProcessing : MonoBehaviour
     private void Start()
     {
         volume.profile.TryGet<ColorAdjustments>(out colorGrading);
-        Debug.Log(_colorB);
         colorGrading.colorFilter.value = purpleNebulaColor;
     }
 

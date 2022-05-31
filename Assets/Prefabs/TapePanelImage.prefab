@@ -278,8 +278,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ImageTag: tape
-  corruptedMaterial: {fileID: 0}
-  deleteButton: {fileID: 0}
+  corruptedMaterial: {fileID: 2100000, guid: 69d5047e8e5348642ae11fbfc381d493, type: 2}
+  deleteButton: {fileID: 3474672905169469888}
 --- !u!95 &5592486190615846935
 Animator:
   serializedVersion: 3

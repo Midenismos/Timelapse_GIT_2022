@@ -10,6 +10,8 @@ public class PanalBasketGlitchController : MonoBehaviour
     [SerializeField] private float glitchOffCenterLength = 3;
     [SerializeField] private float glitchOffAxisLength = 0;
 
+    [SerializeField] private GameObject glitchedScanner = null;
+
     private Material targetMaterial = null;
 
     private bool isGlitched = false;
@@ -32,8 +34,10 @@ public class PanalBasketGlitchController : MonoBehaviour
 
         if(GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().Energy <= 0 && !isGlitched)
         {
-            targetMaterial.SetFloat("_BandCenterLength", glitchOnCenterLength);
-            targetMaterial.SetFloat("_BandAxisLength", glitchOnAxisLength);
+            //targetMaterial.SetFloat("_BandCenterLength", glitchOnCenterLength);
+            //targetMaterial.SetFloat("_BandAxisLength", glitchOnAxisLength);
+
+            glitchedScanner.SetActive(true);
 
             isGlitched = true;
 
@@ -41,8 +45,10 @@ public class PanalBasketGlitchController : MonoBehaviour
         }
         else if (GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().Energy > 0 && isGlitched)
         {
-            targetMaterial.SetFloat("_BandCenterLength", glitchOffCenterLength);
-            targetMaterial.SetFloat("_BandAxisLength", glitchOffAxisLength);
+            //targetMaterial.SetFloat("_BandCenterLength", glitchOffCenterLength);
+            //targetMaterial.SetFloat("_BandAxisLength", glitchOffAxisLength);
+
+            glitchedScanner.SetActive(false);
 
             isGlitched = false;
 

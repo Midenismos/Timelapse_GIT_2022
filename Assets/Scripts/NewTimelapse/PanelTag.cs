@@ -29,11 +29,9 @@ public class PanelTag : MonoBehaviour
     public void Init(bool isCorrupted)
     {
         IsCorrupted = isCorrupted;
-        Debug.Log(IsCorrupted);
         if(IsCorrupted)
         {
             GetComponent<Image>().material = corruptedMaterial;
-            Debug.Log(GetComponent<Image>().material = corruptedMaterial);
         }
     }
 
