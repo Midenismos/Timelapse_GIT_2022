@@ -745,6 +745,8 @@ public class IAVoiceManager : MonoBehaviour
     }
     private void Update()
     {
+        //if (Input.GetKey(KeyCode.A))
+            //LaunchDialogue("ComplétionHorsTuto11");
 
         if(dialogueHappening)
         {
@@ -762,16 +764,16 @@ public class IAVoiceManager : MonoBehaviour
     IEnumerator Cooldown()
     {
         _inCooldown = true;
-        yield return new WaitForSeconds(1);
         i += 1;
-        if (i >= DialogueTexts.Length)
+        yield return new WaitForSeconds(1);
+        if (i >= DialogueTexts.Length && i != 0)
         {
             DialogueTexts = null;
             DialogueSounds = null;
             dialogueHappening = false;
             txt.text = "";
         }
-        else
+        else if(i != 0)
         {
             Play();
         }

@@ -8,6 +8,7 @@ public class CamButton : MonoBehaviour
 {
     public UnityEvent onClickedCam;
     public UnityEvent onClickedAudio;
+    public UnityEvent onClickedVault;
     [SerializeField] private Material _activatedMat = null;
     private Material _deactivatedMat = null;
     [SerializeField] private MeshRenderer _interactFeedBack;
@@ -19,7 +20,7 @@ public class CamButton : MonoBehaviour
     }
     private void OnMouseOver()
     {
-        if (GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == 5 ||GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == 4)
+        if (GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == 5)
         {
             _interactFeedBack.enabled = true;
             if (Input.GetMouseButtonDown(0))
@@ -36,6 +37,15 @@ public class CamButton : MonoBehaviour
             if (Input.GetMouseButtonDown(0))
             {
                 onClickedAudio?.Invoke();
+                StartCoroutine(ButtonFeedback());
+            }
+        }
+        if (GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == 4)
+        {
+            _interactFeedBack.enabled = true;
+            if (Input.GetMouseButtonDown(0))
+            {
+                onClickedVault?.Invoke();
                 StartCoroutine(ButtonFeedback());
             }
         }
