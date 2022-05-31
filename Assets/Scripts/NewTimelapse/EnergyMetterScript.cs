@@ -83,7 +83,7 @@ public class EnergyMetterScript : MonoBehaviour
     void Update()
     {
         // Gère la couleur de la barre d'énergie
-        if (Energy > 75 && Energy <= 150)
+        if (Energy > 75 && Energy <= 250)
             _sliderImage.color = Color.Lerp(Color.yellow, Color.green, (Energy - 75) / 75);
         else if (Energy >= 0 && Energy <= 75)
             _sliderImage.color = Color.Lerp(Color.red, Color.yellow, Energy / 75);

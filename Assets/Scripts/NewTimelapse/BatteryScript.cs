@@ -40,6 +40,11 @@ public class BatteryScript : MonoBehaviour
         {
             GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().OnTriggerEnter(this.GetComponent<BoxCollider>());
         }
+
+        if (isInBox)
+        {
+            GameObject.Find("NewBatteryBox").GetComponent<BatteryBoxScript>().OnTriggerEnter(this.GetComponent<BoxCollider>());
+        }
     }
     private void OnMouseDown()
     {

@@ -44,7 +44,7 @@ public class BatteryBoxScript : MonoBehaviour
     {
         StartCoroutine(Cooldown());
     }
-    private void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Battery" && CurrentBattery == null && isOpen && isAvailable)
         {

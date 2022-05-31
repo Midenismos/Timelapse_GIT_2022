@@ -7,10 +7,11 @@ public class Tutorial : MonoBehaviour
     [SerializeField] private bool activateTuto = true;
     [SerializeField] private string[] dialogueNames;
     [SerializeField] private float[] delays;
+    [SerializeField] private TutorialActionAppear[] tutorialActions;
 
     [SerializeField] private IAVoiceManager voiceManager = null;
 
-    private int dialogueIndex = 0;
+    public int dialogueIndex = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +19,14 @@ public class Tutorial : MonoBehaviour
         {
             StartCoroutine(LaunchNextDialogue(delays[dialogueIndex]));
             voiceManager.OnDialogueFinished += DialogueFinished;
+
+            for (int i = 0; i < tutorialActions.Length; i++)
+            {
+                if(tutorialActions[i])
+                {
+                    tutorialActions[i].OnTutoStart();
+                }
+            }
         }
     }
 
@@ -40,6 +49,9 @@ public class Tutorial : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         voiceManager.LaunchDialogue(dialogueNames[dialogueIndex]);
-
+        if(tutorialActions[dialogueIndex])
+        {
+            tutorialActions[dialogueIndex].ExecuteAction();
+        }
     }
 }

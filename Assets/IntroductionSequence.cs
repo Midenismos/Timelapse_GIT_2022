@@ -41,7 +41,7 @@ public class IntroductionSequence : MonoBehaviour
         {
             floor.SetActive(true);
             player.canMove = true;
-            //player.RotateToAxis(finalRotationAxisNumber);
+            player.RotateToAxis(finalRotationAxisNumber);
             enabled = false;
         }
     }
