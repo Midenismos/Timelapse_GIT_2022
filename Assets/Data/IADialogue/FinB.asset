@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f0bb5c06d1909248a245bbcc4c6c04c, type: 3}
+  m_Name: FinB
+  m_EditorClassIdentifier: 
+  DialogueName: FinB
+  DialogueTexts:
+  - "Communication en provenance de The Argon Station. R\xE9ception en cours."
+  - "Message du colonel Prescott : \u201CNous avons re\xE7u votre rapport. Je dois
+    vous dire que nous sommes d\xE9\xE7us de vous."
+  - "Nos doutes quant \xE0 vos capacit\xE9s \xE9taient justifi\xE9s."
+  - "Nous pensions n\xE9anmoins que si nous vous accordions une derni\xE8re chance,
+    vous auriez \xE9t\xE9 mesure de prouver votre valeur."
+  - "Au lieu de cela, vous nous avez envoy\xE9 un rapport falsifi\xE9 auquel il manque
+    des \xE9l\xE9ments-cl\xE9s dont nous avions d\xE9j\xE0 connaissance avant m\xEAme
+    votre affectation \xE0 cette mission."
+  - "De ce fait, vous \xEAtes officiellement renvoy\xE9 de la Stardust Conquest et
+    de son programme de colonisation spatiale."
+  - "D\xE8s que vous serez revenu \xE0 la Station m\xE8re, votre famille et vous
+    serez renvoy\xE9s sur Terre de fa\xE7on d\xE9finitive."
+  DialogueSounds:
+  - {fileID: 8300000, guid: c916369e9ebd71b40adfe32290e8f45e, type: 3}
+  - {fileID: 8300000, guid: ac6a3ccfad751cc45b322d443a5b8d12, type: 3}
+  - {fileID: 8300000, guid: 27f8289dd96b3a44986fd29681f7a823, type: 3}
+  - {fileID: 8300000, guid: 8294aa4f7db667e4cb7a7e482634278b, type: 3}
+  - {fileID: 8300000, guid: a5c83ce93337cb445bdf798bacd64e70, type: 3}
+  - {fileID: 8300000, guid: 76d1a04f952b4c24594425671ddc5d31, type: 3}
+  - {fileID: 8300000, guid: 6831ed6d37153d2489fe32239f6fb70c, type: 3}

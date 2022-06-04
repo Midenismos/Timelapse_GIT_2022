@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f0bb5c06d1909248a245bbcc4c6c04c, type: 3}
+  m_Name: Presentation
+  m_EditorClassIdentifier: 
+  DialogueName: Presentation
+  DialogueTexts:
+  - "Ma premi\xE8re t\xE2che consiste \xE0 vous pr\xE9senter ou vous rappeler comment
+    se servir avec efficacit\xE9 de l\u2019\xE9quipement \xE0 votre disposition."
+  - "Ma seconde t\xE2che consiste \xE0 analyser votre efficacit\xE9 lors de votre
+    mission."
+  - "La commission pr\xE9sid\xE9e par le colonel Prescott pourra ensuite \xE9tudier
+    les r\xE9sultats de votre enqu\xEAte et d\xE9terminer si vous avez rempli votre
+    mission ou si vous avez \xE9chou\xE9."
+  - Pour commencer, lisez votre briefing de mission.
+  DialogueSounds:
+  - {fileID: 8300000, guid: 08bc52666b6c80e4ebfbf711f3941ef6, type: 3}
+  - {fileID: 8300000, guid: 0c33556223773714a910bc312afa94de, type: 3}
+  - {fileID: 8300000, guid: 9769d5f2da1b9434aa61bf55357316ea, type: 3}
+  - {fileID: 8300000, guid: 55cd866c9902d5645af36a1bf155f1d1, type: 3}

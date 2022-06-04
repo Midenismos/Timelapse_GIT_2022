@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f0bb5c06d1909248a245bbcc4c6c04c, type: 3}
+  m_Name: Casier 1
+  m_EditorClassIdentifier: 
+  DialogueName: 
+  DialogueTexts:
+  - Concentrez-vous sur votre travail.
+  DialogueSounds:
+  - {fileID: 8300000, guid: 091a3b5d269c14343b4a4969cbda4f22, type: 3}

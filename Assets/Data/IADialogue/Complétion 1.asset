@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f0bb5c06d1909248a245bbcc4c6c04c, type: 3}
+  m_Name: "Compl\xE9tion 1"
+  m_EditorClassIdentifier: 
+  DialogueName: "Compl\xE9tion1"
+  DialogueTexts:
+  - "Information valid\xE9e."
+  - "Vous venez de compl\xE9ter votre premier point chronologique sur la frise."
+  - "Faites de m\xEAme avec les trois autres points afin d\u2019\xE9tablir le postulat
+    initial de l\u2019enqu\xEAte."
+  DialogueSounds:
+  - {fileID: 8300000, guid: 2f420bbdcf7337f4e8943a98671a37ee, type: 3}
+  - {fileID: 8300000, guid: 7afe357a99fd1a444b70c51f9337ce80, type: 3}
+  - {fileID: 8300000, guid: 7afe357a99fd1a444b70c51f9337ce80, type: 3}

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f0bb5c06d1909248a245bbcc4c6c04c, type: 3}
+  m_Name: Contexte 1
+  m_EditorClassIdentifier: 
+  DialogueName: Contexte1
+  DialogueTexts:
+  - "D\xE9but de la mission INV0071-ND12-TAS"
+  - Nous sommes le 7 septembre 2246
+  DialogueSounds:
+  - {fileID: 8300000, guid: 6998ecb2e84f8b145a781c15fc8a3e97, type: 3}
+  - {fileID: 8300000, guid: 21a80f977c026d5448551c09f7587617, type: 3}
+  IsFolowedByAnotherDialogue: 1

@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f0bb5c06d1909248a245bbcc4c6c04c, type: 3}
+  m_Name: FinA
+  m_EditorClassIdentifier: 
+  DialogueName: FinA
+  DialogueTexts:
+  - "Communication en provenance de The Argon Station. R\xE9ception en cours."
+  - "Message du colonel Prescott : \u201CNous avons re\xE7u votre rapport."
+  - "Vous avez fait de l\u2019excellent travail."
+  - "Certes, ce qui est arriv\xE9 au capitaine Davis et \xE0 son \xE9quipage est
+    tragique, mais gr\xE2ce \xE0 leur travail et au v\xF4tre, une nouvelle esp\xE8ce
+    d\u2019\xEAtre vivant a \xE9t\xE9 d\xE9couverte."
+  - "Nous allons pouvoir prendre des mesures adapt\xE9es afin d\u2019entrer en contact
+    avec ces parasites et les \xE9tudier en toute s\xE9curit\xE9 pour d\xE9couvrir
+    leurs secrets."
+  - "Enqu\xEAtrice 854-186-420,"
+  - "vous avez bien servi la Stardust Conquest ainsi que toute l\u2019humanit\xE9
+    qui d\xE9pend d\u2019elle."
+  - "Vous pouvez d\xE9sormais revenir \xE0 la Station m\xE8re."
+  - Votre famille sera heureuse de vous retrouver saine et sauve
+  DialogueSounds:
+  - {fileID: 8300000, guid: 1edd8179eb845fe48a0a213197fdd1dd, type: 3}
+  - {fileID: 8300000, guid: 495e61b16a728b349ac7c6004153e30b, type: 3}
+  - {fileID: 8300000, guid: ddbb18d833f464d40968e0d5cdb8a2f9, type: 3}
+  - {fileID: 8300000, guid: 5707a83866d926b4ca6bc13b534b48df, type: 3}
+  - {fileID: 8300000, guid: 2d6cfa3770718e544a7fbd2aed25dcd4, type: 3}
+  - {fileID: 8300000, guid: 034ef3b39f5795a49a9f9fe77d9dbcce, type: 3}
+  - {fileID: 8300000, guid: 383fa457f6c0d1a429a290350ea2a1e3, type: 3}
+  - {fileID: 8300000, guid: 4cc080726cb031c4387c338d0e785ae3, type: 3}
+  - {fileID: 8300000, guid: 881916ef5ac86de4385632c147a8626d, type: 3}

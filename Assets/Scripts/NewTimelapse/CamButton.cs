@@ -12,6 +12,7 @@ public class CamButton : MonoBehaviour
     [SerializeField] private Material _activatedMat = null;
     private Material _deactivatedMat = null;
     [SerializeField] private MeshRenderer _interactFeedBack;
+    public bool isSeenInTuto = false;
 
     private void Awake()
     {
@@ -27,8 +28,11 @@ public class CamButton : MonoBehaviour
             {
                 onClickedCam?.Invoke();
                 StartCoroutine(ButtonFeedback());
+                if(!isSeenInTuto && GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex == 5)
+                {
+                    isSeenInTuto = true;
+                }
             }
-
         }
 
         if (GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == 1)
@@ -36,6 +40,10 @@ public class CamButton : MonoBehaviour
             _interactFeedBack.enabled = true;
             if (Input.GetMouseButtonDown(0))
             {
+                if (!isSeenInTuto && GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex == 8)
+                {
+                    isSeenInTuto = true;
+                }
                 onClickedAudio?.Invoke();
                 StartCoroutine(ButtonFeedback());
             }

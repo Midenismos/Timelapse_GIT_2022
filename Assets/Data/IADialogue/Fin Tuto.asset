@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f0bb5c06d1909248a245bbcc4c6c04c, type: 3}
+  m_Name: Fin Tuto
+  m_EditorClassIdentifier: 
+  DialogueName: FinTuto
+  DialogueTexts:
+  - "Je vous ai donn\xE9 toutes les cl\xE9s pour r\xE9ussir votre mission."
+  - "Maintenant, c\u2019est \xE0 vous de jouer."
+  - "Je mets mes fonctions en veille, mais je vais continuer d\u2019analyser vos
+    progr\xE8s et je vous avertirai de l\u2019arriv\xE9e potentielle de toute perturbation
+    ou anomalie quelconque."
+  DialogueSounds:
+  - {fileID: 8300000, guid: 7712f40b1457d114aaeef9755b7a2357, type: 3}
+  - {fileID: 8300000, guid: 09d47fc755a06934f9813c6d7f36f741, type: 3}
+  - {fileID: 8300000, guid: 6d9e052b97c66ce449a1a91d2d7c90d2, type: 3}

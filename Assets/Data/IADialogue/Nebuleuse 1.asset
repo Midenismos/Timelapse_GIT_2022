@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f0bb5c06d1909248a245bbcc4c6c04c, type: 3}
+  m_Name: Nebuleuse 1
+  m_EditorClassIdentifier: 
+  DialogueName: Nebuleuse1
+  DialogueTexts:
+  - Attention.
+  - Une perturbation inconnue est sur le point de traverser votre navette.
+  - "Cela risque d\u2019affecter votre \xE9quipement. Adaptez-vous en cons\xE9quence."
+  DialogueSounds:
+  - {fileID: 8300000, guid: 208d19e791a19734eafee1f4acf315df, type: 3}
+  - {fileID: 8300000, guid: f5c25591a0f884f498fb6690dc3f9572, type: 3}
+  - {fileID: 8300000, guid: e647a3dbdc3b6354f9163134f2400239, type: 3}

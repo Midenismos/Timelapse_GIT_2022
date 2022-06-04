@@ -100,19 +100,14 @@ public class EnergyMetterScript : MonoBehaviour
         }
         _slider.value = Energy;
 
-        if (Input.GetKeyDown("d") || Input.GetKeyDown("q") || Input.GetKeyDown("z"))
-        {
-            _rotationCountdown = 1;
-            _moveLerp = 0;
-            _isLerping = true;
-            _currentRotation = transform.rotation.eulerAngles;
-            _currentPosition = transform.position;
-            smooth = 1;
-            if (Energy != 0)
-                GetComponent<Animator>().Play("Base Layer.EnergyMetter", 0);
+        if (Input.GetKeyDown("d") && player.DEnabled == true)
+            StartLerp();
+        if (Input.GetKeyDown("q") && player.QEnabled == true)
+            StartLerp();
+        if (Input.GetKeyDown("z") && player.ZEnabled == true)
+            StartLerp();
 
-        }
-        if (Input.GetKeyDown("s"))
+        if (Input.GetKeyDown("s") && player.SEnabled == true)
         {
             _rotationCountdown = 1;
             _moveLerp = 0;
@@ -195,6 +190,17 @@ public class EnergyMetterScript : MonoBehaviour
         }
     }*/
 
+    public void StartLerp()
+    {
+        _rotationCountdown = 1;
+        _moveLerp = 0;
+        _isLerping = true;
+        _currentRotation = transform.rotation.eulerAngles;
+        _currentPosition = transform.position;
+        smooth = 1;
+        if (Energy != 0)
+            GetComponent<Animator>().Play("Base Layer.EnergyMetter", 0);
+    }
     public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Battery" && CurrentBattery == null && isAvailable)

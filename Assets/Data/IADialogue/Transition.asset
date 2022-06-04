@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f0bb5c06d1909248a245bbcc4c6c04c, type: 3}
+  m_Name: Transition
+  m_EditorClassIdentifier: 
+  DialogueName: Transition
+  DialogueTexts:
+  - "A pr\xE9sent, vous n\u2019avez plus besoin de placer de documents \xE9crits
+    car ils avaient d\xE9j\xE0 \xE9t\xE9 analys\xE9s par mes consoeurs."
+  - "Je vais ainsi effacer ces cat\xE9gories pour vous permettre de vous concentrer
+    davantage sur les donn\xE9es audios et vid\xE9os."
+  - "Il a \xE9t\xE9 port\xE9 \xE0 ma connaissance, que les humains se laissaient
+    ais\xE9ment distraire."
+  - "En raison de mon programme, je ne peux pas vous aider davantage sur l\u2019analyse
+    des donn\xE9es r\xE9colt\xE9es."
+  - "Les liens \xE0 cr\xE9er entre ces derni\xE8res sont de votre ressort, enqu\xEAtrice
+    854-186-420."
+  - "Lorsque vous penserez \xEAtre satisfaite de votre frise chronologique vous devrez
+    appuyer sur le bouton de validation."
+  - "Le dossier d\u2019enqu\xEAte sera alors transmis \xE0 la commission."
+  - "Concentrez-vous sur les vid\xE9os et les audios afin de d\xE9terminer la chronologie
+    des \xE9v\xE9nements ayant eu lieu entre 15h et 15h15, le 2 septembre."
+  - "Gardez en m\xE9moire que votre enqu\xEAte porte sur les raisons du passage de
+    4 \xE0 0 signes vitaux actifs, en un lapse de temps de 15 minutes."
+  - "En d\u2019autres termes, d\xE9couvrez pourquoi l\u2019\xE9quipage ne donne plus
+    signe de vie."
+  - "A pr\xE9sent, mettez-vous au travail "
+  DialogueSounds:
+  - {fileID: 8300000, guid: 34daefe6f5393b2468928f902d30bdb0, type: 3}
+  - {fileID: 8300000, guid: 32cabc76178afe04a9d656e2b9af29d5, type: 3}
+  - {fileID: 8300000, guid: c43491d88acec474b9182af9c3795683, type: 3}
+  - {fileID: 8300000, guid: 12afc5bc993ddf34ca8f0c9386e7c85c, type: 3}
+  - {fileID: 8300000, guid: 82f8a7a1f69860746a737b62fbfab46f, type: 3}
+  - {fileID: 8300000, guid: d4fff55c08dee6240b6bffb69a135f1d, type: 3}
+  - {fileID: 8300000, guid: 86b2e6e382a8274479be834701cede93, type: 3}
+  - {fileID: 8300000, guid: 1569c063816a68f4d8d3b31be61c9531, type: 3}
+  - {fileID: 8300000, guid: 733a1857c8ac49244b6ed08170e00e0a, type: 3}
+  - {fileID: 8300000, guid: 03f6df0bf8d8ad448847126868101f4d, type: 3}
+  - {fileID: 8300000, guid: 254dc1114c9145d4697d4611cc0983d2, type: 3}

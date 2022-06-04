@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f0bb5c06d1909248a245bbcc4c6c04c, type: 3}
+  m_Name: "Compl\xE9tion Hors Tuto 1"
+  m_EditorClassIdentifier: 
+  DialogueName: "Compl\xE9tionHorsTuto1"
+  DialogueTexts:
+  - "Vous avez compl\xE9t\xE9 votre premier point chronologique gr\xE2ce \xE0 vos
+    propres d\xE9ductions."
+  - "Cependant, mon programme ne me permet pas de vous confirmer que vous avez fait
+    les bonnes d\xE9ductions."
+  - "Je vous informerai \xE0 chaque fois que vous compl\xE9terez un point chronologique."
+  DialogueSounds:
+  - {fileID: 8300000, guid: 574de5eadfbef2b4299577399a2e2377, type: 3}
+  - {fileID: 8300000, guid: c3c1908b824fb7540afff7614b0cc361, type: 3}
+  - {fileID: 8300000, guid: 896052764e471e14f92ce2d1a29aabc2, type: 3}

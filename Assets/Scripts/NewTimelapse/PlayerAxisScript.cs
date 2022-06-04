@@ -35,6 +35,12 @@ public class PlayerAxisScript : MonoBehaviour
 
     [SerializeField] private InterfaceAnimManager _TI = null;
 
+    public bool isInTuto = true;
+    public bool QEnabled = false;
+    public bool DEnabled = false;
+    public bool ZEnabled = false;
+    public bool SEnabled = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -51,7 +57,78 @@ public class PlayerAxisScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!HasItem && !IsDraging && canMove)
+        if(isInTuto)
+        {
+            if (Input.GetKeyDown("d") && DEnabled)
+            {
+                if (!_isLerping && !IsInTI && !GameObject.Find("PanelBasket").GetComponent<PanelBasketScript>()._isLerping)
+                {
+                    IDCurrentAxis += 1;
+                    if (IDCurrentAxis < 0)
+                        IDCurrentAxis = _axisRotation.Length - 1;
+                    else if (IDCurrentAxis > _axisRotation.Length - 1)
+                        IDCurrentAxis = 0;
+                    _rotationCountdown = 1;
+                    _moveLerp = 0;
+                    _targetRotation = _axisRotation[IDCurrentAxis];
+                    _targetPosition = _camPosition[IDCurrentAxis];
+                    _targetConsolePosition = _consolePosition[IDCurrentAxis];
+                    _targetCamRotation = _camRotation[IDCurrentAxis];
+                    _isLerping = true;
+                    GetComponent<AudioSource>().pitch = Random.Range(0.8f, 1.2f);
+                    GetComponent<AudioSource>().Play();
+                }
+            }
+            if (Input.GetKeyDown("q") && QEnabled)
+            {
+                if (!_isLerping && !IsInTI && !GameObject.Find("PanelBasket").GetComponent<PanelBasketScript>()._isLerping)
+                {
+                    IDCurrentAxis -= 1;
+                    if (IDCurrentAxis < 0)
+                        IDCurrentAxis = _axisRotation.Length - 1;
+                    else if (IDCurrentAxis > _axisRotation.Length - 1)
+                        IDCurrentAxis = 0;
+                    _rotationCountdown = 1;
+                    _moveLerp = 0;
+                    _targetRotation = _axisRotation[IDCurrentAxis];
+                    _targetPosition = _camPosition[IDCurrentAxis];
+                    _targetConsolePosition = _consolePosition[IDCurrentAxis];
+                    _targetCamRotation = _camRotation[IDCurrentAxis];
+                    _isLerping = true;
+                    GetComponent<AudioSource>().pitch = Random.Range(0.8f, 1.2f);
+                    GetComponent<AudioSource>().Play();
+                }
+            }
+            if (Input.GetKeyDown("s") && SEnabled)
+            {
+                if (!_isLerping && !IsInTI && CurrentHoldItem == null)
+                {
+                    _rotationCountdown = 1;
+                    _moveLerp = 0;
+                    _targetConsolePosition = new Vector3(console.transform.localPosition.x - 3f, console.transform.localPosition.y, console.transform.localPosition.z);
+                    _targetPosition = new Vector3(cam.transform.localPosition.x, 1, 4f);
+                    _targetCamRotation = new Vector3(90, cam.transform.rotation.eulerAngles.y, cam.transform.rotation.eulerAngles.z);
+                    _isLerping = true;
+                    IsInTI = true;
+                    _TI.startAppear();
+                }
+            }
+            if (Input.GetKeyDown("z") && ZEnabled)
+            {
+                if (!_isLerping && IsInTI && GameObject.Find("EventSystem").GetComponent<EventSystem>().currentSelectedGameObject == null)
+                {
+                    _rotationCountdown = 1;
+                    _moveLerp = 0;
+                    _targetConsolePosition = _consolePosition[IDCurrentAxis];
+                    _targetPosition = _camPosition[IDCurrentAxis];
+                    _targetCamRotation = _camRotation[IDCurrentAxis];
+                    _isLerping = true;
+                    IsInTI = false;
+                    _TI.startDisappear();
+                }
+            }
+        }
+        else if(!HasItem && !IsDraging && canMove && !isInTuto)
         {
             if (Input.GetKeyDown("d"))
             {
@@ -183,5 +260,39 @@ public class PlayerAxisScript : MonoBehaviour
         _targetCamRotation = _camRotation[IDCurrentAxis];
         _isLerping = true;
         IsInTI = false;
+    }
+
+
+    public void QTrue()
+    {
+        QEnabled = true;
+    }
+    public void QFalse()
+    {
+        QEnabled = false;
+    }
+    public void DTrue()
+    {
+        DEnabled = true;
+    }
+    public void DFalse()
+    {
+        DEnabled = false;
+    }
+    public void ZTrue()
+    {
+        ZEnabled = true;
+    }
+    public void ZFalse()
+    {
+        ZEnabled = false;
+    }
+    public void STrue()
+    {
+        SEnabled = true;
+    }
+    public void SFalse()
+    {
+        SEnabled = false;
     }
 }

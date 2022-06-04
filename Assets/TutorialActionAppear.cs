@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TutorialActionAppear : MonoBehaviour
+public class TutorialActionAppear : TutorialAction
 {
     [SerializeField] public GameObject[] objectsToAppear;
     // Start is called before the first frame update
@@ -17,7 +17,7 @@ public class TutorialActionAppear : MonoBehaviour
         
     }
 
-    public void OnTutoStart()
+    public override void OnTutoStart()
     {
         for (int i = 0; i < objectsToAppear.Length; i++)
         {
@@ -25,7 +25,7 @@ public class TutorialActionAppear : MonoBehaviour
         }
     }
 
-    public void ExecuteAction()
+    public override void ExecuteAction()
     {
         for (int i = 0; i < objectsToAppear.Length; i++)
         {

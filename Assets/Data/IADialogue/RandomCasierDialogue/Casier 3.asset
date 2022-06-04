@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f0bb5c06d1909248a245bbcc4c6c04c, type: 3}
+  m_Name: Casier 3
+  m_EditorClassIdentifier: 
+  DialogueName: 
+  DialogueTexts:
+  - "Je vous rappelle que vous avez une enqu\xEAte \xE0 mener."
+  DialogueSounds:
+  - {fileID: 8300000, guid: 9060a4d033e085c458b49ccef47e75a5, type: 3}

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f0bb5c06d1909248a245bbcc4c6c04c, type: 3}
+  m_Name: "Compl\xE9tion Hors Tuto 7"
+  m_EditorClassIdentifier: 
+  DialogueName: "Compl\xE9tionHorsTuto7"
+  DialogueTexts:
+  - "11\xE8me point chronologique compl\xE9t\xE9 sur 15"
+  - "Je tiens \xE0 vous faire remarquer que nous avons largement d\xE9pass\xE9 la
+    dur\xE9e moyenne que prend une telle mission pour \xEAtre men\xE9e \xE0 son terme."
+  DialogueSounds:
+  - {fileID: 8300000, guid: ef260c4fe8057334e8741c74ccaf8326, type: 3}
+  - {fileID: 8300000, guid: 36693f7fa99641d45ad7650a7e70fac9, type: 3}

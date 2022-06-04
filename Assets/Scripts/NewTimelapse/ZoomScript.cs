@@ -40,6 +40,8 @@ public class ZoomScript : MonoBehaviour
     public AudioClip PutDownSound;
     [SerializeField] private AudioClip _pickupSound;
 
+    public bool TutoBriefing = false;
+
 
     private void Awake()
     {
@@ -92,6 +94,15 @@ public class ZoomScript : MonoBehaviour
                 }
                 if (ZoomPos.GetComponent<ZoomPoint>().IsEmpty == true)
                 {
+                    if ( GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex == 3 && GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying)
+                    {
+                        GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().Pause();
+                    }
+                    if (GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex == 6 && !GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying)
+                    {
+                        GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex++;
+                        StartCoroutine(GameObject.Find("TutorialManager").GetComponent<Tutorial>().LaunchNextDialogue(4));
+                    }
                     posA = _originalPosition;
                     posB = ZoomPos.transform.position;
                     rotA = _originalRotation;
@@ -233,7 +244,7 @@ public class ZoomScript : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown("s"))
+        if (Input.GetKeyDown("s") && AxisScript.SEnabled == true)
         {
             if (AxisScript.CurrentHoldItem != null && AxisScript.CurrentHoldItem.gameObject.tag != "Tape")
             {
@@ -247,7 +258,18 @@ public class ZoomScript : MonoBehaviour
 
     public void DezoomCurrentItem()
     {
+
         ZoomScript currentItem = AxisScript.CurrentHoldItem.GetComponent<ZoomScript>();
+        if (GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex == 3 && GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying)
+        {
+            GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().UnPause();
+        }
+        if (currentItem.TutoBriefing && GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex == 2 && !GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying)
+        {
+            GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex++;
+            StartCoroutine(GameObject.Find("TutorialManager").GetComponent<Tutorial>().LaunchNextDialogue(2));
+        }
+
         currentItem.posB = currentItem._originalPosition;
         if (currentItem.GetComponent<AudioSource>() != null)
         {
