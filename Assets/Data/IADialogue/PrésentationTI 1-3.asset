@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f0bb5c06d1909248a245bbcc4c6c04c, type: 3}
+  m_Name: "Pr\xE9sentationTI 1-3"
+  m_EditorClassIdentifier: 
+  DialogueName: "Pr\xE9sentationTI 1"
+  DialogueTexts:
+  - "Etant donn\xE9 que vous n\u2019avez pas connaissance de l\u2019outil permettant
+    la constitution de cette frise chronologique, je dois vous accompagner pas \xE0
+    pas dans sa d\xE9couverte."
+  - "Pour commencer, prenez le document \xE9crit Journal de bord de Helena partie
+    1 et faites le glisser jusqu\u2019\xE0 ma Base de Donn\xE9es Virtuelle situ\xE9e
+    en bas \xE0 droite de votre \xE9cran, aussi appel\xE9e B.D.V.  "
+  DialogueSounds:
+  - {fileID: 8300000, guid: 5c0ca409228c40441875cc842bb1f578, type: 3}
+  - {fileID: 8300000, guid: 7476fd7c368cc894780fdc53c2a6a15d, type: 3}
+  IsFolowedByAnotherDialogue: 0

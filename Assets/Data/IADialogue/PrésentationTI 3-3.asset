@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f0bb5c06d1909248a245bbcc4c6c04c, type: 3}
+  m_Name: "Pr\xE9sentationTI 3-3"
+  m_EditorClassIdentifier: 
+  DialogueName: "Pr\xE9sentationTI 3"
+  DialogueTexts:
+  - "Un premier panel en haut \xE0 gauche de votre \xE9cran appel\xE9 le P.P.C."
+  - "Il contient les points chronologiques \xE0 placer sur la frise chronologique."
+  DialogueSounds:
+  - {fileID: 8300000, guid: 99f9744b46541a74c86284763dd6e305, type: 3}
+  - {fileID: 8300000, guid: 5249e53b2efca1a4daf7be5a9cb25146, type: 3}
+  IsFolowedByAnotherDialogue: 1

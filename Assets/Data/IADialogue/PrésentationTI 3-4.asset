@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f0bb5c06d1909248a245bbcc4c6c04c, type: 3}
+  m_Name: "Pr\xE9sentationTI 3-4"
+  m_EditorClassIdentifier: 
+  DialogueName: "Pr\xE9sentationTI 3"
+  DialogueTexts:
+  - "Un deuxi\xE8me panel en haut \xE0 droite de votre \xE9cran, appel\xE9 P.B.D.V."
+  - "Il contient les documents que vous enregistrez dans ma B.D.V, base de donn\xE9es
+    virtuelle."
+  DialogueSounds:
+  - {fileID: 8300000, guid: 770b3baac6ac5ae419881fd47a769ef0, type: 3}
+  - {fileID: 8300000, guid: 6c9b8f4bc0ab0b049886c401f8f61fb4, type: 3}
+  IsFolowedByAnotherDialogue: 1

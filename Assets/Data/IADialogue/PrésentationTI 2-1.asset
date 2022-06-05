@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f0bb5c06d1909248a245bbcc4c6c04c, type: 3}
+  m_Name: "Pr\xE9sentationTI 2-1"
+  m_EditorClassIdentifier: 
+  DialogueName: "Pr\xE9sentationTI 2"
+  DialogueTexts:
+  - "Le document \xE9crit Journal de bord de Helena est \xE0 pr\xE9sent num\xE9ris\xE9
+    dans ma B.D.V."
+  DialogueSounds:
+  - {fileID: 8300000, guid: b643983db38b2ff44a94169759990db4, type: 3}
+  IsFolowedByAnotherDialogue: 1

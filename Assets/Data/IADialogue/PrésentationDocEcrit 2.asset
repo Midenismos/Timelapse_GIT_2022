@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f0bb5c06d1909248a245bbcc4c6c04c, type: 3}
+  m_Name: "Pr\xE9sentationDocEcrit 2"
+  m_EditorClassIdentifier: 
+  DialogueName: "Pr\xE9sentationDocEcrit"
+  DialogueTexts:
+  - "Contrairement aux vid\xE9os et aux audios que nous avons pirat\xE9s, ces documents
+    nous ont \xE9t\xE9 envoy\xE9s par l\u2019\xE9quipage avant de perdre tout contact."
+  DialogueSounds:
+  - {fileID: 8300000, guid: a8925f632a89d1d4493f2587c5f0de58, type: 3}
+  IsFolowedByAnotherDialogue: 1

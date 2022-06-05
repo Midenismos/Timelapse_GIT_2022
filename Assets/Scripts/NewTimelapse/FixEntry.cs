@@ -13,7 +13,11 @@ public class FixEntry : MonoBehaviour
             other.GetComponent<DragObjects>().IsFixedInTI = true;
             other.GetComponent<DragObjects>().OnMouseUp();
             other.GetComponent<DragObjects>().OnMouseDown();
-
+            if (GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex == 23)
+            {
+                GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex++;
+                StartCoroutine(GameObject.Find("TutorialManager").GetComponent<Tutorial>().LaunchNextDialogue(4));
+            }
         }
     }
 }

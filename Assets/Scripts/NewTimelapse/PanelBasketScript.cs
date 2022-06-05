@@ -92,6 +92,18 @@ public class PanelBasketScript : MonoBehaviour
                     _isLerping = true;
                     scannedItem = other.gameObject;
                     GetComponent<Animation>().Play();
+
+                    if(other.name == "EcritJournalDeBord (1)" && GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex == 14)
+                    {
+                        print("hey");
+                        GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex++;
+                        StartCoroutine(GameObject.Find("TutorialManager").GetComponent<Tutorial>().LaunchNextDialogue(2));
+                    }
+                    if(other.GetComponent<DragObjects>().isTutoTI2 && GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex == 16)
+                    {
+                        other.GetComponent<DragObjects>().hasBeenTutoScaned = true;
+                        other.GetComponent<Highlight>().StopHighlight();
+                    }
                 }
             }
         }

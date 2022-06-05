@@ -12,12 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f0bb5c06d1909248a245bbcc4c6c04c, type: 3}
   m_Name: "Pr\xE9sentationTI 7"
   m_EditorClassIdentifier: 
-  DialogueName: "Pr\xE9sentationTI 7"
+  DialogueName: "Pr\xE9sentationTI 8"
   DialogueTexts:
-  - "D\xE9placez ensuite le point chronologique \xE0 l\u2019heure concordant avec
-    la date indiqu\xE9 dans le document Journal de bord de Helena."
-  - "Pour cela il vous suffit de cliquer sur le point chronologique et de le faire
-    glisser sur la frise chronologique jusqu\u2019\xE0 atteindre l\u2019heure souhait\xE9e."
+  - "Puisqu\u2019il s\u2019agit de votre premi\xE8re utilisation de la frise chronologique,
+    je vous indiquerai pour chaque point chronologique si vous l\u2019information
+    est valide ou non."
+  - "Vous n\u2019aurez qu\u2019\xE0 cliquer sur le bouton de validation."
+  - "A pr\xE9sent r\xE9p\xE9tez l\u2019op\xE9ration pour les trois autres documents
+    \xE9crits."
   DialogueSounds:
-  - {fileID: 8300000, guid: 07199154b40520e4a975eb304a037525, type: 3}
-  - {fileID: 8300000, guid: 05f1075f6f25966449a0905080d24809, type: 3}
+  - {fileID: 8300000, guid: 469c9420719bd064bb8d4d701b8bdca8, type: 3}
+  - {fileID: 8300000, guid: 528089eb0e13e214ebb4679657bc8d5a, type: 3}
+  - {fileID: 8300000, guid: 7ee439aec33c53f47b92bcc304841dfb, type: 3}
+  IsFolowedByAnotherDialogue: 1

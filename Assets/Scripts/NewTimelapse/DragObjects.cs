@@ -19,6 +19,10 @@ public class DragObjects : MonoBehaviour
     public GameObject EntryDispenser = null;
     public GameObject EntrySlot = null;
 
+    public bool isTutoTI1 = false;
+    public bool isTutoTI2 = false;
+    public bool hasBeenTutoScaned = false;
+
     private void Awake()
     {
         try
@@ -60,6 +64,12 @@ public class DragObjects : MonoBehaviour
         }
         if (tag == "PanelImage" || tag == "Entry" || GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == _axisID)
         {
+            if(isTutoTI1 && GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex == 14)
+            {
+                GetComponent<Highlight>().StopHighlight();
+                if (!GameObject.Find("PanelBasket").GetComponent<Highlight>().Highlighted)
+                    GameObject.Find("PanelBasket").GetComponent<Highlight>().BeginHighlight();
+            }
             if (GetComponent<ZoomScript>())
             {
                 if (!GetComponent<ZoomScript>().HasZoomed)
@@ -122,6 +132,15 @@ public class DragObjects : MonoBehaviour
         {
             if (IsDragable)
             {
+                if (tag == "Entry" && GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex == 26 && !GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying)
+                {
+                    if(GetComponentInChildren<SheetImageScript>().IsFilled)
+                    {
+                        GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex++;
+                        StartCoroutine(GameObject.Find("TutorialManager").GetComponent<Tutorial>().LaunchNextDialogue(4));
+                    }
+                }
+
                 /*if (tag == "Minimap" || tag == "Cam")
                     transform.parent.transform.position = GetMouseWorldPos() + mOffset;
                 else
@@ -131,6 +150,13 @@ public class DragObjects : MonoBehaviour
                 GameObject.Find("Player").GetComponent<PlayerAxisScript>().IsDraging = true;
                 if (GetComponent<ZoomScript>())
                     GetComponent<ZoomScript>().enabled = true;
+
+                if (isTutoTI1 && GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex == 14)
+                {
+                    GetComponent<Highlight>().StopHighlight();
+                    if(!GameObject.Find("PanelBasket").GetComponent<Highlight>().Highlighted)
+                        GameObject.Find("PanelBasket").GetComponent<Highlight>().BeginHighlight();
+                }
 
                 if (Is3D && tag != "Cam" && tag != "Battery")
                 {

@@ -28,6 +28,11 @@ public class SheetImageScript : MonoBehaviour
                     StartCoroutine(CheckIfChildren());
                     GameObject.Find("TI").GetComponent<AudioSource>().clip = _entryFilledFeedback;
                     GameObject.Find("TI").GetComponent<AudioSource>().Play();
+                    if (other.GetComponent<Image>().sprite.name == "writtenJournal1" && GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex == 25)
+                    {
+                        GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex++;
+                        StartCoroutine(GameObject.Find("TutorialManager").GetComponent<Tutorial>().LaunchNextDialogue(0));
+                    }
                 }
             }
         }

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f0bb5c06d1909248a245bbcc4c6c04c, type: 3}
+  m_Name: "Pr\xE9sentationDocEcrit 1"
+  m_EditorClassIdentifier: 
+  DialogueName: "Pr\xE9sentationDocEcrit"
+  DialogueTexts:
+  - "Comme vous l\u2019avez vu, vous disposez \xE9galement de documents \xE9crits
+    pour vous permettre de comprendre le contexte li\xE9 \xE0 la mission de l\u2019\xE9quipage
+    du Camilla Ship."
+  DialogueSounds:
+  - {fileID: 8300000, guid: 573b3f49590c9e14689eb8d9c3342575, type: 3}
+  IsFolowedByAnotherDialogue: 0

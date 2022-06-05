@@ -19,4 +19,9 @@ public class TutorialTI : MonoBehaviour
         }
 
     }
+
+    public void EndTITuto()
+    {
+        TutorialActivated = false;
+    }
 }

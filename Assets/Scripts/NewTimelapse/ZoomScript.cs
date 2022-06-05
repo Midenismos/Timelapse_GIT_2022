@@ -41,6 +41,7 @@ public class ZoomScript : MonoBehaviour
     [SerializeField] private AudioClip _pickupSound;
 
     public bool TutoBriefing = false;
+    public bool TutoCasette = false;
 
 
     private void Awake()
@@ -96,7 +97,7 @@ public class ZoomScript : MonoBehaviour
                 {
                     if ( GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex == 3 && GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying)
                     {
-                        GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().Pause();
+                        //GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().Pause();
                     }
                     if (GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex == 6 && !GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying)
                     {
@@ -269,7 +270,15 @@ public class ZoomScript : MonoBehaviour
             GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex++;
             StartCoroutine(GameObject.Find("TutorialManager").GetComponent<Tutorial>().LaunchNextDialogue(2));
         }
-
+        if (currentItem.TutoCasette && GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex == 9 && !GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying)
+        {
+            if(currentItem.GetComponentInChildren<TMP_Text>().text != "#8-TW​" && currentItem.GetComponentInChildren<TMP_Text>().text != "")
+            {
+                GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex++;
+                StartCoroutine(GameObject.Find("TutorialManager").GetComponent<Tutorial>().LaunchNextDialogue(2));
+            }
+        }
+        
         currentItem.posB = currentItem._originalPosition;
         if (currentItem.GetComponent<AudioSource>() != null)
         {

@@ -12,9 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f0bb5c06d1909248a245bbcc4c6c04c, type: 3}
   m_Name: "Pr\xE9sentationTI 6"
   m_EditorClassIdentifier: 
-  DialogueName: "Pr\xE9sentationTI 6"
+  DialogueName: "Pr\xE9sentationTI 7"
   DialogueTexts:
-  - "Cliquez sur le document Journal de bord de Helena et faites le glissez jusqu\u2019\xE0
-    l\u2019encart document lui \xE9tant r\xE9serv\xE9."
+  - "D\xE9placez ensuite le point chronologique \xE0 l\u2019heure concordant avec
+    la date indiqu\xE9 dans le document Journal de bord de Helena."
+  - "Pour cela il vous suffit de cliquer sur le point chronologique et de le faire
+    glisser sur la frise chronologique jusqu\u2019\xE0 atteindre l\u2019heure souhait\xE9e."
   DialogueSounds:
-  - {fileID: 8300000, guid: a0ee4ab7cf5de474585e1ecadda902e5, type: 3}
+  - {fileID: 8300000, guid: 07199154b40520e4a975eb304a037525, type: 3}
+  - {fileID: 8300000, guid: 05f1075f6f25966449a0905080d24809, type: 3}
