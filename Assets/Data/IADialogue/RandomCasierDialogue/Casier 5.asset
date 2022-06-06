@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DialogueName: 
   DialogueTexts:
-  - "Vous avez vraiment un probl\xE8me d\u2019attention."
+  - "Il n\u2019y a rien l\xE0-dedans qui vous sera utile pour votre travail. "
   DialogueSounds:
-  - {fileID: 8300000, guid: 612cdeb50c207134fa0f552fc4c245ba, type: 3}
+  - {fileID: 8300000, guid: 4657c74ceec051c4da2e45c1dcad3d4f, type: 3}
+  IsFolowedByAnotherDialogue: 0

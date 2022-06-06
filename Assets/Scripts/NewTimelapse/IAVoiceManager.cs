@@ -13,7 +13,7 @@ public class IAVoiceManager : MonoBehaviour
 
     public Dialogue[] DialogueList;
 
-    public Dialogue[] RandomAntiCasierDialogue;
+    public IADialogue[] RandomAntiCasierDialogue;
 
     [SerializeField] int i = 0;
 
