@@ -20,11 +20,12 @@ public class TIEntryScript : MonoBehaviour
 
     private AudioClip _entryCompletedFeedback = null;
 
-    [SerializeField] private SheetImageScript[] Slots;
+    [SerializeField] public SheetImageScript[] Slots;
     private bool entryFilled = false;
 
     public GameObject DeleteButton = null;
     public bool IsTuto = false;
+    public string Date;
 
     private void Awake()
     {
@@ -78,6 +79,7 @@ public class TIEntryScript : MonoBehaviour
             text.text = "15 : " + minute;
         else
             text.text = minute;
+        Date = minute;
     }
 
     private void Update()

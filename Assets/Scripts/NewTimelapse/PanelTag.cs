@@ -10,6 +10,7 @@ public class PanelTag : MonoBehaviour
     private bool _isCorrupted;
     //[SerializeField] private Image _glitchEffect = null;
     [SerializeField] private GameObject deleteButton = null;
+    public string ID = "";
 
     public bool IsCorrupted
     {

@@ -8,6 +8,8 @@ public class SheetImageScript : MonoBehaviour
     [SerializeField] private string _imageTag = null;
     public bool IsFilled = false;
     private AudioClip _entryFilledFeedback = null;
+    public string ID;
+    public bool isGlitched;
 
     private void Awake()
     {
@@ -45,6 +47,8 @@ public class SheetImageScript : MonoBehaviour
         {
             transform.GetChild(0).GetComponent<DragObjects>().EntrySlot = gameObject;
             IsFilled = true;
+            ID = transform.GetChild(0).GetComponent<PanelTag>().ID;
+            isGlitched = transform.GetChild(0).GetComponent<PanelTag>().IsCorrupted;
         }
 
     }

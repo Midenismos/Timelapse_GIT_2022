@@ -5,7 +5,7 @@ using System.Linq;
 using UnityEngine.UI;
 public class Tutorial : MonoBehaviour
 {
-    [SerializeField] private bool activateTuto = true;
+    public bool activateTuto = true;
     [SerializeField] private string[] dialogueNames;
     [SerializeField] private IADialogue[] dialogues;
     [SerializeField] private float[] delays;
@@ -141,7 +141,6 @@ public class Tutorial : MonoBehaviour
         };
         if(dialogues[dialogueIndex].IsFolowedByAnotherDialogue)
         {
-            print("hey");
             dialogueIndex++;
             if (dialogueIndex < dialogues.Length)
             {

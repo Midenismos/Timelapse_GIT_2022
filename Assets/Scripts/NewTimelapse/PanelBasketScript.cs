@@ -45,7 +45,7 @@ public class PanelBasketScript : MonoBehaviour
                         image.transform.SetParent(_panels[2].transform, false);
                         image.GetComponent<PanelTag>().ImageTag = "cam";
                         image.GetComponent<PanelTag>().Init(GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().Energy <= 0 ? true : false);
-
+                        image.GetComponent<PanelTag>().ID = other.GetComponent<PanelImageData>().ID;
                         Bells[1].NewPanelImageNumber += 1;
                     }
                     if (other.tag == "Written")
@@ -55,7 +55,9 @@ public class PanelBasketScript : MonoBehaviour
                         image.transform.SetParent(_panels[1].transform, false);
                         image.GetComponent<PanelTag>().ImageTag = "written";
                         image.GetComponent<PanelTag>().Init(GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().Energy <= 0 ? true : false);
+                        image.GetComponent<PanelTag>().ID = other.GetComponent<PanelImageData>().ID;
                         Bells[0].NewPanelImageNumber += 1;
+
                     }
                     else if (other.tag == "Tape")
                     {
@@ -63,6 +65,7 @@ public class PanelBasketScript : MonoBehaviour
                         image.transform.GetChild(0).GetComponent<TMP_Text>().text = other.GetComponent<PanelImageData>().TMText.text;
                         image.transform.SetParent(_panels[0].transform, false);
                         image.GetComponent<PanelTag>().Init(GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().Energy <= 0 ? true : false);
+                        image.GetComponent<PanelTag>().ID = other.GetComponent<PanelImageData>().ID;
                         Bells[2].NewPanelImageNumber += 1;
                     }
                     /*else if (other.tag == "Minimap")
@@ -73,7 +76,7 @@ public class PanelBasketScript : MonoBehaviour
                         image.GetComponent<PanelTag>().ImageTag = "map";
                         image.GetComponent<PanelTag>().IsCorrupted = GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().Energy <= 0 ? true : false;
                     }*/
-                  //  _colorA = _mat.GetColor("_EmissionColor");
+                    //  _colorA = _mat.GetColor("_EmissionColor");
                     if (GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().Energy <= 0)
                         _colorB = _glitchedScanningColor;
                     else
@@ -95,7 +98,6 @@ public class PanelBasketScript : MonoBehaviour
 
                     if(other.name == "EcritJournalDeBord (1)" && GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex == 14)
                     {
-                        print("hey");
                         GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex++;
                         StartCoroutine(GameObject.Find("TutorialManager").GetComponent<Tutorial>().LaunchNextDialogue(2));
                     }

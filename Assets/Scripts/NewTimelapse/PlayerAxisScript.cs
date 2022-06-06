@@ -303,12 +303,9 @@ public class PlayerAxisScript : MonoBehaviour
         {
             if(dragable.IsDragged)
             {
-                print(dragable);
                 dragable.IsDragable = false;
                 dragable.IsDragged = false;
                 dragable.OnMouseUp();
-                dragable.IsDragable = true;
-
             }
         }
 

@@ -15,8 +15,9 @@ MonoBehaviour:
   DialogueName: Nebuleuse1
   DialogueTexts:
   - Attention.
-  - Une perturbation inconnue est sur le point de traverser votre navette.
-  - "Cela risque d\u2019affecter votre \xE9quipement. Adaptez-vous en cons\xE9quence."
+  - "Une perturbation inconnue est sur le point de traverser votre navette. Cela
+    risque d\u2019affecter votre \xE9quipement."
+  - "Adaptez-vous en cons\xE9quence."
   DialogueSounds:
   - {fileID: 8300000, guid: 208d19e791a19734eafee1f4acf315df, type: 3}
   - {fileID: 8300000, guid: f5c25591a0f884f498fb6690dc3f9572, type: 3}

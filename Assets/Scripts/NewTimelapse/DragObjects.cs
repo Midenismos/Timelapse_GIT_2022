@@ -85,6 +85,8 @@ public class DragObjects : MonoBehaviour
                     if(EntrySlot != null)
                     {
                         EntrySlot.GetComponent<SheetImageScript>().IsFilled = false;
+                        EntrySlot.GetComponent<SheetImageScript>().ID = "";
+                        EntrySlot.GetComponent<SheetImageScript>().isGlitched = false;
                         EntrySlot = null;
                     }
                     transform.SetParent(GameObject.Find("TI").transform, true);
@@ -132,6 +134,7 @@ public class DragObjects : MonoBehaviour
         {
             if (IsDragable)
             {
+                print("hey");
                 if (tag == "Entry" && GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex == 26 && !GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying)
                 {
                     if(GetComponentInChildren<SheetImageScript>().IsFilled)
