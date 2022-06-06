@@ -121,6 +121,15 @@ public class Tutorial : MonoBehaviour
             }
         }
 
+        else if (player.IDCurrentAxis == 2 && dialogueIndex == 32)
+        {
+            dialogueIndex++;
+            if (dialogueIndex < dialogues.Length)
+            {
+                StartCoroutine(LaunchNextDialogue(delays[dialogueIndex]));
+            }
+        }
+
     }
 
     private void DialogueFinished()

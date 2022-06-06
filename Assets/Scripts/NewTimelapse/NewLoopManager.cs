@@ -103,4 +103,9 @@ public class NewLoopManager : MonoBehaviour
 
 
     }
+
+    public void TriggerNebuleuseTuto()
+    {
+        CurrentLoopTime = 224;
+    }
 }

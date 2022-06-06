@@ -18,4 +18,4 @@ MonoBehaviour:
     des \xE9v\xE9nements ayant eu lieu entre 15h et 15h15, le 2 septembre."
   DialogueSounds:
   - {fileID: 8300000, guid: 1569c063816a68f4d8d3b31be61c9531, type: 3}
-  IsFolowedByAnotherDialogue: 0
+  IsFolowedByAnotherDialogue: 1

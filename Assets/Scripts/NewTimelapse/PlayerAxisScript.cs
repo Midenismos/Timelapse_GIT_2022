@@ -295,4 +295,31 @@ public class PlayerAxisScript : MonoBehaviour
     {
         SEnabled = false;
     }
+
+    public void ForceOutOfTI()
+    {
+        DragObjects[] dragables = FindObjectsOfType<DragObjects>();
+        foreach (DragObjects dragable in dragables)
+        {
+            if(dragable.IsDragged)
+            {
+                print(dragable);
+                dragable.IsDragable = false;
+                dragable.IsDragged = false;
+                dragable.OnMouseUp();
+                dragable.IsDragable = true;
+
+            }
+        }
+
+        IsDraging = false;
+        _rotationCountdown = 1;
+        _moveLerp = 0;
+        _targetConsolePosition = _consolePosition[IDCurrentAxis];
+        _targetPosition = _camPosition[IDCurrentAxis];
+        _targetCamRotation = _camRotation[IDCurrentAxis];
+        _isLerping = true;
+        IsInTI = false;
+        _TI.startDisappear();
+    }
 }
