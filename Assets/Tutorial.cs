@@ -129,6 +129,14 @@ public class Tutorial : MonoBehaviour
                 StartCoroutine(LaunchNextDialogue(delays[dialogueIndex]));
             }
         }
+        else if (player.IDCurrentAxis == 3 && dialogueIndex == 35 && !GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying)
+        {
+            dialogueIndex++;
+            if (dialogueIndex < dialogues.Length)
+            {
+                StartCoroutine(LaunchNextDialogue(delays[dialogueIndex]));
+            }
+        }
 
     }
 
@@ -152,6 +160,7 @@ public class Tutorial : MonoBehaviour
 
     public IEnumerator LaunchNextDialogue(float delay)
     {
+        print("hey");
         yield return new WaitForSeconds(delay);
         voiceManager.LaunchDialogue(dialogues[dialogueIndex]);
         if(tutorialActions[dialogueIndex])

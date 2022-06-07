@@ -18,4 +18,4 @@ MonoBehaviour:
     au levier de pilotage."
   DialogueSounds:
   - {fileID: 8300000, guid: 351fc933274fbcd4e85badba4ae73519, type: 3}
-  IsFolowedByAnotherDialogue: 0
+  IsFolowedByAnotherDialogue: 1

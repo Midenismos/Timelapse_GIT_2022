@@ -41,6 +41,16 @@ public class EnergyMetterScript : MonoBehaviour
             if (value != _energy)
             {
                 _energy = value;
+                if(_energy <= 62.5f && !GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying)
+                {
+                    if(GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex == 34)
+                    {
+                        // ATTENTION SI LE DELAY DE 80 S N'EST PAS FINI, CA VA PASSER DIRECTEMENT AU SUIVANT
+                        GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex = 35;
+                        StartCoroutine(GameObject.Find("TutorialManager").GetComponent<Tutorial>().LaunchNextDialogue(0));
+                    }
+                }
+
                 if(_energy <= 0)
                 {
                     GetComponent<AudioSource>().clip = _EnergyDownSound;
