@@ -16,7 +16,11 @@ public class Highlight : MonoBehaviour
     {
         if (GetComponent<MeshRenderer>())
         {
-            baseColor = GetComponent<MeshRenderer>().material.color;
+            if(gameObject.name != "glass_panel_1 (2)")
+                baseColor = GetComponent<MeshRenderer>().material.color;
+            else
+                baseColor = GetComponent<MeshRenderer>().materials[1].color;
+
             baseEmissiveColor = GetComponent<MeshRenderer>().material.GetColor("_EmissionColor");
         }
         if(GetComponent<Image>())
@@ -56,8 +60,12 @@ public class Highlight : MonoBehaviour
         {
             if (GetComponent<MeshRenderer>())
             {
-                GetComponent<MeshRenderer>().material.color = Color.yellow;
-                if (GetComponentInChildren<Image>())
+                if (gameObject.name != "glass_panel_1 (2)")
+                    GetComponent<MeshRenderer>().material.color = Color.yellow;
+                else
+                    GetComponent<MeshRenderer>().materials[1].color = Color.yellow;
+
+                if (GetComponentInChildren<Image>() && !GetComponent<BatteryScript>() && !GetComponent<BatteryBoxScript>() && gameObject.name != "glass_panel_1 (2)")
                 {
                     Image[] images = GetComponentsInChildren<Image>();
                     foreach (Image image in images)
@@ -65,7 +73,7 @@ public class Highlight : MonoBehaviour
                 }
                 GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", Color.yellow);
             }
-            else if (GetComponent<Image>())
+            else if (GetComponent<Image>() && !GetComponent<BatteryScript>())
             {
                 GetComponent<Image>().color = Color.yellow;
             }
@@ -73,8 +81,11 @@ public class Highlight : MonoBehaviour
                 yield return new WaitForSeconds(0.5f);
             if (GetComponent<MeshRenderer>())
             {
-                GetComponent<MeshRenderer>().material.color = baseColor;
-                if (GetComponentInChildren<Image>())
+                if (gameObject.name != "glass_panel_1 (2)")
+                    GetComponent<MeshRenderer>().material.color = baseColor;
+                else
+                    GetComponent<MeshRenderer>().materials[1].color = baseColor;
+                if (GetComponentInChildren<Image>() && !GetComponent<BatteryScript>() && !GetComponent<BatteryBoxScript>() && gameObject.name != "glass_panel_1 (2)")
                 {
                     Image[] images = GetComponentsInChildren<Image>();
                     foreach (Image image in images)
@@ -82,7 +93,7 @@ public class Highlight : MonoBehaviour
                 }
                 GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", baseEmissiveColor);
             }
-            else if (GetComponent<Image>())
+            else if (GetComponent<Image>() && !GetComponent<BatteryScript>())
             {
                 GetComponent<Image>().color = baseColor;
             }
@@ -95,6 +106,7 @@ public class Highlight : MonoBehaviour
     public void BeginHighlight()
     {
         Highlighted = true;
+        print(baseColor);
     }
 
     public void BeginHighlightChildren()

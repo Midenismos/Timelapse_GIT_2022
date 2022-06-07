@@ -20,9 +20,10 @@ MonoBehaviour:
   - "Je m\u2019inclue \xE9galement dans cet \xE9quipement, alors t\xE2chez d\u2019\xEAtre
     attentif."
   - "Pour \xE9conomiser de l\u2019\xE9nergie, pensez \xE0 r\xE9duire la vitesse de
-    la navette et \xE0 \xE9teindre les \xE9quipements dont vous ne vous servez pas.\""
+    la navette et \xE0 \xE9teindre les \xE9quipements dont vous ne vous servez pas."
   DialogueSounds:
   - {fileID: 8300000, guid: ccbc20289bd603544a6192d0f09165aa, type: 3}
   - {fileID: 8300000, guid: dff73279a4bdf75489b13ac33fffb0a8, type: 3}
   - {fileID: 8300000, guid: 40ff2c51bcc6c514086275f46f19044d, type: 3}
   - {fileID: 8300000, guid: 9a9907d569e2e454194fdb996808392e, type: 3}
+  IsFolowedByAnotherDialogue: 0

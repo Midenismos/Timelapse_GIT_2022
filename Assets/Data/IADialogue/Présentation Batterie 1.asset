@@ -18,4 +18,4 @@ MonoBehaviour:
     g\xE9rer vous-m\xEAme l\u2019\xE9nergie de votre navette."
   DialogueSounds:
   - {fileID: 8300000, guid: 1ff91413b5d7d784dbf073821ef6e648, type: 3}
-  IsFolowedByAnotherDialogue: 0
+  IsFolowedByAnotherDialogue: 1

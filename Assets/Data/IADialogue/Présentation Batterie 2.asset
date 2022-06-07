@@ -16,12 +16,6 @@ MonoBehaviour:
   DialogueTexts:
   - "Vous pouvez ainsi d\xE9brancher et rebrancher la batterie connect\xE9e \xE0
     mon syst\xE8me \xE0 tout moment."
-  - "Le rechargement s\u2019effectue en d\xE9posant une batterie face \xE0 la fen\xEAtre
-    d\u2019observation."
-  - "Soyez attentif car il semble que les perturbations aient un impact sur l\u2019\xE9nergie
-    des batteries."
   DialogueSounds:
   - {fileID: 8300000, guid: 02ec0c6767e7a664e8603cc39271f2ff, type: 3}
-  - {fileID: 8300000, guid: 6b983476f62ecdc4f9499aeadfa6c6de, type: 3}
-  - {fileID: 8300000, guid: 6c34bfb9973675848bf208a717976977, type: 3}
-  IsFolowedByAnotherDialogue: 1
+  IsFolowedByAnotherDialogue: 0

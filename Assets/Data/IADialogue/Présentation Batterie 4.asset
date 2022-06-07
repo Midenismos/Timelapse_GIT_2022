@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f0bb5c06d1909248a245bbcc4c6c04c, type: 3}
+  m_Name: "Pr\xE9sentation Batterie 4"
+  m_EditorClassIdentifier: 
+  DialogueName: "Pr\xE9sentationBatterie"
+  DialogueTexts:
+  - "N\xE9anmoins, \xE9tant donn\xE9 que les \xEAtres humains sont cens\xE9s \xEAtre
+    d\xE9brouillards, vous devriez savoir vous servir de la bo\xEEte de protection
+    UV pour contrer certains effets n\xE9fastes."
+  DialogueSounds:
+  - {fileID: 8300000, guid: a76875f203d10a7408acbe00c468cd28, type: 3}
+  IsFolowedByAnotherDialogue: 1

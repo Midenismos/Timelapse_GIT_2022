@@ -17,6 +17,10 @@ public class Tutorial : MonoBehaviour
     [SerializeField] private CamButton[] SliderButtons;
     [SerializeField] private DragObjects[] docsEcritsToScan;
     public int dialogueIndex = 0;
+    public bool Dialogue33Fini = false;
+    public bool Dialogue34Fini = false;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -129,7 +133,7 @@ public class Tutorial : MonoBehaviour
                 StartCoroutine(LaunchNextDialogue(delays[dialogueIndex]));
             }
         }
-        else if (player.IDCurrentAxis == 3 && dialogueIndex == 35 && !GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying)
+        else if (player.IDCurrentAxis == 3 && dialogueIndex == 34 && !GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying && Dialogue34Fini)
         {
             dialogueIndex++;
             if (dialogueIndex < dialogues.Length)
@@ -266,4 +270,18 @@ public class Tutorial : MonoBehaviour
         }
     }
 
+    public void FinishDialogue33()
+    {
+        Dialogue33Fini = true;
+    }
+    public void FinishDialogue34()
+    {
+        Dialogue34Fini = true;
+    }
+
+    public void EndTuto()
+    {
+        activateTuto = false;
+        GameObject.Find("Player").GetComponent<PlayerAxisScript>().isInTuto = false;
+    }
 }

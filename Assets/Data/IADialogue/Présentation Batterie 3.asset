@@ -14,9 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DialogueName: "Pr\xE9sentationBatterie"
   DialogueTexts:
-  - "N\xE9anmoins, \xE9tant donn\xE9 que les \xEAtres humains sont cens\xE9s \xEAtre
-    d\xE9brouillards, vous devriez savoir vous servir de la bo\xEEte de protection
-    UV pour contrer certains effets n\xE9fastes."
+  - "Le rechargement s\u2019effectue en d\xE9posant une batterie face \xE0 la fen\xEAtre
+    d\u2019observation."
+  - "Soyez attentif car il semble que les perturbations aient un impact sur l\u2019\xE9nergie
+    des batteries."
   DialogueSounds:
-  - {fileID: 8300000, guid: a76875f203d10a7408acbe00c468cd28, type: 3}
-  IsFolowedByAnotherDialogue: 0
+  - {fileID: 8300000, guid: 6b983476f62ecdc4f9499aeadfa6c6de, type: 3}
+  - {fileID: 8300000, guid: 6c34bfb9973675848bf208a717976977, type: 3}
+  IsFolowedByAnotherDialogue: 1
