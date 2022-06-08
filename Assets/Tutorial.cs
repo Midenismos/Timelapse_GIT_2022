@@ -20,6 +20,7 @@ public class Tutorial : MonoBehaviour
     public bool Dialogue32Fini = false;
     public bool Dialogue33Fini = false;
     public bool Dialogue34Fini = false;
+    private bool hasSeenVaultOnce = false;
 
 
     // Start is called before the first frame update
@@ -43,6 +44,12 @@ public class Tutorial : MonoBehaviour
 
     private void Update()
     {
+        if(player.IDCurrentAxis == 4 && dialogueIndex >= 30 && !hasSeenVaultOnce && !GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying)
+        {
+            GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().LaunchDialogue(GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().RandomAntiCasierFirstDialogue);
+            hasSeenVaultOnce = true;
+        }
+
         // La plupart des triggers pour continuer le tuto
         if (player.IDCurrentAxis == 0 && dialogueIndex == 1)
         {
@@ -165,8 +172,11 @@ public class Tutorial : MonoBehaviour
 
     public IEnumerator LaunchNextDialogue(float delay)
     {
-        print("hey");
         yield return new WaitForSeconds(delay);
+        while(GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying)
+        {
+            yield return new WaitForSeconds(0.5f);
+        }
         voiceManager.LaunchDialogue(dialogues[dialogueIndex]);
         if(tutorialActions[dialogueIndex])
             tutorialActions[dialogueIndex].OnDialogueStart();

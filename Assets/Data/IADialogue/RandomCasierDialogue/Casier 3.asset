@@ -17,3 +17,5 @@ MonoBehaviour:
   - "Je vous rappelle que vous avez une enqu\xEAte \xE0 mener."
   DialogueSounds:
   - {fileID: 8300000, guid: 9060a4d033e085c458b49ccef47e75a5, type: 3}
+  IsFolowedByAnotherDialogue: 0
+  notInTutorialDialogue: 1

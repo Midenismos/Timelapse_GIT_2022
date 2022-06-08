@@ -18,3 +18,5 @@ MonoBehaviour:
     ?"
   DialogueSounds:
   - {fileID: 8300000, guid: 5636e9d07404b24438d1dd4ee77e154b, type: 3}
+  IsFolowedByAnotherDialogue: 0
+  notInTutorialDialogue: 1

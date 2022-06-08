@@ -17,3 +17,5 @@ MonoBehaviour:
   - "Ce n\u2019est pas le moment de vous d\xE9tendre."
   DialogueSounds:
   - {fileID: 8300000, guid: 886e1e34c4b685d47bdb08e5e4a4c18b, type: 3}
+  IsFolowedByAnotherDialogue: 0
+  notInTutorialDialogue: 1

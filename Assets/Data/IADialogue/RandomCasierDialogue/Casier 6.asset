@@ -17,3 +17,5 @@ MonoBehaviour:
   - "Vous avez vraiment un probl\xE8me d\u2019attention."
   DialogueSounds:
   - {fileID: 8300000, guid: 612cdeb50c207134fa0f552fc4c245ba, type: 3}
+  IsFolowedByAnotherDialogue: 0
+  notInTutorialDialogue: 1

@@ -8,8 +8,8 @@ public class TimelineScript : MonoBehaviour
     public struct TimelineCheck
     {
         public string Date;
-        public string ID;
-        public bool IsGlitched;
+        public string[] IDs;
+        public bool[] IsGlitched;
         public bool isTrue;
     }
 
@@ -21,7 +21,7 @@ public class TimelineScript : MonoBehaviour
 
     public void CheckEntry()
     {
-        if(GameObject.Find("TutorialManager").GetComponent<Tutorial>().activateTuto)
+        if(GameObject.Find("TutorialManager").GetComponent<Tutorial>().activateTuto && GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex == 27)
         {
             foreach(TIEntryScript Entry in GameObject.Find("TI").GetComponentsInChildren<TIEntryScript>())
             {
@@ -31,28 +31,35 @@ public class TimelineScript : MonoBehaviour
                     if (Entry.Date == EndAData[i].Date)
                     {
 
-                        foreach ( SheetImageScript slot in Entry.Slots)
+                        foreach (SheetImageScript slot in Entry.Slots)
                         {
-
-                            if (slot.ID == EndAData[i].ID)
+                            if (EndAData[i].IDs.Any(ID => ID == slot.ID))
                             {
-                                if (slot.isGlitched == EndAData[i].IsGlitched)
+                                for(int y = 0; y <= EndAData[i].IsGlitched.Length -1; y++)
                                 {
-                                    print(Entry.Date);
-                                    print(slot.ID);
-                                    EndAData[i].isTrue = true;
+                                    if (slot.isGlitched == EndAData[i].IsGlitched[y])
+                                        EndAData[i].isTrue = true;
                                 }
                             }
                         }
                     }
                 }
             }
-            print(EndAData.Count(n => n.isTrue == true));
+            //print(EndAData.Count(n => n.isTrue == true));
+            GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().LaunchDialogue(DialogueCompletion[EndAData.Count(n => n.isTrue == true)]);
+            if (EndAData.Count(n => n.isTrue == true) == 3)
+                StartCoroutine(ContinueTutorial());
             for (int i = 0; i <= 2; i++)
             {
                 EndAData[i].isTrue = false;
             }
         }
 
+        IEnumerator ContinueTutorial()
+        {
+            yield return new WaitForSeconds(15);
+            GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex++;
+            StartCoroutine(GameObject.Find("TutorialManager").GetComponent<Tutorial>().LaunchNextDialogue(0));
+        }
     }
 }

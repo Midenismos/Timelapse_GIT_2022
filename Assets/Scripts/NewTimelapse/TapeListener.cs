@@ -14,7 +14,7 @@ public class TapeListener : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Tape" && isAvailable)
+        if (other.tag == "Tape" && isAvailable && other.GetComponent<DragObjects>().IsDragged)
         {
             if(GetComponent<AudioSource>().clip == null)
             {

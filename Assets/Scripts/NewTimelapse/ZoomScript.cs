@@ -290,16 +290,16 @@ public class ZoomScript : MonoBehaviour
         {
             if(AxisScript.IDCurrentAxis == 0 && !currentItem.IsFixed)
             {
-                currentItem.posB.y = -29.75f;
+                currentItem.posB.y = -29.5f;
                 currentItem.posB.z = Mathf.Clamp(currentItem.posB.z, -55, Mathf.Infinity);
             }
             AxisScript.PutConsoleUp();
         }
         else if (currentItem.gameObject.CompareTag("Tape"))
         {
-            currentItem.posB.x = Mathf.Clamp(currentItem.posB.x, -27, Mathf.Infinity);
+            currentItem.posB.x = Mathf.Clamp(currentItem.posB.x, -80, Mathf.Infinity);
             currentItem.posB.y = -30;
-            currentItem.posB.z = Mathf.Clamp(currentItem.posB.z, -61, Mathf.Infinity);
+            currentItem.posB.z = Mathf.Clamp(currentItem.posB.z, -65, Mathf.Infinity);
         }
 
         currentItem.posA = currentItem.ZoomPos.transform.position;

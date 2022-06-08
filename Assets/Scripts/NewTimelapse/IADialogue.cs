@@ -13,4 +13,5 @@ public class IADialogue : ScriptableObject
     public AudioClip[] DialogueSounds;
 
     public bool IsFolowedByAnotherDialogue;
+    public bool notInTutorialDialogue;
 }

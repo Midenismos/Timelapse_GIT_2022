@@ -20,3 +20,4 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 2f420bbdcf7337f4e8943a98671a37ee, type: 3}
   - {fileID: 8300000, guid: 7afe357a99fd1a444b70c51f9337ce80, type: 3}
   IsFolowedByAnotherDialogue: 0
+  notInTutorialDialogue: 1

@@ -15,9 +15,10 @@ MonoBehaviour:
   DialogueName: "Pr\xE9sentationTI 7"
   DialogueTexts:
   - "D\xE9placez ensuite le point chronologique \xE0 l\u2019heure concordant avec
-    la date indiqu\xE9 dans le document Journal de bord de Helena."
+    la date indiqu\xE9e dans le document Journal de bord de Helena partie 1."
   - "Pour cela il vous suffit de cliquer sur le point chronologique et de le faire
     glisser sur la frise chronologique jusqu\u2019\xE0 atteindre l\u2019heure souhait\xE9e."
   DialogueSounds:
   - {fileID: 8300000, guid: 07199154b40520e4a975eb304a037525, type: 3}
   - {fileID: 8300000, guid: 05f1075f6f25966449a0905080d24809, type: 3}
+  IsFolowedByAnotherDialogue: 0

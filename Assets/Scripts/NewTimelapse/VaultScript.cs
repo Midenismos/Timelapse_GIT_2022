@@ -33,7 +33,8 @@ public class VaultScript : MonoBehaviour
             }
             else
             {
-                GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().LaunchRandomAntiCasierDialogue();
+                if(!GameObject.Find("TutorialManager").GetComponent<Tutorial>().activateTuto && !GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying)
+                    GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().LaunchRandomAntiCasierDialogue();
             }
         }
 

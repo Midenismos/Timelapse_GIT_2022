@@ -13,7 +13,8 @@ public class IAVoiceManager : MonoBehaviour
 
     public Dialogue[] DialogueList;
 
-    public IADialogue[] RandomAntiCasierDialogue;
+    public IADialogue[] RandomAntiCasierDialogues;
+    public IADialogue RandomAntiCasierFirstDialogue;
 
     [SerializeField] int i = 0;
 
@@ -25,6 +26,8 @@ public class IAVoiceManager : MonoBehaviour
     private bool _inCooldown = false;
 
     public Action OnDialogueFinished;
+
+    public bool currentDialogueNotInTuto = false;
 
     private void Awake()
     {
@@ -47,6 +50,7 @@ public class IAVoiceManager : MonoBehaviour
         DialogueTexts = dialogue.DialogueTexts;
         DialogueSounds = dialogue.DialogueSounds;
         dialogueHappening = true;
+        currentDialogueNotInTuto = dialogue.notInTutorialDialogue;
         i = 0;
         Play();
     }
@@ -54,8 +58,8 @@ public class IAVoiceManager : MonoBehaviour
     public void LaunchRandomAntiCasierDialogue()
     {
         int iCasier = UnityEngine.Random.Range(0,6);
-        DialogueTexts = RandomAntiCasierDialogue[iCasier].DialogueTexts;
-        DialogueSounds = RandomAntiCasierDialogue[iCasier].DialogueSounds;
+        DialogueTexts = RandomAntiCasierDialogues[iCasier].DialogueTexts;
+        DialogueSounds = RandomAntiCasierDialogues[iCasier].DialogueSounds;
         dialogueHappening = true;
         i = 0;
         Play();
@@ -90,7 +94,8 @@ public class IAVoiceManager : MonoBehaviour
             dialogueHappening = false;
             txt.text = "";
 
-            OnDialogueFinished?.Invoke();
+            if(!currentDialogueNotInTuto)
+                OnDialogueFinished?.Invoke();
         }
         else if(i != 0)
         {

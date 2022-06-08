@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DialogueName: "Pr\xE9sentationTI 2"
   DialogueTexts:
-  - "Le document \xE9crit Journal de bord de Helena est \xE0 pr\xE9sent num\xE9ris\xE9
-    dans ma B.D.V."
+  - "Le document \xE9crit Journal de bord de Helena partie 1 est \xE0 pr\xE9sent
+    num\xE9ris\xE9 dans ma B.D.V."
   DialogueSounds:
   - {fileID: 8300000, guid: b643983db38b2ff44a94169759990db4, type: 3}
   IsFolowedByAnotherDialogue: 1

@@ -17,3 +17,5 @@ MonoBehaviour:
   - Concentrez-vous sur votre travail.
   DialogueSounds:
   - {fileID: 8300000, guid: 091a3b5d269c14343b4a4969cbda4f22, type: 3}
+  IsFolowedByAnotherDialogue: 0
+  notInTutorialDialogue: 1

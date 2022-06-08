@@ -17,3 +17,5 @@ MonoBehaviour:
   - "13\xE8me point chronologique compl\xE9t\xE9 sur 15"
   DialogueSounds:
   - {fileID: 8300000, guid: 2136095c4abaacc4dbf74a24baa3e2fb, type: 3}
+  IsFolowedByAnotherDialogue: 0
+  notInTutorialDialogue: 1
