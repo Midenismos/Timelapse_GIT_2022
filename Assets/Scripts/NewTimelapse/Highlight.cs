@@ -21,7 +21,8 @@ public class Highlight : MonoBehaviour
             else
                 baseColor = GetComponent<MeshRenderer>().materials[1].color;
 
-            baseEmissiveColor = GetComponent<MeshRenderer>().material.GetColor("_EmissionColor");
+            if (gameObject.name != "glass_panel_1 (2)" && gameObject.name != "3Dsphere")
+                baseEmissiveColor = GetComponent<MeshRenderer>().material.GetColor("_EmissionColor");
         }
         if(GetComponent<Image>())
         {
@@ -43,7 +44,8 @@ public class Highlight : MonoBehaviour
             if(GetComponent<MeshRenderer>())
             {
                 GetComponent<MeshRenderer>().material.color = baseColor;
-                GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", baseEmissiveColor);
+                if(gameObject.name != "3Dsphere")
+                    GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", baseEmissiveColor);
             }
             else if(GetComponent<Image>())
             {
@@ -71,7 +73,8 @@ public class Highlight : MonoBehaviour
                     foreach (Image image in images)
                         image.color = Color.yellow;
                 }
-                GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", Color.yellow);
+                if(gameObject.name != "3Dsphere")
+                    GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", Color.yellow);
             }
             else if (GetComponent<Image>() && !GetComponent<BatteryScript>())
             {
@@ -91,7 +94,8 @@ public class Highlight : MonoBehaviour
                     foreach (Image image in images)
                         image.color = Color.white;
                 }
-                GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", baseEmissiveColor);
+                if(gameObject.name != "3Dsphere")
+                    GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", baseEmissiveColor);
             }
             else if (GetComponent<Image>() && !GetComponent<BatteryScript>())
             {

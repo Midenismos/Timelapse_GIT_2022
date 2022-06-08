@@ -36,6 +36,7 @@ public class PlayerAxisScript : MonoBehaviour
     [SerializeField] private InterfaceAnimManager _TI = null;
 
     public bool isInTuto = true;
+    public bool CanClick = false;
     public bool QEnabled = false;
     public bool DEnabled = false;
     public bool ZEnabled = false;
@@ -295,7 +296,14 @@ public class PlayerAxisScript : MonoBehaviour
     {
         SEnabled = false;
     }
-
+    public void ClickTrue()
+    {
+        CanClick = true;
+    }
+    public void ClickFalse()
+    {
+        CanClick = false;
+    }
     public void ForceOutOfTI()
     {
         DragObjects[] dragables = FindObjectsOfType<DragObjects>();
@@ -319,4 +327,8 @@ public class PlayerAxisScript : MonoBehaviour
         IsInTI = false;
         _TI.startDisappear();
     }
+
+
+
+
 }

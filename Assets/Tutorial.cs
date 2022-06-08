@@ -17,6 +17,7 @@ public class Tutorial : MonoBehaviour
     [SerializeField] private CamButton[] SliderButtons;
     [SerializeField] private DragObjects[] docsEcritsToScan;
     public int dialogueIndex = 0;
+    public bool Dialogue32Fini = false;
     public bool Dialogue33Fini = false;
     public bool Dialogue34Fini = false;
 
@@ -125,7 +126,7 @@ public class Tutorial : MonoBehaviour
             }
         }
 
-        else if (player.IDCurrentAxis == 2 && dialogueIndex == 32)
+        else if (player.IDCurrentAxis == 2 && dialogueIndex == 32 && !GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying && Dialogue32Fini)
         {
             dialogueIndex++;
             if (dialogueIndex < dialogues.Length)
@@ -269,7 +270,10 @@ public class Tutorial : MonoBehaviour
             }
         }
     }
-
+    public void FinishDialogue32()
+    {
+        Dialogue32Fini = true;
+    }
     public void FinishDialogue33()
     {
         Dialogue33Fini = true;

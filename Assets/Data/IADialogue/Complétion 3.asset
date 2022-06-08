@@ -12,10 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f0bb5c06d1909248a245bbcc4c6c04c, type: 3}
   m_Name: "Compl\xE9tion 3"
   m_EditorClassIdentifier: 
-  DialogueName: "Compl\xE9tion3"
+  DialogueName: "Compl\xE9tion4"
   DialogueTexts:
   - "Information valid\xE9e."
-  - "Encore un point chronologique \xE0 compl\xE9ter."
+  - "F\xE9licitations."
+  - "Vous avez rempli les points chronologiques permettant d\u2019\xE9tablir le postulat
+    initial de l\u2019enqu\xEAte."
   DialogueSounds:
-  - {fileID: 8300000, guid: 6a14e975fb525824eb1e2974d1daf40f, type: 3}
-  - {fileID: 8300000, guid: 789483f7a06eef542b0105da06b20f9d, type: 3}
+  - {fileID: 8300000, guid: 7b21febcb4081894ea6c7a2a7d35495c, type: 3}
+  - {fileID: 8300000, guid: b5e3167b94b8609438ff1f3104158b45, type: 3}
+  - {fileID: 8300000, guid: 88aabb355398af34fbb5ef10ce34076f, type: 3}

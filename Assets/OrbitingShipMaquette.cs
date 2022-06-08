@@ -101,7 +101,7 @@ public class OrbitingShipMaquette : MonoBehaviour
     // Gère la rotation de la planète
     private void OnMouseDown()
     {
-        if (GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == 2)
+        if (GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == 2 && GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick)
         {
             PressPoint = Input.mousePosition;
             GetComponent<AudioSource>().Play();
@@ -115,7 +115,7 @@ public class OrbitingShipMaquette : MonoBehaviour
 
     private void OnMouseDrag()
     {
-        if (GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == 2)
+        if (GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == 2 && GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick)
         {
             float Speed = Mathf.Clamp((Input.mousePosition - PressPoint).x, -200, 200);
             GetComponent<Rigidbody>().MoveRotation(GetComponent<Rigidbody>().rotation * Quaternion.Euler(Vector3.up * (Speed / SceneWidth)*10));
@@ -125,12 +125,12 @@ public class OrbitingShipMaquette : MonoBehaviour
 
     private void OnMouseExit()
     {
-        if (_interactFeedBack)
+        if (_interactFeedBack && GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick)
             _interactFeedBack.enabled = false;
     }
     private void OnMouseEnter()
     {
-        if (_interactFeedBack)
+        if (_interactFeedBack && GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick)
             _interactFeedBack.enabled = true;
     }
 }

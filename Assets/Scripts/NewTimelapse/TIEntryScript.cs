@@ -36,30 +36,36 @@ public class TIEntryScript : MonoBehaviour
     }
     public void OnMouseUp()
     {
-        if ((Time.time - _clickStart) < 0.3f)
+        if(GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick)
         {
-            _fullSheet.SetActive(!_fullSheet.activeInHierarchy);
-            circleImage.sprite = _fullSheet.activeInHierarchy ? minimiseImage : maximiseImage;
-            if (_fullSheet.activeInHierarchy)
+            if ((Time.time - _clickStart) < 0.3f)
             {
-                GetComponent<AudioSource>().clip = _openSound;
-                GetComponent<AudioSource>().Play();
+                _fullSheet.SetActive(!_fullSheet.activeInHierarchy);
+                circleImage.sprite = _fullSheet.activeInHierarchy ? minimiseImage : maximiseImage;
+                if (_fullSheet.activeInHierarchy)
+                {
+                    GetComponent<AudioSource>().clip = _openSound;
+                    GetComponent<AudioSource>().Play();
+                }
+                else
+                {
+                    GetComponent<AudioSource>().clip = _closeSound;
+                    GetComponent<AudioSource>().Play();
+                }
+                _clickStart = -1;
             }
-            else
-            {
-                GetComponent<AudioSource>().clip = _closeSound;
-                GetComponent<AudioSource>().Play();
-            }
-           _clickStart = -1;
         }
+
     }
 
     public void OnMouseDown()
     {
-        _clickStart = Time.time;
-        GetComponent<AudioSource>().clip = _clickSound;
-        GetComponent<AudioSource>().Play();
-
+        if(GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick)
+        {
+            _clickStart = Time.time;
+            GetComponent<AudioSource>().clip = _clickSound;
+            GetComponent<AudioSource>().Play();
+        }
     }
 
     public void DeleteEntry()

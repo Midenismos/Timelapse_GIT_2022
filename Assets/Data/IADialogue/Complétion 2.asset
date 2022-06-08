@@ -15,7 +15,6 @@ MonoBehaviour:
   DialogueName: "Compl\xE9tion2"
   DialogueTexts:
   - "Information valid\xE9e."
-  - "Encore deux points chronologiques \xE0 compl\xE9ter."
   DialogueSounds:
   - {fileID: 8300000, guid: 6de0c85ee9ff8834cb353d5351a7465f, type: 3}
-  - {fileID: 8300000, guid: 72e6b59042815004fbc4b7638599f42b, type: 3}
+  IsFolowedByAnotherDialogue: 0

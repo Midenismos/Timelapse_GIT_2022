@@ -16,7 +16,7 @@ public class PaperScript : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if(GetComponent<ZoomScript>().HasZoomed)
+        if(GetComponent<ZoomScript>().HasZoomed && GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick)
         {
             PressPoint = Input.mousePosition;
             StartRotation = transform.rotation;
@@ -26,7 +26,7 @@ public class PaperScript : MonoBehaviour
 
     private void OnMouseDrag()
     {
-        if(GetComponent<ZoomScript>().HasZoomed)
+        if(GetComponent<ZoomScript>().HasZoomed && GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick)
         {
             float CurrentDistanceBetweenMousePositions = (Input.mousePosition - PressPoint).x;
             transform.rotation = StartRotation * Quaternion.Euler(-Vector3.forward * (CurrentDistanceBetweenMousePositions / SceneWidth) * 360);

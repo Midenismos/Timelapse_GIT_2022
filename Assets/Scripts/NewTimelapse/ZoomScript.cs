@@ -71,20 +71,21 @@ public class ZoomScript : MonoBehaviour
     //Pour faire le double clic
     void OnMouseUp()
     {
-        clicked = false;
-        if ((Time.time - clickStart) < 0.15f)
+        if(GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick)
         {
-            this.OnSimpleClick();
-            clickStart = -1;
+            clicked = false;
+            if ((Time.time - clickStart) < 0.15f)
+            {
+                this.OnSimpleClick();
+                clickStart = -1;
+            }
         }
-
-
     }
 
     void OnSimpleClick()
     {
         //Rapproche le doc du joueur ou le remet à sa place en cliquant dessus
-        if (AxisScript.IDCurrentAxis == itemAxis && !AxisScript.IsInTI)
+        if (AxisScript.IDCurrentAxis == itemAxis && !AxisScript.IsInTI && GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick)
         {
             if (!_isLerping)
             {
@@ -145,7 +146,7 @@ public class ZoomScript : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (IsZoomable)
+        if (IsZoomable && GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick)
         {
             clicked = true;
             clickStart = Time.time;
@@ -163,7 +164,7 @@ public class ZoomScript : MonoBehaviour
         }
         if (Input.GetMouseButtonDown(0))
         {
-            if (AxisScript.CurrentHoldItem != null && AxisScript.CurrentHoldItem.GetComponent<ZoomScript>().clicked != true)
+            if (AxisScript.CurrentHoldItem != null && AxisScript.CurrentHoldItem.GetComponent<ZoomScript>().clicked != true && GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick)
             {
                 RaycastHit hit;
                 Ray ray = GameObject.Find("Camera").GetComponent<Camera>().ScreenPointToRay(Input.mousePosition);
@@ -315,12 +316,12 @@ public class ZoomScript : MonoBehaviour
 
     private void OnMouseExit()
     {
-        if (_interactFeedBack)
+        if (_interactFeedBack && GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick)
             _interactFeedBack.enabled = false;
     }
     private void OnMouseEnter()
     {
-        if (_interactFeedBack)
+        if (_interactFeedBack && GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick)
             _interactFeedBack.enabled = true;
     }
 }

@@ -51,60 +51,64 @@ public class DragObjects : MonoBehaviour
     }
     public void OnMouseDown()
     {
-        if (tag == "PanelImage")
-            GetComponent<AudioSource>().Play();
-        if (tag == "Entry")
+        if(GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick)
         {
-            if (EntryDispenser != null)
+            if (tag == "PanelImage")
+                GetComponent<AudioSource>().Play();
+            if (tag == "Entry")
             {
-                EntryDispenser.GetComponent<DispenserManager>().CurrentDrag = null;
-                EntryDispenser = null;
-                transform.SetParent(GameObject.Find("TI").transform, true);
-            }
-        }
-        if (tag == "PanelImage" || tag == "Entry" || GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == _axisID)
-        {
-            if(isTutoTI1 && GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex == 14)
-            {
-                GetComponent<Highlight>().StopHighlight();
-                if (!GameObject.Find("PanelBasket").GetComponent<Highlight>().Highlighted)
-                    GameObject.Find("PanelBasket").GetComponent<Highlight>().BeginHighlight();
-            }
-            if (GetComponent<ZoomScript>())
-            {
-                if (!GetComponent<ZoomScript>().HasZoomed)
-                    GetComponent<DragObjects>().IsDragable = true;
-            }
-            else
-            {
-                GetComponent<DragObjects>().IsDragable = true;
-                if (tag == "Battery")
-                    transform.SetParent(null, true);
-                else if (tag == "PanelImage" )
+                if (EntryDispenser != null)
                 {
-                    if(EntrySlot != null)
-                    {
-                        EntrySlot.GetComponent<SheetImageScript>().IsFilled = false;
-                        EntrySlot.GetComponent<SheetImageScript>().ID = "";
-                        EntrySlot.GetComponent<SheetImageScript>().isGlitched = false;
-                        EntrySlot = null;
-                    }
+                    EntryDispenser.GetComponent<DispenserManager>().CurrentDrag = null;
+                    EntryDispenser = null;
                     transform.SetParent(GameObject.Find("TI").transform, true);
                 }
-
             }
-
-            if (IsDragable)
+            if (tag == "PanelImage" || tag == "Entry" || GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == _axisID)
             {
-                if (GetComponent<Rigidbody>() && tag != "Battery" && tag != "Written" && tag != "Tape")
-                    GetComponent<Rigidbody>().isKinematic = true;
-                else if (tag == "Battery" || tag == "Written" || tag == "Tape")
-                    GetComponent<Rigidbody>().isKinematic = false;
+                if (isTutoTI1 && GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex == 14)
+                {
+                    GetComponent<Highlight>().StopHighlight();
+                    if (!GameObject.Find("PanelBasket").GetComponent<Highlight>().Highlighted)
+                        GameObject.Find("PanelBasket").GetComponent<Highlight>().BeginHighlight();
+                }
+                if (GetComponent<ZoomScript>())
+                {
+                    if (!GetComponent<ZoomScript>().HasZoomed)
+                        GetComponent<DragObjects>().IsDragable = true;
+                }
+                else
+                {
+                    GetComponent<DragObjects>().IsDragable = true;
+                    if (tag == "Battery")
+                        transform.SetParent(null, true);
+                    else if (tag == "PanelImage")
+                    {
+                        if (EntrySlot != null)
+                        {
+                            EntrySlot.GetComponent<SheetImageScript>().IsFilled = false;
+                            EntrySlot.GetComponent<SheetImageScript>().ID = "";
+                            EntrySlot.GetComponent<SheetImageScript>().isGlitched = false;
+                            EntrySlot = null;
+                        }
+                        transform.SetParent(GameObject.Find("TI").transform, true);
+                    }
 
-                mZCoord = GameObject.Find("Camera").GetComponent<Camera>().WorldToScreenPoint(gameObject.transform.position).z;
-                mOffset = gameObject.transform.position - GetMouseWorldPos();
+                }
+
+                if (IsDragable)
+                {
+                    if (GetComponent<Rigidbody>() && tag != "Battery" && tag != "Written" && tag != "Tape")
+                        GetComponent<Rigidbody>().isKinematic = true;
+                    else if (tag == "Battery" || tag == "Written" || tag == "Tape")
+                        GetComponent<Rigidbody>().isKinematic = false;
+
+                    mZCoord = GameObject.Find("Camera").GetComponent<Camera>().WorldToScreenPoint(gameObject.transform.position).z;
+                    mOffset = gameObject.transform.position - GetMouseWorldPos();
+                }
             }
         }
+       
 
 
     }
@@ -126,97 +130,102 @@ public class DragObjects : MonoBehaviour
     }
     public void OnMouseDrag()
     {
-        if (tag == "PanelImage")
+        if(GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick)
         {
-            GetComponent<RectTransform>().localScale = new Vector3(4f, 4f, 4);
-        }
-        if (tag == "PanelImage" || tag == "Entry" || GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == _axisID)
-        {
-            if (IsDragable)
+            if (tag == "PanelImage")
             {
-                print("hey");
-                if (tag == "Entry" && GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex == 26 && !GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying)
+                GetComponent<RectTransform>().localScale = new Vector3(4f, 4f, 4);
+            }
+            if (tag == "PanelImage" || tag == "Entry" || GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == _axisID)
+            {
+                if (IsDragable)
                 {
-                    if(GetComponentInChildren<SheetImageScript>().IsFilled)
+                    print("hey");
+                    if (tag == "Entry" && GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex == 26 && !GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying)
                     {
-                        GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex++;
-                        StartCoroutine(GameObject.Find("TutorialManager").GetComponent<Tutorial>().LaunchNextDialogue(4));
+                        if (GetComponentInChildren<SheetImageScript>().IsFilled)
+                        {
+                            GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex++;
+                            StartCoroutine(GameObject.Find("TutorialManager").GetComponent<Tutorial>().LaunchNextDialogue(4));
+                        }
                     }
-                }
 
-                /*if (tag == "Minimap" || tag == "Cam")
-                    transform.parent.transform.position = GetMouseWorldPos() + mOffset;
-                else
-                    transform.position = GetMouseWorldPos() + mOffset;*/
+                    /*if (tag == "Minimap" || tag == "Cam")
+                        transform.parent.transform.position = GetMouseWorldPos() + mOffset;
+                    else
+                        transform.position = GetMouseWorldPos() + mOffset;*/
 
-                IsDragged = true;
-                GameObject.Find("Player").GetComponent<PlayerAxisScript>().IsDraging = true;
-                if (GetComponent<ZoomScript>())
-                    GetComponent<ZoomScript>().enabled = true;
+                    IsDragged = true;
+                    GameObject.Find("Player").GetComponent<PlayerAxisScript>().IsDraging = true;
+                    if (GetComponent<ZoomScript>())
+                        GetComponent<ZoomScript>().enabled = true;
 
-                if (isTutoTI1 && GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex == 14)
-                {
-                    GetComponent<Highlight>().StopHighlight();
-                    if(!GameObject.Find("PanelBasket").GetComponent<Highlight>().Highlighted)
-                        GameObject.Find("PanelBasket").GetComponent<Highlight>().BeginHighlight();
-                }
-
-                if (Is3D && tag != "Cam" && tag != "Battery")
-                {
-                    float planeY = -29.5f;
-                    Transform draggingObject = transform;
-
-                    Plane plane = new Plane(Vector3.up, Vector3.up * planeY); // ground plane
-
-                    Ray ray = GameObject.Find("Camera").GetComponent<Camera>().ScreenPointToRay(Input.mousePosition);
-
-                    float distance; // the distance from the ray origin to the ray intersection of the plane
-                    if (plane.Raycast(ray, out distance))
-                        draggingObject.GetComponent<Rigidbody>().velocity = (new Vector3(ray.GetPoint(Mathf.Clamp(distance, 3, 6)).x, -29.5f, ray.GetPoint(Mathf.Clamp(distance, 3, 4)).z) - draggingObject.transform.position) * 20; // distance along the ray
-                }
-                else
-                {
-                    if (tag == "Battery")
+                    if (isTutoTI1 && GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex == 14)
                     {
-                        Rigidbody r = GetComponent<Rigidbody>();
-                        r.velocity = (GetMouseWorldPos() + mOffset - transform.position) * 20;
-                        transform.position = new Vector3(transform.position.x, transform.position.y, -74f);
+                        GetComponent<Highlight>().StopHighlight();
+                        if (!GameObject.Find("PanelBasket").GetComponent<Highlight>().Highlighted)
+                            GameObject.Find("PanelBasket").GetComponent<Highlight>().BeginHighlight();
                     }
-                    //GetComponent<Rigidbody>().position = new Vector3(GetMouseWorldPos().x + mOffset.x, GetMouseWorldPos().y + mOffset.y, -74f); 
+
+                    if (Is3D && tag != "Cam" && tag != "Battery")
+                    {
+                        float planeY = -29.5f;
+                        Transform draggingObject = transform;
+
+                        Plane plane = new Plane(Vector3.up, Vector3.up * planeY); // ground plane
+
+                        Ray ray = GameObject.Find("Camera").GetComponent<Camera>().ScreenPointToRay(Input.mousePosition);
+
+                        float distance; // the distance from the ray origin to the ray intersection of the plane
+                        if (plane.Raycast(ray, out distance))
+                            draggingObject.GetComponent<Rigidbody>().velocity = (new Vector3(ray.GetPoint(Mathf.Clamp(distance, 3, 6)).x, -29.5f, ray.GetPoint(Mathf.Clamp(distance, 3, 4)).z) - draggingObject.transform.position) * 20; // distance along the ray
+                    }
                     else
                     {
-                        if (IsFixedInTI)
-                            transform.position = new Vector3(GetMouseWorldPos().x + mOffset.x, transform.position.y, transform.position.z);
+                        if (tag == "Battery")
+                        {
+                            Rigidbody r = GetComponent<Rigidbody>();
+                            r.velocity = (GetMouseWorldPos() + mOffset - transform.position) * 20;
+                            transform.position = new Vector3(transform.position.x, transform.position.y, -74f);
+                        }
+                        //GetComponent<Rigidbody>().position = new Vector3(GetMouseWorldPos().x + mOffset.x, GetMouseWorldPos().y + mOffset.y, -74f); 
                         else
-                            transform.position = GetMouseWorldPos() + mOffset;
-
+                        {
+                            if (IsFixedInTI)
+                                transform.position = new Vector3(GetMouseWorldPos().x + mOffset.x, transform.position.y, transform.position.z);
+                            else
+                                transform.position = GetMouseWorldPos() + mOffset;
+                        }
                     }
-
                 }
             }
         }
+        
     }
 
     public void OnMouseUp()
     {
-        if (IsDragable)
+        if(GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick)
         {
-            if (GetComponent<Rigidbody>())
-                GetComponent<Rigidbody>().isKinematic = false;
-        }
-        IsDragged = false;
-        GameObject.Find("Player").GetComponent<PlayerAxisScript>().IsDraging = false;
+            if (IsDragable)
+            {
+                if (GetComponent<Rigidbody>())
+                    GetComponent<Rigidbody>().isKinematic = false;
+            }
+            IsDragged = false;
+            GameObject.Find("Player").GetComponent<PlayerAxisScript>().IsDraging = false;
 
-        if (tag == "Cam")
-        {
-            if(IsDragable)
-                Destroy(this.gameObject);
+            if (tag == "Cam")
+            {
+                if (IsDragable)
+                    Destroy(this.gameObject);
+            }
         }
     }
 
     private void OnMouseExit()
     {
-        if(GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == _axisID)
+        if(GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == _axisID && GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick)
         {
             if (_interactFeedBack)
                 _interactFeedBack.enabled = false;
@@ -225,7 +234,7 @@ public class DragObjects : MonoBehaviour
     }
     private void OnMouseEnter()
     {
-        if (GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == _axisID)
+        if (GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == _axisID && GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick)
         {
             if (_interactFeedBack)
                 _interactFeedBack.enabled = true;

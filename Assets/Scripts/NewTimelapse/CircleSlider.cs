@@ -17,7 +17,7 @@ public class CircleSlider : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == 5)
+        if (GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == 5 && GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick)
         {
             PressPoint = Input.mousePosition;
             StartRotation = transform.rotation;
@@ -27,7 +27,7 @@ public class CircleSlider : MonoBehaviour
 
     private void OnMouseDrag()
     {
-        if (GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == 5)
+        if (GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == 5 && GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick)
         {
             float CurrentDistanceBetweenMousePositions = (Input.mousePosition - PressPoint).x;
             Rotation = StartRotation * Quaternion.Euler(Vector3.up * (CurrentDistanceBetweenMousePositions / SceneWidth) * 360);

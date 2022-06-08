@@ -48,34 +48,38 @@ public class BatteryScript : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        EnergyMetterScript EnergyMetter = GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>();
-        if (EnergyMetter.CurrentBattery == this && GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == 3)
+        if (GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick)
         {
-            EnergyMetter.CurrentBattery = null;
-            EnergyMetter.Energy = 0;
-            EnergyMetter.StopCoroutine(EnergyMetter.co);
-            isPluged = false;
-            gameObject.transform.parent = GameObject.Find("Batteries").transform;
-            EnergyMetter.StartCooldown();
-            EnergyMetter.PlayUnPlugSound();
-            transform.localScale = new Vector3(0.2048901f, 0.12f, 0.28f);
+            EnergyMetterScript EnergyMetter = GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>();
+            if (EnergyMetter.CurrentBattery == this && GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == 3)
+            {
+                EnergyMetter.CurrentBattery = null;
+                EnergyMetter.Energy = 0;
+                EnergyMetter.StopCoroutine(EnergyMetter.co);
+                isPluged = false;
+                gameObject.transform.parent = GameObject.Find("Batteries").transform;
+                EnergyMetter.StartCooldown();
+                EnergyMetter.PlayUnPlugSound();
+                transform.localScale = new Vector3(0.2048901f, 0.12f, 0.28f);
+            }
+
+            BatteryBoxScript Box = GameObject.Find("NewBatteryBox").GetComponent<BatteryBoxScript>();
+            if (Box.CurrentBattery == this.gameObject && GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == 3)
+            {
+                Box.CurrentBattery = null;
+                isInBox = false;
+                Box.StartCooldown();
+            }
+
+            VaultPlug Plug = GameObject.Find("VaultPlug").GetComponent<VaultPlug>();
+            if (Plug.CurrentBattery == this && GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == 3)
+            {
+                Plug.CurrentBattery.isVaultPluged = false;
+                Plug.CurrentBattery = null;
+                Plug.StartCooldown();
+            }
         }
 
-        BatteryBoxScript Box = GameObject.Find("NewBatteryBox").GetComponent<BatteryBoxScript>();
-        if (Box.CurrentBattery == this.gameObject && GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == 3)
-        {
-            Box.CurrentBattery = null;
-            isInBox = false;
-            Box.StartCooldown();
-        }
-
-        VaultPlug Plug = GameObject.Find("VaultPlug").GetComponent<VaultPlug>();
-        if (Plug.CurrentBattery == this && GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == 3)
-        {
-            Plug.CurrentBattery.isVaultPluged = false;
-            Plug.CurrentBattery = null;
-            Plug.StartCooldown();
-        }
     }
 
     private void Update()

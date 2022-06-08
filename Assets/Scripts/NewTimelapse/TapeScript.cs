@@ -58,26 +58,34 @@ public class TapeScript : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        AudioSource Radio = GameObject.Find("Radio").GetComponent<AudioSource>();
-
-        if (Radio.clip == CurrentSound)
+        if(GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick)
         {
-            Radio.Stop();
-            Radio.GetComponent<TapeListener>().CurrentTape = null;
-            Radio.clip = null;
-            Radio.GetComponent<TapeListener>().StartCooldown();
+            AudioSource Radio = GameObject.Find("Radio").GetComponent<AudioSource>();
+
+            if (Radio.clip == CurrentSound)
+            {
+                Radio.Stop();
+                Radio.GetComponent<TapeListener>().CurrentTape = null;
+                Radio.clip = null;
+                Radio.GetComponent<TapeListener>().StartCooldown();
+            }
+            clicked = true;
+            clickStart = Time.time;
         }
-        clicked = true;
-        clickStart = Time.time;
+
     }
     private void OnMouseUp()
     {
-        clicked = false;
-        if ((Time.time - clickStart) < 0.31f)
+        if(GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick)
         {
-            GetComponent<ZoomScript>().IsZoomable = true;
-            clickStart = -1;
+            clicked = false;
+            if ((Time.time - clickStart) < 0.31f)
+            {
+                GetComponent<ZoomScript>().IsZoomable = true;
+                clickStart = -1;
+            }
         }
+
     }
 
     private void Update()
