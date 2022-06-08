@@ -140,7 +140,6 @@ public class DragObjects : MonoBehaviour
             {
                 if (IsDragable)
                 {
-                    print("hey");
                     if (tag == "Entry" && GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex == 26 && !GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying)
                     {
                         if (GetComponentInChildren<SheetImageScript>().IsFilled)

@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System.Linq;
 public class TimelineScript : MonoBehaviour
 {
     [System.Serializable]
@@ -10,6 +10,7 @@ public class TimelineScript : MonoBehaviour
         public string Date;
         public string ID;
         public bool IsGlitched;
+        public bool isTrue;
     }
 
     public TimelineCheck[] EndAData;
@@ -17,17 +18,6 @@ public class TimelineScript : MonoBehaviour
 
     public IADialogue[] DialogueCompletion;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void CheckEntry()
     {
@@ -37,28 +27,30 @@ public class TimelineScript : MonoBehaviour
             {
                 for (int i = 0; i <= 2; i++ )
                 {
+                    print(i);
                     if (Entry.Date == EndAData[i].Date)
                     {
-                        print("hey");
-                        foreach( SheetImageScript slot in Entry.Slots)
+
+                        foreach ( SheetImageScript slot in Entry.Slots)
                         {
-                            print("hey");
 
                             if (slot.ID == EndAData[i].ID)
                             {
-                                print("hey");
-
                                 if (slot.isGlitched == EndAData[i].IsGlitched)
                                 {
-                                    print("hey");
-                                    GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().LaunchDialogue(DialogueCompletion[0]);
-
+                                    print(Entry.Date);
+                                    print(slot.ID);
+                                    EndAData[i].isTrue = true;
                                 }
-
                             }
                         }
                     }
                 }
+            }
+            print(EndAData.Count(n => n.isTrue == true));
+            for (int i = 0; i <= 2; i++)
+            {
+                EndAData[i].isTrue = false;
             }
         }
 
