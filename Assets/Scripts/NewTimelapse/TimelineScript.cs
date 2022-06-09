@@ -5,11 +5,16 @@ using System.Linq;
 public class TimelineScript : MonoBehaviour
 {
     [System.Serializable]
+    public struct SlotPanelImage
+    {
+        public string ID;
+        public bool IsGlitched;
+    }
+    [System.Serializable]
     public struct TimelineCheck
     {
-        public string Date;
-        public string[] IDs;
-        public bool[] IsGlitched;
+        public string[] Date;
+        public SlotPanelImage[] PanelImage;
         public bool isTrue;
     }
 
@@ -27,17 +32,15 @@ public class TimelineScript : MonoBehaviour
             {
                 for (int i = 0; i <= 2; i++ )
                 {
-                    print(i);
-                    if (Entry.Date == EndAData[i].Date)
+                    if (Entry.Date == EndAData[i].Date[0])
                     {
-
                         foreach (SheetImageScript slot in Entry.Slots)
                         {
-                            if (EndAData[i].IDs.Any(ID => ID == slot.ID))
+                            for (int y = 0; y <= EndAData[i].PanelImage.Length - 1; y++)
                             {
-                                for(int y = 0; y <= EndAData[i].IsGlitched.Length -1; y++)
+                                if(EndAData[i].PanelImage[y].ID == slot.ID)
                                 {
-                                    if (slot.isGlitched == EndAData[i].IsGlitched[y])
+                                    if (slot.isGlitched == EndAData[i].PanelImage[y].IsGlitched)
                                         EndAData[i].isTrue = true;
                                 }
                             }
@@ -45,7 +48,7 @@ public class TimelineScript : MonoBehaviour
                     }
                 }
             }
-            //print(EndAData.Count(n => n.isTrue == true));
+            print(EndAData.Count(n => n.isTrue == true));
             GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().LaunchDialogue(DialogueCompletion[EndAData.Count(n => n.isTrue == true)]);
             if (EndAData.Count(n => n.isTrue == true) == 3)
                 StartCoroutine(ContinueTutorial());
@@ -55,6 +58,9 @@ public class TimelineScript : MonoBehaviour
             }
         }
 
+
+        //POUR APRES TUTO
+        //if (int.Parse(Entry.Date) >=int.Parse(EndAData[i].Date[0]) && int.Parse(Entry.Date) <= int.Parse(EndAData[i].Date[1]))
         IEnumerator ContinueTutorial()
         {
             yield return new WaitForSeconds(15);
