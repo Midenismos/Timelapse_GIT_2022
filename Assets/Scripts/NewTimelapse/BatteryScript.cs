@@ -10,6 +10,7 @@ public class BatteryScript : MonoBehaviour
     public bool isVaultPluged = false;
     public bool isInBox = false;
     [SerializeField] private Image _sliderImage;
+    public bool Activated = false;
 
     public float Energy
     {
@@ -24,6 +25,8 @@ public class BatteryScript : MonoBehaviour
     [SerializeField]private float _energy;
     private void Awake()
     {
+        if (!GameObject.Find("TutorialManager").GetComponent<Tutorial>().activateTuto)
+            Activated = true;
         _slider.maxValue = GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().MaxEnergy;
         GameObject.Find("LoopManager").GetComponent<NewLoopManager>().ReactedToNebuleuse += delegate (NebuleuseType NebuleuseType)
         {
@@ -84,19 +87,27 @@ public class BatteryScript : MonoBehaviour
 
     private void Update()
     {
-        if (!isPluged && !isInBox && !isVaultPluged)
-            Energy = Mathf.Clamp(Energy + _multiplier * 0.01f, 0, 250);
-        else if (isVaultPluged)
-            Energy = Mathf.Clamp(Energy - 0.01f, 0, 250);
+        if(Activated)
+        {
+            if (!isPluged && !isInBox && !isVaultPluged)
+                Energy = Mathf.Clamp(Energy + _multiplier * 0.01f, 0, 250);
+            else if (isVaultPluged)
+                Energy = Mathf.Clamp(Energy - 0.01f, 0, 250);
 
             if (isPluged)
-            _sliderImage.enabled = false;
-        else
-        {
-            if(Energy >0 )
-                _sliderImage.enabled = true;
+                _sliderImage.enabled = false;
+            else
+            {
+                if (Energy > 0)
+                    _sliderImage.enabled = true;
+            }
+
+            _slider.value = Energy;
         }
 
-        _slider.value = Energy;
+    }
+    public void Activate()
+    {
+        Activated = true;
     }
 }

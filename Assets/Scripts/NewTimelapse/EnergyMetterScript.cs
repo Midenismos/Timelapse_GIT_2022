@@ -32,6 +32,8 @@ public class EnergyMetterScript : MonoBehaviour
     public BatteryScript CurrentBattery = null;
     private bool waitBeforeTriggerSounds = false;
     private float timerBeforeTriggerSounds = 0;
+
+    public bool Activated = false;
     public float Energy
     {
         get
@@ -75,6 +77,8 @@ public class EnergyMetterScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (!GameObject.Find("TutorialManager").GetComponent<Tutorial>().activateTuto)
+            Activated = true;
         _unPlugSound = Resources.Load("Sound/Snd_UnPlugBattery") as AudioClip;
         _plugSound = Resources.Load("Sound/Snd_PlugBattery") as AudioClip;
         _EnergyDownSound = Resources.Load("Sound/Snd_EnergyDown") as AudioClip;
@@ -233,7 +237,10 @@ public class EnergyMetterScript : MonoBehaviour
                 }
                 GetComponent<Animator>().Play("Base Layer.EnergyMetterUp", 0);
                 ReactedToEnergyReset();
-                co = StartCoroutine(DecreaseEnergy());
+
+                if(Activated)
+                    co = StartCoroutine(DecreaseEnergy());
+
                 _sliderImage.enabled = true;
             }
             if (GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex == 36)
@@ -260,5 +267,11 @@ public class EnergyMetterScript : MonoBehaviour
     {
         GetComponent<AudioSource>().clip = _unPlugSound;
         GetComponent<AudioSource>().Play();
+    }
+
+    public void Activate()
+    {
+        Activated = true;
+        co = StartCoroutine(DecreaseEnergy());
     }
 }

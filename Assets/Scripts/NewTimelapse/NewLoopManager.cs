@@ -37,12 +37,12 @@ public class NewLoopManager : MonoBehaviour
 
     public SpeedType Speed;
 
-    //TODO : REMETTRE LE SYSTEME DE NEBULEUSE ICI
-
     public delegate void ReactToNebuleuse(NebuleuseType NebuleuseType);
     public event ReactToNebuleuse ReactedToNebuleuse;
     //Changer si besoin pour déterminer la période de changement de Nebuleuse
     public Nebuleuse[] Nebuleuses = new Nebuleuse[6];
+
+    public bool Activated = false;
     
 
     private NebuleuseType _currentNebuleusePhase;
@@ -57,15 +57,27 @@ public class NewLoopManager : MonoBehaviour
                 _currentNebuleusePhase = value;
                 if (ReactedToNebuleuse != null)
                     ReactedToNebuleuse(_currentNebuleusePhase);
+                if (!GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying)
+                {
+                    if( GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex > 31 || !GameObject.Find("TutorialManager").GetComponent<Tutorial>().activateTuto)
+                        GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().LaunchDialogue(GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().NebuleuseDialogue);
+
+                }
+
             }
         }
     }
 
-
+    private void Awake()
+    {
+        if (!GameObject.Find("TutorialManager").GetComponent<Tutorial>().activateTuto)
+            Activated = true;
+    }
     // Update is called once per frame
     void Update()
     {
-        CurrentLoopTime += Time.deltaTime * Multiplier;
+        if(Activated)
+            CurrentLoopTime += Time.deltaTime * Multiplier;
 
         if (CurrentLoopTime >= LoopDuration)
             CurrentLoopTime = 0;
@@ -107,5 +119,7 @@ public class NewLoopManager : MonoBehaviour
     public void TriggerNebuleuseTuto()
     {
         CurrentLoopTime = 224;
+        Activated = true;
     }
+
 }
