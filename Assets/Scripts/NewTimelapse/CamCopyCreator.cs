@@ -27,6 +27,7 @@ public class CamCopyCreator : MonoBehaviour
         GameObject cam = Instantiate(copyCam, transform.position + new Vector3(0.1f,0,-0.1f), Quaternion.Euler(0, 30, 0));
         cam.GetComponent<PanelImageData>().Image = GetComponent<PanelImageData>().Image;
         cam.GetComponentInChildren<Image>().sprite = GetComponent<PanelImageData>().Image;
+        cam.GetComponent<PanelImageData>().ID = GetComponent<PanelImageData>().ID;
         cam.GetComponent<DragObjects>().StartDrag();
 
     }
