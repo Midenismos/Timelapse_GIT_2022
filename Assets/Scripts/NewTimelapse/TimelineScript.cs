@@ -10,6 +10,7 @@ public class TimelineScript : MonoBehaviour
         public string ID;
         public bool IsGlitched;
         public bool isTrue;
+        public bool GlitchChecked;
     }
     [System.Serializable]
     public struct TimelineCheck
@@ -20,10 +21,11 @@ public class TimelineScript : MonoBehaviour
     }
 
     public TimelineCheck[] EndAData;
-    public TimelineCheck[] EndBData;
 
     public IADialogue[] DialogueCompletion;
 
+    private int corruptedNumber = 0;
+    [SerializeField] private int corruptedNumberRequired = 9;
 
     public void CheckEntry()
     {
@@ -73,19 +75,23 @@ public class TimelineScript : MonoBehaviour
                             {
                                 for (int y = 0; y <= EndAData[i].PanelImage.Length - 1; y++)
                                 {
-                                    if(EndAData[i].PanelImage[y].ID == slot.ID)
+                                    if (EndAData[i].PanelImage[y].IsGlitched == true && slot.isGlitched == EndAData[i].PanelImage[y].IsGlitched && EndAData[i].PanelImage[y].GlitchChecked == false)
                                     {
-                                        print("slot" + slot.ID);
-                                        print("Data" + EndAData[i].PanelImage[y].ID);
-                                        if (slot.isGlitched == EndAData[i].PanelImage[y].IsGlitched)
-                                            EndAData[i].PanelImage[y].isTrue = true;
+                                        print(EndAData[i].PanelImage[y].ID);
+                                        print(slot.ID);
+                                        corruptedNumber += 1;
+                                        EndAData[i].PanelImage[y].GlitchChecked = true;
+                                    }
+                                    else if (EndAData[i].PanelImage[y].ID == slot.ID)
+                                    {
+                                        EndAData[i].PanelImage[y].isTrue = true;
+
                                     }
                                 }
                             }
                         }
                         if (EndAData[i].PanelImage.All(n => n.isTrue == true))
                         {
-                            print("hey");
                             EndAData[i].isTrue = true;
                             for (int y = 0; y <= EndAData[i].PanelImage.Length - 1; y++)
                                 EndAData[i].PanelImage[y].isTrue = false;
@@ -93,16 +99,26 @@ public class TimelineScript : MonoBehaviour
                     }
                 }
             }
+            print(corruptedNumber);
 
             print(EndAData.Count(n => n.isTrue == true) +3);
             if (EndAData.Count(n => n.isTrue == true) + 3 == 3)
                 GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().LaunchDialogue(DialogueCompletion[0]);
-            else
-                GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().LaunchDialogue(DialogueCompletion[EndAData.Count(n => n.isTrue == true)+3]);
+            //else
+                //GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().LaunchDialogue(DialogueCompletion[EndAData.Count(n => n.isTrue == true)+3]);
+            if(EndAData.Count(n => n.isTrue == true) + 3 == 15)
+                GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().LaunchDialogue(GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().EndADialogue);
+            else if (corruptedNumber == 9)
+                GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().LaunchDialogue(GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().EndBDialogue);
+
             for (int i = 3; i <= 14; i++)
             {
                 EndAData[i].isTrue = false;
+                for (int y = 0; y <= EndAData[i].PanelImage.Length - 1; y++)
+                    EndAData[i].PanelImage[y].GlitchChecked = false;
+
             }
+            corruptedNumber = 0;
         }
     }
         IEnumerator ContinueTutorial()

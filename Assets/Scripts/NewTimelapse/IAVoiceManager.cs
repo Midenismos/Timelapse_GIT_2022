@@ -16,6 +16,8 @@ public class IAVoiceManager : MonoBehaviour
     public IADialogue[] RandomAntiCasierDialogues;
     public IADialogue RandomAntiCasierFirstDialogue;
     public IADialogue NebuleuseDialogue;
+    public IADialogue EndADialogue;
+    public IADialogue EndBDialogue;
 
     [SerializeField] int i = 0;
 
