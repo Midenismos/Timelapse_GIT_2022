@@ -60,7 +60,7 @@ public class TimelineScript : MonoBehaviour
             }
         }
 
-        else if (!GameObject.Find("TutorialManager").GetComponent<Tutorial>().activateTuto)
+        else if (!GameObject.Find("TutorialManager").GetComponent<Tutorial>().activateTuto || GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex >= 30 && !GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying)
         {
             foreach (TIEntryScript Entry in GameObject.Find("TI").GetComponentsInChildren<TIEntryScript>())
             {

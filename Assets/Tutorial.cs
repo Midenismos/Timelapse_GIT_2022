@@ -21,6 +21,7 @@ public class Tutorial : MonoBehaviour
     public bool Dialogue33Fini = false;
     public bool Dialogue34Fini = false;
     private bool hasSeenVaultOnce = false;
+    public bool IsElevatorFinished = false;
 
 
     // Start is called before the first frame update
@@ -40,10 +41,19 @@ public class Tutorial : MonoBehaviour
                 }
             }
         }
+        StartCoroutine(ElevatorCooldown());
     }
 
     private void Update()
     {
+        if(dialogueIndex == 0 && IsElevatorFinished)
+        {
+            dialogueIndex++;
+            if (dialogueIndex < dialogues.Length)
+            {
+                StartCoroutine(LaunchNextDialogue(delays[dialogueIndex]));
+            }
+        }
         if(player.IDCurrentAxis == 4 && dialogueIndex >= 30 && !hasSeenVaultOnce && !GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying)
         {
             GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().LaunchDialogue(GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().RandomAntiCasierFirstDialogue);
@@ -297,5 +307,10 @@ public class Tutorial : MonoBehaviour
     {
         activateTuto = false;
         GameObject.Find("Player").GetComponent<PlayerAxisScript>().isInTuto = false;
+    }
+    IEnumerator ElevatorCooldown()
+    {
+        yield return new WaitForSeconds(15);
+        IsElevatorFinished = true;
     }
 }

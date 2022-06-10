@@ -31,7 +31,7 @@ public class CamButton : MonoBehaviour
                 if(!isSeenInTuto && GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex == 5)
                 {
                     isSeenInTuto = true;
-                    GetComponent<Highlight>().StopHighlight();
+                    GetComponent<Highlight>().StopHighlightChildren();
                 }
             }
         }
@@ -44,7 +44,7 @@ public class CamButton : MonoBehaviour
                 if (!isSeenInTuto && GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex == 8)
                 {
                     isSeenInTuto = true;
-                    GetComponent<Highlight>().StopHighlight();
+                    GetComponent<Highlight>().StopHighlightChildren();
                 }
                 onClickedAudio?.Invoke();
                 StartCoroutine(ButtonFeedback());
