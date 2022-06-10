@@ -64,4 +64,15 @@ public class PanelTag : MonoBehaviour
         Destroy(gameObject);
     }
 
+    private void OnMouseEnter()
+    {
+        if (IsCorrupted)
+            GetComponent<Image>().material.SetFloat("_GlitchFade", 0.3f);
+    }
+    private void OnMouseExit()
+    {
+        if (IsCorrupted)
+            GetComponent<Image>().material.SetFloat("_GlitchFade", 1f);
+    }
+
 }

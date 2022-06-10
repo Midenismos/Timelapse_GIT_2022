@@ -26,7 +26,7 @@ public class TimelineScript : MonoBehaviour
 
     private int corruptedNumber = 0;
     [SerializeField] private int corruptedNumberRequired = 9;
-
+    [SerializeField] private GameObject reportButton = null;
     public void CheckEntry()
     {
         if(GameObject.Find("TutorialManager").GetComponent<Tutorial>().activateTuto && GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex == 27)
@@ -75,16 +75,19 @@ public class TimelineScript : MonoBehaviour
                             {
                                 for (int y = 0; y <= EndAData[i].PanelImage.Length - 1; y++)
                                 {
-                                    if (EndAData[i].PanelImage[y].IsGlitched == true && slot.isGlitched == EndAData[i].PanelImage[y].IsGlitched && EndAData[i].PanelImage[y].GlitchChecked == false)
+
+                                    if (EndAData[i].PanelImage[y].ID == slot.ID)
                                     {
-                                        print(EndAData[i].PanelImage[y].ID);
-                                        print(slot.ID);
-                                        corruptedNumber += 1;
-                                        EndAData[i].PanelImage[y].GlitchChecked = true;
-                                    }
-                                    else if (EndAData[i].PanelImage[y].ID == slot.ID)
-                                    {
-                                        EndAData[i].PanelImage[y].isTrue = true;
+                                        if (EndAData[i].PanelImage[y].IsGlitched == true && slot.isGlitched == EndAData[i].PanelImage[y].IsGlitched && EndAData[i].PanelImage[y].GlitchChecked == false)
+                                        {
+                                            corruptedNumber += 1;
+                                            EndAData[i].PanelImage[y].GlitchChecked = true;
+                                        }
+                                        if (EndAData[i].PanelImage[y].IsGlitched == false && slot.isGlitched == false)
+                                            EndAData[i].PanelImage[y].isTrue = true;
+                                        else if (EndAData[i].PanelImage[y].IsGlitched == true)
+                                            EndAData[i].PanelImage[y].isTrue = true;
+
 
                                     }
                                 }
@@ -104,12 +107,12 @@ public class TimelineScript : MonoBehaviour
             print(EndAData.Count(n => n.isTrue == true) +3);
             if (EndAData.Count(n => n.isTrue == true) + 3 == 3)
                 GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().LaunchDialogue(DialogueCompletion[0]);
-            //else
-                //GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().LaunchDialogue(DialogueCompletion[EndAData.Count(n => n.isTrue == true)+3]);
+            else
+                GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().LaunchDialogue(DialogueCompletion[EndAData.Count(n => n.isTrue == true)+3]);
             if(EndAData.Count(n => n.isTrue == true) + 3 == 15)
-                GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().LaunchDialogue(GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().EndADialogue);
-            else if (corruptedNumber == 9)
-                GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().LaunchDialogue(GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().EndBDialogue);
+                StartCoroutine(SpawnRepportButton());
+
+
 
             for (int i = 3; i <= 14; i++)
             {
@@ -121,10 +124,66 @@ public class TimelineScript : MonoBehaviour
             corruptedNumber = 0;
         }
     }
-        IEnumerator ContinueTutorial()
+    IEnumerator ContinueTutorial()
+    {
+        yield return new WaitForSeconds(15);
+        GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex++;
+        StartCoroutine(GameObject.Find("TutorialManager").GetComponent<Tutorial>().LaunchNextDialogue(0));
+    }
+
+    IEnumerator SpawnRepportButton()
+    {
+        yield return new WaitForSeconds(7);
+        reportButton.gameObject.SetActive(true);
+    }
+    public void StartEnding()
+    {
+        foreach (TIEntryScript Entry in GameObject.Find("TI").GetComponentsInChildren<TIEntryScript>())
         {
-            yield return new WaitForSeconds(15);
-            GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex++;
-            StartCoroutine(GameObject.Find("TutorialManager").GetComponent<Tutorial>().LaunchNextDialogue(0));
+            if (!Entry.IsTuto && Entry.GetComponent<DragObjects>().IsFixedInTI)
+            {
+                for (int i = 3; i <= 14; i++)
+                {
+
+                    if (int.Parse(Entry.Date) >= int.Parse(EndAData[i].Date[0]) && int.Parse(Entry.Date) <= int.Parse(EndAData[i].Date[1]))
+                    {
+                        foreach (SheetImageScript slot in Entry.Slots)
+                        {
+                            for (int y = 0; y <= EndAData[i].PanelImage.Length - 1; y++)
+                            {
+
+                                if (EndAData[i].PanelImage[y].ID == slot.ID)
+                                {
+                                    if (EndAData[i].PanelImage[y].IsGlitched == true && slot.isGlitched == EndAData[i].PanelImage[y].IsGlitched && EndAData[i].PanelImage[y].GlitchChecked == false)
+                                    {
+                                        corruptedNumber += 1;
+                                        EndAData[i].PanelImage[y].GlitchChecked = true;
+                                    }
+                                    if (EndAData[i].PanelImage[y].IsGlitched == false && slot.isGlitched == false)
+                                        EndAData[i].PanelImage[y].isTrue = true;
+                                    else if (EndAData[i].PanelImage[y].IsGlitched == true)
+                                        EndAData[i].PanelImage[y].isTrue = true;
+
+
+                                }
+                            }
+                        }
+                    }
+                    if (EndAData[i].PanelImage.All(n => n.isTrue == true))
+                    {
+                        EndAData[i].isTrue = true;
+                        for (int y = 0; y <= EndAData[i].PanelImage.Length - 1; y++)
+                            EndAData[i].PanelImage[y].isTrue = false;
+                    }
+                }
+            }
         }
+        if (EndAData.Count(n => n.isTrue == true) + 3 == 15)
+        {
+            if (corruptedNumber == 9)
+                GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().LaunchDialogue(GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().EndBDialogue);
+            else
+                GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().LaunchDialogue(GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().EndADialogue);
+        }
+    }
 }

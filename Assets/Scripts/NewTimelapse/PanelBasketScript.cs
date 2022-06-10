@@ -148,7 +148,7 @@ public class PanelBasketScript : MonoBehaviour
                     if (scannedItem.gameObject.tag == "Written")
                         scannedItem.GetComponent<Rigidbody>().AddForce((GameObject.Find("PosWrittenThrow").transform.position - GameObject.Find("start").transform.position) * 75);
                     else if (scannedItem.gameObject.tag == "Tape")
-                        scannedItem.GetComponent<Rigidbody>().AddForce((GameObject.Find("PosTapeThrow").transform.position - GameObject.Find("start").transform.position) * 25);
+                        scannedItem.GetComponent<Rigidbody>().AddForce((GameObject.Find("PosTapeThrow").transform.position - GameObject.Find("start").transform.position) * 75);
                     scannedItem = null;
                 }
                 else
