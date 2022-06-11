@@ -268,6 +268,7 @@ public class ZoomScript : MonoBehaviour
         }
         if (currentItem.TutoBriefing && GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex == 2 && !GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying)
         {
+            GameObject.Find("TutorialManager").GetComponent<Tutorial>().DialogueFinished();
             GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex++;
             StartCoroutine(GameObject.Find("TutorialManager").GetComponent<Tutorial>().LaunchNextDialogue(2));
         }
@@ -275,6 +276,9 @@ public class ZoomScript : MonoBehaviour
         {
             if(currentItem.GetComponentInChildren<TMP_Text>().text != "#8-TW​" && currentItem.GetComponentInChildren<TMP_Text>().text != "")
             {
+                if (GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying)
+                    GameObject.Find("TutorialManager").GetComponent<Tutorial>().DialogueFinished();
+
                 GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex++;
                 StartCoroutine(GameObject.Find("TutorialManager").GetComponent<Tutorial>().LaunchNextDialogue(2));
             }

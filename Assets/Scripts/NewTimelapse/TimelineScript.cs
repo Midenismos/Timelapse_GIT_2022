@@ -126,6 +126,9 @@ public class TimelineScript : MonoBehaviour
     }
     IEnumerator ContinueTutorial()
     {
+        if (GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying)
+            GameObject.Find("TutorialManager").GetComponent<Tutorial>().DialogueFinished();
+        GameObject.Find("Player").GetComponent<PlayerAxisScript>().ZFalse();
         yield return new WaitForSeconds(15);
         GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex++;
         StartCoroutine(GameObject.Find("TutorialManager").GetComponent<Tutorial>().LaunchNextDialogue(0));

@@ -147,6 +147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Highlighted: 0
   isHightlighting: 0
+  HighlightedChildren: []
 --- !u!1 &2498146120449675556
 GameObject:
   m_ObjectHideFlags: 0
@@ -897,6 +898,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _imageTag: written
   IsFilled: 0
+  ID: 
+  isGlitched: 0
 --- !u!114 &4949413627731807369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -911,6 +914,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Highlighted: 0
   isHightlighting: 0
+  HighlightedChildren: []
 --- !u!1 &3849058559238222690
 GameObject:
   m_ObjectHideFlags: 0
@@ -1019,6 +1023,7 @@ MonoBehaviour:
   - {fileID: 311867769}
   DeleteButton: {fileID: 1371186526659508918}
   IsTuto: 1
+  Date: 
 --- !u!114 &1259736151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1116,6 +1121,8 @@ MonoBehaviour:
   isTutoTI1: 0
   isTutoTI2: 0
   hasBeenTutoScaned: 0
+  SheetImages:
+  - {fileID: 311867769}
 --- !u!82 &6568273110181875433
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1322,6 +1329,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Highlighted: 0
   isHightlighting: 0
+  HighlightedChildren: []
 --- !u!1 &3849058559449168958
 GameObject:
   m_ObjectHideFlags: 0
@@ -1419,6 +1427,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Highlighted: 0
   isHightlighting: 0
+  HighlightedChildren: []
 --- !u!1 &3849058559644163688
 GameObject:
   m_ObjectHideFlags: 0
@@ -1509,6 +1518,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Highlighted: 0
   isHightlighting: 0
+  HighlightedChildren: []
 --- !u!1 &3849058559958257141
 GameObject:
   m_ObjectHideFlags: 0
@@ -1599,6 +1609,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Highlighted: 0
   isHightlighting: 0
+  HighlightedChildren: []
 --- !u!1 &3849058560035323657
 GameObject:
   m_ObjectHideFlags: 0
@@ -1791,6 +1802,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Highlighted: 0
   isHightlighting: 0
+  HighlightedChildren: []
 --- !u!1 &4012779512842365530
 GameObject:
   m_ObjectHideFlags: 0
@@ -1882,6 +1894,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Highlighted: 0
   isHightlighting: 0
+  HighlightedChildren: []
 --- !u!1 &4624450522187767098
 GameObject:
   m_ObjectHideFlags: 0
@@ -1972,6 +1985,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Highlighted: 0
   isHightlighting: 0
+  HighlightedChildren: []
 --- !u!1 &6334077313041585699
 GameObject:
   m_ObjectHideFlags: 0

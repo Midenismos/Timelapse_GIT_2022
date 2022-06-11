@@ -35,6 +35,10 @@ public class PanelTag : MonoBehaviour
             GetComponent<Image>().material = corruptedMaterial;
         }
     }
+    private void Awake()
+    {
+        deleteButton.SetActive(false);
+    }
 
     private void Update()
     {
@@ -46,9 +50,15 @@ public class PanelTag : MonoBehaviour
             deleteButton.SetActive(false);
             GetComponent<BoxCollider>().enabled = false;
             if (GetComponent<DragObjects>().EntrySlot == null)
+            {
+                gameObject.transform.parent = null;
+                GameObject.Find("TI").GetComponent<InterfaceAnimManager>().UpdateAnimClips();
                 Destroy(gameObject);
-
+                GameObject.Find("TI").GetComponent<InterfaceAnimManager>().UpdateAnimClips();
+            }
         }
+        if (GameObject.Find("TutorialManager").GetComponent<Tutorial>().activateTuto && GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex >= 30 && ImageTag != "written")
+            deleteButton.SetActive(true);
     }
 
     public void DeletePanelImage()

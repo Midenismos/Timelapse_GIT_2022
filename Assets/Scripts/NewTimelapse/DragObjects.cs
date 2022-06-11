@@ -22,6 +22,7 @@ public class DragObjects : MonoBehaviour
     public bool isTutoTI1 = false;
     public bool isTutoTI2 = false;
     public bool hasBeenTutoScaned = false;
+    public SheetImageScript[] SheetImages;
 
     private void Awake()
     {
@@ -142,7 +143,7 @@ public class DragObjects : MonoBehaviour
                 {
                     if (tag == "Entry" && GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex == 26 && !GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying)
                     {
-                        if (GetComponentInChildren<SheetImageScript>().IsFilled)
+                        if (SheetImages[0].IsFilled)
                         {
                             GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex++;
                             StartCoroutine(GameObject.Find("TutorialManager").GetComponent<Tutorial>().LaunchNextDialogue(4));
@@ -159,10 +160,10 @@ public class DragObjects : MonoBehaviour
                     if (GetComponent<ZoomScript>())
                         GetComponent<ZoomScript>().enabled = true;
 
-                    if (isTutoTI1 && GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex == 14)
+                    if (isTutoTI1)
                     {
                         GetComponent<Highlight>().StopHighlight();
-                        if (!GameObject.Find("PanelBasket").GetComponent<Highlight>().Highlighted)
+                        if (!GameObject.Find("PanelBasket").GetComponent<Highlight>().Highlighted && GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex == 14)
                             GameObject.Find("PanelBasket").GetComponent<Highlight>().BeginHighlight();
                     }
 

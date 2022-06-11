@@ -593,6 +593,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _imageTag: tape
   IsFilled: 0
+  ID: 
+  isGlitched: 0
 --- !u!1 &3849058558170518657
 GameObject:
   m_ObjectHideFlags: 0
@@ -902,6 +904,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _imageTag: cam
   IsFilled: 0
+  ID: 
+  isGlitched: 0
 --- !u!1 &3849058559238222690
 GameObject:
   m_ObjectHideFlags: 0
@@ -1010,6 +1014,7 @@ MonoBehaviour:
   - {fileID: 47911189}
   DeleteButton: {fileID: 5384545077364981587}
   IsTuto: 0
+  Date: 
 --- !u!114 &1259736151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1104,6 +1109,12 @@ MonoBehaviour:
   _axisID: 0
   EntryDispenser: {fileID: 0}
   EntrySlot: {fileID: 0}
+  isTutoTI1: 0
+  isTutoTI2: 0
+  hasBeenTutoScaned: 0
+  SheetImages:
+  - {fileID: 636939503}
+  - {fileID: 47911189}
 --- !u!82 &6568273110181875433
 AudioSource:
   m_ObjectHideFlags: 0

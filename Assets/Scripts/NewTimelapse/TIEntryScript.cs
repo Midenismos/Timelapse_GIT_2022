@@ -29,6 +29,7 @@ public class TIEntryScript : MonoBehaviour
 
     private void Awake()
     {
+        DeleteButton.SetActive(false);
         _openSound = Resources.Load("Sound/Snd_Investigation/Snd_Open") as AudioClip;
         _closeSound = Resources.Load("Sound/Snd_Investigation/Snd_Close") as AudioClip;
         _clickSound = Resources.Load("Sound/MMSequencingClick") as AudioClip;
@@ -114,5 +115,8 @@ public class TIEntryScript : MonoBehaviour
             DeleteButton.SetActive(false);
             GetComponent<BoxCollider>().enabled = false;
         }
+        if(GameObject.Find("TutorialManager").GetComponent<Tutorial>().activateTuto && GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex >= 30 && !IsTuto)
+            DeleteButton.SetActive(true);
+
     }
 }

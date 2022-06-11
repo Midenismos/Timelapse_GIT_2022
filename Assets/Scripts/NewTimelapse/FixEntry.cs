@@ -15,6 +15,8 @@ public class FixEntry : MonoBehaviour
             other.GetComponent<DragObjects>().OnMouseDown();
             if (GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex == 23)
             {
+                if (GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying)
+                    GameObject.Find("TutorialManager").GetComponent<Tutorial>().DialogueFinished();
                 GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex++;
                 StartCoroutine(GameObject.Find("TutorialManager").GetComponent<Tutorial>().LaunchNextDialogue(4));
             }

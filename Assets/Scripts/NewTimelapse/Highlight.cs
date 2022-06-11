@@ -110,7 +110,6 @@ public class Highlight : MonoBehaviour
     public void BeginHighlight()
     {
         Highlighted = true;
-        print(baseColor);
     }
 
     public void BeginHighlightChildren()
@@ -130,10 +129,15 @@ public class Highlight : MonoBehaviour
 
     public void StopHighlightChildren()
     {
-        foreach (Highlight Object in HighlightedChildren)
+        HighlightedChildren = GetComponentsInChildren<Highlight>();
+        if (HighlightedChildren.Length != 0)
         {
-            Object.StopHighlight();
+            foreach (Highlight Object in HighlightedChildren)
+            {
+                Object.StopHighlight();
+            }
+            HighlightedChildren = null;
         }
-        HighlightedChildren = null;
+
     }
 }

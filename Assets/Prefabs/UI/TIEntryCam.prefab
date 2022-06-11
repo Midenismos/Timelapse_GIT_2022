@@ -1006,6 +1006,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _imageTag: cam
   IsFilled: 0
+  ID: 
+  isGlitched: 0
 --- !u!1 &3849058559238222690
 GameObject:
   m_ObjectHideFlags: 0
@@ -1113,6 +1115,7 @@ MonoBehaviour:
   - {fileID: 636939503}
   DeleteButton: {fileID: 1991817471503057136}
   IsTuto: 0
+  Date: 
 --- !u!114 &1259736151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1207,6 +1210,11 @@ MonoBehaviour:
   _axisID: 0
   EntryDispenser: {fileID: 0}
   EntrySlot: {fileID: 0}
+  isTutoTI1: 0
+  isTutoTI2: 0
+  hasBeenTutoScaned: 0
+  SheetImages:
+  - {fileID: 636939503}
 --- !u!82 &6568273110181875433
 AudioSource:
   m_ObjectHideFlags: 0

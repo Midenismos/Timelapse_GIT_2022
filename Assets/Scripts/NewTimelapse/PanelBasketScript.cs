@@ -98,6 +98,8 @@ public class PanelBasketScript : MonoBehaviour
 
                     if(other.name == "EcritJournalDeBord (1)" && GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex == 14)
                     {
+                        if (GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying)
+                            GameObject.Find("TutorialManager").GetComponent<Tutorial>().DialogueFinished();
                         GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex++;
                         StartCoroutine(GameObject.Find("TutorialManager").GetComponent<Tutorial>().LaunchNextDialogue(2));
                     }
