@@ -6,8 +6,11 @@ using System;
 
 public enum SpeedType
 {
-    SLOW,
+    BACKWARDFAST,
+    BACKWARDNORMAL,
+    BACKWARDSLOW,
     NORMAL,
+    SLOW,
     FAST
 }
 public enum NebuleuseType
@@ -87,8 +90,17 @@ public class NewLoopManager : MonoBehaviour
 
         switch (Speed)
         {
-            case (SpeedType.SLOW):
+            case (SpeedType.BACKWARDFAST):
                 Multiplier = -4f;
+                break;
+            case (SpeedType.BACKWARDNORMAL):
+                Multiplier = -1f;
+                break;
+            case (SpeedType.BACKWARDSLOW):
+                Multiplier = -0.5f;
+                break;
+            case (SpeedType.SLOW):
+                Multiplier = 0.5f;
                 break;
             case (SpeedType.NORMAL):
                 Multiplier = 1f;

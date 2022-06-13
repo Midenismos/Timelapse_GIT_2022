@@ -67,9 +67,15 @@ public class LeverScript : MonoBehaviour
             //Change la vitesse du vaisseau en fonction du slider.
         if (_slider.gameObject.activeInHierarchy)
         {
-            if (_slider.value >= 0.5f && _slider.value < 0.75f)
+            if (_slider.value >= 1.3f && _slider.value < 1.5f)
                 GameObject.Find("LoopManager").GetComponent<NewLoopManager>().Speed = SpeedType.SLOW;
-            else if (_slider.value > 1.5f && _slider.value <= 2)
+            else if(_slider.value >= 1f && _slider.value < 1.3f)
+                GameObject.Find("LoopManager").GetComponent<NewLoopManager>().Speed = SpeedType.BACKWARDSLOW;
+            else if(_slider.value >= 0.75f && _slider.value < 1f)
+                GameObject.Find("LoopManager").GetComponent<NewLoopManager>().Speed = SpeedType.BACKWARDNORMAL;
+            else if(_slider.value < 0.75f)
+                GameObject.Find("LoopManager").GetComponent<NewLoopManager>().Speed = SpeedType.BACKWARDFAST;
+            else if (_slider.value >= 1.75f )
                 GameObject.Find("LoopManager").GetComponent<NewLoopManager>().Speed = SpeedType.FAST;
             else
                 GameObject.Find("LoopManager").GetComponent<NewLoopManager>().Speed = SpeedType.NORMAL;

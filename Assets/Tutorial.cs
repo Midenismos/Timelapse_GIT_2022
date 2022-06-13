@@ -45,46 +45,26 @@ public class Tutorial : MonoBehaviour
 
     private void Update()
     {
-        if(dialogueIndex == 0 && IsElevatorFinished)
+        if(activateTuto)
         {
-            if (GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying)
-                DialogueFinished();
-            dialogueIndex++;
-            if (dialogueIndex < dialogues.Length)
+            if (dialogueIndex == 0 && IsElevatorFinished)
             {
-                StartCoroutine(LaunchNextDialogue(delays[dialogueIndex]));
+                if (GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying)
+                    DialogueFinished();
+                dialogueIndex++;
+                if (dialogueIndex < dialogues.Length)
+                {
+                    StartCoroutine(LaunchNextDialogue(delays[dialogueIndex]));
+                }
             }
-        }
-        if(player.IDCurrentAxis == 4 && dialogueIndex >= 30 && !hasSeenVaultOnce && !GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying)
-        {
-            GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().LaunchDialogue(GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().RandomAntiCasierFirstDialogue);
-            hasSeenVaultOnce = true;
-        }
+            if (player.IDCurrentAxis == 4 && dialogueIndex >= 30 && !hasSeenVaultOnce && !GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying)
+            {
+                GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().LaunchDialogue(GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().RandomAntiCasierFirstDialogue);
+                hasSeenVaultOnce = true;
+            }
 
-        // La plupart des triggers pour continuer le tuto
-        if (player.IDCurrentAxis == 0 && dialogueIndex == 1)
-        {
-            if (GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying)
-                DialogueFinished();
-            dialogueIndex++;
-            if (dialogueIndex < dialogues.Length)
-            {
-                StartCoroutine(LaunchNextDialogue(delays[dialogueIndex]));
-            }
-        }
-        else if (player.IDCurrentAxis == 5 && dialogueIndex == 3)
-        {
-            if (GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying)
-                DialogueFinished();
-            dialogueIndex++;
-            if (dialogueIndex < dialogues.Length)
-            {
-                StartCoroutine(LaunchNextDialogue(delays[dialogueIndex]));
-            }
-        }
-        else if (dialogueIndex == 5)
-        {
-            if(SliderButtons.All(button => button.isSeenInTuto == true))
+            // La plupart des triggers pour continuer le tuto
+            if (player.IDCurrentAxis == 0 && dialogueIndex == 1)
             {
                 if (GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying)
                     DialogueFinished();
@@ -94,22 +74,7 @@ public class Tutorial : MonoBehaviour
                     StartCoroutine(LaunchNextDialogue(delays[dialogueIndex]));
                 }
             }
-        }
-        else if (player.IDCurrentAxis == 1 && dialogueIndex == 7)
-        {
-            if (GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying)
-                DialogueFinished();
-            foreach (CamButton button in SliderButtons)
-                button.isSeenInTuto = false;
-            dialogueIndex++;
-            if (dialogueIndex < dialogues.Length)
-            {
-                StartCoroutine(LaunchNextDialogue(delays[dialogueIndex]));
-            }
-        }
-        else if (dialogueIndex == 8)
-        {
-            if (SliderButtons.All(button => button.isSeenInTuto == true))
+            else if (player.IDCurrentAxis == 5 && dialogueIndex == 3)
             {
                 if (GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying)
                     DialogueFinished();
@@ -119,25 +84,45 @@ public class Tutorial : MonoBehaviour
                     StartCoroutine(LaunchNextDialogue(delays[dialogueIndex]));
                 }
             }
-        }
-        else if (player.IDCurrentAxis == 0 && dialogueIndex == 10)
-        {
-            if (GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying)
-                DialogueFinished();
-            dialogueIndex++;
-            if (dialogueIndex < dialogues.Length)
+            else if (dialogueIndex == 5)
             {
-                StartCoroutine(LaunchNextDialogue(delays[dialogueIndex]));
+                if (SliderButtons.All(button => button.isSeenInTuto == true))
+                {
+                    if (GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying)
+                        DialogueFinished();
+                    dialogueIndex++;
+                    if (dialogueIndex < dialogues.Length)
+                    {
+                        StartCoroutine(LaunchNextDialogue(delays[dialogueIndex]));
+                    }
+                }
             }
-        }
-        else if (player.IDCurrentAxis == 0 && dialogueIndex == 14)
-        {
-            player.QFalse();
-            player.DFalse();
-        }
-        else if (dialogueIndex == 16)
-        {
-            if (docsEcritsToScan.All(doc => doc.hasBeenTutoScaned == true))
+            else if (player.IDCurrentAxis == 1 && dialogueIndex == 7)
+            {
+                if (GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying)
+                    DialogueFinished();
+                foreach (CamButton button in SliderButtons)
+                    button.isSeenInTuto = false;
+                dialogueIndex++;
+                if (dialogueIndex < dialogues.Length)
+                {
+                    StartCoroutine(LaunchNextDialogue(delays[dialogueIndex]));
+                }
+            }
+            else if (dialogueIndex == 8)
+            {
+                if (SliderButtons.All(button => button.isSeenInTuto == true))
+                {
+                    if (GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying)
+                        DialogueFinished();
+                    dialogueIndex++;
+                    if (dialogueIndex < dialogues.Length)
+                    {
+                        StartCoroutine(LaunchNextDialogue(delays[dialogueIndex]));
+                    }
+                }
+            }
+            else if (player.IDCurrentAxis == 0 && dialogueIndex == 10)
             {
                 if (GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying)
                     DialogueFinished();
@@ -147,36 +132,55 @@ public class Tutorial : MonoBehaviour
                     StartCoroutine(LaunchNextDialogue(delays[dialogueIndex]));
                 }
             }
-        }
-        else if (player.IsInTI && dialogueIndex == 17)
-        {
-            if (GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying)
-                DialogueFinished();
-            dialogueIndex++;
-            if (dialogueIndex < dialogues.Length)
+            else if (player.IDCurrentAxis == 0 && dialogueIndex == 14)
             {
-                StartCoroutine(LaunchNextDialogue(delays[dialogueIndex]));
+                player.QFalse();
+                player.DFalse();
             }
-        }
+            else if (dialogueIndex == 16)
+            {
+                if (docsEcritsToScan.All(doc => doc.hasBeenTutoScaned == true))
+                {
+                    if (GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying)
+                        DialogueFinished();
+                    dialogueIndex++;
+                    if (dialogueIndex < dialogues.Length)
+                    {
+                        StartCoroutine(LaunchNextDialogue(delays[dialogueIndex]));
+                    }
+                }
+            }
+            else if (player.IsInTI && dialogueIndex == 17)
+            {
+                if (GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying)
+                    DialogueFinished();
+                dialogueIndex++;
+                if (dialogueIndex < dialogues.Length)
+                {
+                    StartCoroutine(LaunchNextDialogue(delays[dialogueIndex]));
+                }
+            }
 
-        else if (player.IDCurrentAxis == 2 && dialogueIndex == 32 && !GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying && Dialogue32Fini)
-        {
-            DialogueFinished();
-            dialogueIndex++;
-            if (dialogueIndex < dialogues.Length)
+            else if (player.IDCurrentAxis == 2 && dialogueIndex == 32 && !GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying && Dialogue32Fini)
             {
-                StartCoroutine(LaunchNextDialogue(delays[dialogueIndex]));
+                DialogueFinished();
+                dialogueIndex++;
+                if (dialogueIndex < dialogues.Length)
+                {
+                    StartCoroutine(LaunchNextDialogue(delays[dialogueIndex]));
+                }
+            }
+            else if (player.IDCurrentAxis == 3 && dialogueIndex == 34 && !GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying && Dialogue34Fini)
+            {
+                DialogueFinished();
+                dialogueIndex++;
+                if (dialogueIndex < dialogues.Length)
+                {
+                    StartCoroutine(LaunchNextDialogue(delays[dialogueIndex]));
+                }
             }
         }
-        else if (player.IDCurrentAxis == 3 && dialogueIndex == 34 && !GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying && Dialogue34Fini)
-        {
-            DialogueFinished();
-            dialogueIndex++;
-            if (dialogueIndex < dialogues.Length)
-            {
-                StartCoroutine(LaunchNextDialogue(delays[dialogueIndex]));
-            }
-        }
+        
 
     }
 
@@ -199,6 +203,7 @@ public class Tutorial : MonoBehaviour
 
     public IEnumerator LaunchNextDialogue(float delay)
     {
+        print("hey");
         yield return new WaitForSeconds(delay);
         while(GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying)
         {

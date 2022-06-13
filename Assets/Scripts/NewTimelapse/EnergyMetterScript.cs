@@ -133,7 +133,7 @@ public class EnergyMetterScript : MonoBehaviour
         }
 
         //Change la quantité d'énergie consommée en fonctionne de la vitesse.
-        if (GameObject.Find("LoopManager").GetComponent<NewLoopManager>().Speed == SpeedType.FAST)
+        if (GameObject.Find("LoopManager").GetComponent<NewLoopManager>().Speed == SpeedType.FAST || GameObject.Find("LoopManager").GetComponent<NewLoopManager>().Speed == SpeedType.BACKWARDFAST)
             _decreaseValueWithSpeed = 0.5f;
         else
             _decreaseValueWithSpeed = 0.2f;
