@@ -203,7 +203,6 @@ public class Tutorial : MonoBehaviour
 
     public IEnumerator LaunchNextDialogue(float delay)
     {
-        print("hey");
         yield return new WaitForSeconds(delay);
         while(GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying)
         {

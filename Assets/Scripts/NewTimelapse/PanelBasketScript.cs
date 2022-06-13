@@ -24,14 +24,17 @@ public class PanelBasketScript : MonoBehaviour
 
     private Color _colorA;
     private Color _colorB;
+    public bool IsActivated = false;
 
     private void Awake()
     {
         _mat = GetComponent<MeshRenderer>().material;
+        if (!GameObject.Find("TutorialManager").GetComponent<Tutorial>().activateTuto)
+            IsActivated = true;
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(other.GetComponent<DragObjects>())
+        if(other.GetComponent<DragObjects>() && IsActivated)
         {
             if (other.GetComponent<DragObjects>().IsDragged)
             {
@@ -174,6 +177,11 @@ public class PanelBasketScript : MonoBehaviour
         }
 
 
+    }
+
+    public void ActivatePanelBasket()
+    {
+        IsActivated = true;
     }
 
 }

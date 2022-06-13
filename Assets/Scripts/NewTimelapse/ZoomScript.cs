@@ -11,6 +11,9 @@ public class ZoomScript : MonoBehaviour
     public Vector3 _originalPosition;
     public Quaternion _originalRotation;
 
+    public Vector3 _fixedPosition;
+    public Quaternion _fixedRotation;
+
     public float _zoomLerp = 0;
     public float _zoomCountdown = 1;
     public float _zoomSpeed = 0.2f;
@@ -42,6 +45,7 @@ public class ZoomScript : MonoBehaviour
 
     public bool TutoBriefing = false;
     public bool TutoCasette = false;
+    public bool _isFixedButDragable = false;
 
 
     private void Awake()
@@ -65,6 +69,11 @@ public class ZoomScript : MonoBehaviour
         {
             _originalPosition = transform.position;
             _originalRotation = transform.rotation;
+        }
+        if(_isFixedButDragable)
+        {
+            _fixedPosition = transform.position;
+            _fixedRotation = transform.rotation;
         }
     }
 
@@ -103,7 +112,7 @@ public class ZoomScript : MonoBehaviour
                     if (GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex == 6 && !GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying)
                     {
                         GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex++;
-                        StartCoroutine(GameObject.Find("TutorialManager").GetComponent<Tutorial>().LaunchNextDialogue(4));
+                        StartCoroutine(GameObject.Find("TutorialManager").GetComponent<Tutorial>().LaunchNextDialogue(3));
                     }
                     posA = _originalPosition;
                     posB = ZoomPos.transform.position;
@@ -294,8 +303,9 @@ public class ZoomScript : MonoBehaviour
         {
             if(AxisScript.IDCurrentAxis == 0 && !currentItem.IsFixed)
             {
+                currentItem.posB.x = Mathf.Clamp(currentItem.posB.x, -35.5f, -32f);
                 currentItem.posB.y = -29.5f;
-                currentItem.posB.z = Mathf.Clamp(currentItem.posB.z, -55, Mathf.Infinity);
+                currentItem.posB.z = Mathf.Clamp(currentItem.posB.z, -56.5f, -55.5f);
             }
             AxisScript.PutConsoleUp();
         }
@@ -327,5 +337,13 @@ public class ZoomScript : MonoBehaviour
     {
         if (_interactFeedBack && GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick)
             _interactFeedBack.enabled = true;
+    }
+
+    public void PutBackFixedWrittenDoc()
+    {
+        transform.position = _fixedPosition;
+        transform.rotation = _fixedRotation;
+        GetComponent<Rigidbody>().isKinematic = true;
+        GetComponent<DragObjects>().IsDragged = false;
     }
 }

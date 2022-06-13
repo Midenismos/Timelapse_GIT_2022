@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -23,6 +24,8 @@ public class DragObjects : MonoBehaviour
     public bool isTutoTI2 = false;
     public bool hasBeenTutoScaned = false;
     public SheetImageScript[] SheetImages;
+    public bool isFixable = false;
+
 
     private void Awake()
     {
@@ -52,8 +55,10 @@ public class DragObjects : MonoBehaviour
     }
     public void OnMouseDown()
     {
-        if(GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick)
+        if (GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick)
         {
+            isFixable = false;
+            StartCoroutine(FixableCooldown());
             if (tag == "PanelImage")
                 GetComponent<AudioSource>().Play();
             if (tag == "Entry")
@@ -114,6 +119,11 @@ public class DragObjects : MonoBehaviour
 
     }
 
+    private void StartCoroutine(IEnumerable enumerable)
+    {
+        throw new NotImplementedException();
+    }
+
     public Vector3 GetMouseWorldPos()
     {
         Vector3 mousePoint = Input.mousePosition;
@@ -146,7 +156,7 @@ public class DragObjects : MonoBehaviour
                         if (SheetImages[0].IsFilled)
                         {
                             GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex++;
-                            StartCoroutine(GameObject.Find("TutorialManager").GetComponent<Tutorial>().LaunchNextDialogue(4));
+                            StartCoroutine(GameObject.Find("TutorialManager").GetComponent<Tutorial>().LaunchNextDialogue(3));
                         }
                     }
 
@@ -220,6 +230,7 @@ public class DragObjects : MonoBehaviour
                 if (IsDragable)
                     Destroy(this.gameObject);
             }
+            isFixable = false;
         }
     }
 
@@ -288,4 +299,11 @@ public class DragObjects : MonoBehaviour
         IsDragable = true;
         
     }
+    IEnumerator FixableCooldown()
+    {
+        yield return new WaitForSeconds(0.5f);
+        print("hey");
+        isFixable = true;
+    }
+
 }

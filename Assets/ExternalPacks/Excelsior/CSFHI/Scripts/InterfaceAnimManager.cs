@@ -73,7 +73,6 @@ public class InterfaceAnimManager : MonoBehaviour {
 
     void OnTransformChildrenChanged()
     {
-        print("hey");
         UpdateAnimClips();
 
     }
