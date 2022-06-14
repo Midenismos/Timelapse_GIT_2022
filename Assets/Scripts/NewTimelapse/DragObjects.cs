@@ -45,7 +45,7 @@ public class DragObjects : MonoBehaviour
 
         }
     }
-    public void StartDrag() { StartCoroutine("SyntheticDrag"); }
+    public void StartDrag() { StartCoroutine(SyntheticDrag()); }
     private void Start()
     {
         if (Input.GetMouseButtonDown(0) && tag == "Cam")
@@ -302,7 +302,6 @@ public class DragObjects : MonoBehaviour
     IEnumerator FixableCooldown()
     {
         yield return new WaitForSeconds(0.5f);
-        print("hey");
         isFixable = true;
     }
 

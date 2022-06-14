@@ -316,15 +316,31 @@ public class ZoomScript : MonoBehaviour
             currentItem.posB.z = Mathf.Clamp(currentItem.posB.z, -65, Mathf.Infinity);
         }
 
-        currentItem.posA = currentItem.ZoomPos.transform.position;
-        currentItem.rotB = currentItem._originalRotation;
-        currentItem.rotA = currentItem.ZoomPos.transform.rotation;
-        currentItem._zoomCountdown = 1;
-        currentItem._zoomLerp = 0;
-        currentItem.ZoomPos.GetComponent<ZoomPoint>().IsEmpty = true;
-        currentItem._isLerping = true;
-        AxisScript.HasItem = false;
-        AxisScript.CurrentHoldItem = null;            
+        if(!currentItem.isCamera)
+        {
+            currentItem.posA = currentItem.ZoomPos.transform.position;
+            currentItem.rotB = currentItem._originalRotation;
+            currentItem.rotA = currentItem.ZoomPos.transform.rotation;
+            currentItem._zoomCountdown = 1;
+            currentItem._zoomLerp = 0;
+            currentItem.ZoomPos.GetComponent<ZoomPoint>().IsEmpty = true;
+            currentItem._isLerping = true;
+            AxisScript.HasItem = false;
+            AxisScript.CurrentHoldItem = null;
+        }
+        else if (!AxisScript.MouseInConsole)
+        {
+            currentItem.posA = currentItem.ZoomPos.transform.position;
+            currentItem.rotB = currentItem._originalRotation;
+            currentItem.rotA = currentItem.ZoomPos.transform.rotation;
+            currentItem._zoomCountdown = 1;
+            currentItem._zoomLerp = 0;
+            currentItem.ZoomPos.GetComponent<ZoomPoint>().IsEmpty = true;
+            currentItem._isLerping = true;
+            AxisScript.HasItem = false;
+            AxisScript.CurrentHoldItem = null;
+        }
+        
     }
 
 

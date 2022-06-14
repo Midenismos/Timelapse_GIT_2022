@@ -267,6 +267,14 @@ public class ConsoleManager : MonoBehaviour
         ChangeTime();
     }
 
+    private void OnMouseEnter()
+    {
+        GameObject.Find("Player").GetComponent<PlayerAxisScript>().MouseInConsole = true;
+    }
+    private void OnMouseExit()
+    {
+        GameObject.Find("Player").GetComponent<PlayerAxisScript>().MouseInConsole = false;
+    }
     public void OnOff()
     {
         /*if (_camOnOffButton.IsActivated == false)

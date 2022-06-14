@@ -41,6 +41,7 @@ public class PlayerAxisScript : MonoBehaviour
     public bool DEnabled = false;
     public bool ZEnabled = false;
     public bool SEnabled = false;
+    public bool MouseInConsole = false;
 
     // Start is called before the first frame update
     void Start()

@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DialogueName: "Pr\xE9sentationBouttonsVid\xE9o 2"
   DialogueTexts:
-  - "Vous pouvez \xE9galement zoomer sur l\u2019un des \xE9crans si vous jugez que
-    votre vue est dysfonctionnelle."
+  - "Vous pouvez \xE9galement zoomer sur l\u2019un des \xE9crans, en cliquant dessus,
+    si vous jugez que votre vue est dysfonctionnelle."
   DialogueSounds:
   - {fileID: 8300000, guid: 223393decb019fa468f8d7e379f483b6, type: 3}
   IsFolowedByAnotherDialogue: 0
+  notInTutorialDialogue: 0
