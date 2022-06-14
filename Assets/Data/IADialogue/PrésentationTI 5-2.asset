@@ -14,11 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DialogueName: "Pr\xE9sentationTI 5"
   DialogueTexts:
-  - "Vous pouvez y observer les quatres documents pr\xE9c\xE9demment transmis par
-    vos soins dans ma B.D.V."
+  - "Vous pouvez y observer les trois documents pr\xE9c\xE9demment transmis par vos
+    soins dans ma B.D.V."
   - "Cliquez sur le document Journal de bord de Helena partie 1 et faites le glissez
     jusqu\u2019\xE0 l\u2019encart document lui \xE9tant r\xE9serv\xE9."
   DialogueSounds:
   - {fileID: 8300000, guid: dda7be50413c1c84b8e1b90ef5727aab, type: 3}
   - {fileID: 8300000, guid: a0ee4ab7cf5de474585e1ecadda902e5, type: 3}
   IsFolowedByAnotherDialogue: 0
+  notInTutorialDialogue: 0
