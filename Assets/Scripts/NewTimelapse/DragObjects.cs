@@ -69,6 +69,8 @@ public class DragObjects : MonoBehaviour
                     EntryDispenser = null;
                     transform.SetParent(GameObject.Find("TI").transform, true);
                 }
+                if (GetComponent<Highlight>())
+                    GetComponent<Highlight>().StopHighlightChildren();
             }
             if (tag == "PanelImage" || tag == "Entry" || GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == _axisID)
             {

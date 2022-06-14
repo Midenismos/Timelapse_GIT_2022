@@ -17,10 +17,9 @@ MonoBehaviour:
   - "Faites de m\xEAme pour les documents suivants :"
   - Dernier rapport du vaisseau
   - "Note de s\xE9curit\xE9 automatique"
-  - Briefing de mission
   DialogueSounds:
   - {fileID: 8300000, guid: b56c889e294a6c9479c51ee23e1fad45, type: 3}
   - {fileID: 8300000, guid: 5db4ab0f1a9b0d54b9b4827aa605628d, type: 3}
   - {fileID: 8300000, guid: 41f8e664a0128c14fa08a121f0471ffd, type: 3}
-  - {fileID: 8300000, guid: ca73f05c8562de8468718f81592a39ba, type: 3}
   IsFolowedByAnotherDialogue: 0
+  notInTutorialDialogue: 0
