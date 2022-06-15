@@ -21,7 +21,7 @@ public class IAVoiceManager : MonoBehaviour
 
     [SerializeField] int i = 0;
 
-    private bool dialogueHappening = false;
+    public bool DialogueHappening = false;
 
     private AudioSource source;
 
@@ -32,6 +32,7 @@ public class IAVoiceManager : MonoBehaviour
 
     public bool currentDialogueNotInTuto = false;
 
+    public bool IsRepeating = false;
     private void Awake()
     {
 
@@ -43,7 +44,7 @@ public class IAVoiceManager : MonoBehaviour
     {
         DialogueTexts = Array.Find(DialogueList, Dialogue => Dialogue.DialogueName == dialogueName).DialogueTexts;
         DialogueSounds = Array.Find(DialogueList, Dialogue => Dialogue.DialogueName == dialogueName).DialogueSounds;
-        dialogueHappening = true;
+        DialogueHappening = true;
         i = 0;
         Play();
     }
@@ -52,7 +53,7 @@ public class IAVoiceManager : MonoBehaviour
     {
         DialogueTexts = dialogue.DialogueTexts;
         DialogueSounds = dialogue.DialogueSounds;
-        dialogueHappening = true;
+        DialogueHappening = true;
         currentDialogueNotInTuto = dialogue.notInTutorialDialogue;
         i = 0;
         Play();
@@ -63,7 +64,7 @@ public class IAVoiceManager : MonoBehaviour
         int iCasier = UnityEngine.Random.Range(0,6);
         DialogueTexts = RandomAntiCasierDialogues[iCasier].DialogueTexts;
         DialogueSounds = RandomAntiCasierDialogues[iCasier].DialogueSounds;
-        dialogueHappening = true;
+        DialogueHappening = true;
         i = 0;
         Play();
     }
@@ -72,7 +73,7 @@ public class IAVoiceManager : MonoBehaviour
         //if (Input.GetKey(KeyCode.A))
             //LaunchDialogue("ComplétionHorsTuto11");
 
-        if(dialogueHappening)
+        if(DialogueHappening)
         {
             if (!source.isPlaying && !_inCooldown)
                 StartCoroutine(Cooldown());
@@ -94,11 +95,15 @@ public class IAVoiceManager : MonoBehaviour
         {
             DialogueTexts = null;
             DialogueSounds = null;
-            dialogueHappening = false;
+            DialogueHappening = false;
             txt.text = "";
 
-            if(!currentDialogueNotInTuto)
+            if(!currentDialogueNotInTuto && !IsRepeating)
+            {
                 OnDialogueFinished?.Invoke();
+            }
+            IsRepeating = false;
+
         }
         else if(i != 0)
         {

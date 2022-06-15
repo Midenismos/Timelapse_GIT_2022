@@ -44,6 +44,8 @@ public class DragObjects : MonoBehaviour
             StartCoroutine(EntryCoolDown());
 
         }
+        if (GetComponent<TapeScript>() && !GameObject.Find("TutorialManager").GetComponent<Tutorial>().activateTuto)
+            ActivateRaycast("Tape");
     }
     public void StartDrag() { StartCoroutine(SyntheticDrag()); }
     private void Start()
@@ -305,6 +307,12 @@ public class DragObjects : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         isFixable = true;
+    }
+
+    public void ActivateRaycast(string layer)
+    {
+        int LayerIgnoreRaycast = LayerMask.NameToLayer(layer);
+        gameObject.layer = LayerIgnoreRaycast;
     }
 
 }

@@ -23,6 +23,8 @@ public class Tutorial : MonoBehaviour
     private bool hasSeenVaultOnce = false;
     public bool IsElevatorFinished = false;
 
+    private bool isDelaying = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -179,6 +181,14 @@ public class Tutorial : MonoBehaviour
                     StartCoroutine(LaunchNextDialogue(delays[dialogueIndex]));
                 }
             }
+
+
+            //Fait en sorte que l'IA puisse répéter sa dernière phrase
+            if(Input.GetKeyDown(KeyCode.H) && !voiceManager.DialogueHappening && !isDelaying)
+            {
+                voiceManager.LaunchDialogue(dialogues[dialogueIndex]);
+                voiceManager.IsRepeating = true;
+            }
         }
         
 
@@ -203,11 +213,13 @@ public class Tutorial : MonoBehaviour
 
     public IEnumerator LaunchNextDialogue(float delay)
     {
+        isDelaying = true;
         yield return new WaitForSeconds(delay);
-        while(GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying)
+        while(voiceManager.DialogueHappening)
         {
             yield return new WaitForSeconds(0.5f);
         }
+        isDelaying = false;
         voiceManager.LaunchDialogue(dialogues[dialogueIndex]);
         if(tutorialActions[dialogueIndex])
         {
