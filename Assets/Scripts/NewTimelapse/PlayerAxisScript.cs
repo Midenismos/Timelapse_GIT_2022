@@ -9,15 +9,18 @@ public class PlayerAxisScript : MonoBehaviour
     [SerializeField] private Vector3[] _camRotation;
     [SerializeField] private Vector3[] _camPosition;
     [SerializeField] private Vector3[] _consolePosition;
+    [SerializeField] private Vector3[] _panelBasketPosition;
     private Vector3 _currentAxisRotation;
     private Vector3 _currentCamRotation;
     private Vector3 _currentCamPosition;
     private Vector3 _currentConsolePosition;
+    private Vector3 _currentPanelBasketPosition;
 
     private Vector3 _targetRotation;
     private Vector3 _targetPosition;
     private Vector3 _targetCamRotation;
     private Vector3 _targetConsolePosition;
+    private Vector3 _targetPanelBasketPosition;
 
 
     public int IDCurrentAxis = 0;
@@ -54,6 +57,7 @@ public class PlayerAxisScript : MonoBehaviour
         _currentCamRotation = _camRotation[IDCurrentAxis];
         _currentCamPosition = _camPosition[IDCurrentAxis];
         _currentConsolePosition = _consolePosition[IDCurrentAxis];
+        _currentPanelBasketPosition = _panelBasketPosition[1];
     }
 
     // Update is called once per frame
@@ -79,6 +83,10 @@ public class PlayerAxisScript : MonoBehaviour
                     _isLerping = true;
                     GetComponent<AudioSource>().pitch = Random.Range(0.8f, 1.2f);
                     GetComponent<AudioSource>().Play();
+                    if (IDCurrentAxis == 3)
+                        _targetPanelBasketPosition = _panelBasketPosition[1];
+                    else
+                        _targetPanelBasketPosition = _panelBasketPosition[0];
                 }
             }
             if (Input.GetKeyDown("q") && QEnabled)
@@ -99,6 +107,12 @@ public class PlayerAxisScript : MonoBehaviour
                     _isLerping = true;
                     GetComponent<AudioSource>().pitch = Random.Range(0.8f, 1.2f);
                     GetComponent<AudioSource>().Play();
+
+                    if (IDCurrentAxis == 3)
+                        _targetPanelBasketPosition = _panelBasketPosition[1];
+                    else
+                        _targetPanelBasketPosition = _panelBasketPosition[0];
+
                 }
             }
             if (Input.GetKeyDown("s") && SEnabled)
@@ -150,6 +164,10 @@ public class PlayerAxisScript : MonoBehaviour
                     _isLerping = true;
                     GetComponent<AudioSource>().pitch = Random.Range(0.8f, 1.2f);
                     GetComponent<AudioSource>().Play();
+                    if (IDCurrentAxis == 3)
+                        _targetPanelBasketPosition = _panelBasketPosition[1];
+                    else
+                        _targetPanelBasketPosition = _panelBasketPosition[0];
                 }
             }
             if (Input.GetKeyDown("q"))
@@ -170,6 +188,10 @@ public class PlayerAxisScript : MonoBehaviour
                     _isLerping = true;
                     GetComponent<AudioSource>().pitch = Random.Range(0.8f, 1.2f);
                     GetComponent<AudioSource>().Play();
+                    if (IDCurrentAxis == 3)
+                        _targetPanelBasketPosition = _panelBasketPosition[1];
+                    else
+                        _targetPanelBasketPosition = _panelBasketPosition[0];
                 }
             }
             if (Input.GetKeyDown("s"))
@@ -213,16 +235,19 @@ public class PlayerAxisScript : MonoBehaviour
                 transform.rotation = Quaternion.Euler(_targetRotation);
                 cam.transform.localPosition = _targetPosition;
                 cam.transform.rotation = Quaternion.Euler(_targetCamRotation);
+                GameObject.Find("PanelBasket").transform.localPosition = _targetPanelBasketPosition;
                 _currentAxisRotation = transform.rotation.eulerAngles;
                 _currentCamRotation = cam.transform.rotation.eulerAngles;
                 _currentCamPosition = cam.transform.localPosition;
                 _currentConsolePosition = console.transform.localPosition;
+                _currentPanelBasketPosition = GameObject.Find("PanelBasket").transform.localPosition;
                 _isLerping = false;
             }
             transform.rotation = Quaternion.Slerp( Quaternion.Euler(_currentAxisRotation), Quaternion.Euler(_targetRotation), _moveLerp);
             cam.transform.localPosition = Vector3.Lerp(_currentCamPosition, _targetPosition, _moveLerp);
             cam.transform.rotation = Quaternion.Slerp(Quaternion.Euler(_currentCamRotation), Quaternion.Euler(_targetCamRotation), _moveLerp);
             console.transform.localPosition = Vector3.Lerp(_currentConsolePosition, _targetConsolePosition, _moveLerp);
+            GameObject.Find("PanelBasket").transform.localPosition = Vector3.Lerp(_currentPanelBasketPosition, _targetPanelBasketPosition, _moveLerp);
             _moveLerp = 1f - _rotationCountdown;
         }
     }
@@ -237,6 +262,10 @@ public class PlayerAxisScript : MonoBehaviour
         _targetPosition = _camPosition[IDCurrentAxis];
         _targetConsolePosition = _consolePosition[IDCurrentAxis];
         _targetCamRotation = _camRotation[IDCurrentAxis];
+        if (IDCurrentAxis == 3)
+            _targetPanelBasketPosition = _panelBasketPosition[1];
+        else
+            _targetPanelBasketPosition = _panelBasketPosition[0];
         _isLerping = true;
     }
 

@@ -311,9 +311,9 @@ public class ZoomScript : MonoBehaviour
         }
         else if (currentItem.gameObject.CompareTag("Tape"))
         {
-            currentItem.posB.x = Mathf.Clamp(currentItem.posB.x, -80, Mathf.Infinity);
+            currentItem.posB.x = Mathf.Clamp(currentItem.posB.x, -27, -24.5f);
             currentItem.posB.y = -30;
-            currentItem.posB.z = Mathf.Clamp(currentItem.posB.z, -65, Mathf.Infinity);
+            currentItem.posB.z = Mathf.Clamp(currentItem.posB.z, -62.5f, -61);
         }
 
         if(!currentItem.isCamera)
