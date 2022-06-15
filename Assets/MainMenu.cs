@@ -25,4 +25,5 @@ public class MainMenu : MonoBehaviour
         audiosource.volume = slider.value;
         TextVolume.text = "Volume " + (audiosource.volume * 100).ToString("00") + "%";
     }
+ 
 }
