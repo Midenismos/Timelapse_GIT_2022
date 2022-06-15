@@ -23,7 +23,7 @@ public class Tutorial : MonoBehaviour
     private bool hasSeenVaultOnce = false;
     public bool IsElevatorFinished = false;
 
-    private bool isDelaying = false;
+    public bool IsDelaying = false;
 
 
     // Start is called before the first frame update
@@ -184,7 +184,7 @@ public class Tutorial : MonoBehaviour
 
 
             //Fait en sorte que l'IA puisse répéter sa dernière phrase
-            if(Input.GetKeyDown(KeyCode.H) && !voiceManager.DialogueHappening && !isDelaying)
+            if(Input.GetKeyDown(KeyCode.H) && !voiceManager.DialogueHappening && !IsDelaying)
             {
                 voiceManager.LaunchDialogue(dialogues[dialogueIndex]);
                 voiceManager.IsRepeating = true;
@@ -213,13 +213,13 @@ public class Tutorial : MonoBehaviour
 
     public IEnumerator LaunchNextDialogue(float delay)
     {
-        isDelaying = true;
+        IsDelaying = true;
         yield return new WaitForSeconds(delay);
         while(voiceManager.DialogueHappening)
         {
             yield return new WaitForSeconds(0.5f);
         }
-        isDelaying = false;
+        IsDelaying = false;
         voiceManager.LaunchDialogue(dialogues[dialogueIndex]);
         if(tutorialActions[dialogueIndex])
         {

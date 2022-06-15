@@ -63,7 +63,10 @@ public class NewLoopManager : MonoBehaviour
                 if (!GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying)
                 {
                     if( GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex > 31 || !GameObject.Find("TutorialManager").GetComponent<Tutorial>().activateTuto)
-                        GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().LaunchDialogue(GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().NebuleuseDialogue);
+                    {
+                        if(!GameObject.Find("TutorialManager").GetComponent<Tutorial>().IsDelaying && !GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().DialogueHappening)
+                            GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().LaunchDialogue(GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().NebuleuseDialogue);
+                    }
 
                 }
 
