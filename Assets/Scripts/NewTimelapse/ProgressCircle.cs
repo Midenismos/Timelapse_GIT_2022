@@ -7,18 +7,46 @@ public class ProgressCircle : MonoBehaviour
 {
     private int _filledEntryNumber = 0;
     [SerializeField] GameObject _circle = null;
+    private OptionData optionData;
+
+    private string maxNumber = "/12";
+
+    private void Awake()
+    {
+        try
+        {
+            optionData = GameObject.Find("OptionsData").GetComponent<OptionData>();
+        }
+        catch
+        {
+            optionData = null;
+        }
+        if (optionData != null)
+        {
+            if (optionData.TutoActivated)
+            {
+                GetComponent<Slider>().maxValue = 15;
+                maxNumber = "/15";
+            }
+            else
+            {
+                GetComponent<Slider>().maxValue = 12;
+                maxNumber = "/12";
+            }
+        }
+        
+
+    }
 
     // Update is called once per frame
     void Update()
     {
-        if (GetComponentInChildren<TMP_Text>().text != _filledEntryNumber.ToString() + "/15")
-            GetComponentInChildren<TMP_Text>().text = _filledEntryNumber.ToString() + "/15";
+        if (GetComponentInChildren<TMP_Text>().text != _filledEntryNumber.ToString() + maxNumber)
+            GetComponentInChildren<TMP_Text>().text = _filledEntryNumber.ToString() + maxNumber;
 
         if (GetComponent<Slider>().value != _filledEntryNumber)
             GetComponent<Slider>().value = _filledEntryNumber;
 
-        //if(_filledEntryNumber == 15)
-        //TODO FAIRE CE QU'IL SE PASSE A LA FIN DU JEU;
     }
 
     public void IncreaseEntryNumber()

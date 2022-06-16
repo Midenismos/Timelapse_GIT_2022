@@ -24,7 +24,32 @@ public class Tutorial : MonoBehaviour
     public bool IsElevatorFinished = false;
 
     public bool IsDelaying = false;
+    private OptionData optionData;
 
+    private void Awake()
+    {
+        try
+        {
+            optionData = GameObject.Find("OptionsData").GetComponent<OptionData>();
+        }
+        catch
+        {
+            optionData = null;
+        }
+        if (optionData != null)
+        {
+            if (optionData.TutoActivated)
+            {
+                activateTuto = true;
+            }
+            else
+            {
+                activateTuto = false;
+            }
+        }
+
+
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -260,7 +285,7 @@ public class Tutorial : MonoBehaviour
         Image[] panelImages = WrittenScreen.GetComponentsInChildren<Image>();
         foreach(Image image in panelImages)
         {
-            if (image.sprite.name == "writtenJournal1")
+            if (image.sprite.name == "Journal de bord 1")
             {
                 image.GetComponent<Highlight>().BeginHighlight();
                 break;
@@ -282,7 +307,7 @@ public class Tutorial : MonoBehaviour
         PanelTag[] panelImages = GameObject.Find("TI").GetComponentsInChildren<PanelTag>();
         foreach (PanelTag image in panelImages)
         {
-            if (image.GetComponent<Image>().sprite.name == "writtenJournal1")
+            if (image.GetComponent<Image>().sprite.name == "Journal de bord 1")
             {
                 image.GetComponent<Highlight>().StopHighlight();
                 break;
@@ -306,7 +331,7 @@ public class Tutorial : MonoBehaviour
         {
             if(image.GetComponent<Image>().sprite != null)
             {
-                if (image.GetComponent<Image>().sprite.name == "writtenJournal1")
+                if (image.GetComponent<Image>().sprite.name == "Journal de bord 1")
                 {
                     image.GetComponentInParent<TIEntryScript>().gameObject.GetComponent<Highlight>().BeginHighlightChildren();
                     break;
@@ -321,7 +346,7 @@ public class Tutorial : MonoBehaviour
         {
             if (image.GetComponent<Image>().sprite != null)
             {
-                if (image.GetComponent<Image>().name == "writtenJournal1")
+                if (image.GetComponent<Image>().name == "Journal de bord 1")
                 {
                     image.gameObject.GetComponent<Highlight>().StopHighlightChildren();
                     break;

@@ -938,8 +938,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -75.10001}
-  m_SizeDelta: {x: 35, y: 30}
+  m_AnchoredPosition: {x: 0, y: -80.9178}
+  m_SizeDelta: {x: 63.2482, y: 52}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3849058558481191901
 CanvasRenderer:
@@ -969,7 +969,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6907306683168a24dbd7e405d15539bd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 55513aae19a4f8444aa9a9ce02d9d080, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1215,6 +1215,7 @@ MonoBehaviour:
   hasBeenTutoScaned: 0
   SheetImages:
   - {fileID: 636939503}
+  isFixable: 0
 --- !u!82 &6568273110181875433
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1598,8 +1599,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -76.1}
-  m_SizeDelta: {x: 65, y: 41.3808}
+  m_AnchoredPosition: {x: 0, y: -80.731}
+  m_SizeDelta: {x: 79.5489, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3849058559958257146
 CanvasRenderer:

@@ -45,6 +45,7 @@ public class ZoomScript : MonoBehaviour
 
     public bool TutoBriefing = false;
     public bool TutoCasette = false;
+    public bool TutoCasetteZoomable = false;
     public bool _isFixedButDragable = false;
 
 
@@ -155,11 +156,24 @@ public class ZoomScript : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (IsZoomable && GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick)
+        if(!TutoCasette)
         {
-            clicked = true;
-            clickStart = Time.time;
+            if (IsZoomable && GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick)
+            {
+                clicked = true;
+                clickStart = Time.time;
+            }
         }
+        else if(TutoCasetteZoomable)
+        {
+            if (IsZoomable && GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick)
+            {
+                print("hey");
+                clicked = true;
+                clickStart = Time.time;
+            }
+        }
+
 
     }
     private void Update()
@@ -293,53 +307,107 @@ public class ZoomScript : MonoBehaviour
             }
         }
         
-        currentItem.posB = currentItem._originalPosition;
-        if (currentItem.GetComponent<AudioSource>() != null)
+        if(!TutoCasette)
         {
-            currentItem.GetComponent<AudioSource>().clip = currentItem.PutDownSound;
-            currentItem.GetComponent<AudioSource>().Play();
-        }
-        if (currentItem.gameObject.CompareTag("Written"))
-        {
-            if(AxisScript.IDCurrentAxis == 0 && !currentItem.IsFixed)
+            currentItem.posB = currentItem._originalPosition;
+            if (currentItem.GetComponent<AudioSource>() != null)
             {
-                currentItem.posB.x = Mathf.Clamp(currentItem.posB.x, -35.5f, -32f);
-                currentItem.posB.y = -29.5f;
-                currentItem.posB.z = Mathf.Clamp(currentItem.posB.z, -56.5f, -55.5f);
+                currentItem.GetComponent<AudioSource>().clip = currentItem.PutDownSound;
+                currentItem.GetComponent<AudioSource>().Play();
             }
-            AxisScript.PutConsoleUp();
+            if (currentItem.gameObject.CompareTag("Written"))
+            {
+                if (AxisScript.IDCurrentAxis == 0 && !currentItem.IsFixed)
+                {
+                    currentItem.posB.x = Mathf.Clamp(currentItem.posB.x, -35.5f, -32f);
+                    currentItem.posB.y = -29.5f;
+                    currentItem.posB.z = Mathf.Clamp(currentItem.posB.z, -56.5f, -55.5f);
+                }
+                AxisScript.PutConsoleUp();
+            }
+            else if (currentItem.gameObject.CompareTag("Tape"))
+            {
+                currentItem.posB.x = Mathf.Clamp(currentItem.posB.x, -27, -24.5f);
+                currentItem.posB.y = -30;
+                currentItem.posB.z = Mathf.Clamp(currentItem.posB.z, -62.5f, -61);
+            }
+
+            if (!currentItem.isCamera)
+            {
+                currentItem.posA = currentItem.ZoomPos.transform.position;
+                currentItem.rotB = currentItem._originalRotation;
+                currentItem.rotA = currentItem.ZoomPos.transform.rotation;
+                currentItem._zoomCountdown = 1;
+                currentItem._zoomLerp = 0;
+                currentItem.ZoomPos.GetComponent<ZoomPoint>().IsEmpty = true;
+                currentItem._isLerping = true;
+                AxisScript.HasItem = false;
+                AxisScript.CurrentHoldItem = null;
+            }
+            else if (!AxisScript.MouseInConsole)
+            {
+                currentItem.posA = currentItem.ZoomPos.transform.position;
+                currentItem.rotB = currentItem._originalRotation;
+                currentItem.rotA = currentItem.ZoomPos.transform.rotation;
+                currentItem._zoomCountdown = 1;
+                currentItem._zoomLerp = 0;
+                currentItem.ZoomPos.GetComponent<ZoomPoint>().IsEmpty = true;
+                currentItem._isLerping = true;
+                AxisScript.HasItem = false;
+                AxisScript.CurrentHoldItem = null;
+            }
         }
-        else if (currentItem.gameObject.CompareTag("Tape"))
+        else if (TutoCasetteZoomable)
         {
-            currentItem.posB.x = Mathf.Clamp(currentItem.posB.x, -27, -24.5f);
-            currentItem.posB.y = -30;
-            currentItem.posB.z = Mathf.Clamp(currentItem.posB.z, -62.5f, -61);
+            currentItem.posB = currentItem._originalPosition;
+            if (currentItem.GetComponent<AudioSource>() != null)
+            {
+                currentItem.GetComponent<AudioSource>().clip = currentItem.PutDownSound;
+                currentItem.GetComponent<AudioSource>().Play();
+            }
+            if (currentItem.gameObject.CompareTag("Written"))
+            {
+                if (AxisScript.IDCurrentAxis == 0 && !currentItem.IsFixed)
+                {
+                    currentItem.posB.x = Mathf.Clamp(currentItem.posB.x, -35.5f, -32f);
+                    currentItem.posB.y = -29.5f;
+                    currentItem.posB.z = Mathf.Clamp(currentItem.posB.z, -56.5f, -55.5f);
+                }
+                AxisScript.PutConsoleUp();
+            }
+            else if (currentItem.gameObject.CompareTag("Tape"))
+            {
+                currentItem.posB.x = Mathf.Clamp(currentItem.posB.x, -27, -24.5f);
+                currentItem.posB.y = -30;
+                currentItem.posB.z = Mathf.Clamp(currentItem.posB.z, -62.5f, -61);
+            }
+
+            if (!currentItem.isCamera)
+            {
+                currentItem.posA = currentItem.ZoomPos.transform.position;
+                currentItem.rotB = currentItem._originalRotation;
+                currentItem.rotA = currentItem.ZoomPos.transform.rotation;
+                currentItem._zoomCountdown = 1;
+                currentItem._zoomLerp = 0;
+                currentItem.ZoomPos.GetComponent<ZoomPoint>().IsEmpty = true;
+                currentItem._isLerping = true;
+                AxisScript.HasItem = false;
+                AxisScript.CurrentHoldItem = null;
+            }
+            else if (!AxisScript.MouseInConsole)
+            {
+                currentItem.posA = currentItem.ZoomPos.transform.position;
+                currentItem.rotB = currentItem._originalRotation;
+                currentItem.rotA = currentItem.ZoomPos.transform.rotation;
+                currentItem._zoomCountdown = 1;
+                currentItem._zoomLerp = 0;
+                currentItem.ZoomPos.GetComponent<ZoomPoint>().IsEmpty = true;
+                currentItem._isLerping = true;
+                AxisScript.HasItem = false;
+                AxisScript.CurrentHoldItem = null;
+            }
         }
 
-        if(!currentItem.isCamera)
-        {
-            currentItem.posA = currentItem.ZoomPos.transform.position;
-            currentItem.rotB = currentItem._originalRotation;
-            currentItem.rotA = currentItem.ZoomPos.transform.rotation;
-            currentItem._zoomCountdown = 1;
-            currentItem._zoomLerp = 0;
-            currentItem.ZoomPos.GetComponent<ZoomPoint>().IsEmpty = true;
-            currentItem._isLerping = true;
-            AxisScript.HasItem = false;
-            AxisScript.CurrentHoldItem = null;
-        }
-        else if (!AxisScript.MouseInConsole)
-        {
-            currentItem.posA = currentItem.ZoomPos.transform.position;
-            currentItem.rotB = currentItem._originalRotation;
-            currentItem.rotA = currentItem.ZoomPos.transform.rotation;
-            currentItem._zoomCountdown = 1;
-            currentItem._zoomLerp = 0;
-            currentItem.ZoomPos.GetComponent<ZoomPoint>().IsEmpty = true;
-            currentItem._isLerping = true;
-            AxisScript.HasItem = false;
-            AxisScript.CurrentHoldItem = null;
-        }
         
     }
 
@@ -361,5 +429,10 @@ public class ZoomScript : MonoBehaviour
         transform.rotation = _fixedRotation;
         GetComponent<Rigidbody>().isKinematic = true;
         GetComponent<DragObjects>().IsDragged = false;
+    }
+
+    public void MakeZoomable()
+    {
+        TutoCasetteZoomable = true;
     }
 }

@@ -45,7 +45,41 @@ public class PlayerAxisScript : MonoBehaviour
     public bool ZEnabled = false;
     public bool SEnabled = false;
     public bool MouseInConsole = false;
+    private OptionData optionData;
 
+    private void Awake()
+    {
+        try
+        {
+            optionData = GameObject.Find("OptionsData").GetComponent<OptionData>();
+        }
+        catch
+        {
+            optionData = null;
+        }
+        if(optionData != null)
+        {
+            if (optionData.TutoActivated)
+            {
+                isInTuto = true;
+                CanClick = false;
+                QEnabled = false;
+                DEnabled = false;
+                ZEnabled = false;
+                SEnabled = false;
+            }
+            else
+            {
+                isInTuto = false;
+                CanClick = true;
+                QEnabled = true;
+                DEnabled = true;
+                ZEnabled = true;
+                SEnabled = true;
+            }
+        }
+
+    }
     // Start is called before the first frame update
     void Start()
     {

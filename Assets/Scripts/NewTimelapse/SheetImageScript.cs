@@ -24,13 +24,13 @@ public class SheetImageScript : MonoBehaviour
                 if( _imageTag == other.GetComponent<PanelTag>().ImageTag && other.GetComponent<DragObjects>().EntrySlot == null)
                 {
                     other.transform.SetParent(this.transform, false);
-                    other.GetComponent<RectTransform>().localScale = new Vector3(4, 4, 4);
+                    other.GetComponent<RectTransform>().localScale = new Vector3(6f, 6f, 6);
                     other.transform.position = this.transform.position;
                     other.GetComponent<DragObjects>().IsDragable = false;
                     StartCoroutine(CheckIfChildren());
                     GameObject.Find("TI").GetComponent<AudioSource>().clip = _entryFilledFeedback;
                     GameObject.Find("TI").GetComponent<AudioSource>().Play();
-                    if (other.GetComponent<Image>().sprite.name == "writtenJournal1" && GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex == 25)
+                    if (other.GetComponent<Image>().sprite.name == "Journal de bord 1" && GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex == 25)
                     {
                         if (GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying)
                             GameObject.Find("TutorialManager").GetComponent<Tutorial>().DialogueFinished();

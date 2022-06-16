@@ -61,17 +61,25 @@ public class OrbitingShipMaquette : MonoBehaviour
 
     private void OnValidate()
     {
-        timeManager = GameObject.Find("LoopManager").GetComponent<NewLoopManager>();
+        try
+        {
+            timeManager = GameObject.Find("LoopManager").GetComponent<NewLoopManager>();
+        }
+        catch
+        {
+            timeManager = null;
+        }
         PositionShip(shipProgress);
         UpdateEllipse();
 
-        for (int i = 0; i <= MiddleValue.Length-1; i++)
-        { 
-            MiddleValue[i] = (timeManager.Nebuleuses[i].end - (timeManager.Nebuleuses[i].end - timeManager.Nebuleuses[i].start) / 2) / timeManager.LoopDuration;
-            PositionNebuleuse(_nebuleuses[i], MiddleValue[i]);
+        if(timeManager)
+        {
+            for (int i = 0; i <= MiddleValue.Length - 1; i++)
+            {
+                MiddleValue[i] = (timeManager.Nebuleuses[i].end - (timeManager.Nebuleuses[i].end - timeManager.Nebuleuses[i].start) / 2) / timeManager.LoopDuration;
+                PositionNebuleuse(_nebuleuses[i], MiddleValue[i]);
+            }
         }
-        
-
     }
 
     public void ChangeShipPosition(float currentLoopTime, float loopDuration)

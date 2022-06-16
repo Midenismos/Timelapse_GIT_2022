@@ -268,6 +268,8 @@ MonoBehaviour:
   isTutoTI1: 0
   isTutoTI2: 0
   hasBeenTutoScaned: 0
+  SheetImages: []
+  isFixable: 0
 --- !u!114 &1321735764834811691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -283,6 +285,7 @@ MonoBehaviour:
   ImageTag: null
   corruptedMaterial: {fileID: 2100000, guid: 69d5047e8e5348642ae11fbfc381d493, type: 2}
   deleteButton: {fileID: 1693247686688234282}
+  ID: 
 --- !u!95 &7443893920544766382
 Animator:
   serializedVersion: 3

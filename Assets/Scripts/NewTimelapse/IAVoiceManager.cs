@@ -33,10 +33,25 @@ public class IAVoiceManager : MonoBehaviour
     public bool currentDialogueNotInTuto = false;
 
     public bool IsRepeating = false;
+    private OptionData optionData;
+
+
     private void Awake()
     {
-
-         source = GetComponent<AudioSource>();
+        try
+        {
+            optionData = GameObject.Find("OptionsData").GetComponent<OptionData>();
+        }
+        catch
+        {
+            optionData = null;
+        }
+        if(optionData)
+        {
+            if (!optionData.IAActivated)
+                GetComponent<AudioSource>().volume = 0;
+        }
+        source = GetComponent<AudioSource>();
         txt = GameObject.Find("IASubtitle").GetComponent<TMP_Text>();
     }
 

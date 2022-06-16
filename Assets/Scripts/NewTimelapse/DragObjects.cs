@@ -149,7 +149,7 @@ public class DragObjects : MonoBehaviour
         {
             if (tag == "PanelImage")
             {
-                GetComponent<RectTransform>().localScale = new Vector3(4f, 4f, 4);
+                GetComponent<RectTransform>().localScale = new Vector3(6.5f, 6.5f, 4);
             }
             if (tag == "PanelImage" || tag == "Entry" || GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == _axisID)
             {
