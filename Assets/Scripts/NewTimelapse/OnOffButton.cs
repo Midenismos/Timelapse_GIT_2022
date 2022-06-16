@@ -17,7 +17,7 @@ public class OnOffButton : MonoBehaviour
         { return _isActivated; }
         set
         {
-            if (value != _isActivated)
+            if (value != _isActivated && gameObject.name != "EjectButton")
             {
                 _isActivated = value;
                 if (_isActivated == false)

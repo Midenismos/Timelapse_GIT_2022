@@ -56,7 +56,7 @@ public class TapeScript : MonoBehaviour
         else
             CurrentSound = sounds[0];
     }
-    private void OnMouseDown()
+    /*private void OnMouseDown()
     {
         if(GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick)
         {
@@ -86,7 +86,7 @@ public class TapeScript : MonoBehaviour
             }
         }
 
-    }
+    }*/
 
     private void Update()
     {

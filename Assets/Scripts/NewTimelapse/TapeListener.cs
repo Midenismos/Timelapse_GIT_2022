@@ -24,6 +24,8 @@ public class TapeListener : MonoBehaviour
                 other.transform.rotation = tapeReceiver.transform.rotation;
                 CurrentTape = other.GetComponent<TapeScript>();
                 other.GetComponent<ZoomScript>().IsZoomable = false;
+                int LayerIgnoreRaycast = LayerMask.NameToLayer("Ignore Raycast");
+                CurrentTape.gameObject.layer = LayerIgnoreRaycast;
                 GetComponent<AudioSource>().clip = CurrentTape.CurrentSound;
                 GameObject.Find("Console").GetComponent<ConsoleManager>().NormalAudio();
                 GetComponent<AudioSource>().time = 0;
@@ -84,5 +86,24 @@ public class TapeListener : MonoBehaviour
         isAvailable = false;
         yield return new WaitForSeconds(1f);
         isAvailable = true;
+    }
+
+    public void EjectTape()
+    {
+        if(CurrentTape != null)
+        {
+            AudioSource AudioSource = GetComponent<AudioSource>();
+            AudioSource.Stop();
+            int LayerIgnoreRaycast = LayerMask.NameToLayer("Tape");
+            CurrentTape.gameObject.layer = LayerIgnoreRaycast;
+            CurrentTape.GetComponent<Rigidbody>().isKinematic = false;
+            CurrentTape.GetComponent<ZoomScript>().IsZoomable = false;
+            CurrentTape.GetComponent<Rigidbody>().AddForce(1000, 100, 1000);
+            CurrentTape.GetComponent<DragObjects>().IsDragable = false;
+            CurrentTape = null;
+            AudioSource.clip = null;
+            StartCooldown();
+        }
+
     }
 }
