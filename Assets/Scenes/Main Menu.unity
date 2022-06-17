@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -699,11 +699,11 @@ RectTransform:
   m_Children:
   - {fileID: 1158616012}
   m_Father: {fileID: 1224699162}
-  m_RootOrder: 19
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 412, y: -110}
+  m_AnchoredPosition: {x: 821, y: -110}
   m_SizeDelta: {x: 412.6803, y: 170.0692}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &106792623
@@ -1829,7 +1829,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Voice acting
+  m_Text: Voix de Marcus
 --- !u!222 &443804669
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4562,11 +4562,11 @@ RectTransform:
   m_Children:
   - {fileID: 1927590942}
   m_Father: {fileID: 1224699162}
-  m_RootOrder: 21
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 824.6802, y: -110}
+  m_AnchoredPosition: {x: 409, y: -110}
   m_SizeDelta: {x: 412.6803, y: 170.0692}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &831748339
@@ -4971,11 +4971,11 @@ RectTransform:
   m_Children:
   - {fileID: 1891508899}
   m_Father: {fileID: 1224699162}
-  m_RootOrder: 18
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 412, y: -110}
+  m_AnchoredPosition: {x: 821, y: -110}
   m_SizeDelta: {x: 412.6803, y: 170.0692}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &924616993
@@ -5331,7 +5331,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Voice acting
+  m_Text: Voix de Helena
 --- !u!222 &944687500
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6620,7 +6620,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Voice acting
+  m_Text: Voix de Tracey
 --- !u!222 &1158616014
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7044,10 +7044,10 @@ RectTransform:
   - {fileID: 865709053}
   - {fileID: 1621050630}
   - {fileID: 385658073}
-  - {fileID: 924616992}
-  - {fileID: 106792622}
   - {fileID: 1592980847}
   - {fileID: 831748338}
+  - {fileID: 924616992}
+  - {fileID: 106792622}
   - {fileID: 1134096530}
   - {fileID: 1070879322}
   - {fileID: 1916810012}
@@ -7135,7 +7135,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Voice acting
+  m_Text: "Voix du Dirigeant n\xB0 1"
 --- !u!222 &1230066164
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8067,7 +8067,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Voice acting
+  m_Text: Voix d'Ethan
 --- !u!222 &1439192872
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8583,11 +8583,11 @@ RectTransform:
   m_Children:
   - {fileID: 1960599884}
   m_Father: {fileID: 1224699162}
-  m_RootOrder: 20
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 824.6802, y: -110}
+  m_AnchoredPosition: {x: 409, y: -110}
   m_SizeDelta: {x: 412.6803, y: 170.0692}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1592980848
@@ -10234,7 +10234,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Voice acting
+  m_Text: Voix de Clark
 --- !u!222 &1874170897
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10801,7 +10801,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Voice acting
+  m_Text: "Voix du Dirigeant n\xB0 2"
 --- !u!222 &1927590944
 CanvasRenderer:
   m_ObjectHideFlags: 0
