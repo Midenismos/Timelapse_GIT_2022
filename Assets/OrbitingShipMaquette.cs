@@ -109,7 +109,7 @@ public class OrbitingShipMaquette : MonoBehaviour
     // Gère la rotation de la planète
     private void OnMouseDown()
     {
-        if (GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == 2 && GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick)
+        if (GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == 2 && GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick && !GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().IsTalkingTutorial)
         {
             PressPoint = Input.mousePosition;
             GetComponent<AudioSource>().Play();
@@ -123,7 +123,7 @@ public class OrbitingShipMaquette : MonoBehaviour
 
     private void OnMouseDrag()
     {
-        if (GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == 2 && GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick)
+        if (GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == 2 && GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick && !GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().IsTalkingTutorial)
         {
             float Speed = Mathf.Clamp((Input.mousePosition - PressPoint).x, -200, 200);
             GetComponent<Rigidbody>().MoveRotation(GetComponent<Rigidbody>().rotation * Quaternion.Euler(Vector3.up * (Speed / SceneWidth)*10));
@@ -133,12 +133,12 @@ public class OrbitingShipMaquette : MonoBehaviour
 
     private void OnMouseExit()
     {
-        if (_interactFeedBack && GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick)
+        if (_interactFeedBack && GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick && !GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().IsTalkingTutorial)
             _interactFeedBack.enabled = false;
     }
     private void OnMouseEnter()
     {
-        if (_interactFeedBack && GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick)
+        if (_interactFeedBack && GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick && !GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().IsTalkingTutorial)
             _interactFeedBack.enabled = true;
     }
 }

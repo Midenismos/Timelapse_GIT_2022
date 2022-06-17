@@ -19,3 +19,5 @@ MonoBehaviour:
   DialogueSounds:
   - {fileID: 8300000, guid: eec3079db02210249a5beac8d86d8cbf, type: 3}
   IsFolowedByAnotherDialogue: 1
+  notInTutorialDialogue: 0
+  ShouldStopPlayerInteraction: 1

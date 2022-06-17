@@ -35,6 +35,8 @@ public class IAVoiceManager : MonoBehaviour
     public bool IsRepeating = false;
     private OptionData optionData;
 
+    public bool IsTalkingTutorial = false;
+
 
     private void Awake()
     {
@@ -71,6 +73,8 @@ public class IAVoiceManager : MonoBehaviour
         DialogueHappening = true;
         currentDialogueNotInTuto = dialogue.notInTutorialDialogue;
         i = 0;
+        if (dialogue.ShouldStopPlayerInteraction)
+            IsTalkingTutorial = true;
         Play();
     }
 
@@ -111,6 +115,7 @@ public class IAVoiceManager : MonoBehaviour
             DialogueTexts = null;
             DialogueSounds = null;
             DialogueHappening = false;
+            IsTalkingTutorial = false;
             txt.text = "";
 
             if(!currentDialogueNotInTuto && !IsRepeating)

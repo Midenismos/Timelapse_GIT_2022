@@ -22,3 +22,5 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 6b983476f62ecdc4f9499aeadfa6c6de, type: 3}
   - {fileID: 8300000, guid: 6c34bfb9973675848bf208a717976977, type: 3}
   IsFolowedByAnotherDialogue: 1
+  notInTutorialDialogue: 0
+  ShouldStopPlayerInteraction: 1

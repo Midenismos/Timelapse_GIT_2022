@@ -81,7 +81,7 @@ public class ZoomScript : MonoBehaviour
     //Pour faire le double clic
     void OnMouseUp()
     {
-        if(GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick)
+        if(GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick && !GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().IsTalkingTutorial)
         {
             clicked = false;
             if ((Time.time - clickStart) < 0.15f)
@@ -95,7 +95,7 @@ public class ZoomScript : MonoBehaviour
     void OnSimpleClick()
     {
         //Rapproche le doc du joueur ou le remet à sa place en cliquant dessus
-        if (AxisScript.IDCurrentAxis == itemAxis && !AxisScript.IsInTI && GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick)
+        if (AxisScript.IDCurrentAxis == itemAxis && !AxisScript.IsInTI && GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick && !GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().IsTalkingTutorial)
         {
             if (!_isLerping)
             {
@@ -158,7 +158,7 @@ public class ZoomScript : MonoBehaviour
     {
         if(!TutoCasette)
         {
-            if (IsZoomable && GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick)
+            if (IsZoomable && GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick && !GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().IsTalkingTutorial)
             {
                 clicked = true;
                 clickStart = Time.time;
@@ -166,7 +166,7 @@ public class ZoomScript : MonoBehaviour
         }
         else if(TutoCasetteZoomable)
         {
-            if (IsZoomable && GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick)
+            if (IsZoomable && GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick && !GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().IsTalkingTutorial)
             {
                 print("hey");
                 clicked = true;
@@ -187,7 +187,7 @@ public class ZoomScript : MonoBehaviour
         }
         if (Input.GetMouseButtonDown(0))
         {
-            if (AxisScript.CurrentHoldItem != null && AxisScript.CurrentHoldItem.GetComponent<ZoomScript>().clicked != true && GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick)
+            if (AxisScript.CurrentHoldItem != null && AxisScript.CurrentHoldItem.GetComponent<ZoomScript>().clicked != true && GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick && !GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().IsTalkingTutorial)
             {
                 RaycastHit hit;
                 Ray ray = GameObject.Find("Camera").GetComponent<Camera>().ScreenPointToRay(Input.mousePosition);
@@ -414,12 +414,12 @@ public class ZoomScript : MonoBehaviour
 
     private void OnMouseExit()
     {
-        if (_interactFeedBack && GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick)
+        if (_interactFeedBack && GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick && !GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().IsTalkingTutorial)
             _interactFeedBack.enabled = false;
     }
     private void OnMouseEnter()
     {
-        if (_interactFeedBack && GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick)
+        if (_interactFeedBack && GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick && !GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().IsTalkingTutorial)
             _interactFeedBack.enabled = true;
     }
 

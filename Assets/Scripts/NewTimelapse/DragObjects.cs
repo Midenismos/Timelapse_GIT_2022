@@ -57,7 +57,7 @@ public class DragObjects : MonoBehaviour
     }
     public void OnMouseDown()
     {
-        if (GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick)
+        if (GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick && !GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().IsTalkingTutorial)
         {
             isFixable = false;
             StartCoroutine(FixableCooldown());
@@ -145,7 +145,7 @@ public class DragObjects : MonoBehaviour
     }
     public void OnMouseDrag()
     {
-        if(GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick)
+        if(GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick && !GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().IsTalkingTutorial)
         {
             if (tag == "PanelImage")
             {
@@ -160,7 +160,7 @@ public class DragObjects : MonoBehaviour
                         if (SheetImages[0].IsFilled)
                         {
                             GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex++;
-                            StartCoroutine(GameObject.Find("TutorialManager").GetComponent<Tutorial>().LaunchNextDialogue(3));
+                            StartCoroutine(GameObject.Find("TutorialManager").GetComponent<Tutorial>().LaunchNextDialogue(2));
                         }
                     }
 
@@ -219,7 +219,7 @@ public class DragObjects : MonoBehaviour
 
     public void OnMouseUp()
     {
-        if(GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick)
+        if(GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick && !GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().IsTalkingTutorial)
         {
             if (IsDragable)
             {
@@ -240,7 +240,7 @@ public class DragObjects : MonoBehaviour
 
     private void OnMouseExit()
     {
-        if(GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == _axisID && GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick)
+        if(GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == _axisID && GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick && !GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().IsTalkingTutorial)
         {
             if (_interactFeedBack)
                 _interactFeedBack.enabled = false;
@@ -249,7 +249,7 @@ public class DragObjects : MonoBehaviour
     }
     private void OnMouseEnter()
     {
-        if (GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == _axisID && GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick)
+        if (GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == _axisID && GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick && !GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().IsTalkingTutorial)
         {
             if (_interactFeedBack)
                 _interactFeedBack.enabled = true;

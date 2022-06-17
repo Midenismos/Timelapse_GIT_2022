@@ -16,10 +16,11 @@ MonoBehaviour:
   DialogueTexts:
   - "Un casier conservant vos effets personnels est \xE0 votre disposition \xE0 droite
     de la fen\xEAtre d\u2019observation. "
-  - " Je vous invite cependant fortement \xE0 rester concentrer sur votre enqu\xEAte
+  - "Je vous invite cependant fortement \xE0 rester concentrer sur votre enqu\xEAte
     et \xE0 ne pas vous \xE9parpiller. "
   DialogueSounds:
   - {fileID: 8300000, guid: 2d482921cc854c14884fba082124093e, type: 3}
   - {fileID: 8300000, guid: 2956ec703e0cdb240b9b6c3d8dbf1eab, type: 3}
   IsFolowedByAnotherDialogue: 0
   notInTutorialDialogue: 1
+  ShouldStopPlayerInteraction: 0

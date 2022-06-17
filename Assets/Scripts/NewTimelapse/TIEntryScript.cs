@@ -37,7 +37,7 @@ public class TIEntryScript : MonoBehaviour
     }
     public void OnMouseUp()
     {
-        if(GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick)
+        if(GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick && !GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().IsTalkingTutorial)
         {
             if ((Time.time - _clickStart) < 0.3f)
             {
@@ -61,7 +61,7 @@ public class TIEntryScript : MonoBehaviour
 
     public void OnMouseDown()
     {
-        if(GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick)
+        if(GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick && !GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().IsTalkingTutorial)
         {
             _clickStart = Time.time;
             GetComponent<AudioSource>().clip = _clickSound;

@@ -11,7 +11,7 @@ public class CamCopyCreator : MonoBehaviour
 
     public void OnMouseDrag()
     {
-        if(!GetComponent<ZoomScript>().HasZoomed && GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick)
+        if(!GetComponent<ZoomScript>().HasZoomed && GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick && !GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().IsTalkingTutorial)
         {
             if (!clicked)
             {

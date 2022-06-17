@@ -99,7 +99,7 @@ public class PlayerAxisScript : MonoBehaviour
     {
         if(isInTuto)
         {
-            if (Input.GetKeyDown("d") && DEnabled)
+            if (Input.GetKeyDown("d") && DEnabled && !GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().IsTalkingTutorial)
             {
                 if (!_isLerping && !IsInTI && !GameObject.Find("PanelBasket").GetComponent<PanelBasketScript>()._isLerping)
                 {
@@ -123,7 +123,7 @@ public class PlayerAxisScript : MonoBehaviour
                         _targetPanelBasketPosition = _panelBasketPosition[0];
                 }
             }
-            if (Input.GetKeyDown("q") && QEnabled)
+            if (Input.GetKeyDown("q") && QEnabled && !GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().IsTalkingTutorial)
             {
                 if (!_isLerping && !IsInTI && !GameObject.Find("PanelBasket").GetComponent<PanelBasketScript>()._isLerping)
                 {
@@ -149,7 +149,7 @@ public class PlayerAxisScript : MonoBehaviour
 
                 }
             }
-            if (Input.GetKeyDown("s") && SEnabled)
+            if (Input.GetKeyDown("s") && SEnabled && !GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().IsTalkingTutorial)
             {
                 if (!_isLerping && !IsInTI && CurrentHoldItem == null)
                 {
@@ -163,7 +163,7 @@ public class PlayerAxisScript : MonoBehaviour
                     _TI.startAppear();
                 }
             }
-            if (Input.GetKeyDown("z") && ZEnabled)
+            if (Input.GetKeyDown("z") && ZEnabled && !GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().IsTalkingTutorial)
             {
                 if (!_isLerping && IsInTI && GameObject.Find("EventSystem").GetComponent<EventSystem>().currentSelectedGameObject == null)
                 {
@@ -180,7 +180,7 @@ public class PlayerAxisScript : MonoBehaviour
         }
         else if(!HasItem && !IsDraging && canMove && !isInTuto)
         {
-            if (Input.GetKeyDown("d"))
+            if (Input.GetKeyDown("d") && !GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().IsTalkingTutorial)
             {
                 if (!_isLerping && !IsInTI && !GameObject.Find("PanelBasket").GetComponent<PanelBasketScript>()._isLerping)
                 {
@@ -204,7 +204,7 @@ public class PlayerAxisScript : MonoBehaviour
                         _targetPanelBasketPosition = _panelBasketPosition[0];
                 }
             }
-            if (Input.GetKeyDown("q"))
+            if (Input.GetKeyDown("q") && !GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().IsTalkingTutorial)
             {
                 if (!_isLerping && !IsInTI && !GameObject.Find("PanelBasket").GetComponent<PanelBasketScript>()._isLerping)
                 {
@@ -228,7 +228,7 @@ public class PlayerAxisScript : MonoBehaviour
                         _targetPanelBasketPosition = _panelBasketPosition[0];
                 }
             }
-            if (Input.GetKeyDown("s"))
+            if (Input.GetKeyDown("s") && !GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().IsTalkingTutorial)
             {
                 if (!_isLerping && !IsInTI && CurrentHoldItem == null)
                 {
@@ -242,7 +242,7 @@ public class PlayerAxisScript : MonoBehaviour
                     _TI.startAppear();
                 }
             }
-            if (Input.GetKeyDown("z"))
+            if (Input.GetKeyDown("z") && !GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().IsTalkingTutorial)
             {
                 if (!_isLerping && IsInTI && GameObject.Find("EventSystem").GetComponent<EventSystem>().currentSelectedGameObject == null)
                 {
@@ -367,6 +367,10 @@ public class PlayerAxisScript : MonoBehaviour
     public void ClickFalse()
     {
         CanClick = false;
+    }
+    public void TutoFalse()
+    {
+        isInTuto = false;
     }
     public void ForceOutOfTI()
     {

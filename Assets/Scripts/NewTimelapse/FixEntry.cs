@@ -18,7 +18,7 @@ public class FixEntry : MonoBehaviour
                 if (GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying)
                     GameObject.Find("TutorialManager").GetComponent<Tutorial>().DialogueFinished();
                 GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex++;
-                StartCoroutine(GameObject.Find("TutorialManager").GetComponent<Tutorial>().LaunchNextDialogue(3));
+                StartCoroutine(GameObject.Find("TutorialManager").GetComponent<Tutorial>().LaunchNextDialogue(2));
             }
         }
     }

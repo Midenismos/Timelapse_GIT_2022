@@ -7,34 +7,23 @@ public class ProgressCircle : MonoBehaviour
 {
     private int _filledEntryNumber = 0;
     [SerializeField] GameObject _circle = null;
-    private OptionData optionData;
 
     private string maxNumber = "/12";
 
     private void Awake()
     {
-        try
+
+        if (GameObject.Find("TI").GetComponent<TutorialTI>().TutorialActivated)
         {
-            optionData = GameObject.Find("OptionsData").GetComponent<OptionData>();
+            GetComponent<Slider>().maxValue = 15;
+            maxNumber = "/15";
         }
-        catch
+        else
         {
-            optionData = null;
+            GetComponent<Slider>().maxValue = 12;
+            maxNumber = "/12";
         }
-        if (optionData != null)
-        {
-            if (optionData.TutoActivated)
-            {
-                GetComponent<Slider>().maxValue = 15;
-                maxNumber = "/15";
-            }
-            else
-            {
-                GetComponent<Slider>().maxValue = 12;
-                maxNumber = "/12";
-            }
-        }
-        
+
 
     }
 

@@ -42,7 +42,7 @@ public class OnOffButton : MonoBehaviour
         if (GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == 5 || GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == 4 || GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == 1 || tag == "ResetEnergy")
         {
             _interactFeedBack.enabled = true;
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) && GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick && !GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().IsTalkingTutorial)
             {
                 if (GameObject.Find("Console").GetComponent<ConsoleManager>().isActivated || tag == "ResetEnergy" || tag == "VaultButton")
                 {

@@ -14,4 +14,5 @@ public class IADialogue : ScriptableObject
 
     public bool IsFolowedByAnotherDialogue;
     public bool notInTutorialDialogue;
+    public bool ShouldStopPlayerInteraction;
 }
