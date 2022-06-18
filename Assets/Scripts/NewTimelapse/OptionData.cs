@@ -32,16 +32,5 @@ public class OptionData : MonoBehaviour
     }
 
 
-    public void ToggleTuto()
-    {
-        TutoActivated = !TutoActivated;
-        GameObject.Find("ButtonDesactiverTuto").GetComponentInChildren<Text>().text = TutoActivated ? "DESACTIVER LE TUTORIEL" : "ACTIVER LE TUTORIEL";
-    }
 
-    public void ToggleIAActivated()
-    {
-        IAActivated = !IAActivated;
-        GameObject.Find("ButtonDesactiverVoixIA").GetComponentInChildren<Text>().text = IAActivated ? "DESACTIVER LA VOIX DE L'IA" : "ACTIVER LA VOIX DE L'IA";
-
-    }
 }

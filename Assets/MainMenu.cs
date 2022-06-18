@@ -45,4 +45,22 @@ public class MainMenu : MonoBehaviour
             optionData.VolumeSliderValue = slider.value;
     }
 
+    public void ToggleTuto()
+    {
+        if (optionData)
+        {
+            optionData.TutoActivated = !optionData.TutoActivated;
+            GameObject.Find("ButtonDesactiverTuto").GetComponentInChildren<Text>().text = optionData.TutoActivated ? "DESACTIVER LE TUTORIEL" : "ACTIVER LE TUTORIEL";
+        }
+    }
+
+    public void ToggleIAActivated()
+    {
+        if (optionData)
+        {
+            optionData.IAActivated = !optionData.IAActivated;
+            GameObject.Find("ButtonDesactiverVoixIA").GetComponentInChildren<Text>().text = optionData.IAActivated ? "DESACTIVER LA VOIX DE L'IA" : "ACTIVER LA VOIX DE L'IA";
+        }
+    }
+
 }
