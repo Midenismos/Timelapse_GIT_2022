@@ -9,7 +9,7 @@ public class MainMenu : MonoBehaviour
 {
     public void ButtonQuitter() {
         Application.Quit();
-        Debug.Log("Game closed");
+        Debug.Log("Pourquoi vouloir quitter ?");
     }
 
     public void ButtonStart() {
