@@ -29,7 +29,7 @@ public class TimelineScript : MonoBehaviour
     [SerializeField] private GameObject reportButton = null;
     public void CheckEntry()
     {
-        if(GameObject.Find("TutorialManager").GetComponent<Tutorial>().activateTuto && GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex == 27)
+        if(GameObject.Find("TutorialManager").GetComponent<Tutorial>().activateTuto && GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex == 27 && !GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying)
         {
             foreach(TIEntryScript Entry in GameObject.Find("TI").GetComponentsInChildren<TIEntryScript>())
             {

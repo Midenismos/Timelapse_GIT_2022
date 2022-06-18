@@ -20,6 +20,7 @@ public class MainMenu : MonoBehaviour
     public Slider slider;
     public Text TextVolume;
     private OptionData optionData;
+    [SerializeField] private GameObject buttonDesactiverVoixIA;
 
 
     private void Awake()
@@ -33,7 +34,10 @@ public class MainMenu : MonoBehaviour
             optionData = null;
         }
         if(optionData)
+        {
+            buttonDesactiverVoixIA.GetComponentInChildren<Text>().text = optionData.IAActivated ? "DESACTIVER LA VOIX DE L'IA" : "ACTIVER LA VOIX DE L'IA";
             slider.value = GameObject.Find("OptionsData").GetComponent<OptionData>().VolumeSliderValue;
+        }
     }
     public void SliderChange()
 

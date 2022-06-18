@@ -3798,6 +3798,7 @@ MonoBehaviour:
   Mixer: {fileID: 24100000, guid: 84ea42bf0cd81c84094e4ba56e664ad6, type: 2}
   slider: {fileID: 1688726943}
   TextVolume: {fileID: 934662443}
+  buttonDesactiverVoixIA: {fileID: 1961579261}
 --- !u!1 &802770100
 GameObject:
   m_ObjectHideFlags: 0
