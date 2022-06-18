@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class MainMenu : MonoBehaviour
 {
@@ -15,15 +16,33 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("NewTimelapsePrototype");
     }
 
-    public AudioSource audiosource;
+    public AudioMixer Mixer;
     public Slider slider;
     public Text TextVolume;
+    private OptionData optionData;
 
+
+    private void Awake()
+    {
+        try
+        {
+            optionData = GameObject.Find("OptionsData").GetComponent<OptionData>();
+        }
+        catch
+        {
+            optionData = null;
+        }
+        if(optionData)
+            slider.value = GameObject.Find("OptionsData").GetComponent<OptionData>().VolumeSliderValue;
+    }
     public void SliderChange()
 
     {
-        audiosource.volume = slider.value;
-        TextVolume.text = "Volume " + (audiosource.volume * 100).ToString("00") + "%";
+        //audiosource.volume = slider.value;
+        Mixer.SetFloat("Volume", Mathf.Log10(slider.value) * 20);
+        TextVolume.text = "Volume " + (slider.value * 100).ToString("00") + "%";
+        if(optionData)
+            optionData.VolumeSliderValue = slider.value;
     }
- 
+
 }

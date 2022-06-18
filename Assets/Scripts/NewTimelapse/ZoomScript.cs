@@ -156,7 +156,7 @@ public class ZoomScript : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if(!TutoCasette)
+        if(!GameObject.Find("TutorialManager").GetComponent<Tutorial>().activateTuto)
         {
             if (IsZoomable && GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick && !GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().IsTalkingTutorial)
             {
@@ -164,14 +164,25 @@ public class ZoomScript : MonoBehaviour
                 clickStart = Time.time;
             }
         }
-        else if(TutoCasetteZoomable)
+        else 
         {
-            if (IsZoomable && GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick && !GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().IsTalkingTutorial)
+            if (TutoCasette)
             {
-                print("hey");
-                clicked = true;
-                clickStart = Time.time;
+                if (IsZoomable && GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick && !GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().IsTalkingTutorial && TutoCasetteZoomable)
+                {
+                    clicked = true;
+                    clickStart = Time.time;
+                }
             }
+            else
+            {
+                if (IsZoomable && GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick && !GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().IsTalkingTutorial)
+                {
+                    clicked = true;
+                    clickStart = Time.time;
+                }
+            }
+
         }
 
 

@@ -11,6 +11,8 @@ public class OptionData : MonoBehaviour
 
     public bool IAActivated = true;
 
+    public float VolumeSliderValue = 1;
+
     static bool created = false;
 
     // Start is called before the first frame update

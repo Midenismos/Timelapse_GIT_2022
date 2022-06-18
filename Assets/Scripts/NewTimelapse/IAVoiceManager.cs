@@ -48,11 +48,7 @@ public class IAVoiceManager : MonoBehaviour
         {
             optionData = null;
         }
-        if(optionData)
-        {
-            if (!optionData.IAActivated)
-                GetComponent<AudioSource>().volume = 0;
-        }
+
         source = GetComponent<AudioSource>();
         txt = GameObject.Find("IASubtitle").GetComponent<TMP_Text>();
     }
@@ -96,6 +92,14 @@ public class IAVoiceManager : MonoBehaviour
         {
             if (!source.isPlaying && !_inCooldown)
                 StartCoroutine(Cooldown());
+        }
+        if (optionData)
+        {
+            if (!optionData.IAActivated)
+                GetComponent<AudioSource>().volume = 0;
+            else
+                GetComponent<AudioSource>().volume = 1;
+
         }
     }
 

@@ -97,7 +97,7 @@ public class TapeListener : MonoBehaviour
             int LayerIgnoreRaycast = LayerMask.NameToLayer("Tape");
             CurrentTape.gameObject.layer = LayerIgnoreRaycast;
             CurrentTape.GetComponent<Rigidbody>().isKinematic = false;
-            CurrentTape.GetComponent<ZoomScript>().IsZoomable = false;
+            CurrentTape.GetComponent<ZoomScript>().IsZoomable = true;
             CurrentTape.GetComponent<Rigidbody>().AddForce(1000, 100, 1000);
             CurrentTape.GetComponent<DragObjects>().IsDragable = false;
             CurrentTape = null;
