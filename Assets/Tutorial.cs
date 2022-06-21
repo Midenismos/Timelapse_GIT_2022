@@ -13,8 +13,6 @@ public class Tutorial : MonoBehaviour
 
     [SerializeField] private IAVoiceManager voiceManager = null;
     private PlayerAxisScript player;
-
-    [SerializeField] private CamButton[] SliderButtons;
     [SerializeField] private DragObjects[] docsEcritsToScan;
     public int dialogueIndex = 0;
     public bool Dialogue32Fini = false;
@@ -111,42 +109,14 @@ public class Tutorial : MonoBehaviour
                     StartCoroutine(LaunchNextDialogue(delays[dialogueIndex]));
                 }
             }
-            else if (dialogueIndex == 5)
-            {
-                if (SliderButtons.All(button => button.isSeenInTuto == true))
-                {
-                    if (GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying)
-                        DialogueFinished();
-                    dialogueIndex++;
-                    if (dialogueIndex < dialogues.Length)
-                    {
-                        StartCoroutine(LaunchNextDialogue(delays[dialogueIndex]));
-                    }
-                }
-            }
             else if (player.IDCurrentAxis == 1 && dialogueIndex == 7)
             {
                 if (GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying)
                     DialogueFinished();
-                foreach (CamButton button in SliderButtons)
-                    button.isSeenInTuto = false;
                 dialogueIndex++;
                 if (dialogueIndex < dialogues.Length)
                 {
                     StartCoroutine(LaunchNextDialogue(delays[dialogueIndex]));
-                }
-            }
-            else if (dialogueIndex == 8)
-            {
-                if (SliderButtons.All(button => button.isSeenInTuto == true))
-                {
-                    if (GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying)
-                        DialogueFinished();
-                    dialogueIndex++;
-                    if (dialogueIndex < dialogues.Length)
-                    {
-                        StartCoroutine(LaunchNextDialogue(delays[dialogueIndex]));
-                    }
                 }
             }
             else if (player.IDCurrentAxis == 0 && dialogueIndex == 10)

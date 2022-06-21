@@ -25,7 +25,6 @@ public class ConsoleManager : MonoBehaviour
     private VideoPlayer currentModelCam = null;
 
     [SerializeField] private AudioSource _tapeListener = null;
-    [SerializeField] private TMP_Text _tapeText = null;
     [SerializeField] private AudioSource[] _secretRadios = null;
 
     private void Awake()
@@ -128,72 +127,8 @@ public class ConsoleManager : MonoBehaviour
         }*/
     }
 
-    public void RewindAudioRadio()
-    {
-        foreach(AudioSource radio in _secretRadios)
-        {
-            radio.pitch = -1;
-        }
-    }
 
-    public void StopAudioRadio()
-    {
-        foreach (AudioSource radio in _secretRadios)
-        {
-            radio.pitch = 0;
-        }
-
-
-    }
-    public void AccelerateAudioRadio()
-    {
-        foreach (AudioSource radio in _secretRadios)
-        {
-            radio.pitch = 2;
-        }
-
-    }
-    public void SlowAudioRadio()
-    {
-        foreach (AudioSource radio in _secretRadios)
-        {
-            radio.pitch = 0.5f;
-        }
-    }
-    public void NormalAudioRadio()
-    {
-        foreach (AudioSource radio in _secretRadios)
-        {
-            radio.pitch = 1;
-        }
-    }
-    public void RewindAudio()
-    {
-        _tapeListener.pitch = -1;
-        _tapeText.text = "REWIND";
-    }
-
-    public void StopAudio()
-    {
-        _tapeListener.pitch = 0;
-        _tapeText.text = "PAUSE";
-
-    }
-    public void AccelerateAudio()
-    {
-        _tapeListener.pitch = 2;
-        _tapeText.text = "FAST";
-    }
-    public void SlowAudio()
-    {
-        _tapeListener.pitch = 0.5f;
-        _tapeText.text = "SLOW";
-    }
-    public void NormalAudio()
-    {
-        _tapeListener.pitch = 1;
-        _tapeText.text = "PLAY";
-    }
+   
 
     public void RewindCam()
     {

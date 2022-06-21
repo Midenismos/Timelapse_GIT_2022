@@ -12,7 +12,6 @@ public class CamButton : MonoBehaviour
     [SerializeField] private Material _activatedMat = null;
     private Material _deactivatedMat = null;
     [SerializeField] private MeshRenderer _interactFeedBack;
-    public bool isSeenInTuto = false;
 
     private void Awake()
     {
@@ -28,9 +27,12 @@ public class CamButton : MonoBehaviour
             {
                 onClickedCam?.Invoke();
                 StartCoroutine(ButtonFeedback());
-                if(!isSeenInTuto && GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex == 5)
+                if(GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex == 5)
                 {
-                    isSeenInTuto = true;
+                    if (GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying)
+                        GameObject.Find("TutorialManager").GetComponent<Tutorial>().DialogueFinished();
+                    GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex++;
+                    StartCoroutine(GameObject.Find("TutorialManager").GetComponent<Tutorial>().LaunchNextDialogue(2));
                 }
                 GetComponent<Highlight>().StopHighlightChildren();
 
@@ -42,9 +44,12 @@ public class CamButton : MonoBehaviour
             _interactFeedBack.enabled = true;
             if (Input.GetMouseButtonDown(0))
             {
-                if (!isSeenInTuto && GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex == 8)
+                if (GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex == 8)
                 {
-                    isSeenInTuto = true;
+                    if (GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying)
+                        GameObject.Find("TutorialManager").GetComponent<Tutorial>().DialogueFinished();
+                    GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex++;
+                    StartCoroutine(GameObject.Find("TutorialManager").GetComponent<Tutorial>().LaunchNextDialogue(2));
                 }
                 onClickedAudio?.Invoke();
                 StartCoroutine(ButtonFeedback());

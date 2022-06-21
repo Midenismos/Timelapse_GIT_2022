@@ -32,6 +32,7 @@ public class VaultListener : MonoBehaviour
             {
                 isActivated = true;
                 GetComponent<AudioSource>().Play();
+                GetComponent<AudioSource>().pitch = 1; 
             }
             else
                 StopSound();
@@ -44,5 +45,28 @@ public class VaultListener : MonoBehaviour
         GetComponent<AudioSource>().Stop();
         _onOffButton.IsActivated = false;
         isActivated = false;
+    }
+
+    public void RewindAudioRadio()
+    {
+        GetComponent<AudioSource>().pitch = -1;
+    }
+
+    public void StopAudioRadio()
+    {
+
+        GetComponent<AudioSource>().pitch = 0;
+    }
+    public void AccelerateAudioRadio()
+    {
+        GetComponent<AudioSource>().pitch = 2;
+    }
+    public void SlowAudioRadio()
+    {
+        GetComponent<AudioSource>().pitch = 0.5f;
+    }
+    public void NormalAudioRadio()
+    {
+        GetComponent<AudioSource>().pitch = 1;
     }
 }

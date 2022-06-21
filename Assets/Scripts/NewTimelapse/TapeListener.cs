@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class TapeListener : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class TapeListener : MonoBehaviour
     public OnOffButton _onOffButton = null;
     public TapeScript CurrentTape = null;
     private bool isAvailable = true;
+    [SerializeField] private Slider sliderAudio = null;
+    private bool IsSliderClicked = false;
+    [SerializeField] private TMP_Text _tapeText = null;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -27,18 +31,62 @@ public class TapeListener : MonoBehaviour
                 int LayerIgnoreRaycast = LayerMask.NameToLayer("Ignore Raycast");
                 CurrentTape.gameObject.layer = LayerIgnoreRaycast;
                 GetComponent<AudioSource>().clip = CurrentTape.CurrentSound;
-                GameObject.Find("Console").GetComponent<ConsoleManager>().NormalAudio();
+                NormalAudio();
                 GetComponent<AudioSource>().time = 0;
+                sliderAudio.maxValue = GetComponent<AudioSource>().clip.length;
                 if (isActivated && _onOffButton.IsActivated)
                     GetComponent<AudioSource>().Play();
             }
         }
     }
+    private void Update()
+    {
+        if (!IsSliderClicked && CurrentTape != null)
+        {
+            sliderAudio.value = (float)GetComponent<AudioSource>().time;
+        }
+
+    }
+    public void StopSlider()
+    {
+        IsSliderClicked = true;
+    }
+    public void ReactivateSlider()
+    {
+        IsSliderClicked = false;
+        ChangeTime();
+    }
     public void StartCooldown()
     {
         StartCoroutine(Cooldown());
     }
+    public void RewindAudio()
+    {
+        GetComponent<AudioSource>().pitch = -1;
+        _tapeText.text = "REWIND";
+    }
 
+    public void StopAudio()
+    {
+        GetComponent<AudioSource>().pitch = 0;
+        _tapeText.text = "PAUSE";
+
+    }
+    public void AccelerateAudio()
+    {
+        GetComponent<AudioSource>().pitch = 2;
+        _tapeText.text = "FAST";
+    }
+    public void SlowAudio()
+    {
+        GetComponent<AudioSource>().pitch = 0.5f;
+        _tapeText.text = "SLOW";
+    }
+    public void NormalAudio()
+    {
+        GetComponent<AudioSource>().pitch = 1;
+        _tapeText.text = "PLAY";
+    }
     private void Awake()
     {
         GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().ReactedToEnergy += delegate ()
@@ -52,7 +100,10 @@ public class TapeListener : MonoBehaviour
         };
     }
 
-
+    public void ChangeTime()
+    {
+        GetComponent<AudioSource>().time = sliderAudio.value;
+    }
     public void ChangeSound()
     {
         if(_onOffButton.IsActivated)
