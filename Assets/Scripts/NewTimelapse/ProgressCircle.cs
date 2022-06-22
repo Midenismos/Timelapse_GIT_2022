@@ -10,7 +10,7 @@ public class ProgressCircle : MonoBehaviour
 
     private string maxNumber = "/12";
 
-    private void Awake()
+    private void Start()
     {
 
         if (GameObject.Find("TI").GetComponent<TutorialTI>().TutorialActivated)

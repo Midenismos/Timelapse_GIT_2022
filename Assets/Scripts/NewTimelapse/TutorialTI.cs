@@ -8,7 +8,7 @@ public class TutorialTI : MonoBehaviour
     [SerializeField] private GameObject[] WrittenButtonsPanels = null;
     [SerializeField] private GameObject _greyedOut = null;
 
-    private void Awake()
+    private void Start()
     {
         if(!GameObject.Find("TutorialManager").GetComponent<Tutorial>().activateTuto)
             TutorialActivated = false;
