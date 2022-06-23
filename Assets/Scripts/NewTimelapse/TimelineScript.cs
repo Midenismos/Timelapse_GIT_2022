@@ -185,8 +185,10 @@ public class TimelineScript : MonoBehaviour
         {
             if (corruptedNumber == 9)
                 GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().LaunchDialogue(GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().EndBDialogue);
+                //image B
             else
                 GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().LaunchDialogue(GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().EndADialogue);
+                //image A
         }
     }
 }

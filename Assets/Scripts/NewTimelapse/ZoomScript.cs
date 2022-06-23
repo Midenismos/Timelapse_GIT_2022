@@ -130,8 +130,8 @@ public class ZoomScript : MonoBehaviour
                         GetComponent<AudioSource>().clip = _pickupSound;
                         GetComponent<AudioSource>().Play();
                     }
-                    if( tag == "Written")
-                        AxisScript.PutConsoleDown();
+                    //if( tag == "Written")
+                        //AxisScript.PutConsoleDown();
 
                 }
                 /*else
@@ -334,7 +334,7 @@ public class ZoomScript : MonoBehaviour
                     currentItem.posB.y = -29.5f;
                     currentItem.posB.z = Mathf.Clamp(currentItem.posB.z, -56.5f, -55.5f);
                 }
-                AxisScript.PutConsoleUp();
+                //AxisScript.PutConsoleUp();
             }
             else if (currentItem.gameObject.CompareTag("Tape"))
             {
@@ -384,7 +384,7 @@ public class ZoomScript : MonoBehaviour
                     currentItem.posB.y = -29.5f;
                     currentItem.posB.z = Mathf.Clamp(currentItem.posB.z, -56.5f, -55.5f);
                 }
-                AxisScript.PutConsoleUp();
+                //AxisScript.PutConsoleUp();
             }
             else if (currentItem.gameObject.CompareTag("Tape"))
             {

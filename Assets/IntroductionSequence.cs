@@ -16,16 +16,29 @@ public class IntroductionSequence : MonoBehaviour
 
     private Vector3 endPoint = new Vector3();
     private float counter = 0;
+
+    private bool gameStarted = false;
     // Start is called before the first frame update
     void Start()
     {
         if(startWithIntroduction)
         {
-            floor.SetActive(false);
             endPoint = mainCamera.position;
             mainCamera.position = startingPoint.position;
             player.canMove = false;
-        } else
+        }
+    }
+
+    public void BeginGame()
+    {
+        gameStarted = true;
+
+        if (startWithIntroduction)
+        {
+            floor.SetActive(false);
+            player.canMove = false;
+        }
+        else
         {
             enabled = false;
         }
@@ -34,6 +47,8 @@ public class IntroductionSequence : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!gameStarted) return;
+
         mainCamera.position = Vector3.Lerp(startingPoint.position, endPoint, counter / ascensionDuration);
         counter += Time.deltaTime;
 

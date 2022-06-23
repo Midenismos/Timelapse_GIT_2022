@@ -9,11 +9,13 @@ public class MainMenu : MonoBehaviour
 {
     public void ButtonQuitter() {
         Application.Quit();
-        Debug.Log("Pourquoi vouloir quitter ?");
+        //Debug.Log("Pourquoi vouloir quitter ?");
     }
 
     public void ButtonStart() {
-        SceneManager.LoadScene("NewTimelapsePrototype");
+        //SceneManager.LoadScene("NewTimelapsePrototype");
+        FindObjectOfType<Tutorial>().BeginGame();
+        FindObjectOfType<IntroductionSequence>().BeginGame();
     }
 
     public AudioMixer Mixer;

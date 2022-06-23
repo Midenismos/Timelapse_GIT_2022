@@ -122,6 +122,7 @@ public class IAVoiceManager : MonoBehaviour
             IsTalkingTutorial = false;
             txt.text = "";
 
+            Debug.Log("cooldown");
             if(!currentDialogueNotInTuto && !IsRepeating)
             {
                 OnDialogueFinished?.Invoke();
