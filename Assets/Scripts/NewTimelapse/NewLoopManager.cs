@@ -76,7 +76,7 @@ public class NewLoopManager : MonoBehaviour
 
     private void Start()
     {
-        if (!GameObject.Find("TutorialManager").GetComponent<Tutorial>().activateTuto)
+        //if (!GameObject.Find("TutorialManager").GetComponent<Tutorial>().activateTuto)
             Activated = true;
     }
     // Update is called once per frame
