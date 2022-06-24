@@ -17,11 +17,8 @@ MonoBehaviour:
   - "Comme vous avez pu le constater, le postulat initial de votre enqu\xEAte observe
     un changement brutal du nombre de signes vitaux \xE9mis par l'\xE9quipage du
     Camilla Ship, le 2 septembre, entre 15h00 et 15h15."
-  - "Avant d\u2019aller plus loin dans la lecture d\u2019autres documents, je vous
-    invite \xE0 regarder les vid\xE9os de surveillance du Camilla Ship."
   DialogueSounds:
   - {fileID: 8300000, guid: 8e03c519576da0a40a5751944d08756b, type: 3}
-  - {fileID: 8300000, guid: 412be5d061ff0b447b66e4cf39361044, type: 3}
   IsFolowedByAnotherDialogue: 0
   notInTutorialDialogue: 0
   ShouldStopPlayerInteraction: 1

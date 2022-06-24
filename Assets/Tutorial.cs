@@ -11,6 +11,7 @@ public class Tutorial : MonoBehaviour
     [SerializeField] private IADialogue[] dialogues;
     [SerializeField] private float[] delays;
     [SerializeField] public TutorialAction[] tutorialActions;
+    [SerializeField] private IADialogue[] axisDialogues;
 
     [SerializeField] private IAVoiceManager voiceManager = null;
     private PlayerAxisScript player;
@@ -26,6 +27,9 @@ public class Tutorial : MonoBehaviour
     private OptionData optionData;
 
     private bool gameStarted = false;
+
+    private bool axisTutoUnlocked = false;
+    private bool axisDialogueOngoing = false;
 
     private void Awake()
     {
@@ -81,33 +85,37 @@ public class Tutorial : MonoBehaviour
     {
         if(activateTuto && gameStarted)
         {
-            //if (dialogueIndex == 0 && IsElevatorFinished)
-            //{
-            //    if (GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying)
-            //        DialogueFinished();
-            //    dialogueIndex++;
-            //    if (dialogueIndex < dialogues.Length)
-            //    {
-            //        StartCoroutine(LaunchNextDialogue(delays[dialogueIndex]));
-            //    }
-            //}
+            if(Input.GetButtonDown("AxisTutorial") && axisTutoUnlocked)
+            {
+                LaunchAxisDialogue(player.IDCurrentAxis);
+            }
+            if (dialogueIndex == 0 && IsElevatorFinished)
+            {
+                if (GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying)
+                    DialogueFinished();
+                dialogueIndex++;
+                if (dialogueIndex < tutoEnd)
+                {
+                    StartCoroutine(LaunchNextDialogue(delays[dialogueIndex]));
+                }
+            }
             //if (player.IDCurrentAxis == 4 && dialogueIndex >= 30 && !hasSeenVaultOnce && !GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying)
             //{
             //    GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().LaunchDialogue(GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().RandomAntiCasierFirstDialogue);
             //    hasSeenVaultOnce = true;
             //}
 
-            //// La plupart des triggers pour continuer le tuto
-            //if (player.IDCurrentAxis == 0 && dialogueIndex == 1)
-            //{
-            //    if (GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying)
-            //        DialogueFinished();
-            //    dialogueIndex++;
-            //    if (dialogueIndex < dialogues.Length)
-            //    {
-            //        StartCoroutine(LaunchNextDialogue(delays[dialogueIndex]));
-            //    }
-            //}
+            // La plupart des triggers pour continuer le tuto
+            if (player.IDCurrentAxis == 0 && dialogueIndex == 1)
+            {
+                if (GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying)
+                    DialogueFinished();
+                dialogueIndex++;
+                if (dialogueIndex < tutoEnd)
+                {
+                    StartCoroutine(LaunchNextDialogue(delays[dialogueIndex]));
+                }
+            }
             //else if (player.IDCurrentAxis == 5 && dialogueIndex == 3)
             //{
             //    if (GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying)
@@ -188,7 +196,7 @@ public class Tutorial : MonoBehaviour
 
 
             //Fait en sorte que l'IA puisse répéter sa dernière phrase
-            if(Input.GetKeyDown(KeyCode.H) && !voiceManager.DialogueHappening && !IsDelaying)
+            if (Input.GetKeyDown(KeyCode.H) && !voiceManager.DialogueHappening && !IsDelaying)
             {
                 voiceManager.LaunchDialogue(dialogues[dialogueIndex]);
                 voiceManager.IsRepeating = true;
@@ -200,21 +208,30 @@ public class Tutorial : MonoBehaviour
 
     public void DialogueFinished()
     {
-        Debug.Log(dialogueIndex);
         if (tutorialActions[dialogueIndex])
         {
             tutorialActions[dialogueIndex].ExecuteAction();
         }
-        //if(dialogues[dialogueIndex].IsFolowedByAnotherDialogue)
-        //{
+        if (dialogues[dialogueIndex].IsFolowedByAnotherDialogue)
+        {
             dialogueIndex++;
-            Debug.Log("yolo");
             if (dialogueIndex < tutoEnd)
             {
                 StartCoroutine(LaunchNextDialogue(delays[dialogueIndex]));
-            }
-        //}
+            } 
+        }
+        if (!axisTutoUnlocked && dialogueIndex == tutoEnd)
+        {
+            axisTutoUnlocked = true;
+            voiceManager.OnDialogueFinished -= DialogueFinished;
+            voiceManager.OnDialogueFinished += AxisDialogueFinished;
+        }
 
+    }
+
+    public void AxisDialogueFinished()
+    {
+        axisDialogueOngoing = false;
     }
 
     public IEnumerator LaunchNextDialogue(float delay)
@@ -230,6 +247,15 @@ public class Tutorial : MonoBehaviour
         if(tutorialActions[dialogueIndex])
         {
             tutorialActions[dialogueIndex].OnDialogueStart();
+        }
+    }
+
+    public void LaunchAxisDialogue(int axis)
+    {
+        if(!axisDialogueOngoing)
+        {
+            voiceManager.LaunchDialogue(axisDialogues[axis]);
+            axisDialogueOngoing = true;
         }
     }
 

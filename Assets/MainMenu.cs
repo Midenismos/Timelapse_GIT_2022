@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.Audio;
+using UnityEngine.EventSystems;
 
 public class MainMenu : MonoBehaviour
 {
@@ -16,6 +17,9 @@ public class MainMenu : MonoBehaviour
         //SceneManager.LoadScene("NewTimelapsePrototype");
         FindObjectOfType<Tutorial>().BeginGame();
         FindObjectOfType<IntroductionSequence>().BeginGame();
+
+        GameObject.Find("EventSystem").GetComponent<EventSystem>().SetSelectedGameObject(null);
+
     }
 
     public AudioMixer Mixer;

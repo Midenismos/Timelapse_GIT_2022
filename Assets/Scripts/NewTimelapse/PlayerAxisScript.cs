@@ -149,7 +149,7 @@ public class PlayerAxisScript : MonoBehaviour
 
                 }
             }
-            if (Input.GetKeyDown("s") && SEnabled && !GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().IsTalkingTutorial)
+            if (Input.GetKeyDown("s") && SEnabled && FindObjectOfType<PanelBasketScript>().hasScanned && !GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().IsTalkingTutorial)
             {
                 if (!_isLerping && !IsInTI && CurrentHoldItem == null)
                 {
@@ -163,8 +163,9 @@ public class PlayerAxisScript : MonoBehaviour
                     _TI.startAppear();
                 }
             }
-            if (Input.GetKeyDown("z") && ZEnabled && !GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().IsTalkingTutorial)
+            if (Input.GetKeyDown("z"))
             {
+                Debug.Log(ZEnabled);
                 if (!_isLerping && IsInTI && GameObject.Find("EventSystem").GetComponent<EventSystem>().currentSelectedGameObject == null)
                 {
                     _rotationCountdown = 1;
@@ -228,13 +229,13 @@ public class PlayerAxisScript : MonoBehaviour
                         _targetPanelBasketPosition = _panelBasketPosition[0];
                 }
             }
-            if (Input.GetKeyDown("s") && !GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().IsTalkingTutorial)
+            if (Input.GetKeyDown("s") && FindObjectOfType<PanelBasketScript>().hasScanned && !GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().IsTalkingTutorial)
             {
                 if (!_isLerping && !IsInTI && CurrentHoldItem == null)
                 {
                     _rotationCountdown = 1;
                     _moveLerp = 0;
-                    _targetConsolePosition = new Vector3(console.transform.localPosition.x-3f, console.transform.localPosition.y, console.transform.localPosition.z);
+                    //_targetConsolePosition = new Vector3(console.transform.localPosition.x-3f, console.transform.localPosition.y, console.transform.localPosition.z);
                     _targetPosition = new Vector3(cam.transform.localPosition.x, 1, 4f);
                     _targetCamRotation = new Vector3(90, cam.transform.rotation.eulerAngles.y, cam.transform.rotation.eulerAngles.z);
                     _isLerping = true;
@@ -242,13 +243,14 @@ public class PlayerAxisScript : MonoBehaviour
                     _TI.startAppear();
                 }
             }
-            if (Input.GetKeyDown("z") && !GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().IsTalkingTutorial)
+            if (Input.GetKeyDown("z"))
             {
+
                 if (!_isLerping && IsInTI && GameObject.Find("EventSystem").GetComponent<EventSystem>().currentSelectedGameObject == null)
                 {
                     _rotationCountdown = 1;
                     _moveLerp = 0;
-                    _targetConsolePosition = _consolePosition[IDCurrentAxis];
+                    //_targetConsolePosition = _consolePosition[IDCurrentAxis];
                     _targetPosition = _camPosition[IDCurrentAxis];
                     _targetCamRotation = _camRotation[IDCurrentAxis];
                     _isLerping = true;
@@ -273,14 +275,14 @@ public class PlayerAxisScript : MonoBehaviour
                 _currentAxisRotation = transform.rotation.eulerAngles;
                 _currentCamRotation = cam.transform.rotation.eulerAngles;
                 _currentCamPosition = cam.transform.localPosition;
-                _currentConsolePosition = console.transform.localPosition;
+                //_currentConsolePosition = console.transform.localPosition;
                 _currentPanelBasketPosition = GameObject.Find("PanelBasket").transform.localPosition;
                 _isLerping = false;
             }
             transform.rotation = Quaternion.Slerp( Quaternion.Euler(_currentAxisRotation), Quaternion.Euler(_targetRotation), _moveLerp);
             cam.transform.localPosition = Vector3.Lerp(_currentCamPosition, _targetPosition, _moveLerp);
             cam.transform.rotation = Quaternion.Slerp(Quaternion.Euler(_currentCamRotation), Quaternion.Euler(_targetCamRotation), _moveLerp);
-            console.transform.localPosition = Vector3.Lerp(_currentConsolePosition, _targetConsolePosition, _moveLerp);
+            //console.transform.localPosition = Vector3.Lerp(_currentConsolePosition, _targetConsolePosition, _moveLerp);
             GameObject.Find("PanelBasket").transform.localPosition = Vector3.Lerp(_currentPanelBasketPosition, _targetPanelBasketPosition, _moveLerp);
             _moveLerp = 1f - _rotationCountdown;
         }

@@ -24,7 +24,9 @@ public class PanelBasketScript : MonoBehaviour
 
     private Color _colorA;
     private Color _colorB;
-    public bool IsActivated = false;
+    public bool IsActivated = true;
+
+    public bool hasScanned = false;
 
     private void Awake()
     {
@@ -50,18 +52,20 @@ public class PanelBasketScript : MonoBehaviour
                         image.GetComponent<PanelTag>().Init(GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().Energy <= 0 ? true : false);
                         image.GetComponent<PanelTag>().ID = other.GetComponent<PanelImageData>().ID;
                         Bells[1].NewPanelImageNumber += 1;
-                    }
-                    if (other.tag == "Written")
-                    {
-                        image = Instantiate(_panelImage, this.transform);
-                        image.GetComponent<Image>().sprite = other.GetComponent<PanelImageData>().Image;
-                        image.transform.SetParent(_panels[1].transform, false);
-                        image.GetComponent<PanelTag>().ImageTag = "written";
-                        image.GetComponent<PanelTag>().Init(GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().Energy <= 0 ? true : false);
-                        image.GetComponent<PanelTag>().ID = other.GetComponent<PanelImageData>().ID;
-                        Bells[0].NewPanelImageNumber += 1;
 
+                        hasScanned = true;
                     }
+                    //if (other.tag == "Written")
+                    //{
+                    //    image = Instantiate(_panelImage, this.transform);
+                    //    image.GetComponent<Image>().sprite = other.GetComponent<PanelImageData>().Image;
+                    //    image.transform.SetParent(_panels[1].transform, false);
+                    //    image.GetComponent<PanelTag>().ImageTag = "written";
+                    //    image.GetComponent<PanelTag>().Init(GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().Energy <= 0 ? true : false);
+                    //    image.GetComponent<PanelTag>().ID = other.GetComponent<PanelImageData>().ID;
+                    //    Bells[0].NewPanelImageNumber += 1;
+
+                    //}
                     else if (other.tag == "Tape")
                     {
                         image = Instantiate(_panelImageTape, this.transform);
@@ -70,6 +74,8 @@ public class PanelBasketScript : MonoBehaviour
                         image.GetComponent<PanelTag>().Init(GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().Energy <= 0 ? true : false);
                         image.GetComponent<PanelTag>().ID = other.GetComponent<PanelImageData>().ID;
                         Bells[2].NewPanelImageNumber += 1;
+
+                        hasScanned = true;
                     }
                     /*else if (other.tag == "Minimap")
                     {
@@ -99,18 +105,18 @@ public class PanelBasketScript : MonoBehaviour
                     scannedItem = other.gameObject;
                     GetComponent<Animation>().Play();
 
-                    if(other.name == "EcritJournalDeBord (1)" && GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex == 14)
-                    {
-                        if (GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying)
-                            GameObject.Find("TutorialManager").GetComponent<Tutorial>().DialogueFinished();
-                        GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex++;
-                        StartCoroutine(GameObject.Find("TutorialManager").GetComponent<Tutorial>().LaunchNextDialogue(2));
-                    }
-                    if(other.GetComponent<DragObjects>().isTutoTI2 && GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex == 16)
-                    {
-                        other.GetComponent<DragObjects>().hasBeenTutoScaned = true;
-                        other.GetComponent<Highlight>().StopHighlight();
-                    }
+                    //if(other.name == "EcritJournalDeBord (1)" && GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex == 14)
+                    //{
+                    //    if (GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying)
+                    //        GameObject.Find("TutorialManager").GetComponent<Tutorial>().DialogueFinished();
+                    //    GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex++;
+                    //    StartCoroutine(GameObject.Find("TutorialManager").GetComponent<Tutorial>().LaunchNextDialogue(2));
+                    //}
+                    //if(other.GetComponent<DragObjects>().isTutoTI2 && GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex == 16)
+                    //{
+                    //    other.GetComponent<DragObjects>().hasBeenTutoScaned = true;
+                    //    other.GetComponent<Highlight>().StopHighlight();
+                    //}
                 }
             }
         }
