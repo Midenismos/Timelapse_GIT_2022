@@ -47,6 +47,8 @@ public class PlayerAxisScript : MonoBehaviour
     public bool MouseInConsole = false;
     private OptionData optionData;
 
+    public System.Action tiOpened;
+
     private void Awake()
     {
         try
@@ -167,11 +169,12 @@ public class PlayerAxisScript : MonoBehaviour
                     _isLerping = true;
                     IsInTI = true;
                     _TI.startAppear();
+
+                    tiOpened?.Invoke();
                 }
             }
             if (Input.GetKeyDown("z"))
             {
-                Debug.Log(ZEnabled);
                 if (!_isLerping && IsInTI && GameObject.Find("EventSystem").GetComponent<EventSystem>().currentSelectedGameObject == null)
                 {
                     _rotationCountdown = 1;
@@ -251,6 +254,8 @@ public class PlayerAxisScript : MonoBehaviour
                     _isLerping = true;
                     IsInTI = true;
                     _TI.startAppear();
+
+                    tiOpened?.Invoke();
                 }
             }
             if (Input.GetKeyDown("z"))

@@ -11,6 +11,8 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject[] Menus;
 
+    public bool isPauseAllowed = false;
+
     // Update is called once per frame
     void Update()
     {
@@ -20,7 +22,7 @@ public class PauseMenu : MonoBehaviour
             {
                 Resume();
             } 
-            else
+            else if (isPauseAllowed)
             {
                 Pause();
             }

@@ -18,6 +18,8 @@ public class MainMenu : MonoBehaviour
         FindObjectOfType<Tutorial>().BeginGame();
         FindObjectOfType<IntroductionSequence>().BeginGame();
 
+        FindObjectOfType<PauseMenu>().isPauseAllowed = true;
+
         GameObject.Find("EventSystem").GetComponent<EventSystem>().SetSelectedGameObject(null);
 
     }

@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Linq;
+using System;
 
 public class PanelBasketScript : MonoBehaviour
 {
@@ -28,6 +29,7 @@ public class PanelBasketScript : MonoBehaviour
     public bool IsActivated = true;
 
     public bool hasScanned = false;
+    public Action OnFirstScan;
 
     private void Awake()
     {
@@ -56,7 +58,9 @@ public class PanelBasketScript : MonoBehaviour
                             image.GetComponent<PanelTag>().ID = other.GetComponent<PanelImageData>().ID;
                             Bells[1].NewPanelImageNumber += 1;
                             GameObject.Find("TI").GetComponent<TIPanelImageData>().PanelImageList.Add(image.GetComponent<PanelTag>());
+                            
                             hasScanned = true;
+                            OnFirstScan?.Invoke();
                         }
                         //if (other.tag == "Written")
                         //{
@@ -80,6 +84,7 @@ public class PanelBasketScript : MonoBehaviour
                             Bells[2].NewPanelImageNumber += 1;
 
                             hasScanned = true;
+                            OnFirstScan?.Invoke();
                         }
                         /*else if (other.tag == "Minimap")
                         {
