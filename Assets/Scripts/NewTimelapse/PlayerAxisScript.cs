@@ -117,10 +117,14 @@ public class PlayerAxisScript : MonoBehaviour
                     _isLerping = true;
                     GetComponent<AudioSource>().pitch = Random.Range(0.8f, 1.2f);
                     GetComponent<AudioSource>().Play();
-                    if (IDCurrentAxis == 3)
-                        _targetPanelBasketPosition = _panelBasketPosition[1];
-                    else
+                    if (IDCurrentAxis == 5)
                         _targetPanelBasketPosition = _panelBasketPosition[0];
+                    else if (IDCurrentAxis == 1)
+                        _targetPanelBasketPosition = _panelBasketPosition[2];
+                    else
+                        _targetPanelBasketPosition = _panelBasketPosition[1];
+                    
+
                 }
             }
             if (Input.GetKeyDown("q") && QEnabled && !GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().IsTalkingTutorial)
@@ -142,10 +146,12 @@ public class PlayerAxisScript : MonoBehaviour
                     GetComponent<AudioSource>().pitch = Random.Range(0.8f, 1.2f);
                     GetComponent<AudioSource>().Play();
 
-                    if (IDCurrentAxis == 3)
-                        _targetPanelBasketPosition = _panelBasketPosition[1];
-                    else
+                    if (IDCurrentAxis == 5)
                         _targetPanelBasketPosition = _panelBasketPosition[0];
+                    else if (IDCurrentAxis == 1)
+                        _targetPanelBasketPosition = _panelBasketPosition[2];
+                    else
+                        _targetPanelBasketPosition = _panelBasketPosition[1];
 
                 }
             }
@@ -199,10 +205,12 @@ public class PlayerAxisScript : MonoBehaviour
                     _isLerping = true;
                     GetComponent<AudioSource>().pitch = Random.Range(0.8f, 1.2f);
                     GetComponent<AudioSource>().Play();
-                    if (IDCurrentAxis == 3)
-                        _targetPanelBasketPosition = _panelBasketPosition[1];
-                    else
+                    if (IDCurrentAxis == 5)
                         _targetPanelBasketPosition = _panelBasketPosition[0];
+                    else if (IDCurrentAxis == 1)
+                        _targetPanelBasketPosition = _panelBasketPosition[2];
+                    else
+                        _targetPanelBasketPosition = _panelBasketPosition[1];
                 }
             }
             if (Input.GetKeyDown("q") && !GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().IsTalkingTutorial)
@@ -223,10 +231,12 @@ public class PlayerAxisScript : MonoBehaviour
                     _isLerping = true;
                     GetComponent<AudioSource>().pitch = Random.Range(0.8f, 1.2f);
                     GetComponent<AudioSource>().Play();
-                    if (IDCurrentAxis == 3)
-                        _targetPanelBasketPosition = _panelBasketPosition[1];
-                    else
+                    if (IDCurrentAxis == 5)
                         _targetPanelBasketPosition = _panelBasketPosition[0];
+                    else if (IDCurrentAxis == 1)
+                        _targetPanelBasketPosition = _panelBasketPosition[2];
+                    else
+                        _targetPanelBasketPosition = _panelBasketPosition[1];
                 }
             }
             if (Input.GetKeyDown("s") && FindObjectOfType<PanelBasketScript>().hasScanned && !GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().IsTalkingTutorial)

@@ -51,6 +51,8 @@ public class SheetImageScript : MonoBehaviour
             IsFilled = true;
             ID = transform.GetChild(0).GetComponent<PanelTag>().ID;
             isGlitched = transform.GetChild(0).GetComponent<PanelTag>().IsCorrupted;
+            GameObject.Find("TI").GetComponent<TIPanelImageData>().PanelImageList.Remove(transform.GetChild(0).GetComponent<PanelTag>());
+
         }
 
     }

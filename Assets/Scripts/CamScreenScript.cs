@@ -75,7 +75,7 @@ public class CamScreenScript : MonoBehaviour
 
             /*if(player.clip = Videos[1])
                 player.time = time;*/
-            GameObject.Find("Console").GetComponent<ConsoleManager>().ChangeTime();
+            //GameObject.Find("Console").GetComponent<ConsoleManager>().ChangeTime();
             if (!_onOffButton.IsActivated)
                 player.Stop();
         };

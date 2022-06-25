@@ -13,10 +13,10 @@ public class ConsoleManager : MonoBehaviour
     [SerializeField] private VideoPlayer _minimap;
 
     [SerializeField] private bool _isRewinding = false;
-    [SerializeField] private Slider _slider;
+    //[SerializeField] private Slider _slider;
     public bool IsSliderClicked = false;
 
-    private RectTransform _sliderTransform = null;
+    //private RectTransform _sliderTransform = null;
     [SerializeField] private float _moveLerp = 0;
     [SerializeField] private float _rotationCountdown = 1;
     [SerializeField] private float _speed = 0.2f;
@@ -33,9 +33,9 @@ public class ConsoleManager : MonoBehaviour
         {
             isActivated = true;
         };
-        _sliderTransform = _slider.transform.parent.gameObject.GetComponent<RectTransform>();
+        //_sliderTransform = _slider.transform.parent.gameObject.GetComponent<RectTransform>();
         OnOff();
-        _slider.maxValue = (float)_cams[0].GetComponent<CamScreenScript>().Videos[1].length;
+        //_slider.maxValue = (float)_cams[0].GetComponent<CamScreenScript>().Videos[1].length;
 
         GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().ReactedToEnergy += delegate ()
         {
@@ -91,22 +91,22 @@ public class ConsoleManager : MonoBehaviour
             }
 
         }
-        if (!IsSliderClicked)
+       /* if (!IsSliderClicked)
         {
             if (currentModelCam != null)
                 _slider.value = (float)currentModelCam.time;
             else if (_minimap.isPlaying)
                 _slider.value = (float)_minimap.time;
-        }
+        }*/
 
-        if(currentModelCam)
+        /*if(currentModelCam)
         {
             if ((float)currentModelCam.time <= _slider.value + 0.1f && (float)currentModelCam.time >= _slider.value - 0.1f)
                 IsSliderClicked = false;
         }
         else if (_minimap.isPlaying)
             if ((float)_minimap.time <= _slider.value + 0.1f && (float)_minimap.time >= _slider.value - 0.1f)
-                IsSliderClicked = false;
+                IsSliderClicked = false;*/
 
 
         //Gère le lerp des sons lors d'un changement temporel
@@ -171,14 +171,14 @@ public class ConsoleManager : MonoBehaviour
         {
             if(!_isRewinding)
             {
-                if(cam.clip != cam.GetComponent<CamScreenScript>().Videos[0])
-                    cam.time = _slider.value;
-                _minimap.time = _slider.value;
+                //if(cam.clip != cam.GetComponent<CamScreenScript>().Videos[0])
+                   // cam.time = _slider.value;
+                //_minimap.time = _slider.value;
             }
             else
             {
-                if(currentModelCam)
-                    currentModelCam.time = _slider.value;
+                //if(currentModelCam)
+                   // currentModelCam.time = _slider.value;
             }
 
 

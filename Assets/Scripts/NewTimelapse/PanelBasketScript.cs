@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Linq;
 
 public class PanelBasketScript : MonoBehaviour
 {
@@ -42,81 +43,86 @@ public class PanelBasketScript : MonoBehaviour
             {
                 if (other.GetComponent<PanelImageData>() && !_isLerping)
                 {
-                    GameObject image;
-                    if (other.tag == "Cam")
+                    if(!GameObject.Find("TI").GetComponent<TIPanelImageData>().PanelImageList.Any(PanelImage => PanelImage.ID == other.GetComponent<PanelImageData>().ID))
                     {
-                        image = Instantiate(_panelImage, this.transform);
-                        image.GetComponent<Image>().sprite = other.GetComponent<PanelImageData>().Image;
-                        image.transform.SetParent(_panels[2].transform, false);
-                        image.GetComponent<PanelTag>().ImageTag = "cam";
-                        image.GetComponent<PanelTag>().Init(GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().Energy <= 0 ? true : false);
-                        image.GetComponent<PanelTag>().ID = other.GetComponent<PanelImageData>().ID;
-                        Bells[1].NewPanelImageNumber += 1;
+                        GameObject image;
+                        if (other.tag == "Cam")
+                        {
+                            image = Instantiate(_panelImage, this.transform);
+                            image.GetComponent<Image>().sprite = other.GetComponent<PanelImageData>().Image;
+                            image.transform.SetParent(_panels[2].transform, false);
+                            image.GetComponent<PanelTag>().ImageTag = "cam";
+                            image.GetComponent<PanelTag>().Init(GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().Energy <= 0 ? true : false);
+                            image.GetComponent<PanelTag>().ID = other.GetComponent<PanelImageData>().ID;
+                            Bells[1].NewPanelImageNumber += 1;
+                            GameObject.Find("TI").GetComponent<TIPanelImageData>().PanelImageList.Add(image.GetComponent<PanelTag>());
+                            hasScanned = true;
+                        }
+                        //if (other.tag == "Written")
+                        //{
+                        //    image = Instantiate(_panelImage, this.transform);
+                        //    image.GetComponent<Image>().sprite = other.GetComponent<PanelImageData>().Image;
+                        //    image.transform.SetParent(_panels[1].transform, false);
+                        //    image.GetComponent<PanelTag>().ImageTag = "written";
+                        //    image.GetComponent<PanelTag>().Init(GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().Energy <= 0 ? true : false);
+                        //    image.GetComponent<PanelTag>().ID = other.GetComponent<PanelImageData>().ID;
+                        //    Bells[0].NewPanelImageNumber += 1;
 
-                        hasScanned = true;
+                        //}
+                        else if (other.tag == "Tape")
+                        {
+                            image = Instantiate(_panelImageTape, this.transform);
+                            image.transform.GetChild(0).GetComponent<TMP_Text>().text = other.GetComponent<PanelImageData>().TMText.text;
+                            image.transform.SetParent(_panels[0].transform, false);
+                            image.GetComponent<PanelTag>().Init(GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().Energy <= 0 ? true : false);
+                            image.GetComponent<PanelTag>().ID = other.GetComponent<PanelImageData>().ID;
+                            GameObject.Find("TI").GetComponent<TIPanelImageData>().PanelImageList.Add(image.GetComponent<PanelTag>());
+                            Bells[2].NewPanelImageNumber += 1;
+
+                            hasScanned = true;
+                        }
+                        /*else if (other.tag == "Minimap")
+                        {
+                            image = Instantiate(_panelImageTape, this.transform);
+                            image.GetComponent<Image>().sprite = other.GetComponent<PanelImageData>().Image;
+                            image.transform.SetParent(_panels[3].transform, false);
+                            image.GetComponent<PanelTag>().ImageTag = "map";
+                            image.GetComponent<PanelTag>().IsCorrupted = GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().Energy <= 0 ? true : false;
+                        }*/
+                        //  _colorA = _mat.GetColor("_EmissionColor");
+                        if (GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().Energy <= 0)
+                            _colorB = _glitchedScanningColor;
+                        else
+                            _colorB = _scanningColor;
+
+
+                        //other.transform.SetParent(this.transform, false);
+                        other.transform.rotation = Quaternion.Euler(new Vector3(90, 0, 90));
+                        other.transform.position = GameObject.Find("start").transform.position;
+                        other.GetComponent<DragObjects>().IsDragable = false;
+                        if (other.GetComponent<ZoomScript>())
+                            other.GetComponent<ZoomScript>().IsZoomable = false;
+                        GetComponent<AudioSource>().Play();
+                        _zoomCountdown = 1;
+                        _zoomLerp = 0;
+                        _isLerping = true;
+                        scannedItem = other.gameObject;
+                        GetComponent<Animation>().Play();
+
+                        //if(other.name == "EcritJournalDeBord (1)" && GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex == 14)
+                        //{
+                        //    if (GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying)
+                        //        GameObject.Find("TutorialManager").GetComponent<Tutorial>().DialogueFinished();
+                        //    GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex++;
+                        //    StartCoroutine(GameObject.Find("TutorialManager").GetComponent<Tutorial>().LaunchNextDialogue(2));
+                        //}
+                        //if(other.GetComponent<DragObjects>().isTutoTI2 && GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex == 16)
+                        //{
+                        //    other.GetComponent<DragObjects>().hasBeenTutoScaned = true;
+                        //    other.GetComponent<Highlight>().StopHighlight();
+                        //}
                     }
-                    //if (other.tag == "Written")
-                    //{
-                    //    image = Instantiate(_panelImage, this.transform);
-                    //    image.GetComponent<Image>().sprite = other.GetComponent<PanelImageData>().Image;
-                    //    image.transform.SetParent(_panels[1].transform, false);
-                    //    image.GetComponent<PanelTag>().ImageTag = "written";
-                    //    image.GetComponent<PanelTag>().Init(GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().Energy <= 0 ? true : false);
-                    //    image.GetComponent<PanelTag>().ID = other.GetComponent<PanelImageData>().ID;
-                    //    Bells[0].NewPanelImageNumber += 1;
 
-                    //}
-                    else if (other.tag == "Tape")
-                    {
-                        image = Instantiate(_panelImageTape, this.transform);
-                        image.transform.GetChild(0).GetComponent<TMP_Text>().text = other.GetComponent<PanelImageData>().TMText.text;
-                        image.transform.SetParent(_panels[0].transform, false);
-                        image.GetComponent<PanelTag>().Init(GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().Energy <= 0 ? true : false);
-                        image.GetComponent<PanelTag>().ID = other.GetComponent<PanelImageData>().ID;
-                        Bells[2].NewPanelImageNumber += 1;
-
-                        hasScanned = true;
-                    }
-                    /*else if (other.tag == "Minimap")
-                    {
-                        image = Instantiate(_panelImageTape, this.transform);
-                        image.GetComponent<Image>().sprite = other.GetComponent<PanelImageData>().Image;
-                        image.transform.SetParent(_panels[3].transform, false);
-                        image.GetComponent<PanelTag>().ImageTag = "map";
-                        image.GetComponent<PanelTag>().IsCorrupted = GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().Energy <= 0 ? true : false;
-                    }*/
-                    //  _colorA = _mat.GetColor("_EmissionColor");
-                    if (GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().Energy <= 0)
-                        _colorB = _glitchedScanningColor;
-                    else
-                        _colorB = _scanningColor;
-
-
-                    //other.transform.SetParent(this.transform, false);
-                    other.transform.rotation = Quaternion.Euler(new Vector3(90, 0, 90));
-                    other.transform.position = GameObject.Find("start").transform.position;
-                    other.GetComponent<DragObjects>().IsDragable = false;
-                    if(other.GetComponent<ZoomScript>())
-                        other.GetComponent<ZoomScript>().IsZoomable = false;
-                    GetComponent<AudioSource>().Play();
-                    _zoomCountdown = 1;
-                    _zoomLerp = 0;
-                    _isLerping = true;
-                    scannedItem = other.gameObject;
-                    GetComponent<Animation>().Play();
-
-                    //if(other.name == "EcritJournalDeBord (1)" && GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex == 14)
-                    //{
-                    //    if (GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying)
-                    //        GameObject.Find("TutorialManager").GetComponent<Tutorial>().DialogueFinished();
-                    //    GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex++;
-                    //    StartCoroutine(GameObject.Find("TutorialManager").GetComponent<Tutorial>().LaunchNextDialogue(2));
-                    //}
-                    //if(other.GetComponent<DragObjects>().isTutoTI2 && GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex == 16)
-                    //{
-                    //    other.GetComponent<DragObjects>().hasBeenTutoScaned = true;
-                    //    other.GetComponent<Highlight>().StopHighlight();
-                    //}
                 }
             }
         }

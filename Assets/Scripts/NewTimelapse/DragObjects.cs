@@ -100,8 +100,10 @@ public class DragObjects : MonoBehaviour
                             EntrySlot.GetComponent<SheetImageScript>().ID = "";
                             EntrySlot.GetComponent<SheetImageScript>().isGlitched = false;
                             EntrySlot = null;
+                            GameObject.Find("TI").GetComponent<TIPanelImageData>().PanelImageList.Add(GetComponent<PanelTag>());
                         }
                         transform.SetParent(GameObject.Find("TI").transform, true);
+
                     }
 
                 }
@@ -192,7 +194,14 @@ public class DragObjects : MonoBehaviour
 
                         float distance; // the distance from the ray origin to the ray intersection of the plane
                         if (plane.Raycast(ray, out distance))
-                            draggingObject.GetComponent<Rigidbody>().velocity = (new Vector3(ray.GetPoint(Mathf.Clamp(distance, 3, 6)).x, -29.5f, ray.GetPoint(Mathf.Clamp(distance, 3, 4)).z) - draggingObject.transform.position) * 20; // distance along the ray
+                        {
+                            if(tag != "Written")
+                                draggingObject.GetComponent<Rigidbody>().velocity = (new Vector3(ray.GetPoint(Mathf.Clamp(distance, 3, 6)).x, -29.5f, ray.GetPoint(Mathf.Clamp(distance, 3, 4)).z) - draggingObject.transform.position) * 20; // distance along the ray
+                            else
+                                draggingObject.GetComponent<Rigidbody>().velocity = (new Vector3(ray.GetPoint(Mathf.Clamp(distance, 3.75f, 6)).x, -29.5f, ray.GetPoint(Mathf.Clamp(distance, 4.5f, 4)).z) - draggingObject.transform.position) * 20; // distance along the ray
+
+
+                        }
                     }
                     else
                     {

@@ -4,9 +4,15 @@ using UnityEngine;
 
 public class DocFixer : MonoBehaviour
 {
-    private void OnMouseEnter()
+    public void FixDoc( GameObject writtenDoc)
     {
-        if (GameObject.Find("Player").GetComponent<PlayerAxisScript>().IsDraging)
+        writtenDoc.GetComponent<ZoomScript>().PutBackFixedWrittenDoc();
+        //writtenDoc.GetComponent<DragObjects>().OnMouseUp();
+       // GameObject.Find("Player").GetComponent<PlayerAxisScript>().IsDraging = false;
+        writtenDoc.GetComponent<DragObjects>().IsDragable = false;
+        writtenDoc.GetComponent<Rigidbody>().isKinematic = true;
+        //break;
+        /*if (GameObject.Find("Player").GetComponent<PlayerAxisScript>().IsDraging)
         {
             foreach (GameObject writtenDoc in GameObject.FindGameObjectsWithTag("Written"))
             {
@@ -14,16 +20,11 @@ public class DocFixer : MonoBehaviour
                 {
                     if (writtenDoc.GetComponent<DragObjects>().IsDragged && writtenDoc.GetComponent<DragObjects>().isFixable && writtenDoc.GetComponent<ZoomScript>()._isFixedButDragable)
                     {
-                        writtenDoc.GetComponent<ZoomScript>().PutBackFixedWrittenDoc();
-                        writtenDoc.GetComponent<DragObjects>().OnMouseUp();
-                        GameObject.Find("Player").GetComponent<PlayerAxisScript>().IsDraging = false;
-                        writtenDoc.GetComponent<DragObjects>().IsDragable = false;
-                        writtenDoc.GetComponent<Rigidbody>().isKinematic = true;
-                        break;
+
                     }
                 }
             }
-        }
+        }*/
 
     }
 }

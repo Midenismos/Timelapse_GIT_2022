@@ -70,6 +70,7 @@ public class PanelTag : MonoBehaviour
         }
         GameObject.Find("TI").GetComponent<AudioSource>().clip = Resources.Load("Sound/Snd_Investigation/Snd_Delete") as AudioClip;
         GameObject.Find("TI").GetComponent<AudioSource>().Play();
+        GameObject.Find("TI").GetComponent<TIPanelImageData>().PanelImageList.Remove(this);
         transform.parent = null;
         Destroy(gameObject);
     }

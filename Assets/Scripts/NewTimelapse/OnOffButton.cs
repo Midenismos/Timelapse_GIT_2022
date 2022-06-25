@@ -44,11 +44,11 @@ public class OnOffButton : MonoBehaviour
             _interactFeedBack.enabled = true;
             if (Input.GetMouseButtonDown(0) && GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick && !GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().IsTalkingTutorial)
             {
-                if (GameObject.Find("Console").GetComponent<ConsoleManager>().isActivated || tag == "ResetEnergy" || tag == "VaultButton")
-                {
+                //if (GameObject.Find("Console").GetComponent<ConsoleManager>().isActivated || tag == "ResetEnergy" || tag == "VaultButton")
+                //{
                     IsActivated = !IsActivated;
                     onClicked?.Invoke();
-                }
+                //}
 
             }
         }
