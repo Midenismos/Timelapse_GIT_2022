@@ -293,14 +293,14 @@ public class DragObjects : MonoBehaviour
             if (gameObject.CompareTag("Tape"))
                 GetComponent<Rigidbody>().AddForce((GameObject.Find("PosTapeThrow").transform.position - transform.position) *50);
         }
-        //if (IsFixedInTI && !IsDragged && !GetComponent<TIEntryScript>().IsTuto)
-        //    transform.localPosition = new Vector3(GameObject.Find("TI").GetComponent<TutorialTI>().TutorialActivated ? Mathf.Clamp(transform.localPosition.x, -300, 300) : Mathf.Clamp(transform.localPosition.x, -210, 300), -7f, 0);
-        //if (IsFixedInTI && IsDragged && !GetComponent<TIEntryScript>().IsTuto)
-        //    transform.localPosition = new Vector3(GameObject.Find("TI").GetComponent<TutorialTI>().TutorialActivated ? Mathf.Clamp(transform.localPosition.x, -300, 300) : Mathf.Clamp(transform.localPosition.x, -210, 300), -7f, 0);
-        //if (IsFixedInTI && !IsDragged && GetComponent<TIEntryScript>().IsTuto)
-        //    transform.localPosition = new Vector3(Mathf.Clamp(transform.localPosition.x, -300, -210) , -7f, 0);
-        //if (IsFixedInTI && IsDragged && GetComponent<TIEntryScript>().IsTuto)
-        //    transform.localPosition = new Vector3(Mathf.Clamp(transform.localPosition.x, -300, -210), -7f, 0);
+        if (IsFixedInTI && !IsDragged && !GetComponent<TIEntryScript>().IsTuto)
+            transform.localPosition = new Vector3(GameObject.Find("TI").GetComponent<TutorialTI>().TutorialActivated ? Mathf.Clamp(transform.localPosition.x, -300, 300) : Mathf.Clamp(transform.localPosition.x, -210, 300), -7f, 0);
+        if (IsFixedInTI && IsDragged && !GetComponent<TIEntryScript>().IsTuto)
+            transform.localPosition = new Vector3(GameObject.Find("TI").GetComponent<TutorialTI>().TutorialActivated ? Mathf.Clamp(transform.localPosition.x, -300, 300) : Mathf.Clamp(transform.localPosition.x, -210, 300), -7f, 0);
+        if (IsFixedInTI && !IsDragged && GetComponent<TIEntryScript>().IsTuto)
+            transform.localPosition = new Vector3(Mathf.Clamp(transform.localPosition.x, -300, -210) , -7f, 0);
+        if (IsFixedInTI && IsDragged && GetComponent<TIEntryScript>().IsTuto)
+            transform.localPosition = new Vector3(Mathf.Clamp(transform.localPosition.x, -300, -210), -7f, 0);
 
 
 
