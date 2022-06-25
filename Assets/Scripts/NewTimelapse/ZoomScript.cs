@@ -294,7 +294,6 @@ public class ZoomScript : MonoBehaviour
 
     public void DezoomCurrentItem()
     {
-
         ZoomScript currentItem = AxisScript.CurrentHoldItem.GetComponent<ZoomScript>();
         if (GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex == 3 && GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying)
         {

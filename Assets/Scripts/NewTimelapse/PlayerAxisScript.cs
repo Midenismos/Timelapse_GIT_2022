@@ -48,6 +48,8 @@ public class PlayerAxisScript : MonoBehaviour
     private OptionData optionData;
 
     public System.Action tiOpened;
+    public System.Action<int> moveStarted;
+    public System.Action<int> moveEnded;
 
     private void Awake()
     {
@@ -125,8 +127,8 @@ public class PlayerAxisScript : MonoBehaviour
                         _targetPanelBasketPosition = _panelBasketPosition[2];
                     else
                         _targetPanelBasketPosition = _panelBasketPosition[1];
-                    
 
+                    moveStarted?.Invoke(IDCurrentAxis);
                 }
             }
             if (Input.GetKeyDown("q") && QEnabled && !GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().IsTalkingTutorial)
@@ -155,6 +157,7 @@ public class PlayerAxisScript : MonoBehaviour
                     else
                         _targetPanelBasketPosition = _panelBasketPosition[1];
 
+                    moveStarted?.Invoke(IDCurrentAxis);
                 }
             }
             if (Input.GetKeyDown("s") && SEnabled && FindObjectOfType<PanelBasketScript>().hasScanned && !GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().IsTalkingTutorial)
@@ -171,6 +174,7 @@ public class PlayerAxisScript : MonoBehaviour
                     _TI.startAppear();
 
                     tiOpened?.Invoke();
+                    moveStarted?.Invoke(IDCurrentAxis);
                 }
             }
             if (Input.GetKeyDown("z"))
@@ -185,6 +189,8 @@ public class PlayerAxisScript : MonoBehaviour
                     _isLerping = true;
                     IsInTI = false;
                     _TI.startDisappear();
+
+                    moveStarted?.Invoke(IDCurrentAxis);
                 }
             }
         }
@@ -214,6 +220,8 @@ public class PlayerAxisScript : MonoBehaviour
                         _targetPanelBasketPosition = _panelBasketPosition[2];
                     else
                         _targetPanelBasketPosition = _panelBasketPosition[1];
+
+                    moveStarted?.Invoke(IDCurrentAxis);
                 }
             }
             if (Input.GetKeyDown("q") && !GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().IsTalkingTutorial)
@@ -240,6 +248,8 @@ public class PlayerAxisScript : MonoBehaviour
                         _targetPanelBasketPosition = _panelBasketPosition[2];
                     else
                         _targetPanelBasketPosition = _panelBasketPosition[1];
+
+                    moveStarted?.Invoke(IDCurrentAxis);
                 }
             }
             if (Input.GetKeyDown("s") && FindObjectOfType<PanelBasketScript>().hasScanned && !GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().IsTalkingTutorial)
@@ -256,6 +266,8 @@ public class PlayerAxisScript : MonoBehaviour
                     _TI.startAppear();
 
                     tiOpened?.Invoke();
+
+                    moveStarted?.Invoke(IDCurrentAxis);
                 }
             }
             if (Input.GetKeyDown("z"))
@@ -271,6 +283,8 @@ public class PlayerAxisScript : MonoBehaviour
                     _isLerping = true;
                     IsInTI = false;
                     _TI.startDisappear();
+
+                    moveStarted?.Invoke(IDCurrentAxis);
                 }
             }
         }
@@ -293,6 +307,7 @@ public class PlayerAxisScript : MonoBehaviour
                 //_currentConsolePosition = console.transform.localPosition;
                 _currentPanelBasketPosition = GameObject.Find("PanelBasket").transform.localPosition;
                 _isLerping = false;
+                moveEnded?.Invoke(IDCurrentAxis);
             }
             transform.rotation = Quaternion.Slerp( Quaternion.Euler(_currentAxisRotation), Quaternion.Euler(_targetRotation), _moveLerp);
             cam.transform.localPosition = Vector3.Lerp(_currentCamPosition, _targetPosition, _moveLerp);

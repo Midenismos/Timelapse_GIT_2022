@@ -28,6 +28,12 @@ public class ConsoleManager : MonoBehaviour
     [SerializeField] private AudioSource[] _secretRadios = null;
     [SerializeField] private InterfaceAnimManager _animManager = null;
 
+    [SerializeField] private MeshRenderer[] buttonRenderers;
+    [SerializeField] private Color pressedButtonColor;
+    [SerializeField] private Color standartButtonColor;
+
+    private MaterialPropertyBlock propBlock;
+
     private void Awake()
     {
         GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().ReactedToEnergyReset += delegate ()
@@ -48,6 +54,13 @@ public class ConsoleManager : MonoBehaviour
             isActivated = false;
         };
 
+    }
+
+    private void Start()
+    {
+        propBlock = new MaterialPropertyBlock();
+
+        ColorButton(2);
     }
     private void Update()
     {
@@ -140,12 +153,24 @@ public class ConsoleManager : MonoBehaviour
     }
 
 
-   
+    public void ColorButton(int buttonIndex)
+    {
+        foreach (MeshRenderer rend in buttonRenderers)
+        {
+            propBlock.SetColor("_BaseColor", standartButtonColor);
+            rend.SetPropertyBlock(propBlock);
+        }
+
+        propBlock.SetColor("_BaseColor", pressedButtonColor);
+        buttonRenderers[buttonIndex].SetPropertyBlock(propBlock);
+    }
 
     public void RewindCam()
     {
         _isRewinding = true;
         //_minimap.playbackSpeed = 0;
+
+        ColorButton(0);
     }
     public void StopCam()
     {
@@ -153,6 +178,9 @@ public class ConsoleManager : MonoBehaviour
         foreach (VideoPlayer cam in _cams)
             cam.playbackSpeed = 0;
         //_minimap.playbackSpeed = 0;
+
+        ColorButton(1);
+
     }
     public void NormalCam()
     {
@@ -160,6 +188,9 @@ public class ConsoleManager : MonoBehaviour
         foreach (VideoPlayer cam in _cams)
             cam.playbackSpeed = 1;
         //_minimap.playbackSpeed = 1;
+
+        ColorButton(2);
+
     }
     public void SlowCam()
     {
@@ -167,6 +198,9 @@ public class ConsoleManager : MonoBehaviour
         foreach (VideoPlayer cam in _cams)
             cam.playbackSpeed = 0.5f;
         //_minimap.playbackSpeed = 0.5f;
+
+        ColorButton(3);
+
     }
     public void AccelerateCam()
     {
@@ -174,6 +208,9 @@ public class ConsoleManager : MonoBehaviour
         foreach (VideoPlayer cam in _cams)
             cam.playbackSpeed = 3;
         //_minimap.playbackSpeed = 3;
+
+        ColorButton(4);
+
     }
 
     public void ChangeTime()
