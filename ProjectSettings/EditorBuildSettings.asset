@@ -38,9 +38,12 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Archives_Micro/EndingEarth.unity
     guid: f902882b7c0bcdc4ca1f7b30f98ac2b0
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Main Menu.unity
     guid: a618272c7cd646c45b656484e1e16a73
+  - enabled: 0
+    path: Assets/Scenes/LoadingScene.unity
+    guid: afaa882af8e85f74693829088acf48a2
   - enabled: 1
     path: Assets/Scenes/NewTimelapsePrototype.unity
     guid: b4d9824727121c845816532e0faf89a3
