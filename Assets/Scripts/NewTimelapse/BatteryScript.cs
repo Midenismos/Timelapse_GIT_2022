@@ -25,8 +25,8 @@ public class BatteryScript : MonoBehaviour
     [SerializeField]private float _energy;
     private void Awake()
     {
-        if (!GameObject.Find("TutorialManager").GetComponent<Tutorial>().activateTuto)
-            Activated = true;
+        /*if (!GameObject.Find("TutorialManager").GetComponent<Tutorial>().activateTuto)
+            Activated = true;*/
         _slider.maxValue = GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().MaxEnergy;
         GameObject.Find("LoopManager").GetComponent<NewLoopManager>().ReactedToNebuleuse += delegate (NebuleuseType NebuleuseType)
         {
