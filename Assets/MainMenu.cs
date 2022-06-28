@@ -8,6 +8,7 @@ using UnityEngine.EventSystems;
 
 public class MainMenu : MonoBehaviour
 {
+    [SerializeField] private PauseMenu pauseMenu;
     public void ButtonQuitter() {
         Application.Quit();
         //Debug.Log("Pourquoi vouloir quitter ?");
@@ -18,7 +19,7 @@ public class MainMenu : MonoBehaviour
         FindObjectOfType<Tutorial>().BeginGame();
         FindObjectOfType<IntroductionSequence>().BeginGame();
 
-        FindObjectOfType<PauseMenu>().isPauseAllowed = true;
+        pauseMenu.isPauseAllowed = true;
 
         GameObject.Find("EventSystem").GetComponent<EventSystem>().SetSelectedGameObject(null);
 

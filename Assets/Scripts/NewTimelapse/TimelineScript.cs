@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.Video;
 public class TimelineScript : MonoBehaviour
 {
     [System.Serializable]
@@ -27,6 +28,7 @@ public class TimelineScript : MonoBehaviour
     private int corruptedNumber = 0;
     [SerializeField] private int corruptedNumberRequired = 9;
     [SerializeField] private GameObject reportButton = null;
+    [SerializeField] private VideoClip[] EndingVideos = null;
     public void CheckEntry()
     {
         if(GameObject.Find("TutorialManager").GetComponent<Tutorial>().activateTuto && GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex == 27 && !GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying)
@@ -134,18 +136,15 @@ public class TimelineScript : MonoBehaviour
         //StartCoroutine(GameObject.Find("TutorialManager").GetComponent<Tutorial>().LaunchNextDialogue(0));
     }
 
-    IEnumerator SpawnRepportButton()
-    {
-        yield return new WaitForSeconds(7);
-        reportButton.gameObject.SetActive(true);
-    }
+
     public void StartEnding()
     {
+        VideoPlayer EndingPlayer = GameObject.Find("VideoEnding").GetComponent<VideoPlayer>();
         foreach (TIEntryScript Entry in GameObject.Find("TI").GetComponentsInChildren<TIEntryScript>())
         {
             if (!Entry.IsTuto && Entry.GetComponent<DragObjects>().IsFixedInTI)
             {
-                for (int i = 3; i <= 14; i++)
+                for (int i = 0; i <= EndAData.Length-1; i++)
                 {
 
                     if (int.Parse(Entry.Date) >= int.Parse(EndAData[i].Date[0]) && int.Parse(Entry.Date) <= int.Parse(EndAData[i].Date[1]))
@@ -184,11 +183,26 @@ public class TimelineScript : MonoBehaviour
         if (EndAData.Count(n => n.isTrue == true) + 3 == 15)
         {
             if (corruptedNumber == 9)
+            {
+                EndingPlayer.clip = EndingVideos[1];
+                EndingPlayer.Play();
                 GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().LaunchDialogue(GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().EndBDialogue);
-                //image B
+            }
+            //image B
             else
+            {
+                EndingPlayer.clip = EndingVideos[2];
+                EndingPlayer.Play();
                 GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().LaunchDialogue(GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().EndADialogue);
-                //image A
+
+            }
+            //image A
+        }
+        else
+        {
+            //Fin ratée
+            EndingPlayer.clip = EndingVideos[0];
+            EndingPlayer.Play();
         }
     }
 }

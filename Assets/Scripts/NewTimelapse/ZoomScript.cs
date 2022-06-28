@@ -76,6 +76,15 @@ public class ZoomScript : MonoBehaviour
             _fixedPosition = transform.position;
             _fixedRotation = transform.rotation;
         }
+
+        if(gameObject.name == "SchemaTI")
+        {
+            AxisScript.ReactedToChangePosition += delegate ()
+            {
+                _originalPosition = transform.position;
+                _originalRotation = transform.rotation;
+            };
+        }
     }
 
     //Pour faire le double clic
@@ -106,14 +115,14 @@ public class ZoomScript : MonoBehaviour
                 }
                 if (ZoomPos.GetComponent<ZoomPoint>().IsEmpty == true)
                 {
-                    if ( GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex == 3 && GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying)
+                    if (GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex == 3 && GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying)
                     {
                         //GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().Pause();
                     }
                     if (GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex == 6 && !GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying)
                     {
-                        GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex++;
-                        StartCoroutine(GameObject.Find("TutorialManager").GetComponent<Tutorial>().LaunchNextDialogue(3));
+                        //GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex++;
+                        //StartCoroutine(GameObject.Find("TutorialManager").GetComponent<Tutorial>().LaunchNextDialogue(3));
                     }
                     posA = _originalPosition;
                     posB = ZoomPos.transform.position;
@@ -125,13 +134,13 @@ public class ZoomScript : MonoBehaviour
                     _isLerping = true;
                     AxisScript.HasItem = true;
                     AxisScript.CurrentHoldItem = this.gameObject;
-                    if(GetComponent<AudioSource>())
+                    if (GetComponent<AudioSource>())
                     {
                         GetComponent<AudioSource>().clip = _pickupSound;
                         GetComponent<AudioSource>().Play();
                     }
                     //if( tag == "Written")
-                        //AxisScript.PutConsoleDown();
+                    //AxisScript.PutConsoleDown();
 
                 }
                 /*else
@@ -151,6 +160,34 @@ public class ZoomScript : MonoBehaviour
                 }*/
             }
 
+        }
+        else if (gameObject.name == "SchemaTI" && GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick && !GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().IsTalkingTutorial)
+        {
+            if (!_isLerping)
+            {
+                if (AxisScript.HasItem && AxisScript.CurrentHoldItem.GetComponent<ZoomScript>() != this)
+                {
+                    DezoomCurrentItem();
+                }
+                if (ZoomPos.GetComponent<ZoomPoint>().IsEmpty == true)
+                {
+                    posA = _originalPosition;
+                    posB = ZoomPos.transform.position;
+                    rotA = _originalRotation;
+                    rotB = ZoomPos.transform.rotation;
+                    _zoomCountdown = 1;
+                    _zoomLerp = 0;
+                    ZoomPos.GetComponent<ZoomPoint>().IsEmpty = false;
+                    _isLerping = true;
+                    AxisScript.HasItem = true;
+                    AxisScript.CurrentHoldItem = this.gameObject;
+                    if (GetComponent<AudioSource>())
+                    {
+                        GetComponent<AudioSource>().clip = _pickupSound;
+                        GetComponent<AudioSource>().Play();
+                    }
+                }
+            }
         }
     }
 
@@ -250,6 +287,11 @@ public class ZoomScript : MonoBehaviour
                 {
                     transform.position = ZoomPos.transform.position;
                     transform.rotation = ZoomPos.transform.rotation;
+                    if(gameObject.name == "SchemaTI" && !HasZoomed)
+                    {
+                        _originalPosition = ZoomPos.transform.position;
+                        _originalRotation = ZoomPos.transform.rotation;
+                    }
                 }
 
             }
@@ -271,10 +313,11 @@ public class ZoomScript : MonoBehaviour
         //Remet l'objet à sa place si le joueur change d'axe
         if (AxisScript.CurrentHoldItem)
         { 
-            if (AxisScript.IDCurrentAxis != AxisScript.CurrentHoldItem.GetComponent<ZoomScript>().itemAxis)
+            if (AxisScript.IDCurrentAxis != AxisScript.CurrentHoldItem.GetComponent<ZoomScript>().itemAxis && AxisScript.CurrentHoldItem.name != "SchemaTI")
             {
                 if (ZoomPos.GetComponent<ZoomPoint>().IsEmpty == false)
                 {
+
                     DezoomCurrentItem();
                 }
             }
@@ -282,7 +325,17 @@ public class ZoomScript : MonoBehaviour
 
         if (Input.GetKeyDown("s") && AxisScript.SEnabled == true)
         {
-            if (AxisScript.CurrentHoldItem != null && AxisScript.CurrentHoldItem.gameObject.tag != "Tape")
+            if (AxisScript.CurrentHoldItem != null && AxisScript.CurrentHoldItem.gameObject.tag != "Tape" && AxisScript.CurrentHoldItem.name != "SchemaTI")
+            {
+                if (ZoomPos.GetComponent<ZoomPoint>().IsEmpty == false)
+                {
+                    DezoomCurrentItem();
+                }
+            }
+        }
+        if (Input.GetKeyDown("z") && AxisScript.ZEnabled == true)
+        {
+            if (AxisScript.CurrentHoldItem != null && AxisScript.CurrentHoldItem.name == "SchemaTI")
             {
                 if (ZoomPos.GetComponent<ZoomPoint>().IsEmpty == false)
                 {
@@ -325,10 +378,11 @@ public class ZoomScript : MonoBehaviour
                 currentItem.GetComponent<AudioSource>().clip = currentItem.PutDownSound;
                 currentItem.GetComponent<AudioSource>().Play();
             }
-            if (currentItem.gameObject.CompareTag("Written"))
+            if (currentItem.gameObject.CompareTag("Written") && currentItem.gameObject.name != "SchemaTI")
             {
                 if (AxisScript.IDCurrentAxis == 0 && !currentItem.IsFixed)
                 {
+                    print("hey");
                     currentItem.posB.x = Mathf.Clamp(currentItem.posB.x, -35.5f, -32f);
                     currentItem.posB.y = -29.5f;
                     currentItem.posB.z = Mathf.Clamp(currentItem.posB.z, -56.5f, -55.5f);

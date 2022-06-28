@@ -5,7 +5,7 @@ using UnityEngine;
 public class PaperScript : MonoBehaviour
 {
 
-    private float SceneWidth;
+    /*private float SceneWidth;
     private Vector3 PressPoint;
     private Quaternion StartRotation;
 
@@ -31,5 +31,5 @@ public class PaperScript : MonoBehaviour
             float CurrentDistanceBetweenMousePositions = (Input.mousePosition - PressPoint).x;
             transform.rotation = StartRotation * Quaternion.Euler(-Vector3.forward * (CurrentDistanceBetweenMousePositions / SceneWidth) * 360);
         }
-    }
+    }*/
 }

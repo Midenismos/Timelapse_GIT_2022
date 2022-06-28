@@ -51,6 +51,9 @@ public class PlayerAxisScript : MonoBehaviour
     public System.Action<int> moveStarted;
     public System.Action<int> moveEnded;
 
+    public delegate void ReactToChangePosition();
+    public event ReactToChangePosition ReactedToChangePosition;
+
     private void Awake()
     {
         try
@@ -308,6 +311,8 @@ public class PlayerAxisScript : MonoBehaviour
                 _currentPanelBasketPosition = GameObject.Find("PanelBasket").transform.localPosition;
                 _isLerping = false;
                 moveEnded?.Invoke(IDCurrentAxis);
+                if (ReactedToChangePosition != null)
+                    ReactedToChangePosition();
             }
             transform.rotation = Quaternion.Slerp( Quaternion.Euler(_currentAxisRotation), Quaternion.Euler(_targetRotation), _moveLerp);
             cam.transform.localPosition = Vector3.Lerp(_currentCamPosition, _targetPosition, _moveLerp);
