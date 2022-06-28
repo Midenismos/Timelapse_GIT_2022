@@ -113,6 +113,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -141,6 +142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -284,6 +286,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -439,6 +442,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 1
 --- !u!114 &493304550252709196
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -519,6 +523,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -543,6 +548,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!54 &493304549035087955
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -571,8 +577,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6ceb86934969ca4bafafef81d22ee0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Image: {fileID: 0}
+  Image: {fileID: 21300000, guid: 551fb787a52502e4f8602cc6f22d3bf7, type: 3}
   TMText: {fileID: 493304549477230004}
+  ID: 
 --- !u!65 &493304549035088044
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -601,9 +608,16 @@ MonoBehaviour:
   IsDragable: 1
   IsDragged: 0
   Is3D: 1
-  IsEntry: 0
+  IsFixedInTI: 0
   _interactFeedBack: {fileID: 0}
   _axisID: 1
+  EntryDispenser: {fileID: 0}
+  EntrySlot: {fileID: 0}
+  isTutoTI1: 0
+  isTutoTI2: 0
+  hasBeenTutoScaned: 0
+  SheetImages: []
+  isFixable: 0
 --- !u!114 &493304549035087952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -637,6 +651,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _originalPosition: {x: 0, y: 0, z: 0}
   _originalRotation: {x: 0, y: 0, z: 0, w: 0}
+  _fixedPosition: {x: 0, y: 0, z: 0}
+  _fixedRotation: {x: 0, y: 0, z: 0, w: 0}
   _zoomLerp: 0
   _zoomCountdown: 1
   _zoomSpeed: 2
@@ -650,6 +666,14 @@ MonoBehaviour:
   ZoomPos: {fileID: 0}
   isCamera: 0
   IsZoomable: 1
+  _interactFeedBack: {fileID: 0}
+  IsFixed: 0
+  PutDownSound: {fileID: 0}
+  _pickupSound: {fileID: 0}
+  TutoBriefing: 0
+  TutoCasette: 0
+  TutoCasetteZoomable: 0
+  _isFixedButDragable: 0
 --- !u!1 &1244899333809918170
 GameObject:
   m_ObjectHideFlags: 0
@@ -705,6 +729,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -729,3 +754,4 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
