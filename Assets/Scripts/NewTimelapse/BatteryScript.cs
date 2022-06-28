@@ -1,8 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class BatteryScript : MonoBehaviour
+public class BatteryScript : MonoBehaviour, IClickable
 {
     [SerializeField]private Slider _slider = null;
     private float _multiplier = 0;
@@ -11,6 +12,10 @@ public class BatteryScript : MonoBehaviour
     public bool isInBox = false;
     [SerializeField] private Image _sliderImage;
     public bool Activated = false;
+
+    private bool isClickable;
+    public Action OnClicked;
+    public Action GetOnClicked { get { return OnClicked; } set { OnClicked = value; } }
 
     public float Energy
     {
@@ -53,6 +58,11 @@ public class BatteryScript : MonoBehaviour
     {
         if (GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick && !GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().IsTalkingTutorial)
         {
+            if(!isClickable)
+            {
+                OnClicked?.Invoke();
+                return;
+            }
             EnergyMetterScript EnergyMetter = GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>();
             if (EnergyMetter.CurrentBattery == this && GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == 3)
             {
@@ -109,5 +119,10 @@ public class BatteryScript : MonoBehaviour
     public void Activate()
     {
         Activated = true;
+    }
+
+    public void SetClickable(bool isClickable)
+    {
+        this.isClickable = isClickable;
     }
 }

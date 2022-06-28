@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
-
-public class ZoomScript : MonoBehaviour
+public class ZoomScript : MonoBehaviour, IClickable
 {
     public Vector3 _originalPosition;
     public Quaternion _originalRotation;
@@ -47,6 +47,10 @@ public class ZoomScript : MonoBehaviour
     public bool TutoCasette = false;
     public bool TutoCasetteZoomable = false;
     public bool _isFixedButDragable = false;
+
+    private bool isClickable = true;
+    private Action OnClicked;
+    public Action GetOnClicked { get { return OnClicked; } set { OnClicked = value; } }
 
 
     private void Awake()
@@ -156,8 +160,15 @@ public class ZoomScript : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if(!GameObject.Find("TutorialManager").GetComponent<Tutorial>().activateTuto)
+        if (!isClickable)
         {
+            OnClicked?.Invoke();
+            return;
+        }
+
+        if (!GameObject.Find("TutorialManager").GetComponent<Tutorial>().activateTuto)
+        {
+            
             if (IsZoomable && GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick && !GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().IsTalkingTutorial)
             {
                 clicked = true;
@@ -444,5 +455,10 @@ public class ZoomScript : MonoBehaviour
     public void MakeZoomable()
     {
         TutoCasetteZoomable = true;
+    }
+
+    public void SetClickable(bool isClickable)
+    {
+        this.isClickable = isClickable;
     }
 }

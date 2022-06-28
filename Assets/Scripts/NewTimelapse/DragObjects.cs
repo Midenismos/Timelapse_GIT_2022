@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class DragObjects : MonoBehaviour
+public class DragObjects : MonoBehaviour, IClickable
 {
 
     private Vector3 mOffset;
@@ -25,6 +25,14 @@ public class DragObjects : MonoBehaviour
     public bool hasBeenTutoScaned = false;
     public SheetImageScript[] SheetImages;
     public bool isFixable = false;
+
+    private bool isClickable = true;
+    private Action OnClicked;
+    public Action GetOnClicked
+    {
+        get { return OnClicked; }
+        set { OnClicked = value; }
+    }
 
 
     private void Awake()
@@ -59,6 +67,11 @@ public class DragObjects : MonoBehaviour
     {
         if (GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick && !GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().IsTalkingTutorial)
         {
+            if(!isClickable)
+            {
+                OnClicked?.Invoke();
+                return;
+            }
             isFixable = false;
             StartCoroutine(FixableCooldown());
             if (tag == "PanelImage")
@@ -149,6 +162,11 @@ public class DragObjects : MonoBehaviour
     {
         if(GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick && !GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().IsTalkingTutorial)
         {
+            if(!isClickable)
+            {
+                OnClicked?.Invoke();
+                return;
+            }
             if (tag == "PanelImage")
             {
                 GetComponent<RectTransform>().localScale = new Vector3(6.5f, 6.5f, 4);
@@ -324,4 +342,8 @@ public class DragObjects : MonoBehaviour
         gameObject.layer = LayerIgnoreRaycast;
     }
 
+    public void SetClickable(bool isClickable)
+    {
+        this.isClickable = isClickable;
+    }
 }

@@ -17,8 +17,7 @@ public class MainMenu : MonoBehaviour
         //SceneManager.LoadScene("NewTimelapsePrototype");
         FindObjectOfType<Tutorial>().BeginGame();
         FindObjectOfType<IntroductionSequence>().BeginGame();
-
-        FindObjectOfType<PauseMenu>().isPauseAllowed = true;
+        FindObjectOfType<PauseMenu>(true).isPauseAllowed = true;
 
         GameObject.Find("EventSystem").GetComponent<EventSystem>().SetSelectedGameObject(null);
 

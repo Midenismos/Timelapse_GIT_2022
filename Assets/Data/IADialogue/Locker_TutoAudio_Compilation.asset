@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f0bb5c06d1909248a245bbcc4c6c04c, type: 3}
+  m_Name: Locker_TutoAudio_Compilation
+  m_EditorClassIdentifier: 
+  DialogueName: Casier
+  DialogueTexts:
+  - "Un casier conservant vos effets personnels est \xE0 votre disposition \xE0 droite
+    de la fen\xEAtre d\u2019observation. "
+  - "Je vous invite cependant fortement \xE0 rester concentrer sur votre enqu\xEAte
+    et \xE0 ne pas vous \xE9parpiller. "
+  DialogueSounds:
+  - {fileID: 8300000, guid: 2d482921cc854c14884fba082124093e, type: 3}
+  - {fileID: 8300000, guid: 2956ec703e0cdb240b9b6c3d8dbf1eab, type: 3}
+  IsFolowedByAnotherDialogue: 0
+  notInTutorialDialogue: 0
+  ShouldStopPlayerInteraction: 0

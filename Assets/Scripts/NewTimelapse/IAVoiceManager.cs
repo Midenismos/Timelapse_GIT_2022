@@ -14,6 +14,7 @@ public class IAVoiceManager : MonoBehaviour
     public Dialogue[] DialogueList;
 
     public IADialogue[] RandomAntiCasierDialogues;
+    public IADialogue[] FocusDialogues;
     public IADialogue RandomAntiCasierFirstDialogue;
     public IADialogue NebuleuseDialogue;
     public IADialogue EndADialogue;
@@ -82,6 +83,12 @@ public class IAVoiceManager : MonoBehaviour
         DialogueHappening = true;
         i = 0;
         Play();
+    }
+
+    public void LaunchRandomFocusDialogue()
+    {
+        if (DialogueHappening) return;
+        LaunchDialogue(FocusDialogues[UnityEngine.Random.Range(0, FocusDialogues.Length)]);
     }
     private void Update()
     {

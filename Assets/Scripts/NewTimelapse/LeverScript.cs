@@ -1,13 +1,18 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 
-public class LeverScript : MonoBehaviour
+public class LeverScript : MonoBehaviour, IClickable
 {
     [SerializeField] private Slider _slider = null;
     [SerializeField] private InterfaceAnimManager _animManager = null;
+
+    private bool isClickable = true;
+    public Action OnClicked;
+    public Action GetOnClicked { get { return OnClicked; } set { OnClicked = value; } }
 
     /*private float SceneHeight;
     private Vector3 PressPoint;
@@ -82,5 +87,17 @@ public class LeverScript : MonoBehaviour
         }
 
 
+    }
+
+    public void SetClickable(bool isClickable)
+    {
+        _slider.interactable = isClickable;
+        this.isClickable = isClickable;
+        GetComponent<BoxCollider>().enabled = !isClickable;
+    }
+
+    private void OnMouseDown()
+    {
+        if (!isClickable) OnClicked?.Invoke();
     }
 }
