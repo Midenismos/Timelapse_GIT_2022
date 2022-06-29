@@ -15,6 +15,8 @@ public class MainMenu : MonoBehaviour
 
     public void ButtonStart() {
         //SceneManager.LoadScene("NewTimelapsePrototype");
+        FindObjectOfType<Tutorial>().UnlockTuto();
+        FindObjectOfType<PlayerAxisScript>().UnLockTuto();
         FindObjectOfType<Tutorial>().BeginGame();
         FindObjectOfType<IntroductionSequence>().BeginGame();
         FindObjectOfType<PauseMenu>(true).isPauseAllowed = true;

@@ -78,6 +78,7 @@ public class PanelBasketScript : MonoBehaviour
                             image = Instantiate(_panelImageTape, this.transform);
                             image.transform.GetChild(0).GetComponent<TMP_Text>().text = other.GetComponent<PanelImageData>().TMText.text;
                             image.transform.SetParent(_panels[0].transform, false);
+                            image.GetComponent<PanelTag>().ImageTag = "tape";
                             image.GetComponent<PanelTag>().Init(GameObject.Find("EnergyMetter").GetComponent<EnergyMetterScript>().Energy <= 0 ? true : false);
                             image.GetComponent<PanelTag>().ID = other.GetComponent<PanelImageData>().ID;
                             GameObject.Find("TI").GetComponent<TIPanelImageData>().PanelImageList.Add(image.GetComponent<PanelTag>());

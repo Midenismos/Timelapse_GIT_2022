@@ -26,6 +26,7 @@ public class TIEntryScript : MonoBehaviour
     public GameObject DeleteButton = null;
     public bool IsTuto = false;
     public string Date;
+    public GameObject CurrentStandingPoint = null;
 
     private void Awake()
     {
@@ -117,6 +118,16 @@ public class TIEntryScript : MonoBehaviour
         }
         if(GameObject.Find("TutorialManager").GetComponent<Tutorial>().activateTuto && GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex >= 30 && !IsTuto)
             DeleteButton.SetActive(true);
+
+    }
+
+    public void MoveLeft()
+    {
+
+    }
+
+    public void MoveRight()
+    {
 
     }
 }

@@ -113,14 +113,14 @@ public class EnergyMetterScript : MonoBehaviour
         }
         _slider.value = Energy;
 
-        if (Input.GetKeyDown("d") && player.DEnabled == true)
+        if (Input.GetKeyDown("d") && player.DEnabled == true && !GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().IsTalkingTutorial)
             StartLerp();
-        if (Input.GetKeyDown("q") && player.QEnabled == true)
+        if (Input.GetKeyDown("q") && player.QEnabled == true && !GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().IsTalkingTutorial)
             StartLerp();
-        if (Input.GetKeyDown("z") && player.ZEnabled == true)
+        if (Input.GetKeyDown("z") && player.ZEnabled == true && !GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().IsTalkingTutorial)
             StartLerp();
 
-        if (Input.GetKeyDown("s") && player.SEnabled == true)
+        if (Input.GetKeyDown("s") && player.SEnabled == true && !GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().IsTalkingTutorial && FindObjectOfType<PanelBasketScript>().hasScanned)
         {
             _rotationCountdown = 1;
             _moveLerp = 0;

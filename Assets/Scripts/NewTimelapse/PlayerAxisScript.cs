@@ -54,7 +54,8 @@ public class PlayerAxisScript : MonoBehaviour
     public delegate void ReactToChangePosition();
     public event ReactToChangePosition ReactedToChangePosition;
 
-    private void Awake()
+
+    public void UnLockTuto()
     {
         try
         {
@@ -64,7 +65,7 @@ public class PlayerAxisScript : MonoBehaviour
         {
             optionData = null;
         }
-        if(optionData != null)
+        if (optionData != null)
         {
             if (optionData.TutoActivated)
             {
@@ -85,7 +86,6 @@ public class PlayerAxisScript : MonoBehaviour
                 SEnabled = true;
             }
         }
-
     }
     // Start is called before the first frame update
     void Start()

@@ -32,7 +32,7 @@ public class Tutorial : MonoBehaviour
     private bool axisTutoUnlocked = false;
     private bool axisDialogueOngoing = false;
 
-    private void Awake()
+    public void UnlockTuto()
     {
         try
         {

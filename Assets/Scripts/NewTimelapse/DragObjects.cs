@@ -169,7 +169,8 @@ public class DragObjects : MonoBehaviour, IClickable
             }
             if (tag == "PanelImage")
             {
-                GetComponent<RectTransform>().localScale = new Vector3(6.5f, 6.5f, 4);
+                if(transform.parent.name != "Content")
+                    GetComponent<RectTransform>().localScale = new Vector3(6.5f, 6.5f, 4);
             }
             if (tag == "PanelImage" || tag == "Entry" || GameObject.Find("Player").GetComponent<PlayerAxisScript>().IDCurrentAxis == _axisID)
             {
@@ -311,15 +312,17 @@ public class DragObjects : MonoBehaviour, IClickable
             if (gameObject.CompareTag("Tape"))
                 GetComponent<Rigidbody>().AddForce((GameObject.Find("PosTapeThrow").transform.position - transform.position) *50);
         }
-        if (IsFixedInTI && !IsDragged && !GetComponent<TIEntryScript>().IsTuto)
+        /*if (IsFixedInTI && !IsDragged && !GetComponent<TIEntryScript>().IsTuto)
             transform.localPosition = new Vector3(GameObject.Find("TI").GetComponent<TutorialTI>().TutorialActivated ? Mathf.Clamp(transform.localPosition.x, -300, 300) : Mathf.Clamp(transform.localPosition.x, -210, 300), -7f, 0);
         if (IsFixedInTI && IsDragged && !GetComponent<TIEntryScript>().IsTuto)
             transform.localPosition = new Vector3(GameObject.Find("TI").GetComponent<TutorialTI>().TutorialActivated ? Mathf.Clamp(transform.localPosition.x, -300, 300) : Mathf.Clamp(transform.localPosition.x, -210, 300), -7f, 0);
         if (IsFixedInTI && !IsDragged && GetComponent<TIEntryScript>().IsTuto)
             transform.localPosition = new Vector3(Mathf.Clamp(transform.localPosition.x, -300, -210) , -7f, 0);
         if (IsFixedInTI && IsDragged && GetComponent<TIEntryScript>().IsTuto)
-            transform.localPosition = new Vector3(Mathf.Clamp(transform.localPosition.x, -300, -210), -7f, 0);
-
+            transform.localPosition = new Vector3(Mathf.Clamp(transform.localPosition.x, -300, -210), -7f, 0);*/
+        
+        /*if (IsFixedInTI && !IsDragged && !GetComponent<TIEntryScript>().IsTuto)
+            transform.localPosition =*/
 
 
     }

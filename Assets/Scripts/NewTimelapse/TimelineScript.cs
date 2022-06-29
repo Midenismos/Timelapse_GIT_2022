@@ -29,6 +29,8 @@ public class TimelineScript : MonoBehaviour
     [SerializeField] private int corruptedNumberRequired = 9;
     [SerializeField] private GameObject reportButton = null;
     [SerializeField] private VideoClip[] EndingVideos = null;
+
+    public GameObject[] TIEntryPositions = null;
     public void CheckEntry()
     {
         if(GameObject.Find("TutorialManager").GetComponent<Tutorial>().activateTuto && GameObject.Find("TutorialManager").GetComponent<Tutorial>().dialogueIndex == 27 && !GameObject.Find("IAVoiceManager").GetComponent<AudioSource>().isPlaying)
@@ -112,7 +114,7 @@ public class TimelineScript : MonoBehaviour
             else
                 GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().LaunchDialogue(DialogueCompletion[EndAData.Count(n => n.isTrue == true)+3]);
             if(EndAData.Count(n => n.isTrue == true) + 3 == 15)
-                StartCoroutine(SpawnRepportButton());
+                //StartCoroutine(SpawnRepportButton());
 
 
 
@@ -180,7 +182,7 @@ public class TimelineScript : MonoBehaviour
                 }
             }
         }
-        if (EndAData.Count(n => n.isTrue == true) + 3 == 15)
+        if (EndAData.Count(n => n.isTrue == true) == 12)
         {
             if (corruptedNumber == 9)
             {

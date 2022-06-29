@@ -39,14 +39,14 @@ public class ProgressCircle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*if(Input.GetKey(KeyCode.A))
+        if(Input.GetKey(KeyCode.A))
         {
             TestButton();
         }
         if (Input.GetKey(KeyCode.E))
         {
             TestButton2();
-        }*/
+        }
         if (_text.text != _filledEntryNumber.ToString() + maxNumber)
             _text.text = _filledEntryNumber.ToString() + maxNumber;
 
