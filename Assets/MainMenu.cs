@@ -8,7 +8,6 @@ using UnityEngine.EventSystems;
 
 public class MainMenu : MonoBehaviour
 {
-    [SerializeField] private PauseMenu pauseMenu;
     public void ButtonQuitter() {
         Application.Quit();
         //Debug.Log("Pourquoi vouloir quitter ?");
@@ -18,8 +17,7 @@ public class MainMenu : MonoBehaviour
         //SceneManager.LoadScene("NewTimelapsePrototype");
         FindObjectOfType<Tutorial>().BeginGame();
         FindObjectOfType<IntroductionSequence>().BeginGame();
-
-        pauseMenu.isPauseAllowed = true;
+        FindObjectOfType<PauseMenu>(true).isPauseAllowed = true;
 
         GameObject.Find("EventSystem").GetComponent<EventSystem>().SetSelectedGameObject(null);
 

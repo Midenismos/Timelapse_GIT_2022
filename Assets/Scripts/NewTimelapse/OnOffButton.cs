@@ -1,9 +1,10 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class OnOffButton : MonoBehaviour
+public class OnOffButton : MonoBehaviour, IClickable
 {
     public UnityEvent onClicked;
     [SerializeField] private MeshRenderer _interactFeedBack;
@@ -11,6 +12,10 @@ public class OnOffButton : MonoBehaviour
     [SerializeField] private Material[] _mats = new Material[2];
     private MeshRenderer _plane = null;
     [SerializeField] private bool _isActivated = false;
+
+    private bool isClickable = true;
+    public Action OnTutoClicked;
+    public Action GetOnClicked { get { return OnTutoClicked; } set { OnTutoClicked = value; } }
     public bool IsActivated
     {
         get
@@ -44,6 +49,11 @@ public class OnOffButton : MonoBehaviour
             _interactFeedBack.enabled = true;
             if (Input.GetMouseButtonDown(0) && GameObject.Find("Player").GetComponent<PlayerAxisScript>().CanClick && !GameObject.Find("IAVoiceManager").GetComponent<IAVoiceManager>().IsTalkingTutorial)
             {
+                if(!isClickable)
+                {
+                    OnTutoClicked?.Invoke();
+                    return;
+                }
                 //if (GameObject.Find("Console").GetComponent<ConsoleManager>().isActivated || tag == "ResetEnergy" || tag == "VaultButton")
                 //{
                     IsActivated = !IsActivated;
@@ -58,5 +68,10 @@ public class OnOffButton : MonoBehaviour
     private void OnMouseExit()
     {
         _interactFeedBack.enabled = false;
+    }
+
+    public void SetClickable(bool isClickable)
+    {
+        this.isClickable = isClickable;
     }
 }

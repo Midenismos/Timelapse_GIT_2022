@@ -12,6 +12,7 @@ public class Tutorial : MonoBehaviour
     [SerializeField] private float[] delays;
     [SerializeField] public TutorialAction[] tutorialActions;
     [SerializeField] private IADialogue[] axisDialogues;
+    [SerializeField] private IADialogue TIDialogue;
 
     [SerializeField] private IAVoiceManager voiceManager = null;
     private PlayerAxisScript player;
@@ -87,7 +88,17 @@ public class Tutorial : MonoBehaviour
         {
             if(Input.GetButtonDown("AxisTutorial") && axisTutoUnlocked)
             {
-                LaunchAxisDialogue(player.IDCurrentAxis);
+                if(player.IsInTI)
+                {
+                    if (!axisDialogueOngoing)
+                    {
+                        voiceManager.LaunchDialogue(TIDialogue);
+                        axisDialogueOngoing = true;
+                    }
+                } else
+                {
+                    LaunchAxisDialogue(player.IDCurrentAxis);
+                }
             }
             if (dialogueIndex == 0 && IsElevatorFinished)
             {
